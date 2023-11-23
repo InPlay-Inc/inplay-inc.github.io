@@ -1,0 +1,40 @@
+name: Github pages
+
+on:
+    #push:
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        env:
+          HUGO_VERSION: 0.120.4
+        steps:
+            - name: Install Hugo CLI
+              run: |
+                wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+                && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
+            - name: Install Dart Sass
+              run: sudo snap install dart-sass
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                  submodules: true
+                  fetch-depth: 0
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v2
+              with:
+                hugo-version: "0.120.4"
+                extended: true
+
+            - name: Build Web
+              run: hugo --minify
+
+            - name: Deploy Web
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                personal_token: ${{ secrets.HUGO_TOKEN }}
+                publish_branch: publish
+                publish_dir: ./public
+                commit_message: ${{ github.event.head_commit.message }}

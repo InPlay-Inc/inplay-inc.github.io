@@ -1,0 +1,27 @@
+baseURL = 'https://xicheng5713.github.io/hugoDemo/'
+#relativeURLS = true
+#uglyURLs = true
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'hugo-book'
+
+[markup]
+    [markup.tableOfContents]
+        # 纳入目录的最小标题级别，默认为3
+        endLevel = 3
+        # 是否排序，其实就是是否在目录的前面添加序号“1. ”、"2. "等等
+        ordered = true
+        # 纳入目录的最大标题级别，默认为2
+        startLevel = 2
+    [markup.highlight]
+        anchorLineNos = false
+        codeFences = true
+        guessSyntax = false
+        hl_Lines = ""
+        lineAnchors = ""
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        style = "dracula"
+        tabWidth = 4
