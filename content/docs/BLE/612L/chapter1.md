@@ -34,51 +34,10 @@ content_2_1
 {{< tab "Windows" >}} # Windows Content {{< /tab >}}
 {{< /tabs >}}
 
-/n 
 ![](/images/sample.png)
 
-/n 
-
-/n 
-
-/n 
 
 find content 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-/n 
-
-
-/n 
-
-/n 
-
-/n 
 
 ## title_2_2
 

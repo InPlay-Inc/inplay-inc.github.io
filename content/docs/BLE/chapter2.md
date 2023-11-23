@@ -1,7 +1,7 @@
 ---
 title: "chapter2"
 weight: 2
-bookFlatSection: true
+bookFlatSection: true # 
 # bookToc: true
 # bookHidden: false
 # bookCollapseSection: false
