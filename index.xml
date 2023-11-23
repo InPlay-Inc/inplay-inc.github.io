@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My New Hugo Site</title><link>https://xicheng5713.github.io/hugoDemo/</link><description>Recent content on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://xicheng5713.github.io/hugoDemo/index.xml" rel="self" type="application/rss+xml"/><item><title>chapter1</title><link>https://xicheng5713.github.io/hugoDemo/docs/ble/612l/chapter1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xicheng5713.github.io/hugoDemo/docs/ble/612l/chapter1/</guid><description>title_1 # content_1
+title_2_1 # content_2_1 /n
+/n MacOS 199 200 201 202 203 204 205 206 207 { class ACK{ const ACK({required this.cmd, required this.res}); final int cmd; final int res; } } Linux Linux Content # Windows Windows Content # find content
+title_2_2 # title_3 # content_3</description></item><item><title>chapter1</title><link>https://xicheng5713.github.io/hugoDemo/docs/ble/chapter1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xicheng5713.github.io/hugoDemo/docs/ble/chapter1/</guid><description>title_1 # content_1
+title_2_1 # content_2_1 /n
+/n MacOS 199 200 201 202 203 204 205 206 207 { class ACK{ const ACK({required this.cmd, required this.res}); final int cmd; final int res; } } Linux Linux Content # Windows Windows Content # /n /n
+/n
+/n
+find content
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+/n
+title_2_2 # title_3 # content_3</description></item><item><title>chapter2</title><link>https://xicheng5713.github.io/hugoDemo/docs/ble/612l/chapter2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xicheng5713.github.io/hugoDemo/docs/ble/612l/chapter2/</guid><description>title_1 # content_1
+title_2 # content_2
+title_3 # content_3</description></item><item><title>chapter2</title><link>https://xicheng5713.github.io/hugoDemo/docs/ble/chapter2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xicheng5713.github.io/hugoDemo/docs/ble/chapter2/</guid><description>title_1 # content_1
+title_2 # content_2
+title_3 # content_3</description></item><item><title>chapter3</title><link>https://xicheng5713.github.io/hugoDemo/docs/ble/app/chapter3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xicheng5713.github.io/hugoDemo/docs/ble/app/chapter3/</guid><description>title_1 # content_1
+title_2 # content_2 config
+title_3 # content_3</description></item></channel></rss>
