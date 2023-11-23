@@ -23,4 +23,4 @@ find content
 /n
 title_2_2 # title_3 # content_3</description></item><item><title>chapter2</title><link>https://inplay-inc.github.io/docs/ble/chapter2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://inplay-inc.github.io/docs/ble/chapter2/</guid><description>title_1 # content_1
 title_2 # content_2
-title_3 # content_3</description></item></channel></rss>
+title_3 # content_3 add content</description></item></channel></rss>
