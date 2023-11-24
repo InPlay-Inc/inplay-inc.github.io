@@ -160,7 +160,7 @@ Receive Test command：0x01, 0x1D, 0x20, 0x01, <channel>
 
 Complete Event 0x04, 0x0E, 0x01, 0x01, 0x1D, 0x20, <status>
 
-5. **Start Carrier TX (carrier signal)**
+5. ### Start Carrier TX (carrier signal)
 
 Command：0x01, 0x01, 0xFC, 0x02, <channel> <TX power>
 
@@ -352,15 +352,14 @@ Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x50, 0xFC, <status> , <version byte 0>,
 20. ### Set TX Gain
     
     Command: 0x01, 0x51, 0xFC, 0x00, <TX Gain>
-  - <TX Gain>: TX gain, range is0x00 ~ 0x7F.  Default is 0x18.
+    
+    - <TX Gain>: TX gain, range is0x00 ~ 0x7F.  Default is 0x18.
 
 Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x51, 0xFC, <status> 
 
-
-
 ***The following command in only available for Golden tester board.***
 
-20. ### DUT Calibrate XO
+21. ### DUT Calibrate XO
     
     Command 0x01, 0x31, 0xFC, 0x03, <pwm id>, <save>, <limit>
 
@@ -393,7 +392,7 @@ Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>
 - <cap> cap value
 
 - <offset> Offset between DUT and tester , Unit is 1/8 us at 100ms(1.25PPM).
-21. ### DUT Set TX Power
+22. ### DUT Set TX Power
     
     Test DUT tx power command: 0x01, 0x32, 0xFC, 0x03 <ch>, <phy>, <tx powe code>
 - <ch> 0 ~ 39
@@ -403,7 +402,7 @@ Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>
 Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x32, 0xFC, <status>,<rssi> 
 
 - <rssi> RSSI value
-22. ### DUT RX Sensitivity
+23. ### DUT RX Sensitivity
     
     Test DUT RX sensitivity command: 0x01, 0x33, 0xFC, 0x03, <ch>, <phy>, <loss rate>
 - <ch> 0 ~ 39
@@ -417,7 +416,7 @@ Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x33, 0xFC, <status>,<tx power> <loss ra
 - <tx power> Tester TX power
 
 - <loss rate> loss rate, unit is 0.1%.  20 means 2%.
-22. ### DUT Download Image
+24. ### DUT Download Image
     
     Command: 0x01, 0x34, 0xFC, 0x08,<bootram size byte 0>,<bootram size byte 1>,<bootram size byte 2>,<bootram size byte 3>,<image size byte 0>,,<image size byte 1>,<image size byte 2>,<image size byte 3>
     
@@ -430,7 +429,7 @@ Example: bootram size is 0x2000 bytes, image size is 0xAC00 bytes:
 
 Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x34, 0xFC, <status>
 
-23. ### Start BLE Scan
+25. ### Start BLE Scan
     
     Command: 0x01, 0x40, 0xFC, 0x07,<channel>,<BD addr byte 0>,< BD addr byte 1>,< BD addr byte 2>,< BD addr byte 3 >,< BD addr byte 4>,< BD addr byte 5 >
 - <channel>:Scan channel. 37, 38 or 39
@@ -439,7 +438,7 @@ Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x34, 0xFC, <status>
 
 Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x40, 0xFC, <status>
 
-24. ### Start SDR Scan
+26. ### Start SDR Scan
     
     Command: 0x01, 0x41, 0xFC, 0x05,<channel>,<access addr byte 0>,< access addr byte 1>,< access addr byte 2>,< access addr byte 3 >
 - <channel>:Scan channel. Range is 0 ~  39.
@@ -448,7 +447,7 @@ Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x40, 0xFC, <status>
 
 Complete Event: 0x04, 0x0E, 0x01, 0x01, 0x41, 0xFC, <status>
 
-25. ### Stop Scan
+27. ### Stop Scan
     
     Command: 0x01, 0x42, 0xFC, 0x00
 
