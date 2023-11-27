@@ -1,4 +1,8 @@
-﻿# HCI Command
+﻿---
+title: "HCI"
+---
+
+# HCI Command
 
 ## Introduction to BLE HCI Commands
 
