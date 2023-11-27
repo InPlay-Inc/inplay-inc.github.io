@@ -38,6 +38,10 @@ Press Ctrl+C to stop
 ```
 编写好md后提交到main分支，之后GitHub会自动编译到GitPages上。
 
+Github pages : https://inplay-inc.github.io/
+
+若需要本地网站，只需将pages分支拉取下来，打开根目录下的docs.html即可。
+
 ## 内容编写
 
 在content/docs/路径下编写markdown文件。若需要多级目录，需创建文件夹并在该文件夹下创建_index.md 文件，再在该文件夹下创建子目录或文件，如创建IN6XXE目录，该目录下又有Getting Started目录: 
@@ -84,7 +88,7 @@ Press Ctrl+C to stop
 
 2. 利用PicGo 工具: 
    [PicGo 下载地址](https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1)  
-   
+
    [PicGo 文档](https://picgo.github.io/PicGo-Doc/zh/guide/#picgo-is-here) 
 
   安装好后打开PicGo，进入图床设置-> Github ， 
