@@ -3,7 +3,9 @@
 ## 快速使用
 
 [Hugo 官方文档](https://gohugo.io/documentation/) 
+
 [Hugo-book Github](https://github.com/alex-shpak/hugo-book) 
+
 [Hugo-book Demo](https://hugo-book-demo.netlify.app/) 
 
 
@@ -40,12 +42,19 @@ Press Ctrl+C to stop
 
 在content/docs/路径下编写markdown文件。若需要多级目录，需创建文件夹并在该文件夹下创建_index.md 文件，再在该文件夹下创建子目录或文件，如创建IN6XXE目录，该目录下又有Getting Started目录: 
 |-- content 
+
 |&emsp;&emsp;|-- docs 
+
 |&emsp;&emsp;&emsp;&emsp;|-- IN6XXE 
+
 |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- _index.md 
+
 |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- Getting Started 
+
 |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- _index.md 
+
 |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- HCI command.md 
+
 |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- introduction.md 
 
 ### 图片引用
@@ -54,19 +63,28 @@ Press Ctrl+C to stop
 1. 直接引用：
   在需要引用图片的页面单独建一个文件夹，此文件夹只存放index.md文件及图片资源，如创建picShow页面: 
   |-- content 
+
   |&emsp;&emsp;|-- docs 
+
   |&emsp;&emsp;&emsp;&emsp;|-- IN6XXE 
+
   |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- _index.md 
+
   |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- Getting Started 
+
   |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- _index.md 
+
   |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- picShow 
+
   |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|--index.md 
+
   |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|--sample.png 
   
   之后再在index.md里编写内容，引入图片 `![](sample.png)`，这种引用方式是可以部署到GitPages上的，不需要更改引用路径。
 
 2. 利用PicGo 工具: 
    [PicGo 下载地址](https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1)  
+   
    [PicGo 文档](https://picgo.github.io/PicGo-Doc/zh/guide/#picgo-is-here) 
 
   安装好后打开PicGo，进入图床设置-> Github ， 
