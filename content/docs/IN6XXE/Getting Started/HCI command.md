@@ -156,7 +156,7 @@ Transmitter Test command：`0x01, 0x1E, 0x20, 0x03, <channel>, <data length>, <
 
 - channel: the range is 0x00 to 0x27（39），Formula：N =（F – 2402）/ 2；  0x00 means 2.402G
 - data length: please use 0x25 in 1M mode
-- packet type: please refer to table 1.
+- packet type: please refer to Table 1.
 
 Complete Event：`0x04, 0x0E, 01, 0x01, 0x1E, 0x20, <status>`
 
@@ -181,9 +181,9 @@ Command: `0x01, 0x34, 0x20, 0x04, <channel>, <data length>, <packet type>, <phy>
 
 - data length: please use 0x25 in 1M mode
 
-- packet type: please refer to table 1
+- packet type: please refer to Table 1
 
-- phy: Please refer to table 2
+- phy: Please refer to Table 2
 
 Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x34, 0x20, <status>`
 
@@ -195,7 +195,7 @@ Command: `0x01, 0x33, 0x20, 0x03, <channel>, <phy>, <modulation index>`
 
 - channel: range 0x00 to 0x27 (39), formula: N = (F - 2402)/ 2; 0x00 represents 2.402G
 
-- phy: please refer to table 1
+- phy: please refer to Table 1
 
 - modulation index: Normally set to 0
   
@@ -239,9 +239,9 @@ Command：`0x01, 0x0D, 0xFC, 0x06, <channel>, <data length>, <packet type>, <phy
 
 - data length: See  “Start Enhanced TX Test”
 
-- packet type: Refer to table 1
+- packet type: Refer to Table 1
 
-- phy: Refer to table 2
+- phy: Refer to Table 2
 
 - midx: Reserved, must set to 0.
 
@@ -284,11 +284,11 @@ Command: `0x01, 0x08, 0xFC, 0x01, <Cap>`
   Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x08, 0xFC, <status>`
 14. ### Set TX Power
     
-    Sets the transmit power. 
+    Set the transmit power according to Table 3. 
 
 Commands: `0x01, 0x07, 0xFC, 0x01, <TX Power>`
 
-- TX Power: transmit power, range is 0x00 to 0x1A. Please refer to table 3.
+- TX Power: transmit power, range is 0x00 to 0x1A. Please refer to Table 3.
 
 Complete Event: `0x04, 0x0E, 01, 0x01, 0x07, 0xFC, <status>`
 
@@ -416,7 +416,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>`
     
     Command: `0x01, 0x32, 0xFC, 0x03, <ch>, <phy>, <tx gain code>`
 - ch: 0 ~ 39
-- phy: Please refer to table 2
+- phy: Please refer to Table 2
 - tx gain: DUT tx gain code(0x0 ~ 0x7F), only available for carrier.
 
 Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x32, 0xFC, <status>,<rssi>` 
@@ -427,7 +427,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x32, 0xFC, <status>,<rssi>`
     Command: `0x01, 0x33, 0xFC, 0x03, <ch>, <phy>, <loss rate>`
 - ch: 0 ~ 39
 
-- phy: Please refer to table 2
+- phy: Please refer to Table 2
 
 - loss rate:  0~255, unit is 0.1%.  For example ,20 means 2%
 
