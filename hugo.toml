@@ -2,7 +2,7 @@ baseURL = 'https://inplay-inc.github.io/'
 #relativeURLS = true
 #uglyURLs = true
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'InPlay Doc'
 theme = 'hugo-book'
 
 [markup]
