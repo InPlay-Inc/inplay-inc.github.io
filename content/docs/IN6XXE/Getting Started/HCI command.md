@@ -284,15 +284,23 @@ Command: `0x01, 0x08, 0xFC, 0x01, <Cap>`
   Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x08, 0xFC, <status>`
 14. ### Set TX Power
     
-    Sets the transmit power. Note that it is not valid for Carrier TX command.
+    Sets the transmit power. 
 
 Commands: `0x01, 0x07, 0xFC, 0x01, <TX Power>`
 
-- TX Power: transmit power, range 0x00~0x7F. Default is 0x18.
+- TX Power: transmit power, range is 0x00 to 0x1A. Please refer to table 3.
 
 Complete Event: `0x04, 0x0E, 01, 0x01, 0x07, 0xFC, <status>`
 
-15. ### Read Register
+15. ### Set TX Gain
+    
+    Command: `0x01, 0x51, 0xFC, 0x00, <TX Gain>`
+    
+    - TX Gain: TX gain, range is 0x00 ~ 0x7F.  Default is 0x18.
+
+	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x51, 0xFC, <status>`
+
+16.  ### Read Register
     
     Read register.
 
@@ -312,7 +320,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x07, 0xFC, <status> ,<Reg Value Byte 0
 - Reg Value Byte 1: Register value byte 1.
 - Reg Value Byte 2: Register value byte 2.
 - Reg Value Byte 3: Register value byte 3.
-16. ### Write Register
+17. ### Write Register
 
 Write register.
 
@@ -336,7 +344,7 @@ Command: `0x01, 0x0F, 0xFC, 0x08, <Address Byte0>,<Address Byte1>,<Address Byte2
 
 Complete Event:  `0x04, 0x0E, 0x01, 0x01, 0x07, 0xFC, <status>`
 
-17. ### Start PWM
+18. ### Start PWM
     
     Command: `0x01, 0x09, 0xFC, 0x01, <pwm id>`
 
@@ -354,26 +362,20 @@ Complete Event:  `0x04, 0x0E, 0x01, 0x01, 0x07, 0xFC, <status>`
 
 Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x09, 0xFC, <status>` 
 
-18. ### Stop PWM
+19. ### Stop PWM
     
     Command: `0x01, 0x0A, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x0A, 0xFC, <status>` 
 
-19. ### Get Version Number
+20. ### Get Version Number
     
     Command: `0x01, 0x50, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x50, 0xFC, <status> , <version byte 0>, <version byte 1>, <version byte 2>, <version byte 3>`
 
     - Version: 32bit HCI command SW version number
-20. ### Set TX Gain
-    
-    Command: `0x01, 0x51, 0xFC, 0x00, <TX Gain>`
-    
-    - TX Gain: TX gain, range is0x00 ~ 0x7F.  Default is 0x18.
 
-	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x51, 0xFC, <status>`
 
 ***The following command in only available for Golden tester board.***
 
