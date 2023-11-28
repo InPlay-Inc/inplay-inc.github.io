@@ -1,9 +1,17 @@
-baseURL = 'https://inplay-inc.github.io/'
-#relativeURLS = true
-#uglyURLs = true
+#baseURL = 'https://inplay-inc.github.io/'
+relativeURLS = true
+uglyURLs = true
+date = '2023-11-27'
 languageCode = 'en-us'
 title = 'InPlay Doc'
 theme = 'hugo-book'
+
+# Book configuration
+enableGitInfo = true
+
+[params]
+
+    BookDateFormat = 'January 2, 2006'
 
 [markup]
     [markup.tableOfContents]
