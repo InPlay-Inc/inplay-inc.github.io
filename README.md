@@ -8,6 +8,8 @@
 
 [Hugo-book Demo](https://hugo-book-demo.netlify.app/) 
 
+[Markdown 文档](https://markdown.com.cn/basic-syntax/)
+
 
 `hugo serve` 命令开启本地服务，可用于本地预览，如下:
 ```
