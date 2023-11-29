@@ -6,15 +6,11 @@ title: "HCI"
 
 ## Introduction to BLE HCI Commands
 
-Bluetooth Low Energy (BLE) is a wireless communication technology designed for short-range communication with low power consumption. In BLE-enabled systems, the Host Controller Interface (HCI) serves as a crucial bridge between the host (application processor) and the Bluetooth controller embedded in the device. HCI commands play a pivotal role in facilitating communication and control between these two components.
-
-## Purpose of BLE HCI Commands
-
 BLE HCI commands are standardized instructions exchanged between the host and the Bluetooth controller to manage and configure Bluetooth communication. These commands enable the host to initiate various actions, such as establishing connections, configuring parameters, and managing the overall behavior of the Bluetooth device.
 
 ## HCI Command Structure
 
-BLE HCI commands follow a specific structure, adhering to a standardized format that includes an HCI type, opcode, and parameters. Understanding this structure is essential for developers and engineers working on BLE-enabled devices, as it allows them to communicate effectively with the Bluetooth controller.
+BLE HCI commands follow a specific structure, adhering to a standardized format that includes an HCI type, opcode, and parameters. Understanding this structure is essential for developers and engineers working on BLE devices, as it allows them to communicate effectively with the Bluetooth controller.
 
 ## HCI Command Format
 
