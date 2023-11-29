@@ -66,39 +66,26 @@ Github pages : https://inplay-inc.github.io/
 ### 图片引用
 
 推荐两种方式引用图片：
-1. ~~直接引用~~(编译后图片不显示)：
-  在需要引用图片的页面单独建一个文件夹，此文件夹只存放index.md文件及图片资源，如创建picShow页面: 
-  |-- content 
+1. ~~直接引用~~：
+  将图片放在static/images/目录下，再直接再markdown文件中引用，如: 
 
-  |&emsp;&emsp;|-- docs 
-
-  |&emsp;&emsp;&emsp;&emsp;|-- IN6XXE 
-
-  |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- _index.md 
-
-  |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- Getting Started 
-
-  |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- _index.md 
-
-  |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- picShow 
-
-  |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|--index.md 
-
-  |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|--sample.png 
-  
-  之后再在index.md里编写内容，引入图片 `![](sample.png)`，这种引用方式是可以部署到GitPages上的，不需要更改引用路径。
+  `![](/images/4_1920.png)`
 
 2. 利用PicGo 工具: 
    [PicGo 下载地址](https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.1)  
 
    [PicGo 文档](https://picgo.github.io/PicGo-Doc/zh/guide/#picgo-is-here) 
 
-  安装好后打开PicGo，进入图床设置-> Github ， 
-  仓库名： InPlay-Inc/inplay-inc.github.io 
-  分支名： main 
-  Token：需自己创建，勾上repo权限即可 
-  存储路径: static/images/ 
+  安装好后打开PicGo，进入图床设置-> Github, 
 
+  仓库名： InPlay-Inc/inplay-inc.github.io 
+
+  分支名： main 
+
+  Token：需自己创建，勾上repo权限即可 
+
+  存储路径: static/images/ 
+  
   设置好后点击确定即可。 
   之后在上传区上传，上传成功会有提示，成功后会默认复制Markdown格式的引用路径，直接粘贴到md文件里即可，如：
   `![](https://raw.githubusercontent.com/InPlay-Inc/inplay-inc.github.io/main/static/images/4_1920.png)`
