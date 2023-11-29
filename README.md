@@ -66,7 +66,7 @@ Github pages : https://inplay-inc.github.io/
 ### 图片引用
 
 推荐两种方式引用图片：
-1. 直接引用：
+1. ~~直接引用~~(编译后图片不显示)：
   在需要引用图片的页面单独建一个文件夹，此文件夹只存放index.md文件及图片资源，如创建picShow页面: 
   |-- content 
 
