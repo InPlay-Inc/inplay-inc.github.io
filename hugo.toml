@@ -3,7 +3,7 @@ relativeURLS = true
 uglyURLs = true
 date = '2023-11-27'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'InPlay Doc'
 theme = 'hugo-book'
 
 # Book configuration
