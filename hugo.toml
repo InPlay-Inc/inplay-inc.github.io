@@ -9,6 +9,9 @@ theme = 'hugo-book'
 # Book configuration
 enableGitInfo = true
 
+# copyright footer
+copyright = "InPlay Inc"
+
 [params]
     BookDateFormat = 'January 2, 2006'
 

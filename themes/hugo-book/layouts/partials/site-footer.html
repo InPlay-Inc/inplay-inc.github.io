@@ -1,0 +1,7 @@
+<footer class="{{ .Site.Params.background_color_class | default "bg-black" }} bottom-0 w-100 pa3" style="position: fixed;bottom: 0;width: 100%;" role="contentinfo">
+    <div class="flex justify-between">
+    <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" style="color: black;" >
+      &copy; Copyright {{ now.Format "2006"}} {{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }}  {{ end }}
+    </a>
+    </div>
+  </footer>
