@@ -10,10 +10,12 @@ theme = 'hugo-book'
 enableGitInfo = true
 
 [params]
-
     BookDateFormat = 'January 2, 2006'
 
 [markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
     [markup.tableOfContents]
         # 纳入目录的最小标题级别，默认为3
         endLevel = 3
