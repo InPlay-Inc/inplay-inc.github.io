@@ -43,6 +43,8 @@
   </main>
 
   {{ partial "docs/inject/body" . }}
+
+  {{ block "footer1" . }}{{ partialCached "site-footer.html" . }}{{ end }}
 </body>
 </html>
 
