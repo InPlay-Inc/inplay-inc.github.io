@@ -50,10 +50,11 @@ Command: `0x01, 0x03, 0x0C, 0x00`
 - 0x03 0x0C – operation code
 - 0x00 – the number of bytes of parameters. For reset, the number is zero because no parameter.
 
-Command Complete Event: `0x04, 0x0E, <Commands Available>, 0x01, 0x03, 0x0C, <status>`
+Command Complete Event: `0x04, 0x0E, <Packet len ><Commands Available>, 0x01, 0x03, 0x0C, <status>`
 
 - `0x04` – single byte before all events.
 - `0x0E` – event code after command completion
+- `<Packet Len>` - Length of all of the parameters contained in this packet. It is 0x4 in this example.
 - `<Commands Available>` – the number of commands that the controller can receive. It is 0x1 by default.
 - `0x01 0x03 0x0C` – operation code
 - `<status>` – `0x00` means the command was successful. If not `0x00`, it means an error. The error list reference is to *Volume 2 Part D of the Core Spec for a list of error codes*.
