@@ -27,7 +27,7 @@ The [serial port parameter configure](#uartcfg) command can modify the UART sett
 
 The AT commands can be divided into 3 main categories: Command, Response and Event. The module receives Command and, after execution, sends back Response to the command initiator. When something happens in the module, such as an unexpected disconnection, receiving data from a remote device, etc., a corresponding Event is sent.
 
-### COMMAND SYNTAX
+### **COMMAND SYNTAX**
 
 An AT command is composed of the Prefix, CommandID, CommandBody and Terminator as shown below.
 
@@ -43,7 +43,7 @@ CommandBody can be either ASCII '?' if the command *gets* a parameter or paramet
 
 Terminator of each command is carriage return (CR, '\r', \x0d) and line feed (LF, '\n', \x0a). Command is accepted and executed only when the Terminator is received.
 
-### RESPONSE SYNTAX
+### **RESPONSE SYNTAX**
 
 After an AT command is executed, a response will be sent back. Response consists of corresponding CommandID, ResponseBody and Terminator as shown below. 
 
@@ -53,7 +53,7 @@ After an AT command is executed, a response will be sent back. Response consists
 
 If command is to *set* parameter, the ResponseBody is either parameter set read or just a numerical error result code. The format of the read parameter set is same as the format of the *set* parameters of the corresponding command. Only result code is returned for *set* parameter commands. 
 
-### EVENT SYNTAX
+### **EVENT SYNTAX**
 
 An event is a message reported by the module initiatively, rather than a response obtained through the AT command. An event consists of EventID, EventBody and Terminator as shown in below.
 
@@ -63,9 +63,11 @@ An event is a message reported by the module initiatively, rather than a respons
 
 EventID is an ASCII string representing different event. It's case sensitive. EventBody is a parameter set and its format is same as CommandBody in AT command. Terminator is same as that in AT command response.
 
-### PARAMETER VALUE
+### **PARAMETER VALUE**
 
-Parameter in parameter set supports numeric values, strings, and byte arrays. Some binary data is encoded in Base64 format string.
+Parameter in parameter set supports numeric values, strings. There are three format of string: ASCII format string, Byte Array format string and Base64 encoding format string.
+
+### **EXAMPLES**
 
 The below table lists some examples of AT commands and their responses and events.
 
@@ -76,69 +78,71 @@ The below table lists some examples of AT commands and their responses and event
         <th width="52%" align="center" bgcolor="#cccccc">Response</th>
     </tr>
     <tr>
-        <td><font size="0">AT+DEVCFG=[10,‘112222222211’,0,“Slave”,1]</font></td>
-        <td><font size="0">Set Device configuration</font></td>
+        <td><font size="0">AT+DEVCFG=[10,"112222222211",0,"Slave",1]</font></td>
+        <td><font size="0">Set device general configuration</font></td>
         <td><font size="0">+DEVCFG=0000H</font></td>
     </tr>
     <tr>
         <td><font size="0">AT+DEVCFG=?</font></td>
-        <td><font size="0">Get Device configuration</font></td>
-        <td><font size="0">+DEVCFG=[10,‘112222222211’,0,“Slave”,1]</font></td>
+        <td><font size="0">Get device general configuration</font></td>
+        <td><font size="0">+DEVCFG=[10,"112222222211",0,"Slave",1]</font></td>
     </tr>    
     <tr>
-        <td><font size="0">AT+ADVACTV=[1,1,0,1,“BwlJbnBsYXk=",500,0,0]</font></td>
-        <td><font size="0">Start legacy connectable advertising in 500ms interval. The payload is local name “Inplay”</font></td>
-        <td><font size="0">+ADVACTV=0000H: successful<br>+ADVACTV=0043H: error advertising can't be started in current state</font></td>
+        <td><font size="0">AT+CFGADVACTV=[1,0,1,500,0,"BwlJbnBsYXk="]</font></td>
+        <td><font size="0">Create legacy connectable advertising in 500ms interval. The payload is local name "Inplay"</font></td>
+        <td><font size="0">+CFGADVACTV=0000H: successful<br>+CFGADVACTV=0043H: error advertising can't be create</font></td>
     </tr>
     <tr>
-        <td><font size="0">-EVTCONN=[1,‘EFBBCCCCDDEF’,1,1]</font></td>
-        <td><font size="0">Connected with device “EF:DD:CC:CC:BB:EF” on 1M PHY</font></td>
+        <td><font size="0">-EVTCONN=[1,"EFBBCCCCDDEF",1,1]</font></td>
+        <td><font size="0">Connected with device "EF:DD:CC:CC:BB:EF" on 1M PHY</font></td>
         <td><font size="0"></font></td>
     </tr> 
 </table>
 
 ## COMMAND REFERENCE
 
-This section describes AT commands in detail and provides examples. Those parameter surrounded by '<>' brackets are optional in some cases.
+This section describes AT commands in detail and provides examples. Those parameter surrounded by '<>' brackets are optional in some cases. If an optional parameter needs to be set, all optional parameters prior to that optional parameter must also be provided.
 
-1. ### **+STATE**
+Since the responseBody of the response returned by the *get* command is the same as the CommandBody of the corresponding *set* command, for simplicity, only the format of the *get* command is listed.
+
+1. ### **Get Module State**
 
 This command *gets* the current status of the module.
 
 Command:    <span style="color:blue;">**AT+STATE=?**</span>
 
-Response:   <span style="color:blue;">**+STATE=[<sys_state>,<pair_state>,<conn_state>,<scan_state>,<adv_state>]**</span>
+Response:   <span style="color:blue;">**+STATE=[sys_state,pair_state,conn_state,scan_state,adv_state]**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">sys_state</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Not ready;<br>1: Ready</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Not ready;<br>1:  Ready</font></td>
     </tr>
     <tr>
         <td><font size="0">pair_state</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Not paired;<br>1: Paired</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Not paired;<br>1:  Paired</font></td>
     </tr>
     <tr>
         <td><font size="0">conn_state</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Unconnected<br>1: Connecting <br>2: Connected</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Unconnected<br>1:  Connecting <br>2:  Connected</font></td>
     </tr>
     <tr>
         <td><font size="0">scan_state</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Scanning Stopped;<br>1: Scanning Started</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Scanning Stopped;<br>1:  Scanning Started</font></td>
     </tr>
     <tr>
         <td><font size="0">adv_state</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Advertising Stopped;<br>1: Advertising Started</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Advertising Stopped;<br>1:  Advertising Started</font></td>
     </tr>
 </table>
 
@@ -146,19 +150,19 @@ Example:
 
 > *→AT+STATE=?<br>←+STATE=[1,0,0,0,0]*
 
-- ### **+VER**
+- ### **Get Version**
 
-This command *gets* the firmware version of the module.
+This command *gets* the version of the module including chip version, sdk version and firmware version
 
 Command:    <span style="color:blue;">**AT+VER=?**</span>
 
-Response:   <span style="color:blue;">**+VER=[<chip_ver>,<sdk_ver>,<fw_ver>]**</span>
+Response:   <span style="color:blue;">**+VER=[chip_ver,sdk_ver,fw_ver]**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">chip_ver</font></td>
@@ -181,19 +185,19 @@ Example:
 
 > *→AT+VER=?<br>←+VER=["602F0100","3.0.0","xxxx"]*
 
-- ### **+CFGUART**
+- ### **UART Configuration**
 
 This command *sets* UART parameters. Once UART parameter is changed, module will automatically reset and all parameters configured before will be lost.
 
-Command:    <span style="color:blue;">**AT+CFGUART=[baud_rate,<data_bit>,<parity_bit>,<stop_bit>]**</span>
+Command:    <span style="color:blue;">**AT+CFGUART=[baud_rate,<data_bit>,<polarity>,<stop_bit>]**</span>
 
 Response:   <span style="color:blue;">**+CFGUART=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">baud_rate</font></td>
@@ -206,9 +210,9 @@ Response:   <span style="color:blue;">**+CFGUART=err_code**</span>
         <td><font size="0">5 - 8 bits</font></td>
     </tr>
     <tr>
-        <td><font size="0">parity_bit</font></td>
+        <td><font size="0">polarity</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0：No parity<br>1：Odd parity<br>2：Even parity<br>Other: invalid value</font></td>
+        <td><font size="0">0：No polarity<br>1：Odd polarity<br>2：Even polarity<br>Other: invalid value</font></td>
     </tr>
     <tr>
         <td><font size="0">stop_bit</font></td>
@@ -221,19 +225,19 @@ Example:
 
 > *→AT+CFGUART=[921600,8,0,1]<br>←+CFGUART=0000H*
 
-- ### **+CFGDEV**
+- ### **Device General Configuration**
 
-This command *gets* or *sets* the basic parameters of the module.
+This command ***gets*** or ***sets*** the general parameters of the module.
 
-Command:    <span style="color:blue;">**AT+CFGDEV=[\<mode>,<dev_addr>,<addr_type>,<dev_name>,\<phy>]**</span>
+Command:    <span style="color:blue;">**AT+CFGDEV=[mode,dev_addr,addr_type,dev_name,phy]**</span>
 
 Response:   <span style="color:blue;">**+CFGDEV=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">mode</font></td>
@@ -250,13 +254,13 @@ Response:   <span style="color:blue;">**+CFGDEV=err_code**</span>
     </tr>
     <tr>
         <td><font size="0">dev_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">Device MAC address，the little-endian mode</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">Byte Array format string representing MAC address of device in little-endian mode</font></td>
     </tr>
     <tr>
         <td><font size="0">addr_type</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Public address;<br>1: Static random address</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Public address;<br>1:  Static random address</font></td>
     </tr>
     <tr>
         <td><font size="0">dev_name</font></td>
@@ -279,13 +283,15 @@ Response:   <span style="color:blue;">**+CFGDEV=err_code**</span>
 
 Example:
 
-> *//Set device as BLE Peripheral, device public MAC address is 11-22-22-22-22-11, device name is "Slave" and prefered PHY is 1M PHY<br>→AT+CFGDEV=[10,'112222222211',0,"Slave",1]<br>←+CFGDEV=0000H*
+> *//Set device as BLE Peripheral, device public MAC address is 11-22-22-22-22-11, device name is "Slave" and prefered PHY is 1M PHY<br>→AT+CFGDEV=[10,"112222222211",0,"Slave",1]<br>←+CFGDEV=0000H*
 
-> *//Set device as All role and prefered PHY is Coded Phy<br>→AT+CFGDEV=[15,'AABB0101BBAA',0,"ALL",4]<br>←+CFGDEV=0000H*
+> *//Set device as All role and prefered PHY is Coded Phy<br>→AT+CFGDEV=[15,"AABB0101BBAA",0,"Slave",4]<br>←+CFGDEV=0000H*
 
-- ### **+CFGTRXSVC**
+- ### **Data Transparent Transmission Service Configuration**
 
-This command *sets* parameters of Inplay private data transparent tranmission service as GATT server, including service UUID, maximum data transmission size etc. After the execution of the command, the service with specified parameters will be created. It MUST be sent after [+CFGDEV](#cfgdev)
+This command ***gets*** or ***sets*** parameters of Inplay private data transparent tranmission service as GATT server, including service UUID, maximum data transmission size etc. After the execution of the command, the service with specified parameters will be created. It MUST be sent after [+CFGDEV](#device-general-configuration)
+
+It is only allowed by device with 'Peripheral role' or 'All role', otherwise 1001H [error code](#error-code) is returned.
 
 Command:    <span style="color:blue;">**AT+CFGTRXSVC=[start_hdl,<svc_uuid>,<max_data_sz>]**</span>
 
@@ -293,9 +299,9 @@ Response:   <span style="color:blue;">**+CFGTRXSVC=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">start_hdl</font></td>
@@ -304,35 +310,37 @@ Response:   <span style="color:blue;">**+CFGTRXSVC=err_code**</span>
     </tr>    
     <tr>
         <td><font size="0">svc_uuid</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">16-byte service UUID based on GATT data transparent transmission. Default is "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4"</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">Byte Array format string representing 16-byte service UUID in little-endian mode<br>Default is "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4"</font></td>
     </tr>
     <tr>
         <td><font size="0">max_data_sz</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">Data transmission size, 1 - 1024 bytes. Default 20 bytes</font></td>
+        <td><font size="0">Data transmission size, 1 - 1024 bytes.<br>Default 20 bytes</font></td>
     </tr>    
 </table>
 
 Example:
 
-> *//Set service UUID as ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4 and the maximum transmission data as 512 bytes.<br>→AT+CFGTRXSVC=[0,'ccddb4f8cdf311e9a32f2a2ae2dbcce4',512]<br>←+CFGTRXSVC=0000H*
+> *//Set service UUID as 1122b4f8-cdf3-11e9-a32f-2a2ae2dbcce4 and the maximum transmission data as 512 bytes.<br>→AT+CFGTRXSVC=[0,"e4ccdbe22a2a2fa3e911f3cdf8b42211",512]<br>←+CFGTRXSVC=0000H*
 
 > *//Set service UUID by default. Fixed service start handle to 20<br>→AT+CFGTRXSVC=[20]<br>←+CFGTRXSVC=0000H*
 
-- ### **+CFGTRXCLT**
+- ### **Data Transparent Transmission Client Configuration**
 
-This command *sets* parameters of Inplay private data transparent tranmission service as GATT client. After the execution of the command it will initiate a Service Discovery Process (SDP) to find remote service if necessary, once device is connected. 
+This command ***gets*** or ***sets*** parameter of Inplay private data transparent tranmission service as GATT client. If parameters are not set or parameter 'start_hdl' is set to 0, device will initiate a Service Discovery Process (SDP) to find remote service after connection.
 
-Command:    <span style="color:blue;">**AT+CFGTRXCLT=[start_hdl,<svc_uuid>]**</span>
+It is only allowed by device with 'Central role' or 'All role', otherwise 1001H [error code](#error-code) is returned.
+
+Command:    <span style="color:blue;">**AT+CFGTRXCLT=[start_hdl,<svc_uuid>,<max_data_sz>]**</span>
 
 Response:   <span style="color:blue;">**+CFGTRXCLT=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">start_hdl</font></td>
@@ -341,18 +349,23 @@ Response:   <span style="color:blue;">**+CFGTRXCLT=err_code**</span>
     </tr>    
     <tr>
         <td><font size="0">svc_uuid</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">16-byte service UUID based on GATT data transparent transmission. Default is "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4"</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">Byte Array format string representing 16-byte service UUID in little-endian mode<br>Default is "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4"</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">max_data_sz</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Data transmission size, 1 - 1024 bytes. Default 20 bytes</font></td>
     </tr>
 </table>
 
 Example:
 
-> *//Set to discover service by SDP.<br>→AT+CFGTRXCLT=[0,'ccddb4f8cdf311e9a32f2a2ae2dbcce4']<br>←+CFGTRXCLT=0000H*
+> *//Set to discover service by SDP.<br>→AT+CFGTRXCLT=[0,"e4ccdbe22a2a2fa3e911f3cdf8b42211",512]<br>←+CFGTRXCLT=0000H*
 
-> *//Set specific start handle so that SDP is not necessary.<br>→AT+CFGTRXCLT=[20,'ccddb4f8cdf311e9a32f2a2ae2dbcce4']<br>←+CFGTRXCLT=0000H*
+> *//Set specific start handle and leave other in default, so that SDP is not necessary.<br>→AT+CFGTRXCLT=[20]<br>←+CFGTRXCLT=0000H*
 
-- ### **+CFGRF**
+- ### **RF Configuration**
 
 This command *gets* or *sets* RF related parameter.
 
@@ -362,9 +375,9 @@ Response:   <span style="color:blue;">**+CFGRF=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">tx_power</font></td>
@@ -384,7 +397,7 @@ Example:
 
 > *//Set TX power +3dBm<br>→AT+CFGRF=[9]<br>←+CFGRF=0000H*
 
-- ### **+CFGSMP**
+- ### **SMP Configuration**
 
 This command *gets* or *sets* security parameters of the module.
 
@@ -394,9 +407,9 @@ Response:   <span style="color:blue;">**+CFGSMP=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">smp</font></td>
@@ -443,159 +456,76 @@ Response:   <span style="color:blue;">**+CFGSMP=err_code**</span>
     <tr>
         <td><font size="0">pairing_code</font></td>
         <td><font size="0">String</font></td>
-        <td><font size="0">Paring code</font></td>
+        <td><font size="0">ASCII Paring code</font></td>
     </tr>
 </table>
 
 Example:
 
-> *//Set SMP to MITM security and encryption, with ability of keyboard input. The corresponding MITM pairing code is 012345<br>→AT+CFGSMP=[5.2,"012345"]<br>←+CFGSMP=0000H*
+> *//Set SMP to MITM security and encryption, with ability of keyboard input. The corresponding MITM pairing code is 012345<br>→AT+CFGSMP=[5,2,"012345"]<br>←+CFGSMP=0000H*
 
-- ### **+CONNLST**
+- ### **Target Device Configuration**
 
-This command *gets* a list of currently connected devices.
+This command *gets* or *sets* the target devices that are allowed to connect or scan. It is available when [scan activity](#scan-activity-configuration) or [initiating activity](#initiating-activity-configuration) is configured with right 'type' value. Maximum 25 target devices can be set.
 
-Command:    <span style="color:blue;">**AT+CONNLST=?**</span>
+It is only allowed by device with ‘Central role’ or ‘All role’, otherwise 1001H [error code](#error-code) is returned.
 
-Response:   <span style="color:blue;">**+CONNLST=[<dev1_addr>,<dev1_mode>,<dev2_addr>,<dev2_mode>,...]**</span>
+Command:    <span style="color:blue;">**AT+CFGTARGET=[dev1_addr,dev1_addr_type,<dev2_addr>,<dev2_addr_type>,...]**</span>
+
+Response:   <span style="color:blue;">**+CFGTARGET=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">dev_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">MAC address of device connected，the little-endian mode</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">Byte Array format string representing MAC address of target device in little-endian mode</font></td>
     </tr>
     <tr>
-        <td><font size="0">dev_mode</font></td>
+        <td><font size="0">dev_addr_type</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Device is a Master role;<br>1: Device as Slave role</font></td>
-    </tr>
-</table>
-
-Example:
-
-> *→AT+CONNLST=?<br>←+CONNLST=['112222222211',0,'AABB0101BBAA',1]*
-
-- ### **+TARGET**
-
-This command *gets* or *sets* the target devices that are allowed to connect. It is only valid for Master Role or All Role. If this command is executed before the [initiating activity](#initactv) is started, only devices specified in this command can be connected.
-
-Command:    <span style="color:blue;">**AT+TARGET=[\<dev1_addr>,<dev1_addr_type>,<dev2_addr>,<dev2_addr_type>,...]**</span>
-
-Response:   <span style="color:blue;">**+TARGET=err_code**</span>
-
-<table width="100%" border="0">
-    <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
-    </tr>
-    <tr>
-        <td><font size="0">dev1_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">target device's MAC address</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">dev1_addr_type</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">0: Public address;<br>1: Static random address</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Public address;<br>1:  Static random address</font></td>
     </tr>    
 </table>
 
 Example:
 
-> *→AT+TARGET=['112222222211',0,'AABBCCCCDDEE',0]<br>←+TARGET=0000H*
+> *→AT+CFGTARGET=["112222222211",0,"AABBCCCCDDEE",0]<br>←+CFGTARGET=0000H*
 
-- ### **+SCANACTV**
+- ### **Advertising Activity Configuration**
 
-This command *sets* the operation of BLE scan activity. Only one scan activity can be started at a time.
+This command ***sets*** parameter to create BLE advertising activity. Multiple advertising activities can be created one by one.
 
-Command:    <span style="color:blue;">**AT+SCANACTV=[\<op>,\<intv>,\<wnd>,\<duration>,<dup_filter>]**</span>
+It is only allowed for device that is configured 'Peripheral role’ or ‘All role’ mode, otherwise 1001H [error code](#error-code) is returned.
 
-Response:   <span style="color:blue;">**+SCANACTV=err_code**</span>
+Command:    <span style="color:blue;">**AT+CFGADVACTV=[actv_id,adv_type,connectable,intv,chn,payload]**</span>
 
-<table width="100%" border="0">
-    <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
-    </tr>
-    <tr>
-        <td><font size="0">op</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">0: Stop Activity. In this case the latter parameters can be ommited.;<br>1: Start Activity</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">intv</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">Scan activity interval 3-40959ms</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">wnd</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">Scan actually running time, < intv</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">duration</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">Scan activity duration: <br>0 forever, 10-655350 otherwise.</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">dup_filter</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">0: No filtering <br>1: Filter duplicates for the duration of the scan</font></td>
-    </tr>    
-</table>
-
-Example:
-
-> *→AT+SCANACTV=[1,200,100,0,1]<br>←+SCANACTV=0000H*
-
-> *//Stop scan activity<br>→AT+SCANACTV=[0]<br>←+SCANACTV=0000H*
-
-- ### **+ADVACTV**
-
-This command *sets* the operation of BLE advertising activity. Multiple advertising commands (depending on which chip running on) can be started at the same time.
-
-Command:    <span style="color:blue;">**AT+ADVACTV=[op,actv_id,\<adv_type>,\<conn>,\<payload>,\<intv>,\<chn>,\<duration>]**</span>
-
-Response:   <span style="color:blue;">**+ADVACTV=err_code**</span>
+Response:   <span style="color:blue;">**+CFGADVACTV=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
-    </tr>
-    <tr>
-        <td><font size="0">op</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">0: Stop Activity. In this case the latter parameters can be ommited except actv_id;<br>1: Start Activity</font></td>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">actv_id</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">ID that uniquely identifies the advertising activity</font></td>
+        <td><font size="0">Unique ID for advertising activity</font></td>
     </tr>
     <tr>
         <td><font size="0">adv_type</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Legacy Advertise <br>1: Extended Advertise</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Legacy Advertise <br>1:  Extended Advertise</font></td>
     </tr>
     <tr>
-        <td><font size="0">conn</font></td>
+        <td><font size="0">connectable</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Unconnectable <br>1: Connectable</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">payload</font></td>
-        <td><font size="0">String</font></td>
-        <td><font size="0">BLE standard advertising data format in base64 encoding<br>Length (1 byte) + Type (1 byte) + Content (length -1 byte)</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Unconnectable <br>1:  Connectable</font></td>
     </tr>
     <tr>
         <td><font size="0">intv</font></td>
@@ -605,49 +535,207 @@ Response:   <span style="color:blue;">**+ADVACTV=err_code**</span>
     <tr>
         <td><font size="0">chn</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: all BLE advertising channel <br>37-39: Fixed channel</font></td>
+        <td style="white-space: pre;"><font size="0">0:  all BLE advertising channel<br>37-39:  Fixed channel</font></td>
     </tr>
     <tr>
-        <td><font size="0">duration</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">0 forever, 10-655350ms otherwise</font></td>
-    </tr>    
+        <td><font size="0">payload</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">BLE standard advertising data format in base64 encoding<br>Length (1 byte) + Type (1 byte) + Content (length -1 byte)</font></td>
+    </tr>
 </table>
 
 Example:
 
-> *//Start legacy connectable advertising in 500ms interval. The payload is local name "Inplay"<br>→AT+ADVACTV=[1,1,0,1,"BwlJbnBsYXk=",500,0,0]<br>←+ADVACTV=0000H*
+> *//Set legacy connectable advertising in 500ms interval. The payload is local name "Inplay"<br>→AT+CFGADVACTV=[1,0,1,500,0,"BwlJbnBsYXk="]<br>//Successfully set<br>←+CFGADVACTV=0000H*
 
-> *//Stop advertising activity<br>→AT+ADVACTV=[0,1]<br>←+ADVACTV=0000H*
+- ### **Scan Activity Configuration**
 
-- ### **+INITACTV**
+This command ***sets*** parameter to create BLE scan activity. Only one scan activity can be created.
 
-This command *sets* operation of BLE initiating activity to establish connections with the target device. It is only valid for the Master or All role. Only one connection activity can be started at a time. If previous [+TARGET](#target) command is executed, the "target addr" parameter is ignored in this command and the connection activity will end automatically until all devices specified by [+TARGET](#target) command are connected.
+It is only allowed by device with ‘Central role’ or ‘All role’, otherwise 1001H [error code](#error-code) is returned.
 
-Command:    <span style="color:blue;">**AT+INITACTV=[op,\<target_addr>,\<addr_type>,<conn_intv>,\<latency>,<sup_tmo>,\<duration>]**</span>
+Command:    <span style="color:blue;">**AT+CFGSCANACTV=[actv_id,type]**</span>
+
+Response:   <span style="color:blue;">**+CFGSCANACTV=err_code**</span>
+
+<table width="100%" border="0">
+    <tr>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
+    </tr>
+    <tr>
+        <td><font size="0">actv_id</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Unique ID for scan activity</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">type</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">2:  Observer<br>3:  Selective observer. Only devices configured by +CFGTARGET will be reported </font></td>
+    </tr>
+</table>
+
+Example:
+
+> *//Set scan activity<br>→AT+CFGSCANACTV=[20,3]<br>//Successfully set<br>←+CFGSCANACTV=0000H*
+
+- ### **Initiating Activity Configuration**
+
+This command ***sets*** parameter to create BLE initiating activity to establish connections with the target device. Only one initiating activity can be created.
+
+It is only allowed for device that is configured ‘Central role’ or ‘All role’ mode, otherwise 1001H [error code](#error-code) is returned.
+
+Command:    <span style="color:blue;">**AT+CFGINITACTV=[actv_id,type]**</span>
+
+Response:   <span style="color:blue;">**+CFGINITACTV=err_code**</span>
+
+<table width="100%" border="0">
+    <tr>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
+    </tr>
+    <tr>
+        <td><font size="0">actv_id</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Unique ID for advertising activity</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">type</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Direct connect<br>1:  Auto connect. Only devices configured by +CFGTARGET can be connected </font></td>
+    </tr>
+</table>
+
+Example:
+
+> *//Create initiating activity to auto connect with target devices.<br>→AT+CFGINITACTV=[10,1]<br>//Successfully set<br>←+CFGINITACTV=0000H*
+
+> *//Create initiating activity to direct connect with remote device.<br>→AT+CFGINITACTV=[10,0]<br>//Successfully set<br>←+CFGINITACTV=0000H*
+
+- ### **Start Scan Activity**
+
+This command start scan activity that is created by previous [+CFGSCANACTV](#scan-activity-configuration) command.
+
+Command:    <span style="color:blue;">**AT+SCANACTV=[actv_id,op,\<intv>,\<wnd>,\<duration>,\<dup_filter>]**</span>
+
+Response:   <span style="color:blue;">**+SCANACTV=err_code**</span>
+
+<table width="100%" border="0">
+    <tr>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
+    </tr>
+    <tr>
+        <td><font size="0">actv_id</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Unique ID for scan activity</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">op</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Stop Activity<br>1:  Start Activity</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">intv</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Scan activity interval 3-40959ms</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">wnd</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Scan running time, must be less than intv</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">duration</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350: Actual duration in ms.</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">dup_filter</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  No filtering<br>1:  Filter duplicates within the duration</font></td>
+    </tr>
+</table>
+
+Example:
+
+> *//Start scan activty permanently<br>→AT+SCANACTV=[20,1,200,100,0,1]<br>//Successfully set<br>←+SCANACTV=0000H*
+
+> *//Stop scan activity<br>→AT+SCANACTV=[20,0]<br>←+SCANACTV=0000H*
+
+- ### **Start Advertising Activity**
+
+This command start advertising activity that is created by previous [+CFGADVACTV](#advertising-activity-configuration) command.
+
+Command:    <span style="color:blue;">**AT+ADVACTV=[actv_id,op,\<duration>]**</span>
+
+Response:   <span style="color:blue;">**+ADVACTV=err_code**</span>
+
+<table width="100%" border="0">
+    <tr>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
+    </tr>
+    <tr>
+        <td><font size="0">actv_id</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Unique ID for advertising activities</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">op</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Stop Activity<br>1:  Start Activity</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">duration</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350: Actual duration in ms.</font></td>
+    </tr>
+</table>
+
+Example:
+
+> *//Start advertising activty permanently<br>→AT+ADVACTV=[1,1,0]<br>//Successfully set<br>←+ADVACTV=0000H*
+
+> *//Stop advertising activity<br>→AT+ADVACTV=[1,0]<br>←+ADVACTV=0000H*
+
+- ### **Start Initiating Activity**
+
+This command start initiating activity that is created by previous [+CFGINITACTV](#initiating-activity-configuration) command. When activity is started permanently, it will end until devices either specified by 'target_addr' parameter or configured by [+CFGTARGET](#target-device-configuration) are connected.
+
+Command:    <span style="color:blue;">**AT+INITACTV=[actv_id,op,\<target_addr>,\<addr_type>,\<conn_intv>,\<latency>,\<sup_tmo>,\<duration>]**</span>
 
 Response:   <span style="color:blue;">**+INITACTV=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
+    </tr>
+    <tr>
+        <td><font size="0">actv_id</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Unique ID for initiating activity</font></td>
     </tr>
     <tr>
         <td><font size="0">op</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Stop Activity. In this case the latter parameters can be ommited<br>1: Start Activity</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Stop Activity<br>1:  Start Activity</font></td>
     </tr>
     <tr>
         <td><font size="0">target_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">Target device's MAC address</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">The Byte Array format string representing MAC address of target device in little-endian mode. Only valid when initiating 'type' is 0</font></td>
     </tr>
     <tr>
         <td><font size="0">addr_type</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">Target device's MAC address type <br>0: public <br>1: static random</font></td>
+        <td style="white-space: pre;"><font size="0">Target device's MAC address type. Only valid when initiating 'type' is 0 in<br>0:  public<br>1: static random</font></td>
     </tr>
     <tr>
         <td><font size="0">conn_intv</font></td>
@@ -667,39 +755,71 @@ Response:   <span style="color:blue;">**+INITACTV=err_code**</span>
     <tr>
         <td><font size="0">duration</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0 forever, 10-655350ms otherwise</font></td>
-    </tr>    
+        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350:  Actual duration in ms.</font></td>
+    </tr>
 </table>
 
 Example:
 
-> *→AT+INITACTV=[1,'112222222211',0,200,0,20000,0]<br>←+INITACTV=0000H*
+> *//Start initiating activty to peer device "66-55-44-33-22-11"<br>→AT+INITACTV=[10,1,"112233445566",0,200,0,20000,0]<br>//Successfully set<br>←+INITACTV=0000H*
 
-> *//Stop initiating activity<br>→AT+INITACTV=[0]<br>←+INITACTV=0000H*
+> *//Start initiating activty to devices set by +CFGTARGET<br>→AT+INITACTV=[10,1,"",0,200,0,20000,0]<br>//Successfully set<br>←+INITACTV=0000H*
 
-- ### **+BOND**
+> *//Stop initiating activity<br>→AT+INITACTV=[10,0]<br>←+INITACTV=0000H*
 
-This command *sets* operation of BLE pairing with connected device.
+- ### **Get current connection list**
 
-Command:    <span style="color:blue;">**AT+BOND=[op,\<dest_addr>,<pairing_code>]**</span>
+This command *gets* a list of currently connected devices.
+
+Command:    <span style="color:blue;">**AT+CONNLST=?**</span>
+
+Response:   <span style="color:blue;">**+CONNLST=[<dev1_addr>,<dev1_mode>,<dev2_addr>,<dev2_mode>,...]**</span>
+
+<table width="100%" border="0">
+    <tr>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
+    </tr>
+    <tr>
+        <td><font size="0">dev_addr</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">The Byte Array format string representing MAC address of peer device in little-endian mode</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">dev_mode</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Peer device as Master role;<br>1:  Peer device as Slave role</font></td>
+    </tr>
+</table>
+
+Example:
+
+> *→AT+CONNLST=?<br>//Connect to master device "66-55-44-33-22-11" and a peripheral device "FF-EE-DD-CC-BB-AA"<br>←+CONNLST=["112233445566",0,"AABBCCDDEEFF",1]*
+
+- ### **Start Pairing**
+
+This command start operation of BLE pairing with connected device.
+
+Command:    <span style="color:blue;">**AT+BOND=[op,dest_addr,<pairing_code>]**</span>
 
 Response:   <span style="color:blue;">**+BOND=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">op</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Cancel pairing<br>1: Start pairing</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Cancel pairing<br>1:  Start pairing</font></td>
     </tr>
     <tr>
         <td><font size="0">dest_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">Destination connected device's MAC address</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">The Byte Array format string representing MAC address of connected device in little-endian mode</font></td>
     </tr>
     <tr>
         <td><font size="0">pairing_code</font></td>
@@ -710,13 +830,13 @@ Response:   <span style="color:blue;">**+BOND=err_code**</span>
 
 Example:
 
-> *→AT+BOND=[1,'112222222211',"012345"]<br>←+BOND=0000H*
+> *→AT+BOND=[1,"112233445566","012345"]<br>←+BOND=0000H*
 
 > *//Stop pairing<br>→AT+BOND=[0]<br>←+BOND=0000H*
 
-- ### **+DATATX**
+- ### **Data Transmit**
 
-This command *sets* operation of BLE data transmission via Inplay transparent transmission service.
+This command transmit data via Inplay private transparent transmission service.
 
 Command:    <span style="color:blue;">**AT+DATATX=[dest_addr,data]**</span>
 
@@ -724,29 +844,29 @@ Response:   <span style="color:blue;">**+DATATX=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">dest_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">Destination connected device's MAC address</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">The Byte Array format string representing MAC address of destination connected device in little-endian mode</font></td>
     </tr>
     <tr>
         <td><font size="0">data</font></td>
         <td><font size="0">String</font></td>
-        <td><font size="0">Actually transmitted binary data in base64 encoding</font></td>
+        <td><font size="0">Base64 encoding string representing binary data to transmit</font></td>
     </tr>
 </table>
 
 Example:
 
-> *//Send data "0x0001020304050607080910" to remove device "11-22-22-22-22-11"<br>→AT+DATATX=['112222222211',"AAECAwQFBgcICRA="]<br>←+DATATX=0000H*
+> *//Send data "0x0001020304050607080910" to remove device "66-55-44-33-22-11"<br>→AT+DATATX=["112233445566","AAECAwQFBgcICRA="]<br>←+DATATX=0000H*
 
-- ### **+SYSRST**
+- ### **Reset**
 
-This command *sets* system reset operations. While execution, application can choose whether to save or clear current configured parameters permanently. This command don't have any respose back. The application determines whether reset is complete by receiving the [+EVTREADY](#evtready) event.
+This command causes the system to reset. While execution, application can choose whether to save or clear current configured parameters permanently. This command don't have any response. The application determines whether reset is complete or not by receiving the [+EVTREADY](#evtready) event.
 
 Command:    <span style="color:blue;">**AT+SYSRST=[op]**</span>
 
@@ -754,14 +874,14 @@ Response:   <span style="color:blue;">**N/A**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">op</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Reset module<br>1: Reset after saving current parameters to Flash<br>2: Reset after clearing current parameter from Flash</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Reset module<br>1:  Reset after saving current parameters to Flash<br>2:  Reset after clearing current parameter from Flash</font></td>
     </tr>
 </table>
 
@@ -769,9 +889,9 @@ Example:
 
 > *→AT+SYSRST=[1]*
 
-- ### **+SYSWDT**
+- ### **Watchdog**
 
-This command *sets* system watch dog.
+This command set up watch dog.
 
 Command:    <span style="color:blue;">**AT+SYSWDT=[wdt_enable,wdt_int_pol,wdt_tmo]**</span>
 
@@ -779,19 +899,19 @@ Response:   <span style="color:blue;">**+SYSWDT=err_code**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">wdt_enable</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Disable<br>1: Enable</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Disable<br>1:  Enable</font></td>
     </tr>
     <tr>
         <td><font size="0">wdt_int_pol</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Low level trigger interrupt<br>1: High level trigger interrupt</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Low level trigger interrupt<br>1:  High level trigger interrupt</font></td>
     </tr>
     <tr>
         <td><font size="0">wdt_tmo</font></td>
@@ -808,15 +928,15 @@ Example:
 
 - ### **-EVTREADY**
 
-This event indicates module is ready to accept AT commands.
+This event indicates module is ready to accept AT commands. It is usually received after power on reset or [+SYSRST](#reset) command is executed.
 
 Event:    <span style="color:blue;">**-EVTREADY=[prev_state]**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">prev_state</font></td>
@@ -844,9 +964,9 @@ Event:    <span style="color:blue;">**-EVTCONN=[state,peer_addr,mode,phy]**</spa
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">state</font></td>
@@ -855,8 +975,8 @@ Event:    <span style="color:blue;">**-EVTCONN=[state,peer_addr,mode,phy]**</spa
     </tr>
     <tr>
         <td><font size="0">peer_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">Peer device's MAC address</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">Byte Array format string representing MAC address of peer device in little</font></td>
     </tr>
     <tr>
         <td><font size="0">mode</font></td>
@@ -882,25 +1002,25 @@ Event:    <span style="color:blue;">**-EVTDATA=[peer_addr,data]**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">peer_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">Peer device's MAC address</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">Byte Array format string representing MAC address of peer device in little-endian mode</font></td>
     </tr>
     <tr>
         <td><font size="0">data</font></td>
         <td><font size="0">String</font></td>
-        <td><font size="0">Binary data received in base64 encoding </fond></td>
+        <td><font size="0">Base64 encoding format string representing binary data received</fond></td>
     </tr>
 </table>
 
 Example:
 
-> *//Data “0x0001020304050607080910” received from remove device “ef-dd-cc-cd-bb-ef”<br>-EVTDAT=['EFBBCCCCDDEF',"AAECAwQFBgcICRA="]*
+> *//Data "0x0001020304050607080910" received from remove device "66-55-44-33-22-11”<br>-EVTDATA=["112233445566","AAECAwQFBgcICRA="]*
 
 - ### **-EVTADV**
 
@@ -910,19 +1030,19 @@ Event:    <span style="color:blue;">**-EVTADV=[dev_addr,addr_type,conn,rssi,payl
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">dev_addr</font></td>
-        <td><font size="0">Byte Array</font></td>
-        <td><font size="0">Advertising device's MAC address</font></td>
+        <td><font size="0">String</font></td>
+        <td><font size="0">Byte Array format string representing MAC address of advertising device in little-endian mode</font></td>
     </tr>
     <tr>
         <td><font size="0">addr_type</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Public<br>1: Static random</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Public<br>1:  Static random</font></td>
     </tr>
     <tr>
         <td><font size="0">rssi</font></td>
@@ -932,25 +1052,25 @@ Event:    <span style="color:blue;">**-EVTADV=[dev_addr,addr_type,conn,rssi,payl
     <tr>
         <td><font size="0">payload</font></td>
         <td><font size="0">String</font></td>
-        <td><font size="0">Advertising payload binary data in base64 encoding</fond></td>
+        <td><font size="0">Base64 encoding format string representing advertising payload binary data</fond></td>
     </tr>
 </table>
 
 Example:
 
-> *//A connectable ad with local name 'Inplay' as payload from device 'ef-dd-cc-cd-bb-ef' is scanned. RSSI is -80dBm.<br>-EVTADV=['EFBBCCCCDDEF',0,B0,"BwlJbnBsYXk="]*
+> *//A connectable ad with local name 'Inplay' as payload from device '66-55-44-33-22-11' is scanned. RSSI is -80dBm.<br>-EVTADV=["112233445566",0,-80,"BwlJbnBsYXk="]*
 
 - ### **-EVTACTVEND**
 
-This event indicates the termination of the command [+SCANACTV](#scanactv), [+ADVACTV](#advactv), [+INITACTV](#initactv) and [+BOND](#bond), whether the commands are terminated automatically or manually.
+This event indicates the termination of the command [+SCANACTV](#start-scan-activity), [+ADVACTV](#start-advertising-activity), [+INITACTV](#start-initiating-activity) and [+BOND](#start-pairing), whether the commands are terminated automatically or manually.
 
-Event:    <span style="color:blue;">**-EVTACTVEND=[actv_type,<adv_actv_id>]**</span>
+Event:    <span style="color:blue;">**-EVTACTVEND=[actv_type,actv_id]**</span>
 
 <table width="100%" border="0">
     <tr>
-        <th width="10%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="15%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="75%" align="center" bgcolor="#cccccc">Value</th>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
         <td><font size="0">actv_type</font></td>
@@ -975,7 +1095,7 @@ Example:
 
 > *//Advertising activity 1 has ended<br>-EVTACTVEND=[0,1]*
 
-> *//Scan activity has ended<br>-EVTACTVEND=[1]*
+> *//Scan activity has ended<br>-EVTACTVEND=[1,20]*
 
 ## ERROR CODE
 
