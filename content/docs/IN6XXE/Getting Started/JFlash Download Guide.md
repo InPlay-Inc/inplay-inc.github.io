@@ -1,0 +1,61 @@
+﻿---
+title: "JFlash Programming"
+---
+
+
+# Introduction
+This document provides a guide on how to use J-Flash to download bin file to the IN6XXE chip. 
+
+J-Flash, a part of the J-Link tool series developed by Segger, offers a reliable solution for programming Flash memory on embedded systems.
+
+# Prerequisites
+
+1. J-Link Debugger hardware.
+2. J-Link Software and Documentation Pack installed on your host computer(Version 7.62 or later is recommended).
+
+
+# Install InPlayTools:
+
+InPlayTools is an extension designed to enhance J-Flash functionality by adding support for the IN6XXE series of chips.
+
+The installation file for Inplaytools is in "SDK\in-dev\tools\InPlayToolsSetup.exe"
+
+User should select the Jlink version. Recommended install Jlink Version 7.62 or later first.
+
+
+![](/images/jflash0.png)
+
+
+
+# Step:
+- Open JFlash, and select “create a new project.”
+
+![](/images/jflash1.png)
+
+- Select the target device
+![](/images/jflash2.png)
+
+- Select InPlay IN6XXE device
+![](/images/jflash3.png)
+
+- Open the Bin file
+
+Click the file menu, select “Open data file”, and select the Bin file to be downloaded.
+![](/images/jflash4.png)
+
+- Set start address
+  Set start address to 0x300000.
+  ![](/images/jflash5.png)
+
+
+- Connect to device
+  ![](/images/jflash6.png)
+
+- Download bin file
+  ![](/images/jflash7.png)
+
+Note:
+
+Make sure that the chip is in boot mode before downloading.
+
+For entering boot mode, please press boot pin then reset chip.
