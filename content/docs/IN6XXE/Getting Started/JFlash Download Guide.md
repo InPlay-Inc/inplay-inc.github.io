@@ -2,19 +2,20 @@
 title: "JFlash Programming"
 ---
 
+# JFlash Programming Guide
 
-# Introduction
+## Introduction
 This document provides a guide on how to use J-Flash to download bin file to the IN6XXE chip. 
 
-J-Flash, a part of the J-Link tool series developed by Segger, offers a reliable solution for programming Flash memory on embedded systems.
+J-Flash is a part of the J-Link tool series developed by Segger, offers a reliable solution for programming Flash memory on embedded systems.
 
-# Prerequisites
+## Prerequisites
 
-1. J-Link Debugger hardware.
-2. J-Link Software and Documentation Pack installed on your host computer(Version 7.62 or later is recommended).
+1. J-Link Debugger hardware.Get it on [Segger web site](https://shop.segger.com/debug-trace-probes/debug-probes/j-link/j-link-base-classic).
+2. [J-Link Software and Documentation Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) installed on your host computer(Version 7.62 or later is recommended).
+	
 
-
-# Install InPlayTools:
+## Install InPlayTools:
 
 InPlayTools is an extension designed to enhance J-Flash functionality by adding support for the IN6XXE series of chips.
 
@@ -27,7 +28,7 @@ User should select the Jlink version. Recommended install Jlink Version 7.62 or 
 
 
 
-# Step:
+## Step:
 - Open JFlash, and select “create a new project.”
 
 ![](/images/jflash1.png)
