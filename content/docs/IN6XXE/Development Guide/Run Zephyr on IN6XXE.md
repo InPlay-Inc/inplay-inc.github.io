@@ -6,7 +6,7 @@ title: "Run Zephyr on IN6XXE"
 
 Zephyr is an open source RTOS maintained by the Linux foundation, which is designed for connected, resource-constrained embedded devices. It provides a scalable and secure platform for developing IoT and embedded applications.
 
-Inplay has added support including BLE for Zephyr on IN6XXE chips. If you have an IN6XXE DK board, you can run Zephyr BLE samples on it with this guide.
+Inplay has added support including BLE for Zephyr on IN6XXE chips. If you have an IN6XXE DK board(Refer to [Introduction to IN6XXE DK]({{<ref "docs/IN6XXE/Getting Started/Introduction to IN6XXE DK.md">}})), you can run Zephyr BLE samples on it with this guide.
 
 ## Setup a Zephyr development environment under Windows
 It is recommended to develop Zephyr on IN6XXE under Windows. You can follow [Zephyr Getting Started Guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) to setup a Zephyr development environment under Windows, it can be divided into following steps:
