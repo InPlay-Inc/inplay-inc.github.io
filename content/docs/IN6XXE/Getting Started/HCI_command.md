@@ -1,5 +1,5 @@
 ﻿---
-title: "HCI"
+title: "HCI Command"
 ---
 
 # HCI Command
