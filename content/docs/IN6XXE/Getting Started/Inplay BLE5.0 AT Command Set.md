@@ -229,7 +229,7 @@ Example:
 
 This command ***gets*** or ***sets*** the general parameters of the module.
 
-Command:    <span style="color:blue;">**AT+CFGDEV=[mode,dev_addr,addr_type,dev_name,phy]**</span>
+Command:    <span style="color:blue;">**AT+CFGDEV=[role,dev_addr,addr_type,dev_name,phy]**</span>
 
 Response:   <span style="color:blue;">**+CFGDEV=err_code**</span>
 
@@ -240,15 +240,15 @@ Response:   <span style="color:blue;">**+CFGDEV=err_code**</span>
         <th width="82%" align="center" bgcolor="#cccccc">Value</th>
     </tr>
     <tr>
-        <td><font size="0">mode</font></td>
+        <td><font size="0">role</font></td>
         <td><font size="0">Number</font></td>
         <td>
             <table width="100%" border="0">
-                <tr> <td><font size="0">1</font></td> <td><font size="0">Observer Mode</font></td> </tr>
-                <tr> <td><font size="0">2</font></td> <td><font size="0">Broadcaster Mode</font></td> </tr>
-                <tr> <td><font size="0">5</font></td> <td><font size="0">Central Mode</font></td> </tr>
-                <tr> <td><font size="0">10</font></td> <td><font size="0">Peripheral Mode</font></td> </tr>
-                <tr> <td><font size="0">15</font></td> <td><font size="0">All Role Mode</font></td> </tr>
+                <tr> <td><font size="0">1</font></td> <td><font size="0">Observer</font></td> </tr>
+                <tr> <td><font size="0">2</font></td> <td><font size="0">Broadcaster</font></td> </tr>
+                <tr> <td><font size="0">5</font></td> <td><font size="0">Central</font></td> </tr>
+                <tr> <td><font size="0">10</font></td> <td><font size="0">Peripheral</font></td> </tr>
+                <tr> <td><font size="0">15</font></td> <td><font size="0">All Role</font></td> </tr>
             </table>
         </td>
     </tr>
@@ -293,7 +293,7 @@ This command ***gets*** or ***sets*** parameters of Inplay private data transpar
 
 It is only allowed by device with 'Peripheral role' or 'All role', otherwise 1001H [error code](#error-code) is returned.
 
-Command:    <span style="color:blue;">**AT+CFGTRXSVC=[start_hdl,<svc_uuid>,<max_data_sz>]**</span>
+Command:    <span style="color:blue;">**AT+CFGTRXSVC=[start_hdl,svc_uuid,max_data_sz]**</span>
 
 Response:   <span style="color:blue;">**+CFGTRXSVC=err_code**</span>
 
@@ -311,12 +311,12 @@ Response:   <span style="color:blue;">**+CFGTRXSVC=err_code**</span>
     <tr>
         <td><font size="0">svc_uuid</font></td>
         <td><font size="0">String</font></td>
-        <td><font size="0">Byte Array format string representing 16-byte service UUID in little-endian mode<br>Default is "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4"</font></td>
+        <td><font size="0">Byte Array format string representing 16-byte service UUID in little-endian mode. If it is empty, default  "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4" is applied</font></td>
     </tr>
     <tr>
         <td><font size="0">max_data_sz</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">Data transmission size, 1 - 1024 bytes.<br>Default 20 bytes</font></td>
+        <td style="white-space: pre;"><font size="0">Maximum data transmission size<br>0:  Default 20 bytes<br>1 - 1024:  Maximum data size</font></td>
     </tr>    
 </table>
 
@@ -324,7 +324,7 @@ Example:
 
 > *//Set service UUID as 1122b4f8-cdf3-11e9-a32f-2a2ae2dbcce4 and the maximum transmission data as 512 bytes.<br>→AT+CFGTRXSVC=[0,"e4ccdbe22a2a2fa3e911f3cdf8b42211",512]<br>←+CFGTRXSVC=0000H*
 
-> *//Set service UUID by default. Fixed service start handle to 20<br>→AT+CFGTRXSVC=[20]<br>←+CFGTRXSVC=0000H*
+> *//Set service UUID by default. Fixed service start handle to 20<br>→AT+CFGTRXSVC=[20,"",0]<br>←+CFGTRXSVC=0000H*
 
 - ### **Data Transparent Transmission Client Configuration**
 
@@ -332,7 +332,7 @@ This command ***gets*** or ***sets*** parameter of Inplay private data transpare
 
 It is only allowed by device with 'Central role' or 'All role', otherwise 1001H [error code](#error-code) is returned.
 
-Command:    <span style="color:blue;">**AT+CFGTRXCLT=[start_hdl,<svc_uuid>,<max_data_sz>]**</span>
+Command:    <span style="color:blue;">**AT+CFGTRXCLT=[start_hdl,svc_uuid]**</span>
 
 Response:   <span style="color:blue;">**+CFGTRXCLT=err_code**</span>
 
@@ -350,20 +350,15 @@ Response:   <span style="color:blue;">**+CFGTRXCLT=err_code**</span>
     <tr>
         <td><font size="0">svc_uuid</font></td>
         <td><font size="0">String</font></td>
-        <td><font size="0">Byte Array format string representing 16-byte service UUID in little-endian mode<br>Default is "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4"</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">max_data_sz</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">Data transmission size, 1 - 1024 bytes. Default 20 bytes</font></td>
+        <td><font size="0">Byte Array format string representing 16-byte service UUID in little-endian mode. If it is empty, default  "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4" is applied</font></td>
     </tr>
 </table>
 
 Example:
 
-> *//Set to discover service by SDP.<br>→AT+CFGTRXCLT=[0,"e4ccdbe22a2a2fa3e911f3cdf8b42211",512]<br>←+CFGTRXCLT=0000H*
+> *//Set to discover service by SDP.<br>→AT+CFGTRXCLT=[0,"e4ccdbe22a2a2fa3e911f3cdf8b42211"]<br>←+CFGTRXCLT=0000H*
 
-> *//Set specific start handle and leave other in default, so that SDP is not necessary.<br>→AT+CFGTRXCLT=[20]<br>←+CFGTRXCLT=0000H*
+> *//Set specific start handle and leave other in default, so that SDP is not necessary.<br>→AT+CFGTRXCLT=[20,""]<br>←+CFGTRXCLT=0000H*
 
 - ### **RF Configuration**
 
@@ -466,7 +461,7 @@ Example:
 
 - ### **Target Device Configuration**
 
-This command *gets* or *sets* the target devices that are allowed to connect or scan. It is available when [scan activity](#scan-activity-configuration) or [initiating activity](#initiating-activity-configuration) is configured with right 'type' value. Maximum 25 target devices can be set.
+This command *gets* or *sets* the target devices that are allowed to connect or scan. If [initiating activity](#initiating-activity-configuration) is configured as direct connection type, only first device in the device list is the target. Maximum 25 target devices can be set.
 
 It is only allowed by device with ‘Central role’ or ‘All role’, otherwise 1001H [error code](#error-code) is returned.
 
@@ -498,9 +493,9 @@ Example:
 
 - ### **Advertising Activity Configuration**
 
-This command ***sets*** parameter to create BLE advertising activity. Multiple advertising activities can be created one by one.
+This command ***sets*** parameter to create BLE advertising activity. Maximum 2 advertising activities can be created.
 
-It is only allowed for device that is configured 'Peripheral role’ or ‘All role’ mode, otherwise 1001H [error code](#error-code) is returned.
+It is only allowed for device which role is configured as 'Peripheral’ or ‘All role’, otherwise 1001H [error code](#error-code) is returned.
 
 Command:    <span style="color:blue;">**AT+CFGADVACTV=[actv_id,adv_type,connectable,intv,chn,payload]**</span>
 
@@ -552,7 +547,7 @@ Example:
 
 This command ***sets*** parameter to create BLE scan activity. Only one scan activity can be created.
 
-It is only allowed by device with ‘Central role’ or ‘All role’, otherwise 1001H [error code](#error-code) is returned.
+It is only allowed by device with 'Central role' or 'All role', otherwise 1001H [error code](#error-code) is returned.
 
 Command:    <span style="color:blue;">**AT+CFGSCANACTV=[actv_id,type]**</span>
 
@@ -584,7 +579,7 @@ Example:
 
 This command ***sets*** parameter to create BLE initiating activity to establish connections with the target device. Only one initiating activity can be created.
 
-It is only allowed for device that is configured ‘Central role’ or ‘All role’ mode, otherwise 1001H [error code](#error-code) is returned.
+It is only allowed for device which role is configured as 'Central' or 'All role', otherwise 1001H [error code](#error-code) is returned.
 
 Command:    <span style="color:blue;">**AT+CFGINITACTV=[actv_id,type]**</span>
 
@@ -614,58 +609,6 @@ Example:
 
 > *//Create initiating activity to direct connect with remote device.<br>→AT+CFGINITACTV=[10,0]<br>//Successfully set<br>←+CFGINITACTV=0000H*
 
-- ### **Start Scan Activity**
-
-This command start scan activity that is created by previous [+CFGSCANACTV](#scan-activity-configuration) command.
-
-Command:    <span style="color:blue;">**AT+SCANACTV=[actv_id,op,\<intv>,\<wnd>,\<duration>,\<dup_filter>]**</span>
-
-Response:   <span style="color:blue;">**+SCANACTV=err_code**</span>
-
-<table width="100%" border="0">
-    <tr>
-        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
-        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
-        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
-    </tr>
-    <tr>
-        <td><font size="0">actv_id</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">Unique ID for scan activity</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">op</font></td>
-        <td><font size="0">Number</font></td>
-        <td style="white-space: pre;"><font size="0">0:  Stop Activity<br>1:  Start Activity</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">intv</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">Scan activity interval 3-40959ms</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">wnd</font></td>
-        <td><font size="0">Number</font></td>
-        <td><font size="0">Scan running time, must be less than intv</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">duration</font></td>
-        <td><font size="0">Number</font></td>
-        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350: Actual duration in ms.</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">dup_filter</font></td>
-        <td><font size="0">Number</font></td>
-        <td style="white-space: pre;"><font size="0">0:  No filtering<br>1:  Filter duplicates within the duration</font></td>
-    </tr>
-</table>
-
-Example:
-
-> *//Start scan activty permanently<br>→AT+SCANACTV=[20,1,200,100,0,1]<br>//Successfully set<br>←+SCANACTV=0000H*
-
-> *//Stop scan activity<br>→AT+SCANACTV=[20,0]<br>←+SCANACTV=0000H*
-
 - ### **Start Advertising Activity**
 
 This command start advertising activity that is created by previous [+CFGADVACTV](#advertising-activity-configuration) command.
@@ -693,7 +636,7 @@ Response:   <span style="color:blue;">**+ADVACTV=err_code**</span>
     <tr>
         <td><font size="0">duration</font></td>
         <td><font size="0">Number</font></td>
-        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350: Actual duration in ms.</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-65535: Actual duration (in unit of 10ms)<br>Default 0</font></td>
     </tr>
 </table>
 
@@ -703,11 +646,68 @@ Example:
 
 > *//Stop advertising activity<br>→AT+ADVACTV=[1,0]<br>←+ADVACTV=0000H*
 
+- ### **Start Scan Activity**
+
+This command start scan activity that is created by previous [+CFGSCANACTV](#scan-activity-configuration) command. If target devices are not configured by [+CFGTARGET](#target-device-configuration) command, advertisement from any devices scaned will be reported.
+
+Command:    <span style="color:blue;">**AT+SCANACTV=[actv_id,op,\<intv>,\<wnd>,\<chn>,\<duration>,\<dup_filter>]**</span>
+
+Response:   <span style="color:blue;">**+SCANACTV=err_code**</span>
+
+<table width="100%" border="0">
+    <tr>
+        <th width="8%" align="center" bgcolor="#cccccc">Parameter</th>
+        <th width="10%" align="center" bgcolor="#cccccc">Type</th>
+        <th width="82%" align="center" bgcolor="#cccccc">Value</th>
+    </tr>
+    <tr>
+        <td><font size="0">actv_id</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Unique ID for scan activity</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">op</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Stop Activity<br>1:  Start Activity</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">intv</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Scan activity interval 3-40959 ms<br>Default 200ms</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">wnd</font></td>
+        <td><font size="0">Number</font></td>
+        <td><font size="0">Scan running time, must be less than intv<br>Default 100ms</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">chn</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Scan on three channel alternately<br>37-39:  Scan on fixed channel<br>Default 0</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">duration</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350: Actual duration in ms<br>Default 0</font></td>
+    </tr>
+    <tr>
+        <td><font size="0">dup_filter</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  No filtering<br>1:  Filter duplicates within the duration<br>Default 0</font></td>
+    </tr>
+</table>
+
+Example:
+
+> *//Start scan activty permanently<br>→AT+SCANACTV=[20,1,200,100,0,0,1]<br>//Successfully set<br>←+SCANACTV=0000H*
+
+> *//Stop scan activity<br>→AT+SCANACTV=[20,0]<br>←+SCANACTV=0000H*
+
 - ### **Start Initiating Activity**
 
-This command start initiating activity that is created by previous [+CFGINITACTV](#initiating-activity-configuration) command. When activity is started permanently, it will end until devices either specified by 'target_addr' parameter or configured by [+CFGTARGET](#target-device-configuration) are connected.
+This command start initiating activity that is created by previous [+CFGINITACTV](#initiating-activity-configuration) command. If target devices are not configured by [+CFGTARGET](#target-device-configuration) command, activity cann't be started and retures error response. When it is started permanently, it will end until all target devices configured are connected.
 
-Command:    <span style="color:blue;">**AT+INITACTV=[actv_id,op,\<target_addr>,\<addr_type>,\<conn_intv>,\<latency>,\<sup_tmo>,\<duration>]**</span>
+Command:    <span style="color:blue;">**AT+INITACTV=[actv_id,op,\<conn_intv>,\<latency>,\<sup_tmo>,\<duration>]**</span>
 
 Response:   <span style="color:blue;">**+INITACTV=err_code**</span>
 
@@ -728,42 +728,30 @@ Response:   <span style="color:blue;">**+INITACTV=err_code**</span>
         <td style="white-space: pre;"><font size="0">0:  Stop Activity<br>1:  Start Activity</font></td>
     </tr>
     <tr>
-        <td><font size="0">target_addr</font></td>
-        <td><font size="0">String</font></td>
-        <td><font size="0">The Byte Array format string representing MAC address of target device in little-endian mode. Only valid when initiating 'type' is 0</font></td>
-    </tr>
-    <tr>
-        <td><font size="0">addr_type</font></td>
-        <td><font size="0">Number</font></td>
-        <td style="white-space: pre;"><font size="0">Target device's MAC address type. Only valid when initiating 'type' is 0 in<br>0:  public<br>1: static random</font></td>
-    </tr>
-    <tr>
         <td><font size="0">conn_intv</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">Connection interval: 7.5 - 4800 ms</font></td>
+        <td><font size="0">Connection interval: 8 - 4800 ms<br>Default 100 ms</font></td>
     </tr>
     <tr>
         <td><font size="0">latency</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0 - 499</font></td>
+        <td><font size="0">0 - 499<br>Default 0</font></td>
     </tr>
     <tr>
         <td><font size="0">sup_tmo</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">100 - 32000 ms</font></td>
+        <td><font size="0">100 - 32000 ms<br>Default 20000 ms</font></td>
     </tr>
     <tr>
         <td><font size="0">duration</font></td>
         <td><font size="0">Number</font></td>
-        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350:  Actual duration in ms.</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Forever<br>10-655350:  Actual duration in ms<br>Default 0</font></td>
     </tr>
 </table>
 
 Example:
 
-> *//Start initiating activty to peer device "66-55-44-33-22-11"<br>→AT+INITACTV=[10,1,"112233445566",0,200,0,20000,0]<br>//Successfully set<br>←+INITACTV=0000H*
-
-> *//Start initiating activty to devices set by +CFGTARGET<br>→AT+INITACTV=[10,1,"",0,200,0,20000,0]<br>//Successfully set<br>←+INITACTV=0000H*
+> *//Start initiating activty<br>→AT+INITACTV=[10,1,200,0,20000,0]<br>//Successfully set<br>←+INITACTV=0000H*
 
 > *//Stop initiating activity<br>→AT+INITACTV=[10,0]<br>←+INITACTV=0000H*
 
@@ -773,7 +761,7 @@ This command *gets* a list of currently connected devices.
 
 Command:    <span style="color:blue;">**AT+CONNLST=?**</span>
 
-Response:   <span style="color:blue;">**+CONNLST=[<dev1_addr>,<dev1_mode>,<dev2_addr>,<dev2_mode>,...]**</span>
+Response:   <span style="color:blue;">**+CONNLST=[<dev1_addr>,<dev1_role>,<dev2_addr>,<dev2_role>,...]**</span>
 
 <table width="100%" border="0">
     <tr>
@@ -787,7 +775,7 @@ Response:   <span style="color:blue;">**+CONNLST=[<dev1_addr>,<dev1_mode>,<dev2_
         <td><font size="0">The Byte Array format string representing MAC address of peer device in little-endian mode</font></td>
     </tr>
     <tr>
-        <td><font size="0">dev_mode</font></td>
+        <td><font size="0">dev_role</font></td>
         <td><font size="0">Number</font></td>
         <td style="white-space: pre;"><font size="0">0:  Peer device as Master role;<br>1:  Peer device as Slave role</font></td>
     </tr>
@@ -832,7 +820,7 @@ Example:
 
 > *→AT+BOND=[1,"112233445566","012345"]<br>←+BOND=0000H*
 
-> *//Stop pairing<br>→AT+BOND=[0]<br>←+BOND=0000H*
+> *//Stop pairing<br>→AT+BOND=[0,"112233445566"]<br>←+BOND=0000H*
 
 - ### **Data Transmit**
 
@@ -960,7 +948,7 @@ Example:
 
 This event indicates device has been connected or disconnected.
 
-Event:    <span style="color:blue;">**-EVTCONN=[state,peer_addr,mode,phy]**</span>
+Event:    <span style="color:blue;">**-EVTCONN=[state,peer_addr,role,phy]**</span>
 
 <table width="100%" border="0">
     <tr>
@@ -979,9 +967,9 @@ Event:    <span style="color:blue;">**-EVTCONN=[state,peer_addr,mode,phy]**</spa
         <td><font size="0">Byte Array format string representing MAC address of peer device in little</font></td>
     </tr>
     <tr>
-        <td><font size="0">mode</font></td>
+        <td><font size="0">role</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">0: Device is connected as Master role;<br>1: Device is connected as Slave role</font></td>
+        <td style="white-space: pre;"><font size="0">5:  Device is connected as Master role;<br>10:  Device is connected as Slave role</font></td>
     </tr>    
     <tr>
         <td><font size="0">phy</font></td>
@@ -1026,7 +1014,7 @@ Example:
 
 This event indicates that an advertising signal has been scanned.
 
-Event:    <span style="color:blue;">**-EVTADV=[dev_addr,addr_type,conn,rssi,payload]**</span>
+Event:    <span style="color:blue;">**-EVTADV=[dev_addr,addr_type,connectable,rssi,payload]**</span>
 
 <table width="100%" border="0">
     <tr>
@@ -1045,6 +1033,11 @@ Event:    <span style="color:blue;">**-EVTADV=[dev_addr,addr_type,conn,rssi,payl
         <td style="white-space: pre;"><font size="0">0:  Public<br>1:  Static random</font></td>
     </tr>
     <tr>
+        <td><font size="0">connectable</font></td>
+        <td><font size="0">Number</font></td>
+        <td style="white-space: pre;"><font size="0">0:  Unconnectable<br>1:  Connectable</font></td>
+    </tr>
+    <tr>
         <td><font size="0">rssi</font></td>
         <td><font size="0">Number</font></td>
         <td><font size="0">Signed integer in dBm</font></td>
@@ -1058,7 +1051,7 @@ Event:    <span style="color:blue;">**-EVTADV=[dev_addr,addr_type,conn,rssi,payl
 
 Example:
 
-> *//A connectable ad with local name 'Inplay' as payload from device '66-55-44-33-22-11' is scanned. RSSI is -80dBm.<br>-EVTADV=["112233445566",0,-80,"BwlJbnBsYXk="]*
+> *//A connectable ad with local name 'Inplay' as payload from device '66-55-44-33-22-11' is scanned. RSSI is -80dBm.<br>-EVTADV=["112233445566",0,1,-80,"BwlJbnBsYXk="]*
 
 - ### **-EVTACTVEND**
 
@@ -1085,9 +1078,9 @@ Event:    <span style="color:blue;">**-EVTACTVEND=[actv_type,actv_id]**</span>
         </td>
     </tr>
     <tr>
-        <td><font size="0">adv_actv_id</font></td>
+        <td><font size="0">actv_id</font></td>
         <td><font size="0">Number</font></td>
-        <td><font size="0">If advertising activity, this is the advertising activity ID that terminates</font></td>
+        <td><font size="0">Unique ID for activity</font></td>
     </tr>
 </table>
 
