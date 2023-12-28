@@ -45,26 +45,26 @@ If you encounter errors indicating that project files such as "hw\_ana" and "ble
    
 2. Click "Project" menu in Keil, and select "Options for target"(or use shortcut key Alt+F7).
 3. Click "Device" tab, and select "IN6XXE" device under "InPlay Inc".
-   ![](quickstart03.png)
+   ![](/images/quickstart03.png)
 4. Click "Debug" tab, and select "J-Link" from the drop-down menu, as shown below:
-   ![](quickstart00.png)
+   ![](/images/quickstart00.png)
 5. If a devices selection window pops up, select the "unspecified Cortex M4".  
-   ![](quickstart01.png) 
+   ![](/images/quickstart01.png) 
 6. Then click "Settings" tab,  select "SW" (single-wire interface) from the drop-down menu of "Port." The click "OK" to apply changes.
 
 Note:
 
 If the J-Link is connected to the DK board and DK board is powered up, KEIL should detect DK board and display its information in the "SW Device" column, as illustrated below. If Keil can't find device, reset DK and click "Scan" to rescan device.
 
-![](quickstart02.png) 
+![](/images/quickstart02.png) 
 	
 8. In the "Utilities" tab, click  "Settings". If the Keil Pack is installed, configuration will be done automatically as follows.
-   ![](quickstart04.png) 
+   ![](/images/quickstart04.png) 
    If Keil is not configured properly, please manually add the "IN6XX SPI FLASH "flm file, set start addres and size.
 9. Click "OK" to apply changes.
 
 10. Click "download" button to download image file to DK board.
-![](quickstart05.png) 
+![](/images/quickstart05.png) 
 
 
 
