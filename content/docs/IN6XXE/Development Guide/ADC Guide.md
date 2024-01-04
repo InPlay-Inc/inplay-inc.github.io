@@ -133,7 +133,7 @@ hal_adc_auto_mode_start(dev,32, osWaitForever);
 
 
 ## Convert data
-Convert raw data to voltage 
+Convert raw data to voltage and temperature.
 
 - Use "hal_adc_sample_convert" to covert raw data to voltage for channel0 ~ channel 12.
 - Use "hal_adc_vbat_sample_convert" for channel 14. 
