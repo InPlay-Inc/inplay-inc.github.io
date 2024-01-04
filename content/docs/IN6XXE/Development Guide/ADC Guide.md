@@ -2,11 +2,14 @@
 title: "ADC Guide"
 ---
 # ADC Guide
-## Introduction
+## Overview
 
-The ADC (Analog to Digital Converter) has a precision of 12 bits and operates in two modes: force mode and auto mode.
-
+The ADC (Analog-to-Digital Converter) is a crucial component in electronic systems that facilitates the conversion of analog signals into digital values. This process is essential for interfacing with digital systems, microcontrollers, and processors, allowing them to process and interpret real-world analog data.
+## Key Features
+### Precision
+The ADC operates with a precision of 12 bits, providing a fine resolution for accurate signal representation.
 ### Mode
+There are two modes for the ADC:
 - Force Mode
 
 In Force Mode, the ADC samples a single channel once and returns the result.
@@ -44,7 +47,7 @@ enum adc_ch{
 ```
 Note:
 
-	Channel 13 is only for internal usage.
+Channel 13 is only for internal usage.
 
 
 ### Vref
