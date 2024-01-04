@@ -43,6 +43,7 @@ enum adc_ch{
 };
 ```
 Note:
+
 	Channel 13 is only for internal usage.
 
 
@@ -50,6 +51,7 @@ Note:
 The Vref (Reference Voltage) can be configured as either 1.0V or 1.5V. The ADC's range is *2\*Vref*. And the maximum ADC sample value is 0xFFF. 
 
 Note:
+
 
 Don’t input voltage higher than 2\*Vref to ADC pin.
 
@@ -66,6 +68,8 @@ Rs is input's output resistance (Rs).
 C is internal capacitor, it is 11 pF.
 ```
 Note:
+
+
 If use a lower capture clock, will get a lower ADC sample rate.
 
 If use a higher capture clock, it may be necessary to discard the first few samples.
@@ -81,10 +85,11 @@ Configration tool
 - Select "SADC" in SwiftConfig tool peripheral tab.
 ![](/images/adc0.png)
 - If use auto mode, select "Sensor ADC" in Misc tab. And set SMEM size. A single sample has 2 bytes, and the minimum required size can be calculated according to the number of needed samples.
-![](/images/adc1.png)
+
 ```
 	SMEM size = all channel samples * 2
 ```
+![](/images/adc1.png)
 ## Example code
 - Force Mode
 
@@ -127,9 +132,9 @@ hal_adc_auto_mode_start(dev,32, osWaitForever);
 ## Convert data
 Convert raw data to voltage 
 
-Should use "hal_adc_sample_convert" to covert raw data to voltage for channel0 ~ channel 12.
-
-And use "hal_adc_vbat_sample_convert" for channel 14. Use hal_adc_temp_sample_convert" for channel 15.
+- Use "hal_adc_sample_convert" to covert raw data to voltage for channel0 ~ channel 12.
+- Use "hal_adc_vbat_sample_convert" for channel 14. 
+- Use hal_adc_temp_sample_convert" for channel 15.
 
 These API use calibration data for coverting.
 
