@@ -34,11 +34,11 @@ NanoSync engine supports three priority queues:
    When multiple triggers within the same queue are triggered simultaneously, the trigger with the smallest trigger id will be executed first.
 
 ### Trigger Header
-Every triggerhas a header. Trigger headers are located at beginning of queue memory.
+Every trigger has a header. Trigger headers are located at beginning of queue memory.
 
-### Trigger Conditions
+### Trigger Signals
 
-   There are 255 trigger conditions. And 0xFF is invalid trigger condition. Refer to enum trig_cond_idx for  details. Each trigger condition corresponds to an external or internal signal. When receive the signal(rising edge/failling edge), it triggers the corresponding trigger and executing the corresponding trigger command.
+   There are 255 trigger signals. And 0xFF is invalid trigger signal(refer to enum trig_cond_idx for  details). Each trigger signal corresponds to an external or internal signal. When receive the signal(rising edge/failling edge), it triggers the corresponding trigger and executing the corresponding trigger command.
 
 ### Trigger Command
 A trigger can have multiple trigger commands. When activated, these commands will be executed sequentially.
@@ -46,7 +46,7 @@ A trigger can have multiple trigger commands. When activated, these commands wil
 
 ### ODC(output direct controls)
 
-   Used by output command. Has 127 output direct controls. 
+   Used by output command. Has 127 output direct controls(refer to enum trig_odc_idx for details). 
 
 ### Memory
 
