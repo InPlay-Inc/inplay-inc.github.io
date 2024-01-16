@@ -251,11 +251,9 @@ Set the value when resetting
 ```
 ### Example:
 
-B2 is to hold and stop counter, while A2 resets value and stops counter. The reset values are both set to 0.
+B2 is to hold and stop counter, while A2 resets value and stops counter. The reset values are both set to 0.
 ```
-cnt_set_target_ctrl(dev->base, CNT_B2_KEEP_VALUE|CNT_B2_STOP_COUNTER           |CNT_A2_RESET_VALUE|CNT_A2_STOP_COUNTER   
-
-|(0<<CNT_DOUT_A_RESET_VALUE_SHIFT)|(0<<CNT_DOUT_B_RESET_VALUE_SHIFT));
+cnt_set_target_ctrl(dev->base, CNT_B2_KEEP_VALUE|CNT_B2_STOP_COUNTER |CNT_A2_RESET_VALUE|CNT_A2_STOP_COUNTER|(0<<CNT_DOUT_A_RESET_VALUE_SHIFT)|(0<<CNT_DOUT_B_RESET_VALUE_SHIFT));
 ```
 ### Set output bypass
 ```
