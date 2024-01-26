@@ -10,9 +10,9 @@ This routine demonstrates the functionality of configuring and handling callback
 
 ## Hardware Requirements
 
-| Hardware  | Project Name   | Project Path                   |
-| --------- | -------------- | ------------------------------ |
-| IN628E DK | proj_drv_timer | in-dev/proj/BLE/proj_drv_timer |
+| Hardware  | Project Name   | Project Path                      |
+| --------- | -------------- | --------------------------------- |
+| IN628E DK | proj_drv_timer | in-dev/proj/driver/proj_drv_timer |
 
 
 

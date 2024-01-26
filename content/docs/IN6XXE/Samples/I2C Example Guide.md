@@ -10,9 +10,9 @@ This routine demonstrates the sending and receiving of data between I2C Master a
 
 ## Hardware Requirements
 
-| Hardware  | Project Name | Project Path                 |
-| --------- | ------------ | ---------------------------- |
-| IN628E DK | proj_drv_I2C | in-dev/proj/BLE/proj_drv_I2C |
+| Hardware  | Project Name | Project Path                    |
+| --------- | ------------ | ------------------------------- |
+| IN628E DK | proj_drv_I2C | in-dev/proj/driver/proj_drv_I2C |
 
 
 

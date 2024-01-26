@@ -10,9 +10,9 @@ This routine demonstrates the generation of square wave signals using PWM. It ca
 
 ## Hardware Requirements
 
-| Hardware  | Project Name | Project Path                 |
-| --------- | ------------ | ---------------------------- |
-| IN628E DK | proj_drv_pwm | in-dev/proj/BLE/proj_drv_pwm |
+| Hardware  | Project Name | Project Path                    |
+| --------- | ------------ | ------------------------------- |
+| IN628E DK | proj_drv_pwm | in-dev/proj/driver/proj_drv_pwm |
 
 
 

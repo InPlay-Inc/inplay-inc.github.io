@@ -12,9 +12,9 @@ The LOG is printed through the UART port, showing the count changes based on the
 
 ## Hardware Requirements
 
-| Hardware  | Project Name  | Project Path                  |
-| --------- | ------------- | ----------------------------- |
-| IN628E DK | proj_drv_qdec | in-dev/proj/BLE/proj_drv_qdec |
+| Hardware  | Project Name  | Project Path                     |
+| --------- | ------------- | -------------------------------- |
+| IN628E DK | proj_drv_qdec | in-dev/proj/driver/proj_drv_qdec |
 
 
 

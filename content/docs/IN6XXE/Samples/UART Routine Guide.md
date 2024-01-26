@@ -10,9 +10,9 @@ In this routine, we can achieve sending data, receiving data, and RTS/CTS flow c
 
 ## Hardware Requirements
 
-| Hardware  | Project Name   | Project Path                   |
-| --------- | -------------- | ------------------------------ |
-| IN628E DK | proj_drv_timer | in-dev/proj/BLE/proj_drv_timer |
+| Hardware  | Project Name   | Project Path                      |
+| --------- | -------------- | --------------------------------- |
+| IN628E DK | proj_drv_timer | in-dev/proj/driver/proj_drv_timer |
 
 
 
