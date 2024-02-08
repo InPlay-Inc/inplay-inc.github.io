@@ -8,9 +8,9 @@ ADC, short for Analog-to-Digital Converter, is a key component in embedded syste
 
 ## Hardware Requirements
 
-| Hardware  | Project Name | Project Path                 |
-| --------- | ------------ | ---------------------------- |
-| IN628E DK | proj_drv_adc | in-dev/proj/BLE/proj_drv_adc |
+| Hardware  | Project Name | Project Path                    |
+| --------- | ------------ | ------------------------------- |
+| IN628E DK | proj_drv_adc | in-dev/proj/driver/proj_drv_adc |
 
 
 
