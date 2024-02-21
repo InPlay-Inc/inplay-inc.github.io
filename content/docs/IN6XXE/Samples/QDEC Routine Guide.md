@@ -12,9 +12,9 @@ The LOG is printed through the UART port, showing the count changes based on the
 
 ## Hardware Requirements
 
-| Hardware  | Project Name  | Project Path                  |
-| --------- | ------------- | ----------------------------- |
-| IN628E DK | proj_drv_qdec | in-dev/proj/BLE/proj_drv_qdec |
+| Hardware  | Project Name  | Project Path                     |
+| --------- | ------------- | -------------------------------- |
+| IN628E DK | proj_drv_qdec | in-dev/proj/driver/proj_drv_qdec |
 
 
 
@@ -40,7 +40,7 @@ Connect the VCC and GND of IN6xxE to the qdec board. Then, connect GPIO_1_3 to c
 
 ## Test Steps
 
-1. Open Keil and download the proj_drv_qdec project.
+1. Open Keil and download the **proj_drv_qdec** project.
 2. Press the K1 button and observe the text `main start...` appearing in the log.
 3. Rotate the rotary encoder in the forward direction. The count will increase, and the text `cnt is 0x...` will be displayed.
 

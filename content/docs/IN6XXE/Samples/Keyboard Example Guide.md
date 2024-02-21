@@ -8,9 +8,9 @@ A matrix keyboard is a type of keyboard that uses a grid of buttons or keys arra
 
 ## Hardware Requirements
 
-| Hardware  | Project Name      | Project Path                      |
-| --------- | ----------------- | --------------------------------- |
-| IN628E DK | proj_drv_keyboard | in-dev/proj/BLE/proj_drv_keyboard |
+| Hardware  | Project Name      | Project Path                         |
+| --------- | ----------------- | ------------------------------------ |
+| IN628E DK | proj_drv_keyboard | in-dev/proj/driver/proj_drv_keyboard |
 
 
 

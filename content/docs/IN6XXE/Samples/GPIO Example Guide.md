@@ -19,17 +19,17 @@ In this example, we can achieve basic input and output functionality using GPIO.
 ## Configuration
 
 ```c
-#define GPIO_OUTPUT_TEST_PORT 0
-#define GPIO_OUTPUT_TEST_PIN 0
+#define LED1_PORT 2
+#define LED1_PORT 8
 ```
 
-Define the GPIO output port and pin.
+Define the GPIO output port and pin for LED.
 
 
 
 ```c
-#define GPIO_INPUT_TEST_PORT 2
-#define GPIO_INPUT_TEST_PIN 3
+#define KEY_PORT 2
+#define KEY_PIN 3
 ```
 
 Define the GPIO input port and pin.
@@ -47,7 +47,7 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 We can get the status of gpio to Uart Log and LED. The following are samples,
 
 - LED cycle flashing
-- when the GPIO_2_3 put up, the message `gpio2_3 put up` will be printed.
+- when the  GPIO_2_3 put up, the message `KEY up` will be printed.
 
 More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
 
@@ -57,4 +57,4 @@ More information may be found in  [debug guide](https://inplay-inc.github.io/doc
 
 1. Open Keil and select the GPIO output pin and input pin, then download **proj_drv_GPIO**.
 2. Press the reset button and observe the log for the message `CHIP ID =`.
-3. Repeat the LED on/off cycle. If the GPIO input pin is high, the message `gpio2_3 put up` will be printed.
+3. Repeat the LED on/off cycle. If the GPIO input pin is high, the message `KEY up` will be printed.

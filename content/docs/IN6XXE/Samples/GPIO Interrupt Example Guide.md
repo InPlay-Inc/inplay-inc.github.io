@@ -8,9 +8,9 @@ GPIO interrupts are signals that are sent to the processor when there is a chang
 
 ## Hardware Requirements
 
-| Hardware  | Project Name            | Project Path                            |
-| --------- | ----------------------- | --------------------------------------- |
-| IN628E DK | proj_drv_gpio_interrupt | in-dev/proj/BLE/proj_drv_gpio_interrupt |
+| Hardware  | Project Name            | Project Path                               |
+| --------- | ----------------------- | ------------------------------------------ |
+| IN628E DK | proj_drv_gpio_interrupt | in-dev/proj/driver/proj_drv_gpio_interrupt |
 
 
 
@@ -45,7 +45,7 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 
 We can get the status of gpio according to Uart Log. The following are samples,
 
-- **gpio interrupt occur** `interrupt occur, key port 1 pin 2`
+- **gpio interrupt occur** `rise:... fall:... wup:...` mains the gpio interrupt source.
 
 More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
 
@@ -55,6 +55,6 @@ More information may be found in  [debug guide](https://inplay-inc.github.io/doc
 
 1. Open Keil and select the GPIO interrupt pin. Download the **proj_drv_gpio_interrupt** project.
 2. Press the reset button and observe the log for the text `CHIP ID =`.
-3. Toggle the light on and off. When the corresponding edge signal is detected on the GPIO input pin, `interrupt occur, key port 1 pin 2` will be printed.
+3. Toggle the light on and off. When the corresponding edge signal is detected on the GPIO input pin, `rise:... fall:... wup:...` will be printed.
 
 - In this example, due to the presence of the mask function in the callback, the interrupt will only be triggered once.

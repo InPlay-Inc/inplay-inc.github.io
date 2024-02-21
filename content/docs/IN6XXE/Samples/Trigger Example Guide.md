@@ -10,9 +10,9 @@ Trigger is a mechanism that initiates specific operations or events. It can be i
 
 ## Hardware Requirements
 
-| Hardware  | Project Name  | Project Path                  |
-| --------- | ------------- | ----------------------------- |
-| IN628E DK | proj_drv_trig | in-dev/proj/BLE/proj_drv_trig |
+| Hardware  | Project Name  | Project Path                     |
+| --------- | ------------- | -------------------------------- |
+| IN628E DK | proj_drv_trig | in-dev/proj/driver/proj_drv_trig |
 
 
 

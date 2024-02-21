@@ -8,9 +8,9 @@ GPIO interrupt and wake-up are two important features in embedded systems. GPIO 
 
 ## Hardware Requirements
 
-| Hardware  | Project Name                | Project Path                                |
-| --------- | --------------------------- | ------------------------------------------- |
-| IN628E DK | proj_drv_gpio_wuk_interrupt | in-dev/proj/BLE/proj_drv_gpio_wuk_interrupt |
+| Hardware  | Project Name                | Project Path                                   |
+| --------- | --------------------------- | ---------------------------------------------- |
+| IN628E DK | proj_drv_gpio_wuk_interrupt | in-dev/proj/driver/proj_drv_gpio_wuk_interrupt |
 
 
 
