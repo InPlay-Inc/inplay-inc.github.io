@@ -85,7 +85,7 @@ Refer to "proj_drv_gpio_reset".
 
 Reset chip by falling edge
 ```
-    hal_gpio_cfg_input(port, pin, GPIO_PULL_UP);
+	hal_gpio_cfg_input(port, pin, GPIO_PULL_UP);
 	hal_gpio_reset_chip(port, pin, port, pin, 1, 16);
 ```
 
