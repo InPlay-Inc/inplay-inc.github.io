@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['dev_5fappearance',['DEV_APPEARANCE',['../group___i_n___b_l_e___g_a_p.html#gga4f2c7cadf9c2edea855bd957af66eb31af10bd478205dd648c72ff8fa7230ff5b',1,'in_ble_gap.h']]],
+  ['dev_5fctl_5faddr_5fresol',['DEV_CTL_ADDR_RESOL',['../group___i_n___b_l_e___g_a_p.html#gga4f2c7cadf9c2edea855bd957af66eb31a37bfe08655f3e6c9b6e8c2a89c6c11f3',1,'in_ble_gap.h']]],
+  ['dev_5finfo_5fmax',['DEV_INFO_MAX',['../group___i_n___b_l_e___g_a_p.html#gga4f2c7cadf9c2edea855bd957af66eb31aa26617526a12b3382ca46529cfefeaf8',1,'in_ble_gap.h']]],
+  ['dev_5fname',['DEV_NAME',['../group___i_n___b_l_e___g_a_p.html#gga4f2c7cadf9c2edea855bd957af66eb31a181ff314916d1353089c218e11ac5130',1,'in_ble_gap.h']]],
+  ['dev_5fslv_5fpref_5fparams',['DEV_SLV_PREF_PARAMS',['../group___i_n___b_l_e___g_a_p.html#gga4f2c7cadf9c2edea855bd957af66eb31a0c55decf775665bd2ece60504cf2900a',1,'in_ble_gap.h']]],
+  ['disc_5freason_5fauth_5ffailure',['DISC_REASON_AUTH_FAILURE',['../group___i_n___b_l_e___g_a_p.html#gga485f3e38c90f0b8511addd570df8cf42a4877c3384de9f8beb3a45babe26ac28d',1,'in_ble_gap.h']]],
+  ['disc_5freason_5fpairing_5fwith_5funit_5fkey_5fnot_5fsupp',['DISC_REASON_PAIRING_WITH_UNIT_KEY_NOT_SUPP',['../group___i_n___b_l_e___g_a_p.html#gga485f3e38c90f0b8511addd570df8cf42a8be9475cffd628a02cc4fce4c947a383',1,'in_ble_gap.h']]],
+  ['disc_5freason_5fremote_5fdev_5fpower_5foff',['DISC_REASON_REMOTE_DEV_POWER_OFF',['../group___i_n___b_l_e___g_a_p.html#gga485f3e38c90f0b8511addd570df8cf42a7e9459052fc9c87cc9fdd4362b4f89db',1,'in_ble_gap.h']]],
+  ['disc_5freason_5fremote_5fdev_5fterm_5flow_5fresources',['DISC_REASON_REMOTE_DEV_TERM_LOW_RESOURCES',['../group___i_n___b_l_e___g_a_p.html#gga485f3e38c90f0b8511addd570df8cf42a444a52c937493b426fc04fc225edf136',1,'in_ble_gap.h']]],
+  ['disc_5freason_5fremote_5fuser_5fterm_5fcon',['DISC_REASON_REMOTE_USER_TERM_CON',['../group___i_n___b_l_e___g_a_p.html#gga485f3e38c90f0b8511addd570df8cf42ac73f2bd63b70e352266b08d4ae17fc5c',1,'in_ble_gap.h']]],
+  ['disc_5freason_5funacceptable_5fconn_5fint',['DISC_REASON_UNACCEPTABLE_CONN_INT',['../group___i_n___b_l_e___g_a_p.html#gga485f3e38c90f0b8511addd570df8cf42a6774b5de7ae3ab35c2fc70b288386ef6',1,'in_ble_gap.h']]],
+  ['disc_5freason_5funsupported_5fremote_5ffeature',['DISC_REASON_UNSUPPORTED_REMOTE_FEATURE',['../group___i_n___b_l_e___g_a_p.html#gga485f3e38c90f0b8511addd570df8cf42a0891d5f0d6855286cf9e4e587e844c20',1,'in_ble_gap.h']]],
+  ['diss_5fevt_5fvalue_5freq_5find',['DISS_EVT_VALUE_REQ_IND',['../group___i_n___b_l_e___p_r_f___d_i_s.html#gga2a984afb6037e0861d3a513e5fc67d0ea161bebb22201bffb21c9b430f07f6a09',1,'in_ble_prf_dis.h']]],
+  ['duplic_5fdis',['DUPLIC_DIS',['../group___i_n___b_l_e___g_a_p.html#gga15cae118ed3aacb5fcac1dc3e2950b1da7824b2f5f6b0066da8e0ab38d4084c46',1,'in_ble_gap.h']]],
+  ['duplic_5fen',['DUPLIC_EN',['../group___i_n___b_l_e___g_a_p.html#gga15cae118ed3aacb5fcac1dc3e2950b1da1c7602b7953d9ba490384b488f2d6ee8',1,'in_ble_gap.h']]],
+  ['duplic_5fen_5fper_5fperiod',['DUPLIC_EN_PER_PERIOD',['../group___i_n___b_l_e___g_a_p.html#gga15cae118ed3aacb5fcac1dc3e2950b1da1199306affa9b8c9adcd49b2730f57f6',1,'in_ble_gap.h']]]
+];
