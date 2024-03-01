@@ -1,0 +1,35 @@
+var group___h_a_l___a_u_d_i_o =
+[
+    [ "audio_status_t", "group___h_a_l___a_u_d_i_o.html#ga3cab1658a75d76ded444c50e35edc9e9", [
+      [ "AUDIO_ERR_OK", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9a18e877cbaee80572e71bedb9e9554d09", null ],
+      [ "AUDIO_ERR_NOT_INIT", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9ab61eb690311c60b0a92f77e57442873d", null ],
+      [ "AUDIO_ERR_ALREADY_INIT", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9aa35dbbf53c4dfc5a9cd417137dac2e02", null ],
+      [ "AUDIO_ERR_DEV_BAD_STATE", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9a656f7be2261acb9a26c17680440a5813", null ],
+      [ "AUDIO_ERR_INVALID_PARA", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9a225f24fe205625102686a1dee6032c9b", null ],
+      [ "AUDIO_ERR_OP_BLOCKED", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9aaa7115f7c91134c2792f0dde35d02b41", null ],
+      [ "AUDIO_ERR_NO_AUDIO_CONFIG", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9a70f65baf011ac35be0a73180dee6c12e", null ],
+      [ "AUDIO_ERR_BAD_HW_GPIO_CONFIG", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9a1c9f6c1270f086c301bf216e181d63d4", null ],
+      [ "AUDIO_ERR_AUDIO_HW_INTR", "group___h_a_l___a_u_d_i_o.html#gga3cab1658a75d76ded444c50e35edc9e9a2eda184a8e5d016a9babccf8bd3cfadb", null ]
+    ] ],
+    [ "hal_audio_dec_close", "group___h_a_l___a_u_d_i_o.html#ga6765b98d51f9121701c1b01c4f4857b0", null ],
+    [ "hal_audio_dec_open", "group___h_a_l___a_u_d_i_o.html#gacdf531f8f014d54ce75debd114297126", null ],
+    [ "hal_audio_dec_set_config", "group___h_a_l___a_u_d_i_o.html#gab6be7b9a0f071bbb2bbbe6d054263df8", null ],
+    [ "hal_audio_dec_set_predict_endianness", "group___h_a_l___a_u_d_i_o.html#gac0cf34d3bd2918392fe6c1ad2ebf7e67", null ],
+    [ "hal_audio_decode_process", "group___h_a_l___a_u_d_i_o.html#ga1df6b44ec8bbf7a583ad713c20e9c5ec", null ],
+    [ "hal_audio_decode_start", "group___h_a_l___a_u_d_i_o.html#gaf60bd6daab2ca86a16a0c8c8110586f6", null ],
+    [ "hal_audio_decode_stop", "group___h_a_l___a_u_d_i_o.html#ga5e0216808da6e752751f4d76ce47903c", null ],
+    [ "hal_audio_enc_close", "group___h_a_l___a_u_d_i_o.html#gab355dba277c8ff8f8801b101b6fdf327", null ],
+    [ "hal_audio_enc_open", "group___h_a_l___a_u_d_i_o.html#ga4e2572d0d7a950a2486ce4f59487f0b0", null ],
+    [ "hal_audio_enc_pdm_dc_offset_cal", "group___h_a_l___a_u_d_i_o.html#ga56270aeb19314899205906214fb545bf", null ],
+    [ "hal_audio_enc_set_config", "group___h_a_l___a_u_d_i_o.html#ga15fd996fe238ae8c65bb8638eaa01916", null ],
+    [ "hal_audio_enc_set_pdm_mic_inp", "group___h_a_l___a_u_d_i_o.html#gad97113bdcf067dfb9e4a38d49502d428", null ],
+    [ "hal_audio_enc_set_predict_endianness", "group___h_a_l___a_u_d_i_o.html#gaa40a3fc4bd7dd403746884a99ef87115", null ],
+    [ "hal_audio_encode_process", "group___h_a_l___a_u_d_i_o.html#ga38636f97a78b49efe79ed5a21b88243e", null ],
+    [ "hal_audio_encode_start", "group___h_a_l___a_u_d_i_o.html#ga6ea10616b7f0ac8b57bf69102066472d", null ],
+    [ "hal_audio_encode_stop", "group___h_a_l___a_u_d_i_o.html#ga5aac4680f4c4bd88cb8b489f40d492ee", null ],
+    [ "hal_audio_resample_close", "group___h_a_l___a_u_d_i_o.html#ga77044bc80ee5064cbac62d4253553680", null ],
+    [ "hal_audio_resample_open", "group___h_a_l___a_u_d_i_o.html#ga2617311341c84b83a3175bbcd26f4ab6", null ],
+    [ "hal_audio_resample_process", "group___h_a_l___a_u_d_i_o.html#ga06646b1dfa72a071e10e8329e5775ab5", null ],
+    [ "hal_audio_resample_set_config", "group___h_a_l___a_u_d_i_o.html#gaaa6a30fc286240d170aeb33e90ac3e5c", null ],
+    [ "hal_audio_resample_stop", "group___h_a_l___a_u_d_i_o.html#gaab501b49d8d9698ee97aa3923e7a034f", null ]
+];

@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['repeated_5fattempt',['REPEATED_ATTEMPT',['../group___i_n___b_l_e___g_a_p.html#gga308d96997345d6169594def6bf97f9d2a0868b6a18c045b7fbb3f89482026699b',1,'in_ble_gap.h']]],
+  ['report_5finfo_5fcomplete_5fbit',['REPORT_INFO_COMPLETE_BIT',['../group___i_n___b_l_e___g_a_p.html#ggaa4ef93ca610347107c08b7336cd800b4ad0cdca29003a242c00a3cf8a182fe12f',1,'in_ble_gap.h']]],
+  ['report_5finfo_5fconn_5fadv_5fbit',['REPORT_INFO_CONN_ADV_BIT',['../group___i_n___b_l_e___g_a_p.html#ggaa4ef93ca610347107c08b7336cd800b4a318b428e1033ec328c35dc9c09411361',1,'in_ble_gap.h']]],
+  ['report_5finfo_5fdir_5fadv_5fbit',['REPORT_INFO_DIR_ADV_BIT',['../group___i_n___b_l_e___g_a_p.html#ggaa4ef93ca610347107c08b7336cd800b4adadb02b6d7a4ad4e31236ea5b5d529fe',1,'in_ble_gap.h']]],
+  ['report_5finfo_5freport_5ftype_5fmask',['REPORT_INFO_REPORT_TYPE_MASK',['../group___i_n___b_l_e___g_a_p.html#ggaa4ef93ca610347107c08b7336cd800b4a7f1330821b7bfeba8a4bbf59006b3bd2',1,'in_ble_gap.h']]],
+  ['report_5finfo_5fscan_5fadv_5fbit',['REPORT_INFO_SCAN_ADV_BIT',['../group___i_n___b_l_e___g_a_p.html#ggaa4ef93ca610347107c08b7336cd800b4a250f38dcce7713b54b3def41b23d6163',1,'in_ble_gap.h']]],
+  ['report_5ftype_5fadv_5fext',['REPORT_TYPE_ADV_EXT',['../group___i_n___b_l_e___g_a_p.html#gga586827f2b8e2c17b183858febd25a205a59ad919478107532715a49e6ad75114f',1,'in_ble_gap.h']]],
+  ['report_5ftype_5fadv_5fleg',['REPORT_TYPE_ADV_LEG',['../group___i_n___b_l_e___g_a_p.html#gga586827f2b8e2c17b183858febd25a205a44d7aebbbfbbeb34e40de6f4a0e9c9df',1,'in_ble_gap.h']]],
+  ['report_5ftype_5fper_5fadv',['REPORT_TYPE_PER_ADV',['../group___i_n___b_l_e___g_a_p.html#gga586827f2b8e2c17b183858febd25a205a570e3ca9160eb5704457953f00688f00',1,'in_ble_gap.h']]],
+  ['report_5ftype_5fscan_5frsp_5fext',['REPORT_TYPE_SCAN_RSP_EXT',['../group___i_n___b_l_e___g_a_p.html#gga586827f2b8e2c17b183858febd25a205a76fb8ea453b6ad91445db1586cb43802',1,'in_ble_gap.h']]],
+  ['report_5ftype_5fscan_5frsp_5fleg',['REPORT_TYPE_SCAN_RSP_LEG',['../group___i_n___b_l_e___g_a_p.html#gga586827f2b8e2c17b183858febd25a205a3706f1a939dcdeffba155441cad99cb1',1,'in_ble_gap.h']]],
+  ['role_5fall',['ROLE_ALL',['../group___i_n___b_l_e___g_a_p.html#gga60c28c4961ba2c2384adcbd8f577ed01a9a16770e21067458b47da084c5dc9a15',1,'in_ble_gap.h']]],
+  ['role_5fbroadcaster',['ROLE_BROADCASTER',['../group___i_n___b_l_e___g_a_p.html#gga60c28c4961ba2c2384adcbd8f577ed01ad9f2b259be392474f5a1038c09372c9b',1,'in_ble_gap.h']]],
+  ['role_5fcentral',['ROLE_CENTRAL',['../group___i_n___b_l_e___g_a_p.html#gga60c28c4961ba2c2384adcbd8f577ed01a3ac08bd41fb962689dda9d0f7f9df980',1,'in_ble_gap.h']]],
+  ['role_5fnone',['ROLE_NONE',['../group___i_n___b_l_e___g_a_p.html#gga60c28c4961ba2c2384adcbd8f577ed01a6db5378d7d3593626328a31ca0c43f8d',1,'in_ble_gap.h']]],
+  ['role_5fobserver',['ROLE_OBSERVER',['../group___i_n___b_l_e___g_a_p.html#gga60c28c4961ba2c2384adcbd8f577ed01af79c21c2ebd14422662c6ea700d890e7',1,'in_ble_gap.h']]],
+  ['role_5fperipheral',['ROLE_PERIPHERAL',['../group___i_n___b_l_e___g_a_p.html#gga60c28c4961ba2c2384adcbd8f577ed01a21f619b35fa2b5e7ad588e5aae9fd34b',1,'in_ble_gap.h']]],
+  ['rslv_5faddr',['RSLV_ADDR',['../group___i_n___b_l_e___g_a_p.html#ggaea4288a160a5c74ed35f04164d0d562da662143434d97def1e054e8a12417f301',1,'in_ble_gap.h']]]
+];
