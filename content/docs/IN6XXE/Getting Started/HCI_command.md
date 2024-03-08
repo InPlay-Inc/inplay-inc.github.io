@@ -118,10 +118,11 @@ Command Complete Event: `0x04, 0x0E, <Packet len ><Commands Available>, 0x01, 0x
   | 0x14  | -5dBm     |
   | 0x15  | -6dBm     |
   | 0x16  | -8dBm     |
-  | 0x17  | -12dBm    |
-  | 0x18  | -16dBm    |
-  | 0x19  | -20dBm    |
-  | 0x1A  | -43dBm    |
+  | 0x17  | -10dBm     |
+  | 0x18  | -12dBm    |
+  | 0x19  | -16dBm    |
+  | 0x1A  | -20dBm    |
+  | 0x1B  | -43dBm    |
 
 *Table 3*
 
@@ -294,6 +295,14 @@ Complete Event: `0x04, 0x0E, 01, 0x01, 0x07, 0xFC, <status>`
     Command: `0x01, 0x51, 0xFC, 0x00, <TX Gain>`
     
     - TX Gain: TX gain, range is 0x00 ~ 0x7F.  Default is 0x18.
+
+	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x51, 0xFC, <status>`
+
+15. ### Set TX Power Table
+    
+    Command: `0x01, 0x52, 0xFC, 0x00, <TX Power Table>`
+    
+    - TX Power Table:  Range is 0x01 ~ 0x04.  Default is 0x1. Table 1 is for low power mode. And table 4 is for high power mode.
 
 	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x51, 0xFC, <status>`
 
