@@ -15,20 +15,32 @@ J-Flash is a part of the J-Link tool series developed by Segger, offers a reliab
 2. [J-Link Software and Documentation Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) installed on your host computer(Version 7.62 or later is recommended).
 	
 
-## Install InPlayTools:
+## JLinkDevices  Configuration
+### Windows
+- **Install InPlayTools(recommended)**:
 
-InPlayTools is an extension designed to enhance J-Flash functionality by adding support for the IN6XXE series of chips.
+	InPlayTools is an extension designed to enhance J-Flash functionality by adding support for the IN6XXE series of chips.
 
-The installation file for Inplaytools is in "SDK\in-dev\tools\InPlayToolsSetup.exe", or download [InPlayTools](https://github.com/InPlay-Inc/IN6XXE-Tools/blob/main/InPlayTool/InPlayToolsSetup.exe) from website.
+	The installation file for Inplaytools is in "SDK\in-dev\tools\InPlayToolsSetup.exe", or download [InPlayTools](https://github.com/InPlay-Inc/IN6XXE-Tools/blob/main/InPlayTool/InPlayToolsSetup.exe) from website.
 
-User should select the Jlink version. Recommended install Jlink Version 7.62 or later first.
+	User should select the Jlink version. Recommended install Jlink Version 7.62 or later first.
 
 
 ![](/images/jflash0.png)
+- **Copy files**:
+	Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "C:\Users\<USER>\AppData\Roaming\SEGGER\JLinkDevices".
+	(Only support "J-Link Software and Documentation Pack" version 7.62 or later.)
 
+### Ubuntu
 
+Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "$HOME/.config/SEGGER/JLinkDevices".
+	(Only support "J-Link Software and Documentation Pack" version 7.62 or later.)
 
-## Step:
+### macOS
+Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "$HOME/Library/Application Support/SEGGER/JLinkDevices".
+	(Only support "J-Link Software and Documentation Pack" version 7.62 or later.)
+
+## Downlaod Step:
 - Open JFlash, and select “create a new project.”
 
 ![](/images/jflash1.png)
