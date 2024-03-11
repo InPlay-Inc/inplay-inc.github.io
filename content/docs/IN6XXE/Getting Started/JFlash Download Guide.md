@@ -28,17 +28,18 @@ J-Flash is a part of the J-Link tool series developed by Segger, offers a reliab
 
 ![](/images/jflash0.png)
 - **Copy files**:
-	Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "C:\Users\<USER>\AppData\Roaming\SEGGER\JLinkDevices".
-	(Only support "J-Link Software and Documentation Pack" version 7.62 or later.)
+  
+	Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "C:\Users\<USER>\AppData\Roaming\SEGGER\JLinkDevices"
+	(only support "J-Link Software and Documentation Pack" version 7.62 or later).
 
 ### Ubuntu
 
-Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "$HOME/.config/SEGGER/JLinkDevices".
-	(Only support "J-Link Software and Documentation Pack" version 7.62 or later.)
+Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "$HOME/.config/SEGGER/JLinkDevices"
+	(only support "J-Link Software and Documentation Pack" version 7.62 or later).
 
 ### macOS
-Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "$HOME/Library/Application Support/SEGGER/JLinkDevices".
-	(Only support "J-Link Software and Documentation Pack" version 7.62 or later.)
+Copy [IN6XXE](https://github.com/InPlay-Inc/IN6XXE-Tools/tree/main/JLinkDevices/IN6XXE) to "$HOME/Library/Application Support/SEGGER/JLinkDevices"
+	(only support "J-Link Software and Documentation Pack" version 7.62 or later).
 
 ## Downlaod Step:
 - Open JFlash, and select “create a new project.”
