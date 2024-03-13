@@ -5,7 +5,11 @@ title: "Introduction to IN6XXE DK"
 ## Overview
 
 IN6XXE DK is a development board for IN6XXE series chips.
-The schematics can be downloaded [here](/pdf/SCH_IN612LE-QFN48-REF_DESIGN_2023-06-25.pdf).
+You can download the schematics:
+
+[SCH_IN612LE-QFN48-DK-ver1.1](/pdf/SCH_IN612LE-QFN48-DK-ver1.1_2024-02-18.pdf)
+
+[SCH_IN612LE-QFN56-DK-ver1.1](/pdf/SCH_IN612LE-QFN56-DK-ver1.1_2024-02-18.pdf)
 
 ## Hardware description
 
@@ -13,7 +17,7 @@ The schematics can be downloaded [here](/pdf/SCH_IN612LE-QFN48-REF_DESIGN_2023-0
 
 || **Component** | **Description** |
 |---|---|---|
-|1|RF Switch |  |
+|1|RF Connector |  |
 |2| I2C pull up | R19:GPIO_0_0, R20:GPIO_0_1; R21:GPIO_0_3, R22:GPIO_0_4 |
 |3| VDDQ Jumper | When programming eFuse, connect VDDQ to 3.3V |
 |4| GPIO Test Pin | GPIO pins |
@@ -31,13 +35,12 @@ The schematics can be downloaded [here](/pdf/SCH_IN612LE-QFN48-REF_DESIGN_2023-0
 |16| GPIO Test Pin | GPIO pins |
 |17| GPIO Test Hole | GPIO pins |
 |18| GPIO Button+Reset | One reset button, other buttons are LOW active(when pressed, GPIO input LOW) |
-|19| Power Level Shift | Convert UART interface voltage level between IN6XXE and USB to UART chip |
-|20| UART1 flow control | Control power supply of USB to UART chip; Control voltage level converter;  Control which GPIOs are connected to the USB to UART chip, default is UART1: GPIO_2_1:TX GPIO_2_7:RX GPIO_1_5:RTS GPIO_1_6:CTS see [UART Configuration]({{<ref "#uart_cfg">}})|
-|21| UART to USB |  |
-|22| 3.3V Power | 5V to 3.3V |
-|23| Type-C | Power supply and connect to PC for UART port |
-|24| External VBAT | External supply to VBAT |
-|25| External VDDIO | External supply to VDDIO |
+|19| UART Jumper | Control power supply of USB to UART chip; Control which GPIOs are connected to the USB to UART chip, default is UART1: GPIO_2_1:TX GPIO_2_7:RX GPIO_1_5:RTS GPIO_1_6:CTS see [UART Configuration]({{<ref "#uart_cfg">}})|
+|20| UART to USB | USB to UART chip |
+|21| 3.3V Power | 5V to 3.3V |
+|22| Type-C | Power supply and connect to PC for UART port |
+|23| External VBAT | External supply to VBAT |
+|24| External VDDIO | External supply to VDDIO |
 
 These components will be refered as "Component_xx"(xx is the component number) in this page.
 
@@ -66,23 +69,23 @@ There are three connectors(component 8, 11, 13) can be used as debug port, usual
 ## UART configuration {id = "uart_cfg"}
 IN6XXE has two UART ports, UART0 and UART1. You can connect external USB to UART module to Component_13 if you use UART0.
 
-You can also use the on board USB to UART chip, configured with Component_20:
+You can also use the on board USB to UART chip, configured with Component_19:
 
 ![](/images/uart-ctrl.png)
 
-If you want to use on board USB to UART chip, 1<->2, 3<->4 should be connected.
+If you want to use on board USB to UART chip, 1<->2 should be connected.
 
 If you want to use UART1(GPIO_2_1 as Tx, and GPIO_2_7 as Rx):
 
- - 9<->10, 11<->12 should be connected for UART Rx and Tx.
+ - 3<->4, 5<->6 should be connected for UART Rx and Tx.
 
- - 5<->6, 7<->8 should be connected for flow control.
+ - 7<->8, 9<->10 should be connected for flow control.
 
-You can connect 5,7,9,11 to other GPIOs if you use other GPIOs as UART port pins.
+You can connect 4, 6 to other GPIOs if you use other GPIOs as UART port pins.
 
 ## Current measurement
 
-If you want to measure current of IN6XXE, all pins of Component_13 should be disconnected.
+If you want to measure current of IN6XXE, all pins of Component_19 should be disconnected.
 
 For the Power Jumper,  CHIP_EN<->VBAT and VDDIO<->VBAT should be connected.
 
