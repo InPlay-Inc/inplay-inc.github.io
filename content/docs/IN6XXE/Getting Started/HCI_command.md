@@ -136,7 +136,7 @@ The Reset command needs to be sent only once after power-up.
 
 Command: `0x01, 0x03, 0x0C, 0x00`
 
-Complete Event: `0x04, 0x0E,01, 0x01, 0x03, 0x0C, <status>`
+Complete Event: `0x04, 0x0E,0x04, 0x01, 0x03, 0x0C, <status>`
 
 2. ### End Test
 
@@ -144,7 +144,7 @@ After each modulation signal test command (TX or RX command) is completed, you n
 
 Command: `0x01, 0x1F, 0x20, 0x00`
 
-Complete Event：`0x04, 0x0E, 01, 0x01, 0x1F, 0x20, <status>, <packets number byte 0>, <packets number byte 1>`
+Complete Event：`0x04, 0x0E, 0x06, 0x01, 0x1F, 0x20, <status>, <packets number byte 0>, <packets number byte 1>`
 
 3. ### Start TX Test (Modulation signal)
 
@@ -156,7 +156,7 @@ Transmitter Test command：`0x01, 0x1E, 0x20, 0x03, <channel>, <data length>, <
 - data length: please use 0x25 in 1M mode
 - packet type: please refer to Table 1.
 
-Complete Event：`0x04, 0x0E, 01, 0x01, 0x1E, 0x20, <status>`
+Complete Event：`0x04, 0x0E, 0x04, 0x01, 0x1E, 0x20, <status>`
 
 4. ### Start RX Test (Receive mode)
 
@@ -166,7 +166,7 @@ Receive Test command：`0x01, 0x1D, 0x20, 0x01, <channel>`
 
 - channel: the range is 0x00 to 0x27（39），Formula：N =（F – 2402）/ 2；  0x00 means 2.402GHz
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x1D, 0x20, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x1D, 0x20, <status>`
 
 
 5. ### Start Enhanced TX Test
@@ -183,7 +183,7 @@ Command: `0x01, 0x34, 0x20, 0x04, <channel>, <data length>, <packet type>, <phy>
 
 - phy: Please refer to Table 2
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x34, 0x20, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x34, 0x20, <status>`
 
 6. ### Start Enhanced RX Test
 
@@ -201,13 +201,13 @@ Command: `0x01, 0x33, 0x20, 0x03, <channel>, <phy>, <modulation index>`
   
   - 0x01 Assume transmitter will have a stable modulation index
 
-Complete Event: `0x04, 0x0E, 01, 0x01, 0x33, 0x20, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x33, 0x20, <status>`
 
 7. ### Stop Carrier TX ( Carrier signal)
 
 Command：`0x01, 0x04, 0xFC, 0x00`
 
-Complete Event:`0x04, 0x0E,0x01, 0x01, 0x04, 0xFC, <status>`
+Complete Event:`0x04, 0x0E,0x04, 0x01, 0x04, 0xFC, <status>`
 
 ***The following commands are vendor specified.***
 
@@ -220,13 +220,13 @@ Command：`0x01, 0x01, 0xFC, 0x02, <channel> <TX gain>`
   - 0: use default value.  
   - 0x1 ~ 0x7F: PA gain, 0x19 is 0dBm. 
 
-Complete Event：`0x04, 0x0E, 0x01, 0x01, 0x01, 0xFC, <status>`
+Complete Event：`0x04, 0x0E, 0x04, 0x01, 0x01, 0xFC, <status>`
 
 9. ### Get RSSI
 
 Command：`0x01, 0x03, 0xFC, 0x00`
 
-Complete Event: `0x04, 0x0E, 01, 0x01, 0x03, 0xFC, <status> ，<RSSI>`
+Complete Event: `0x04, 0x0E, 0x05, 0x01, 0x03, 0xFC, <status> ，<RSSI>`
 
 - RSSI: value of RSSI, it is a  int8\_t value. Example: return value is 0xCD, RSSI=0xCD-0x100=-51dBm
 10. ### Vendor TX command
@@ -249,7 +249,7 @@ Command：`0x01, 0x0D, 0xFC, 0x06, <channel>, <data length>, <packet type>, <phy
   
   - 0: Normal TX
 
-Complete Event:`0x04, 0x0E, 0x01, 0x01, 0x0D, 0xFC, <status>`
+Complete Event:`0x04, 0x0E, 0x04, 0x01, 0x0D, 0xFC, <status>`
 
 11.  ### Set Cap
 
@@ -257,7 +257,7 @@ Command: `0x01, 0x05, 0xFC, 0x01 <Cap>`
 
 - cap:  capacitance  range is 0x0~0xF
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x05, 0xFC, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x05, 0xFC, <status>`
 
 12. ### Save Cap to Efuse
 
@@ -265,7 +265,7 @@ Command: `0x01, 0x06, 0xFC, 0x01 <Cap>`
 
 - cap:  capacitance  range is 0x0~0xF
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x06, 0xFC, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x06, 0xFC, <status>`
 
 **Notice:**
 
@@ -279,7 +279,7 @@ Command: `0x01, 0x08, 0xFC, 0x01, <Cap>`
 
 - cap:  capacitance  range is 0x0~0xF
   
-  Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x08, 0xFC, <status>`
+  Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x08, 0xFC, <status>`
 14. ### Set TX Power
     
     Set the transmit power according to Table 3. 
@@ -288,7 +288,7 @@ Commands: `0x01, 0x07, 0xFC, 0x01, <TX Power>`
 
 - TX Power: transmit power, range is 0x00 to 0x1A. Please refer to Table 3.
 
-Complete Event: `0x04, 0x0E, 01, 0x01, 0x07, 0xFC, <status>`
+Complete Event: `0x04, 0x0E, 01, 0x04, 0x07, 0xFC, <status>`
 
 15. ### Set TX Gain
     
@@ -296,7 +296,7 @@ Complete Event: `0x04, 0x0E, 01, 0x01, 0x07, 0xFC, <status>`
     
     - TX Gain: TX gain, range is 0x00 ~ 0x7F.  Default is 0x18.
 
-	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x51, 0xFC, <status>`
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x51, 0xFC, <status>`
 
 15. ### Set TX Power Table
     
@@ -304,7 +304,7 @@ Complete Event: `0x04, 0x0E, 01, 0x01, 0x07, 0xFC, <status>`
     
     - TX Power Table:  Range is 0x01 ~ 0x04.  Default is 0x1. Table 1 is for low power mode. And table 4 is for high power mode.
 
-	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x51, 0xFC, <status>`
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x51, 0xFC, <status>`
 
 16.  ### Read Register
     
@@ -320,7 +320,7 @@ Command: `0x01, 0x0E, 0xFC, 0x04, <Address Byte0>,<Address Byte1>,<Address Byte2
 
 - Address Byte3: Register address byte 3.
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x07, 0xFC, <status> ,<Reg Value Byte 0>, <Reg Value Byte 1>,<Reg Value Byte 2>，<Reg Value Byte 3>`
+Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x07, 0xFC, <status> ,<Reg Value Byte 0>, <Reg Value Byte 1>,<Reg Value Byte 2>，<Reg Value Byte 3>`
 
 - Reg Value Byte 0: Register value byte 0.
 - Reg Value Byte 1: Register value byte 1.
@@ -348,9 +348,75 @@ Command: `0x01, 0x0F, 0xFC, 0x08, <Address Byte0>,<Address Byte1>,<Address Byte2
 
 - Reg Value Byte 3: Register value byte 3.
 
-Complete Event:  `0x04, 0x0E, 0x01, 0x01, 0x07, 0xFC, <status>`
+Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 
-18. ### Start PWM
+
+
+20. ### Get Version Number
+    
+    Command: `0x01, 0x50, 0xFC, 0x00`
+
+	Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x50, 0xFC, <status> , <version byte 0>, <version byte 1>, <version byte 2>, <version byte 3>`
+
+    - Version: 32bit HCI command SW version number
+
+
+20. ### Set TX Enable Pin
+    
+    Command: `0x01, 0x44, 0xFC, 0x04, <tx en port>, <tx en pin>, <bias port> <bias pin>`
+	- tx en port: TX enable port
+	- tx en pin: TX enable pin
+	- bias port: PA bias port, set to 0xFF if it is invaild
+	- bias pin: PA bias pin, set to 0xFF if it is invaild
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x44, 0xFC, <status> `
+
+21. ### Set RX Enable Pin
+    
+    Command: `0x01, 0x45, 0xFC, 0x02, <port>, <pin>`
+	- port: RX enable port
+	- pin: RX enable pin. 
+  
+  	Only GPIO23 and GPIO25 is valid for this command.
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x45, 0xFC, <status> `
+
+
+22. ### GPIO Output
+    
+    Command: `0x01, 0x0B, 0xFC, 0x03, <port>, <pin>, <output>`
+	- port: GPIO port
+	- pin: GPIO pin
+	- output: GPIO output, 1 is high and 0 is low
+  
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0B, 0xFC, <status> `
+
+23. ### GPIO input
+    
+    Command: `0x01, 0x0C, 0xFC, 0x03, <port>, <pin>, <pull>`
+	- port: GPIO port
+	- pin: GPIO pin
+	- pull: 0 is no pull up/down, 1 is pull up and 2 is pull down
+
+  
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0C, 0xFC, <status> <GPIO input>`
+	- GPIO input: 1 is high and 0 is low
+21. ### Vendor TX end 
+    Stop TX and send back TX packets,
+    Command: `0x01, 0x53, 0xFC, 0x00`
+
+	Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x53, 0xFC, <status> ,<packet number byte 0>, <packet number byte 1>`
+	- packet number: TX packet number
+22. ### Get ADC sample
+    
+    Command: `0x01, 0x43, 0xFC, 0x01, <ADC channel>`
+	- ADC channel: ADC channel
+
+	Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x43, 0xFC, <status> , <Sample raw data byte 0>, <Sample raw data byte 1> <Sample converted data byte 0>, <Sample converted data byte 1>`
+
+    - Sample raw data: 16 bits ADC sample raw data.
+    - Sample converted data: 16 bits converted data in millivolt.
+23. ### Start PWM
     
     Command: `0x01, 0x09, 0xFC, 0x01, <pwm id>`
 
@@ -366,26 +432,16 @@ Complete Event:  `0x04, 0x0E, 0x01, 0x01, 0x07, 0xFC, <status>`
 
     - PWM4    4
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x09, 0xFC, <status>` 
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 
 
 19. ### Stop PWM
     
     Command: `0x01, 0x0A, 0xFC, 0x00`
 
-	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x0A, 0xFC, <status>` 
-
-20. ### Get Version Number
-    
-    Command: `0x01, 0x50, 0xFC, 0x00`
-
-	Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x50, 0xFC, <status> , <version byte 0>, <version byte 1>, <version byte 2>, <version byte 3>`
-
-    - Version: 32bit HCI command SW version number
-
-
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0A, 0xFC, <status>`   
 ***The following command in only available for Golden tester board.***
 
-21. ### DUT Calibrate XO
+1.  ### DUT Calibrate XO
     
     Command: `0x01, 0x31, 0xFC, 0x03, <pwm id>, <save>, <limit>`
 
@@ -413,7 +469,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x09, 0xFC, <status>`
 
 For example, limit is 16, means that offset is  ±2us at every 100ms(20 PPM).
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>` 
+Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>` 
 
 - cap: cap value
 
@@ -425,7 +481,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>`
 - phy: Please refer to Table 2
 - tx gain: DUT tx gain code(0x0 ~ 0x7F), only available for carrier.
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x32, 0xFC, <status>,<rssi>` 
+Complete Event: `0x04, 0x0E, 0x05, 0x01, 0x32, 0xFC, <status>,<rssi>` 
 
 - rssi: RSSI value
 23. ### DUT RX Sensitivity
@@ -437,7 +493,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x32, 0xFC, <status>,<rssi>`
 
 - loss rate:  0~255, unit is 0.1%.  For example ,20 means 2%
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x33, 0xFC, <status>, <tx power>, <loss rate>`
+Complete Event: `0x04, 0x0E, 0x01, 0x06, 0x33, 0xFC, <status>, <tx power>, <loss rate>`
 
 - tx power: Tester TX power
 
@@ -453,7 +509,7 @@ Example: bootram size is 0x2000 bytes, image size is 0xAC00 bytes:
 
 01 34 fc 08 00 20 00 00 00 ac 00 00
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x34, 0xFC, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x34, 0xFC, <status>`
 
 25. ### Start BLE Scan
     
@@ -462,7 +518,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x34, 0xFC, <status>`
 
 - BD addr: BLE device address, 6 bytes
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x40, 0xFC, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x40, 0xFC, <status>`
 
 26. ### Start SDR Scan
     
@@ -471,7 +527,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x40, 0xFC, <status>`
 
 - addcess addr: SDR access address, 4 bytes
 
-Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x41, 0xFC, <status>`
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x41, 0xFC, <status>`
 
 27. ### Stop Scan
     
@@ -481,6 +537,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x41, 0xFC, <status>, <RSSI>,<freq_offs
 
 - RSSI: value of RSSI, int8\_t. Example: return value is 0xCD, RSSI=0xCD-0x100=-51dBm
 
-- freq\_offset\_code: frequency offset code. It is int16\_t value. Use this to covert to KHz:
+- freq offset code: frequency offset code. It is int16\_t value. Use this to covert to KHz:
 
-Offset(KHz) = 500.0/1024\* freq\_offset\_code 
+`Offset(KHz) = 500.0/1024* freq_offset_code` 
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x42, 0xFC, <status>`
