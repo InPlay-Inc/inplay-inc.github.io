@@ -1,6 +1,5 @@
 ---
 title: "Wireless Communication Protocol"
-menu: false
 ---
 
 # Stellar Gateway Wireless Communication Protocol Implementation Guide
