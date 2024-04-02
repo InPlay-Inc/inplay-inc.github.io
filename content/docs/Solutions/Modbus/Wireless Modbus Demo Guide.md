@@ -22,13 +22,18 @@ The Demo GUI's main window features three dock windows—Indicator, Sensor, Comm
 
 ![GUI main window](/images/solution/Modbus/gui/gui_main.png)
 
+The Toolbar has changed in version: 0.9
+
+![GUI main window](/images/solution/Modbus/gui/toolbar_v09.png)
+
+
 ### Operations
 Steps:
 1. Confirm Serial settings
 2. Ascertain Modbus request and response patterns of relay and sensor
 3. Connect COM port
-4. Control relay: search or switch on/off
-5. Monitor sensor
+4. Scan devices
+5. Control devices
 
 #### Serial Configuration
 Navigate to *Setting/com* to open a dialog window and modify serial settings parameters such as baud rate, data bits, stop bits, parity, and timeout. Click "confirm" to apply these settings.
@@ -65,16 +70,31 @@ Upon receiving the slave's response, the GUI parses the data list and employs fo
 #### Connect and Run
 Choose the appropriate COM Port and hit the `Connect` button in the toolbar. The status bar will exhibit the connection state.
 
+Version 0.9 as below:
+
+![Toolbar](/images/solution/Modbus/gui/toolbar_v09_default.png)
+
+
+Version 0.8 as below:
+
 ![Toolbar](/images/solution/Modbus/gui/toolbar.png)
 ![Status Bar](/images/solution/Modbus/gui/statusbar.png)
 
-Pressing the `Start All` button ignites the Relay Search and Sensor Monitor, proceeding as per the Settings to dispatch requests. The Command dock window relays messages of both requests and responses.
+Pressing the `Network Scan Discovery` (which is `Start All` in v0.8) button ignites the Relay Search and Sensor Monitor, proceeding as per the Settings to dispatch requests. The Command dock window relays messages of both requests and responses.
 
 Should relay or sensor devices be located, the Indicator and Sensor dock windows will relay pertinent information such as "lamp buttons," alongside temperature and humidity graphs.
 
+Version 0.8 as below:
 ![Start All](/images/solution/Modbus/gui/start_all.png)
 
 Indicator and Sensor sections incorporate selectors and buttons for demonstrating various actions.
+
+And in version 0.9 update the sensor's dock window:
+
+![Start All](/images/solution/Modbus/gui/gui_sensor_v09.png)
+
+Set "Temp upper" and "Temp lower" to adjust the temperature display limits on the graph.
+
 
 #### Manual Command Input
 Located at the Command dock window's base, a manual command input area exists for entry of Modbus RTU requests (sans crc). Click `Send Request` post-entry to dispatch the command.
@@ -92,6 +112,13 @@ Editing the setting.json file can be accomplished with an external editor, repla
 The `View` menu permits modification of the GUI's visual appeal, such as font selection, and toggles the display status of Dock Windows.
 
 ![View Theme](/images/solution/Modbus/gui/menu_view_theme.png)
+
+In version 0.9, `View` menu permit toggles the display of "other tools" in toolbar.
+
+![View Theme](/images/solution/Modbus/gui/menu_view_v09_other_tools.png)
+
+
+![View Theme](/images/solution/Modbus/gui/toolbar_v09_other_tools.png)
 
 
 The `Help` menu grants access to assorted explanatory documents, including a GUI usage guide.
