@@ -654,7 +654,7 @@ When the master receives data from the slave(s) or vice versa, the received data
 |...|...|
 |Bn|last byte of data|
 
-### **Read UART Configuration: 0xA063**
+### **Get UART Configuration: 0xA063**
 This command *read* the UART configuration.
 
 Send:    **0xA0 0x63 0x00 0x00**
