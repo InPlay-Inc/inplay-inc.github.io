@@ -27,7 +27,7 @@ The master can be configured to send a broadcast packet to all the slaves at eac
 *Broadcast packet: Slaves do not acknowledge the reception of a broadcast packet.*
 
 ## Overview of transparent data transmission
-Many modern applications rely on wireless data transmission; however, end-users often lack knowledge or interest in the underlying wireless technologies. Consequently, we have designed a mechanism that allows users to conveniently utilize the powerful data transfer capabilities provided by SMULL without the need to understand the details of this protocol. However, before starting the data transmission, it is necessary to configure the relevant parameters of SMULL to establish a network between the master and slave. By using the commands we provide, you can quickly establish the SMULL network. Please refer to the [example](#example) provided below for more details. The schematic of the entire system, showing the connection between the host and IN618 module, is illustrated in Figure 3.<br>
+Many modern applications rely on wireless data transmission; however, end-users often lack knowledge or interest in the underlying wireless technologies. Consequently, we have designed a mechanism that allows users to conveniently utilize the powerful data transfer capabilities provided by SMULL without the need to understand the details of this protocol. Before starting the data transmission, it is necessary to configure the relevant parameters of SMULL to establish a network between the master and slave. By using the commands we provide, you can quickly establish the SMULL network. Please refer to the [example](#example) provided below for more details. The schematic of the entire system, showing the connection between the host and IN618 module, is illustrated in Figure 3.<br>
 ![Schematic](/images/smull_dt/fig3.png "Figure 3: Schematic")
 Typically, the host refers to various devices such as personal computers (PCs), laptops, microcontroller units (MCUs), and others. In the current architecture, the host and IN618 communicate through UART. The default settings for the UART in our system are illustrated below.<br>
 
@@ -800,7 +800,7 @@ Before the data transmission begins, it is essential to establish a network conn
 - Maximum length of downlink packet: 10bytes
 - Maximum length of uplink packet: 100bytes
 
-Two methods can be used to achieve the configuration. Method 1 requires the use of command 0xA043,whereas method 2 entails a combination of commands 0xA01A, 0xA012, 0xA014, 0xA018, 0xA016, 0xA01C, 0xA01E. Once the configuration is completed successfully, it is necessary to execute the reset command.  
+Two methods can be used to complete the configuration. Method 1 requires the use of command 0xA043, whereas method 2 entails a combination of commands 0xA01A, 0xA012, 0xA014, 0xA018, 0xA016, 0xA01C, 0xA01E. Once the configuration is completed successfully, it is necessary to execute the reset command.  
 
 **Method1:**<br>
 The command sequence issued by the master would be<br>
