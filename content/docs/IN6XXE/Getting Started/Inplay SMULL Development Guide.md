@@ -791,7 +791,7 @@ Response:    **0xA0 0xE1 0x00 0x01 B0**
 
 ## Example
 
-Before the data transmission begins, it is essential to establish a network connection (also known as paring). In order to ensure successful network communication, the SMULL settings for both the master and each slave must be identical, with the exception of the mode and slave ID. Configuring the SMULL settings using UART can facilitate this consistency between the master and all slaves. To illustrate the process of setting up a network, we will provide an example. Each parameter for the network is presented below.<br>
+Before initiating data transmission, it is crucial to set up a network connection - a process also referred to as pairing. To guarantee effective network communication, it is imperative that the SMULL configurations of both the master and each slave must be identical, with the exception of the mode and slave ID. Employing UART for SMULL configuration paves the way for this essential uniformity between the master and all slave devices. To elucidate this setup procedure, we will walk through an illustrative example. The specifications for each network parameter are detailed hereinbelow.<br>
 - Mode: (master: 0x01, slave: 0x00)
 - Slave number: 4
 - Slave Id: (0x00 ~ 0x03), master will ignore this value
