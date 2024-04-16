@@ -424,7 +424,7 @@ Response:   **0xA0 0x34 0x00 0x01 B0**
 |0x34|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00:success<br>B0=0x01:command sent is too short|
+|B0|B0=0x00:success<br>B0=0x01:The command is too short|
 
 Notice:
 
@@ -455,7 +455,7 @@ Response:    **0xA0 0x40 0x00 0x01 B0**
 |0x40|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: Success<br>B0=0x01: The command sent is short<br>B0=0x02: In slave mode, this command will be ignored|
+|B0|B0=0x00: Success<br>B0=0x01: The command is too short<br>B0=0x02: In slave mode, this command will be ignored|
 
 
 ### **Get SMULL status: 0xA041**
@@ -476,7 +476,7 @@ Response:   **0xA0 0x41 0x00 0x01 B0**
 |0x41|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: it means the SMULL is successfully initialized<br>B0=0xFF: it means the SMULL is not initialized.|
+|B0|B0=0x00: It means the SMULL is successfully initialized<br>B0=0xFF: It means the SMULL is not initialized.|
 
 Notice:
 
