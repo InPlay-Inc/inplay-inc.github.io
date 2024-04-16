@@ -446,7 +446,7 @@ Send:    **0xA0 0x40 0x00 0x04 B0 B1 B2 B3**
 |B2|Broadcast Duration|
 |B3|Broadcast Duration (LSB)|
 
-The broadcast duration indicates the intended time period for the master to transmit new settings, measured in milliseconds. If this value is set to zero, the default value of 3000ms is utilized. To ensure successful reception by each slave, it is recommended to set this value to a minimum of 3000ms.
+The broadcast duration in milliseconds indicates how long the broadcast will last. If this value is set to zero, the default value of 3000ms is utilized. To ensure successful reception by each slave, it is recommended to set this value to a minimum of 3000ms.
 
 Response:    **0xA0 0x40 0x00 0x01 B0**
 |Byte|Comment|
