@@ -483,9 +483,9 @@ Notice:
 > *If the initialization of SMULL fails, any SMULL related command that is issued will result in receiving the following response containing an error code 0xFF.<br>**Command Code** 0x00 0x01 0xFF*
 
 
-### **Read SMULL settings: 0xA042**
+### **Get SMULL configurations: 0xA042**
 
-The SMULL settings consist of 7 parameters: *mode, slave number, slave ID, PHY rate, SYNC address, maximum length of downlink private packet and maximum length of uplink private packet*. You can get all settings by issuing this command.<br>
+The SMULL configurations consist of 7 parameters: *mode, slave number, slave ID, PHY rate, SYNC address, maximum length of downlink private packet and maximum length of uplink private packet*. You can get all settings by issuing this command.<br>
 
 Send:    **0xA0 0x42 0x00 0x00**
 |Byte|Comment|
@@ -528,9 +528,9 @@ Failure response:  **0xA0 0x42 0x00 0x01 0x01**
 |0x01|Fail|
 
 
-### **Write SMULL settings: 0xA043**
+### **Set SMULL configurations: 0xA043**
 
-As aforementioned, the SMULL settings include 7 parameters. You can set these parameters all at once by issuing this command. 
+As aforementioned, the SMULL configurations include 7 parameters. You can set these parameters all at once by issuing this command. 
 
 Send:    **0xA0 0x43 0x00 0x0C B0~B11**
 |Byte|Comment|
