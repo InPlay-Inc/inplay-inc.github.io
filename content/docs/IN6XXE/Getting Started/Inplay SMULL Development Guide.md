@@ -306,7 +306,7 @@ Response:   **0xA0 0x1B 0x00 0x02 B0 B1**
 Length = (B0 << 8) | B1
 
 ### **Set Maximum Length of Downlink Private Packet: 0xA01C**
-The default length of downlink private packet is 6 bytes. Ensure that the value you set is equal to or greater than 6.
+The default length of downlink private packet is 6 bytes. Ensure that the value you set is equal to or greater than 6. This length should be less than 200.
 
 Send:    **0xA0 0x1C 0x00 0x02 B0 B1**
 |Byte|Comment|
@@ -353,6 +353,7 @@ Response:   **0xA0 0x1D 0x00 0x02 B0 B1**
 |B1|maximum length of uplink private packet (LSB)|
 
 ### **Set Maximum Length of Uplink Private Packet: 0xA01E**
+This length should be less than 200.
 
 Send:    **0xA0 0x1E 0x00 0x02 B0 B1**
 |Byte|Comment|
