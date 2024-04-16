@@ -349,8 +349,8 @@ Response:   **0xA0 0x1D 0x00 0x02 B0 B1**
 |0x1D|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x02|Data Length (LSB)|
-|B0|maximum length of uplink private packet (MSB)|
-|B1|maximum length of uplink private packet (LSB)|
+|B0|Maximum length of uplink private packet (MSB)|
+|B1|Maximum length of uplink private packet (LSB)|
 
 ### **Set Maximum Length of Uplink Private Packet: 0xA01E**
 This length should be less than 200.
@@ -362,8 +362,8 @@ Send:    **0xA0 0x1E 0x00 0x02 B0 B1**
 |0x1E|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x02|Data Length (LSB)|
-|B0|maximum length of uplink private packet (MSB)|
-|B1|maximum length of uplink private packet (LSB)|
+|B0|Maximum length of uplink private packet (MSB)|
+|B1|Maximum length of uplink private packet (LSB)|
 
 Response:   **0xA0 0x1E 0x00 0x01 B0**
 |Byte|Comment|
