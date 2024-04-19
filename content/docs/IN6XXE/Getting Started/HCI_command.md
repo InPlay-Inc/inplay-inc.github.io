@@ -60,7 +60,7 @@ Command Complete Event: `0x04, 0x0E, <Packet len ><Commands Available>, 0x01, 0x
 - `<status>` – `0x00` means the command was successful. If not `0x00`, it means an error. The error list reference is to *Volume 2 Part D of the Core Spec for a list of error codes*.
 
 ## Command Parameters
-
+*Table 1*
 - packet type:
   
   | Packet type |Payload                                                        |
@@ -74,10 +74,10 @@ Command Complete Event: `0x04, 0x0E, <Packet len ><Commands Available>, 0x01, 0x
   | 0x06        | Repeated ‘00001111’                                            |
   | 0x07        | Repeated ‘01010101’                                            |
 
-*Table 1*
+
 
 ----
-
+*Table 2*
 - phy:
   
   | Phy  | Description                                                  |
@@ -87,10 +87,10 @@ Command Complete Event: `0x04, 0x0E, <Packet len ><Commands Available>, 0x01, 0x
   | 0x03 | Transmitter set to use the LE Coded PHY with S=8 data coding |
   | 0x04 | Transmitter set to use the LE Coded PHY with S=2 data coding |
 
-*Table 2*
+
 
 ----
-
+*Table 3*
 - tx power:
   
   | Value | TX Power  |
@@ -124,7 +124,7 @@ Command Complete Event: `0x04, 0x0E, <Packet len ><Commands Available>, 0x01, 0x
   | 0x1A  | -20dBm    |
   | 0x1B  | -43dBm    |
 
-*Table 3*
+
 
 ----
 
@@ -231,7 +231,7 @@ Complete Event: `0x04, 0x0E, 0x05, 0x01, 0x03, 0xFC, <status> ，<RSSI>`
 - RSSI: value of RSSI, it is a  int8\_t value. Example: return value is 0xCD, RSSI=0xCD-0x100=-51dBm
 10. ### Vendor TX command
 
-Command：`0x01, 0x0D, 0xFC, 0x06, <channel>, <data length>, <packet type>, <phy>, <midx>, <continue tx>`
+Command：`0x01, 0x0D, 0xFC, 0x08, <channel>, <data length>, <packet type>, <phy>, <midx>, <continue tx>, <packet number byte 0>, <packet number byte 1>`
 
 - channel: See  “Start Enhanced TX Test”
 
@@ -248,10 +248,20 @@ Command：`0x01, 0x0D, 0xFC, 0x06, <channel>, <data length>, <packet type>, <phy
   - 1: Continuous TX
   
   - 0: Normal TX
+- packet number: TX packet number, 0 is TX forever.
+Note:
+	If packet number is not 0, current is a little higher.
 
 Complete Event:`0x04, 0x0E, 0x04, 0x01, 0x0D, 0xFC, <status>`
 
-11.  ### Set Cap
+21. ### Vendor TX end 
+    Stop TX and send back TX packets,
+    Command: `0x01, 0x53, 0xFC, 0x00`
+
+	Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x53, 0xFC, <status> ,<packet number byte 0>, <packet number byte 1>`
+	- packet number: TX packet number
+
+22.   ### Set Cap
 
 Command: `0x01, 0x05, 0xFC, 0x01 <Cap>`
 
@@ -361,28 +371,20 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
     - Version: 32bit HCI command SW version number
 
 
-20. ### Set TX Enable Pin
+20. ### Set TRX Enable Pin
     
-    Command: `0x01, 0x44, 0xFC, 0x04, <tx en port>, <tx en pin>, <bias port> <bias pin>`
+    Command: `0x01, 0x44, 0xFC, 0x06,  <bias port> <bias pin>, <tx en port>, <tx en pin>,<rx en port>, <rx en pin>`
+	- bias port: PA bias port, set to 0xFF if it is invaild
+	- bias pin: PA bias pin, set to 0xFF if it is invaild	
 	- tx en port: TX enable port
 	- tx en pin: TX enable pin
-	- bias port: PA bias port, set to 0xFF if it is invaild
-	- bias pin: PA bias pin, set to 0xFF if it is invaild
+	- rx en port: RX enable port
+	- rx en pin: RX enable pin
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x44, 0xFC, <status> `
 
-21. ### Set RX Enable Pin
-    
-    Command: `0x01, 0x45, 0xFC, 0x02, <port>, <pin>`
-	- port: RX enable port
-	- pin: RX enable pin. 
-  
-  	Only GPIO23 and GPIO25 is valid for this command.
 
-	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x45, 0xFC, <status> `
-
-
-22. ### GPIO Output
+21. ### GPIO Output
     
     Command: `0x01, 0x0B, 0xFC, 0x03, <port>, <pin>, <output>`
 	- port: GPIO port
@@ -391,7 +393,7 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
   
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0B, 0xFC, <status> `
 
-23. ### GPIO input
+22. ### GPIO input
     
     Command: `0x01, 0x0C, 0xFC, 0x03, <port>, <pin>, <pull>`
 	- port: GPIO port
@@ -401,12 +403,7 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
   
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0C, 0xFC, <status> <GPIO input>`
 	- GPIO input: 1 is high and 0 is low
-21. ### Vendor TX end 
-    Stop TX and send back TX packets,
-    Command: `0x01, 0x53, 0xFC, 0x00`
 
-	Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x53, 0xFC, <status> ,<packet number byte 0>, <packet number byte 1>`
-	- packet number: TX packet number
 22. ### Get ADC sample
     
     Command: `0x01, 0x43, 0xFC, 0x01, <ADC channel>`
