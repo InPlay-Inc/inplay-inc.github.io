@@ -27,7 +27,7 @@ The master can be configured to send a broadcast packet to all the slaves at eac
 *Broadcast packet: Slaves do not acknowledge the reception of a broadcast packet.*
 
 ## Overview of transparent data transmission
-Many modern applications rely on wireless data transmission; however, end-users often lack knowledge or interest in the underlying wireless technologies. Consequently, we have designed a mechanism that allows users to conveniently utilize the powerful data transfer capabilities provided by SMULL without the need to understand the details of this protocol. However, before starting the data transmission, it is necessary to configure the relevant parameters of SMULL to establish a network between the master and slave. By using the commands we provide, you can quickly establish the SMULL network. Please refer to the [example](#example) provided below for more details. The schematic of the entire system, showing the connection between the host and IN618 module, is illustrated in Figure 3.<br>
+Many modern applications rely on wireless data transmission; however, end-users often lack knowledge or interest in the underlying wireless technologies. Consequently, we have designed a mechanism that allows users to conveniently utilize the powerful data transfer capabilities provided by SMULL without the need to understand the details of this protocol. Before starting the data transmission, it is necessary to configure the relevant parameters of SMULL to establish a network between the master and slave. By using the commands we provide, you can quickly establish the SMULL network. Please refer to the [example](#example) provided below for more details. The schematic of the entire system, showing the connection between the host and IN618 module, is illustrated in Figure 3.<br>
 ![Schematic](/images/smull_dt/fig3.png "Figure 3: Schematic")
 Typically, the host refers to various devices such as personal computers (PCs), laptops, microcontroller units (MCUs), and others. In the current architecture, the host and IN618 communicate through UART. The default settings for the UART in our system are illustrated below.<br>
 
@@ -306,7 +306,7 @@ Response:   **0xA0 0x1B 0x00 0x02 B0 B1**
 Length = (B0 << 8) | B1
 
 ### **Set Maximum Length of Downlink Private Packet: 0xA01C**
-The default length of downlink private packet is 6 bytes. Ensure that the value you set is equal to or greater than 6.
+The default length of downlink private packet is 6 bytes. Ensure that the value you set is equal to or greater than 6. This length should be less than 200.
 
 Send:    **0xA0 0x1C 0x00 0x02 B0 B1**
 |Byte|Comment|
@@ -349,10 +349,11 @@ Response:   **0xA0 0x1D 0x00 0x02 B0 B1**
 |0x1D|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x02|Data Length (LSB)|
-|B0|maximum length of uplink private packet (MSB)|
-|B1|maximum length of uplink private packet (LSB)|
+|B0|Maximum length of uplink private packet (MSB)|
+|B1|Maximum length of uplink private packet (LSB)|
 
 ### **Set Maximum Length of Uplink Private Packet: 0xA01E**
+This length should be less than 200.
 
 Send:    **0xA0 0x1E 0x00 0x02 B0 B1**
 |Byte|Comment|
@@ -361,8 +362,8 @@ Send:    **0xA0 0x1E 0x00 0x02 B0 B1**
 |0x1E|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x02|Data Length (LSB)|
-|B0|maximum length of uplink private packet (MSB)|
-|B1|maximum length of uplink private packet (LSB)|
+|B0|Maximum length of uplink private packet (MSB)|
+|B1|Maximum length of uplink private packet (LSB)|
 
 Response:   **0xA0 0x1E 0x00 0x01 B0**
 |Byte|Comment|
@@ -424,7 +425,7 @@ Response:   **0xA0 0x34 0x00 0x01 B0**
 |0x34|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00:success<br>B0=0x01:command sent is too short|
+|B0|B0=0x00:success<br>B0=0x01:The command is too short|
 
 Notice:
 
@@ -446,7 +447,7 @@ Send:    **0xA0 0x40 0x00 0x04 B0 B1 B2 B3**
 |B2|Broadcast Duration|
 |B3|Broadcast Duration (LSB)|
 
-The broadcast duration indicates the intended time period for the master to transmit new settings, measured in milliseconds. If this value is set to zero, the default value of 3000ms is utilized. To ensure successful reception by each slave, it is recommended to set this value to a minimum of 3000ms.
+The broadcast duration in milliseconds indicates how long the broadcast will last. If this value is set to zero, the default value of 3000ms is utilized. To ensure successful reception by each slave, it is recommended to set this value to a minimum of 3000ms.
 
 Response:    **0xA0 0x40 0x00 0x01 B0**
 |Byte|Comment|
@@ -455,7 +456,7 @@ Response:    **0xA0 0x40 0x00 0x01 B0**
 |0x40|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: Success<br>B0=0x01: The command sent is short<br>B0=0x02: In slave mode, this command will be ignored|
+|B0|B0=0x00: Success<br>B0=0x01: The command is too short<br>B0=0x02: In slave mode, this command will be ignored|
 
 
 ### **Get SMULL status: 0xA041**
@@ -476,16 +477,16 @@ Response:   **0xA0 0x41 0x00 0x01 B0**
 |0x41|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: it means the SMULL is successfully initialized<br>B0=0xFF: it means the SMULL is not initialized.|
+|B0|B0=0x00: It means the SMULL is successfully initialized<br>B0=0xFF: It means the SMULL is not initialized.|
 
 Notice:
 
 > *If the initialization of SMULL fails, any SMULL related command that is issued will result in receiving the following response containing an error code 0xFF.<br>**Command Code** 0x00 0x01 0xFF*
 
 
-### **Read SMULL settings: 0xA042**
+### **Get SMULL configurations: 0xA042**
 
-The SMULL settings consist of 7 parameters: *mode, slave number, slave ID, PHY rate, SYNC address, maximum length of downlink private packet and maximum length of uplink private packet*. You can get all settings by issuing this command.<br>
+The SMULL configurations consist of 7 parameters: *mode, slave number, slave ID, PHY rate, SYNC address, maximum length of downlink private packet and maximum length of uplink private packet*. You can get all settings by issuing this command.<br>
 
 Send:    **0xA0 0x42 0x00 0x00**
 |Byte|Comment|
@@ -528,9 +529,9 @@ Failure response:  **0xA0 0x42 0x00 0x01 0x01**
 |0x01|Fail|
 
 
-### **Write SMULL settings: 0xA043**
+### **Set SMULL configurations: 0xA043**
 
-As aforementioned, the SMULL settings include 7 parameters. You can set these parameters all at once by issuing this command. 
+As aforementioned, the SMULL configurations include 7 parameters. You can set these parameters all at once by issuing this command. 
 
 Send:    **0xA0 0x43 0x00 0x0C B0~B11**
 |Byte|Comment|
@@ -654,7 +655,7 @@ When the master receives data from the slave(s) or vice versa, the received data
 |...|...|
 |Bn|last byte of data|
 
-### **Read UART Configuration: 0xA063**
+### **Get UART Configuration: 0xA063**
 This command *read* the UART configuration.
 
 Send:    **0xA0 0x63 0x00 0x00**
@@ -791,7 +792,7 @@ Response:    **0xA0 0xE1 0x00 0x01 B0**
 
 ## Example
 
-Before the data transmission begins, it is essential to establish a network connection (also known as paring). In order to ensure successful network communication, the SMULL settings for both the master and each slave must be identical, with the exception of the mode and slave ID. Configuring the SMULL settings using UART can facilitate this consistency between the master and all slaves. To illustrate the process of setting up a network, we will provide an example. Each parameter for the network is presented below.<br>
+Before initiating data transmission, it is crucial to set up a network connection - a process also referred to as pairing. To guarantee effective network communication, it is imperative that the SMULL configurations of both the master and each slave must be identical, with the exception of the mode and slave ID. Employing UART for SMULL configuration paves the way for this essential uniformity between the master and all slave devices. To elucidate this setup procedure, we will walk through an illustrative example. The specifications for each network parameter are detailed hereinbelow.<br>
 - Mode: (master: 0x01, slave: 0x00)
 - Slave number: 4
 - Slave Id: (0x00 ~ 0x03), master will ignore this value
@@ -800,7 +801,7 @@ Before the data transmission begins, it is essential to establish a network conn
 - Maximum length of downlink packet: 10bytes
 - Maximum length of uplink packet: 100bytes
 
-Two methods can be used to achieve the configuration. Method 1 requires the use of command 0xA043,whereas method 2 entails a combination of commands 0xA01A, 0xA012, 0xA014, 0xA018, 0xA016, 0xA01C, 0xA01E. Once the configuration is completed successfully, it is necessary to execute the reset command.  
+Two methods can be used to complete the configuration. Method 1 requires the use of command 0xA043, whereas method 2 entails a combination of commands 0xA01A, 0xA012, 0xA014, 0xA018, 0xA016, 0xA01C, 0xA01E. Once the configuration is completed successfully, it is necessary to execute the reset command.  
 
 **Method1:**<br>
 The command sequence issued by the master would be<br>
