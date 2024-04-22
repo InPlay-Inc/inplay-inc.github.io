@@ -312,7 +312,7 @@ Example:
 
 > *//Start BLE advertising only scan every 1000ms on all 37 to 39 channels.<br>→03 00 00 00 00 00 E8 03*
 
-> *//Start Transceiver with sync interval 100ms.<br>→03 01 01 64 00*
+> *//Start Transceiver with sync interval 100ms.<br>→03 01 64 00*
 
 > *//Error Scanner parameter not set (0x0111).<br>←03 11 01*
 
