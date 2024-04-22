@@ -513,8 +513,8 @@ Command:
         <td><font size="0">6</font></td>
         <td><font size="0">SDR Node Type</font></td>
         <td><font size="0">1</font></td>
-        <td><font size="0">4</font></td>
-        <td style="white-space: pre;"><font size="0">4: SDR Broadcast only Node <br>6: SDR Node that support Private Data Exchange</font></td>
+        <td><font size="0">6</font></td>
+        <td><font size="0">6: SDR Node that support Private Data Exchange</font></td>
     </tr>
     <tr>
         <td><font size="0">7</font></td>
