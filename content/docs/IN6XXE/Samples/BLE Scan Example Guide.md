@@ -27,7 +27,7 @@ We can get the status of development board according to Uart Log. The following 
 - **start scan process:** `start scan`
 - **get advertising data from other BLE device:** `*** ADV DATA FROM...*** ` , `...`means the address of other device. 
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

@@ -27,7 +27,7 @@ We can get the status of keyboard on uart log.
 - **press button:** `press key: row:... col:...`
 - **release button:** `release row:... col:...`
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

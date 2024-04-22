@@ -97,7 +97,7 @@ We can get the trigger interrupt status on UART log.
 
   When TRIG_CON_PIN experiences a rising edge or a falling edge,  compare the value in register with the expected value.
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
   ​     
 

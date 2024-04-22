@@ -57,7 +57,7 @@ We can get the status of gpio to Uart Log and LED. The following are samples,
 
 - **Wake up:**`power up src=23`. number 23 means wake-up source, we can find its meaning in `pm_ws`.
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

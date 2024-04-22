@@ -40,7 +40,7 @@ We can get the status of both central and peripheral according to Uart Log. The 
 - **disconnect** `*** Disconnect ***, reason=...`
 - **Receive data** `TRX RX: len=...`
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

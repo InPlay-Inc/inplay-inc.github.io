@@ -77,7 +77,7 @@ We can get the status of gpio to Uart Log.
 
 - **TIMER_MANUAL:** Start the timer in manual mode, where it counts down each time the corresponding register is written.
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

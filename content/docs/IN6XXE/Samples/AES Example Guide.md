@@ -26,7 +26,7 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 
 We can get the status of encryption to UART Log. If test pass, `...passed` or `... successed  `will be shown on UART log.
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

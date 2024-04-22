@@ -28,7 +28,7 @@ We can get the status of both master and slave according to Uart Log and LED.
 
 - When we transmit or receive data, we can get information on uart log.
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

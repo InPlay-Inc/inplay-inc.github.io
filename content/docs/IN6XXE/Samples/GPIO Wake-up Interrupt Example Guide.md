@@ -43,7 +43,7 @@ We can get the status of gpio according to Uart Log. The following are samples,
 
 - Power down `power down`
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
   
 
