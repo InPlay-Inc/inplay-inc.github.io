@@ -312,7 +312,7 @@ Example:
 
 > *//Start BLE advertising only scan every 1000ms on all 37 to 39 channels.<br>→03 00 00 00 00 00 E8 03*
 
-> *//Start Transceiver with sync interval 100ms.<br>→03 01 01 64 00*
+> *//Start Transceiver with sync interval 100ms.<br>→03 01 64 00*
 
 > *//Error Scanner parameter not set (0x0111).<br>←03 11 01*
 
@@ -513,8 +513,8 @@ Command:
         <td><font size="0">6</font></td>
         <td><font size="0">SDR Node Type</font></td>
         <td><font size="0">1</font></td>
-        <td><font size="0">4</font></td>
-        <td style="white-space: pre;"><font size="0">4: SDR Broadcast only Node <br>6: SDR Node that support Private Data Exchange</font></td>
+        <td><font size="0">6</font></td>
+        <td><font size="0">6: SDR Node that support Private Data Exchange</font></td>
     </tr>
     <tr>
         <td><font size="0">7</font></td>
