@@ -1,5 +1,5 @@
 ---
 weight: 10
-bookCollapseSection: true
+bookCollapseSection: false
 title: "IN6XXE"
 ---
