@@ -1,4 +1,8 @@
-# Bluetooth Scan Example Guide
+---
+title: "BLE Scan Sample"
+---
+
+# Bluetooth Scan Sample
 
 ## Overview
 
@@ -16,7 +20,7 @@ In Bluetooth Low Energy (BLE), scanning is the process where a BLE central devic
 
 ## Building
 
-To build the sample with keil, follow the steps listed on the [quick start](https://inplay-inc.github.io/docs/in6xxe/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
+To build the sample with keil, follow the steps listed on the [quick start](https://inplay-inc.github.io/docs/in6xxe/getting-started/installation/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
 
 
 

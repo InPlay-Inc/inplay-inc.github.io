@@ -1,4 +1,9 @@
-# Debug reference
+---
+title: "Debug Reference"
+weight: 10
+---
+
+# Debug Reference
 
 ## Configuration and Connection during Debug
 

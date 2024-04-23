@@ -1,4 +1,8 @@
-# Keyboard Routine Guide
+---
+title: "Keyboard Sample"
+---
+
+# Keyboard Sample
 
 ## Overview
 
@@ -16,7 +20,7 @@ A matrix keyboard is a type of keyboard that uses a grid of buttons or keys arra
 
 ## Building
 
-To build the sample with keil, follow the steps listed on the [quick start](https://inplay-inc.github.io/docs/in6xxe/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
+To build the sample with keil, follow the steps listed on the  [quick start](https://inplay-inc.github.io/docs/in6xxe/getting-started/installation/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
 
 
 

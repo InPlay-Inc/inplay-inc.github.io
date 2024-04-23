@@ -1,4 +1,8 @@
-# ECC Guide
+---
+title: "ECC Sample"
+---
+
+# ECC Sample
 
 
 ## Overview 
@@ -9,7 +13,7 @@ ECC (Error Correction Code) is an encoding technology used for detecting and cor
 
 ## Building
 
-To build the sample with keil, follow the steps listed on the [quick start](https://inplay-inc.github.io/docs/in6xxe/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
+To build the sample with keil, follow the steps listed on the [quick start](https://inplay-inc.github.io/docs/in6xxe/getting-started/installation/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
 
 
 

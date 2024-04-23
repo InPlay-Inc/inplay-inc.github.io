@@ -1,4 +1,8 @@
-# Bluetooth Advertising Example Guide
+---
+title: "BLE advertising Sample"
+---
+
+# BLE Advertising Sample
 
 ## Overview
 
@@ -16,7 +20,7 @@ Bluetooth advertising is based on the transmission of advertising packets. An ad
 
 ## Building
 
-To build the sample with keil, follow the steps listed on the [quick start](https://inplay-inc.github.io/docs/in6xxe/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
+To build the sample with keil, follow the steps listed on the  [quick start](https://inplay-inc.github.io/docs/in6xxe/getting-started/installation/quick-start.html) page in the IN6xxE  of Inplay Doc. You may be able to solve questions on that webpage.
 
 
 
