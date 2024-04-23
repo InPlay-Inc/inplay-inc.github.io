@@ -1,5 +1,5 @@
 ---
 weight: 10
-bookCollapseSection: false
+bookCollapseSection: true
 title: "Solutions"
 ---

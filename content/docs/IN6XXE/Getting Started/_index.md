@@ -1,5 +1,5 @@
 ---
 weight: 1
-bookCollapseSection: false
+bookCollapseSection: true
 title: "Getting Started"
 ---

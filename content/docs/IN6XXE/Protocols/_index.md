@@ -1,5 +1,5 @@
 ---
 weight: 20
-bookCollapseSection: false
+bookCollapseSection: true
 title: "Protocols"
 ---
