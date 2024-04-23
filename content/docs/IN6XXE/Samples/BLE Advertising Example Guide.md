@@ -30,7 +30,7 @@ We can get the status of development board according to Uart Log. The following 
 
 - **disconnect** `*** Disconnect ***, reason=...`
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

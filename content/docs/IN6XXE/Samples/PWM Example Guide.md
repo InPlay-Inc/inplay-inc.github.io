@@ -60,7 +60,7 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 
 We can get the status of development board according to terminal emulator.
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
 
 

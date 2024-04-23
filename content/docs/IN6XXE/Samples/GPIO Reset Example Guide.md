@@ -47,7 +47,7 @@ We can get the status of gpio to Uart Log and LED. The following are samples,
 
 - **reset success:**`CHIP ID = ...`
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
   
 

@@ -58,7 +58,7 @@ We can get the status of sample value, test content and value according to UART 
 
 - **converted value**: here is `3294,8mV`
 
-More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/samples/Debug-Guide) page.
+More information may be found in  [debug guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/debug-guide) page.
 
   
 
