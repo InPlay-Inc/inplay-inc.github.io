@@ -1,5 +1,5 @@
 ---
 weight: 10
 bookCollapseSection: true
-title: "Modbus"
+title: "Wireless Modbus Network"
 ---
