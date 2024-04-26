@@ -402,7 +402,7 @@ Response:   **0xA0 0x33 0x00 0x04 B0 B1 B2 B3**
 |B3|Period (LSB)|
 
 ### **Set Period of Heartbeat Packet: 0xA034**
-Users can change the period of the heartbeat packet by issuing this command. 
+Users can change the sending interval of the heartbeat packet by issuing this command. 
 
 Send:    **0xA0 0x34 0x00 0x04 B0 B1 B2 B3**
 |Byte|Comment|
