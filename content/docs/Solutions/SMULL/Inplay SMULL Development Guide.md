@@ -416,7 +416,6 @@ Send:    **0xA0 0x34 0x00 0x04 B0 B1 B2 B3**
 |B2|Period|
 |B3|Period (LSB)|
 
-If the period is zero, the default value (1000ms) will be used.
 
 Response:   **0xA0 0x34 0x00 0x01 B0**
 |Byte|Comment|
