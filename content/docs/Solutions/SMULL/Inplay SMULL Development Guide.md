@@ -616,7 +616,7 @@ Response:   **0xA0 0x48 0x00 0x01 B0**
 |B0|B0=0x00: Success<br>B0=0x01: Fail<br>B0=0x02: The length of transmitted data is too long|
 
 ②Master transmits data. The master can transmit three types of packets to the slave: private, public
-and broadcast. In current firmware, we only support private packet.
+and broadcast. In current firmware, we only support private packet and broadcast packet.
 
 Send:    **0xA0 0x48 D0 D1 T0 S0 B0~Bn**
 |Byte|Comment|
@@ -626,7 +626,7 @@ Send:    **0xA0 0x48 D0 D1 T0 S0 B0~Bn**
 |D0|Data Length (MSB)|
 |D1|Data Length (LSB)|
 |T0|Packet type<br>0x00: broadcast<br> 0x01: public<br> 0x02: private|
-|S0|Slave ID. If sending a private packet, it is necessary to specify which slave it is sent to.|
+|S0|If the packet type is private, this byte represents the ID of the slave.<br> If the packet type is broadcast, 0 indicates to stop broadcasting, while 1 indicates to continuously broadcast this data packet.|
 |B0|first byte of data|
 |...|...|
 |Bn|last byte of data|
