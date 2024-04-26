@@ -430,7 +430,7 @@ Notice:
 
 > *The minimum heartbeat period is 500ms. Thus, the period you set should be larger than or equal to 500ms. If the period is less than 500ms, it will be automatically set to 500ms.*
 
-### **Slave connection status indication: 0xA03C**
+### **Slave connection status notification: 0xA03C**
 This command indicates the connection status between the slave and the master on the slave side. This is a notification command, which will be automatically sent when the status of the slave changes.
 
 Response:   **0xA0 0x3C 0x00 0x01 B0**
