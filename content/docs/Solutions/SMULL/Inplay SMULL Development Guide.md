@@ -431,6 +431,18 @@ Notice:
 
 > *The minimum heartbeat period is 500ms. Thus, the period you set should be larger than or equal to 500ms. If the period is less than 500ms, it will be automatically set to 500ms.*
 
+### **Slave connection status indication: 0xA03C**
+This command indicates the connection status between the slave and the master. This is a notification command, which will be automatically sent when the status of the slave changes.
+
+Response:   **0xA0 0x3C 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x3C|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|status: 1-The slave connects to the master, 2-The slave disconnects to the master.|
+
 
 ### **Broadcast SMULL Settings: 0xA040**
 With this command, the master can broadcast the SMULL settings. Once the network has been established, the master can use this command to broadcast the new SMULL-related parameters to all the slaves. The slave will update its settings and reset automatically upon receiving new settings broadcasted by the master.
