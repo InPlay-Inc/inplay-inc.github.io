@@ -378,7 +378,7 @@ Notice:
 
 > *After successfully setting the maximum length of uplink private packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1.<br><br>After successfully setting the maximum length of uplink private packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1.*
 
-### **Get Period of Heartbeat Packet: 0xA033**
+### **Get the Interval of Heartbeat Packet: 0xA033**
 In order to track the connection status of the network, heartbeat packet is periodically sent between the master and slave(s). Users can get the period of the heartbeat packet by issuing this command. The default value is 1000ms.
 
 Send:    **0xA0 0x33 0x00 0x00**
@@ -401,7 +401,7 @@ Response:   **0xA0 0x33 0x00 0x04 B0 B1 B2 B3**
 |B2|Period|
 |B3|Period (LSB)|
 
-### **Set Period of Heartbeat Packet: 0xA034**
+### **Set the Interval of Heartbeat Packet: 0xA034**
 Users can change the sending interval of the heartbeat packet by issuing this command. 
 
 Send:    **0xA0 0x34 0x00 0x04 B0 B1 B2 B3**
@@ -430,7 +430,7 @@ Notice:
 
 > *The minimum heartbeat period is 500ms. Thus, the period you set should be larger than or equal to 500ms. If the period is less than 500ms, it will be automatically set to 500ms.*
 
-### **Slave connection status notification: 0xA03C**
+### **Slave Connection Status Notification: 0xA03C**
 This command indicates the connection status between the slave and the master on the slave side. This is a notification command, which will be automatically sent when the status of the slave changes.
 
 Response:   **0xA0 0x3C 0x00 0x01 B0**
