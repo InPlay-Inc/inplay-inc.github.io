@@ -812,6 +812,28 @@ Response:    **0xA0 0xE1 0x00 0x01 B0**
 |0x01|Data Length (LSB)|
 |B0|B0=0x00: Success<br>B0=0x01: Fail|
 
+### **Get Firmware Version Number: 0xA0EB**
+
+This command is used to get the firmware version.
+
+Send:    **0xA0 0xEB 0x00 0x00**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0xEB|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x00|Data Length (LSB)|
+
+Response:    **0xA0 0xEB 0x00 0x04 B0~B3**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0xEB|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x04|Data Length (LSB)|
+|B0~B3|Firmware Version. This version number is a string: "vX.X"|
+
+
 ## Example
 
 Before initiating data transmission, it is crucial to set up a network connection - a process also referred to as pairing. To guarantee effective network communication, it is imperative that the SMULL configurations of both the master and each slave must be identical, with the exception of the mode and slave ID. Employing UART for SMULL configuration paves the way for this essential uniformity between the master and all slave devices. To elucidate this setup procedure, we will walk through an illustrative example. The specifications for each network parameter are detailed hereinbelow.<br>
