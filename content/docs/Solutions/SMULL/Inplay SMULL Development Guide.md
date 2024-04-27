@@ -433,7 +433,7 @@ Notice:
 ### **Successful Pairing Notification: 0xA03B**
 This command indicates that all slaves are successfully paired with the master. This is a notification command on the master side, which will be automatically sent when all slaves are successfully paired with the master.
 
-Response:   **0xA0 0x3B 0x00 0x01 B0**
+Notification:   **0xA0 0x3B 0x00 0x01 B0**
 |Byte|Comment|
 |---|---|
 |0xA0|Command Code (MSB)|
@@ -444,7 +444,7 @@ Response:   **0xA0 0x3B 0x00 0x01 B0**
 ### **Slave Connection Status Notification: 0xA03C**
 This command indicates the connection status between the slave and the master. This is a notification command on the slave side, which will be automatically sent when the status of the slave changes.
 
-Response:   **0xA0 0x3C 0x00 0x01 B0**
+Notification:   **0xA0 0x3C 0x00 0x01 B0**
 |Byte|Comment|
 |---|---|
 |0xA0|Command Code (MSB)|
