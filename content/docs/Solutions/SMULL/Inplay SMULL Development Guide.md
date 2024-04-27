@@ -432,6 +432,7 @@ Notice:
 
 ### **Successful Pairing Notification: 0xA03B**
 This command indicates that all slaves are successfully paired with the master. This is a notification command on the master side, which will be automatically sent when all slaves are successfully paired with the master.
+
 Response:   **0xA0 0x3B 0x00 0x01 B0**
 |Byte|Comment|
 |---|---|
