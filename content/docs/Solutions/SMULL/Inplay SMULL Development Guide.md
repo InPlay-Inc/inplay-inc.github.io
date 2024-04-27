@@ -441,7 +441,7 @@ Response:   **0xA0 0x3B 0x00 0x01 B0**
 |0x00|Data Length (LSB)|
 
 ### **Slave Connection Status Notification: 0xA03C**
-This command indicates the connection status between the slave and the master on the slave side. This is a notification command, which will be automatically sent when the status of the slave changes.
+This command indicates the connection status between the slave and the master. This is a notification command on the slave side, which will be automatically sent when the status of the slave changes.
 
 Response:   **0xA0 0x3C 0x00 0x01 B0**
 |Byte|Comment|
