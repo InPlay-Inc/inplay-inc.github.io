@@ -541,7 +541,7 @@ Successful response: **0xA0 0x42 0x00 0x0E B0~B13**
 |B10|Maximum Length of Uplink Private Packet (MSB)|
 |B11|Maximum Length of Uplink Private Packet (LSB)|
 |B12|Maximum Length of Broadcast Packet (MSB)|
-|B13|Maximum Length of Broadcast Private Packet (LSB)|
+|B13|Maximum Length of Broadcast Packet (LSB)|
 
 Failure response:  **0xA0 0x42 0x00 0x01 0x01**
 |Byte|Comment|
