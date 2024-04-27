@@ -508,7 +508,7 @@ Notice:
 
 ### **Get SMULL configurations: 0xA042**
 
-The SMULL configurations consist of 7 parameters: *mode, slave number, slave ID, PHY rate, SYNC address, maximum length of downlink private packet and maximum length of uplink private packet*. You can get all settings by issuing this command.<br>
+The SMULL configurations consist of 8 parameters: *mode, slave number, slave ID, PHY rate, SYNC address, maximum length of downlink private packet, maximum length of uplink private packet and maximum length of broadcast packet*. You can get all settings by issuing this command.<br>
 
 Send:    **0xA0 0x42 0x00 0x00**
 |Byte|Comment|
@@ -520,14 +520,14 @@ Send:    **0xA0 0x42 0x00 0x00**
 
 The length of data in successful response differs from that in failure response.
 
-Successful response: **0xA0 0x42 0x00 0x0C B0~B11**
+Successful response: **0xA0 0x42 0x00 0x0E B0~B13**
 
 |Byte|Comment|
 |---|---|
 |0xA0|Command Code (MSB)|
 |0x42|Command Code (LSB)|
 |0x00|Data Length (MSB)|
-|0x0C|Data Length (LSB)|
+|0x0E|Data Length (LSB)|
 |B0|Mode<br>0x00: slave<br>0x01: master|
 |B1|Slave Number. The maximum number of slaves that is used in your application.|
 |B2|Slave ID. 0~ (slave number – 1). Master will ignore this value.|
@@ -540,6 +540,8 @@ Successful response: **0xA0 0x42 0x00 0x0C B0~B11**
 |B9|Maximum Length of Downlink Private Packet (LSB)|
 |B10|Maximum Length of Uplink Private Packet (MSB)|
 |B11|Maximum Length of Uplink Private Packet (LSB)|
+|B12|Maximum Length of Broadcast Packet (MSB)|
+|B13|Maximum Length of Broadcast Private Packet (LSB)|
 
 Failure response:  **0xA0 0x42 0x00 0x01 0x01**
 |Byte|Comment|
@@ -553,15 +555,15 @@ Failure response:  **0xA0 0x42 0x00 0x01 0x01**
 
 ### **Set SMULL configurations: 0xA043**
 
-As aforementioned, the SMULL configurations include 7 parameters. You can set these parameters all at once by issuing this command. 
+As aforementioned, the SMULL configurations include 8 parameters. You can set these parameters all at once by issuing this command. 
 
-Send:    **0xA0 0x43 0x00 0x0C B0~B11**
+Send:    **0xA0 0x43 0x00 0x0E B0~B11**
 |Byte|Comment|
 |---|---|
 |0xA0|Command Code (MSB)|
 |0x43|Command Code (LSB)|
 |0x00|Data Length (MSB)|
-|0x0C|Data Length (LSB)|
+|0x0E|Data Length (LSB)|
 |B0|Mode<br>0x00: slave<br>0x01: master|
 |B1|Slave Number. The maximum number of slaves that may be used in your application. This number must be less than or equal to the value of CFG_IPMAC_MAX_SLV_NUM. As of the current firmware, CFG_IPMAC_MAX_SLV_NUM is set at 64.|
 |B2|Slave ID. 0~ (slave number – 1). Master will ignore this value.|
@@ -574,6 +576,8 @@ Send:    **0xA0 0x43 0x00 0x0C B0~B11**
 |B9|Maximum Length of Downlink Private Packet (LSB)|
 |B10|Maximum Length of Uplink Private Packet (MSB)|
 |B11|Maximum Length of Uplink Private Packet (LSB)|
+|B12|Maximum Length of Broadcast Packet (MSB)|
+|B13|Maximum Length of Broadcast Packet (LSB)|
 
 Response:   **0xA0 0x43 0x00 0x01 B0**
 |Byte|Comment|
@@ -582,7 +586,7 @@ Response:   **0xA0 0x43 0x00 0x01 B0**
 |0x43|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: Success<br>B0=0x01: A general error<br>B0=0x02: Command length is short<br>B0=0x03: Invalid SMULL mode<br>B0=0x04: Invalid slave number<br>B0=0x05: Invalid slave Id<br>B0=0x06: Invalid PHY Rate<br>B0=0x07: Invalid SYNC address<br>B0=0x08: Invalid downlink packet size<br>B0=0x09: Invalid uplink packet size|
+|B0|B0=0x00: Success<br>B0=0x01: A general error<br>B0=0x02: Command length is short<br>B0=0x03: Invalid SMULL mode<br>B0=0x04: Invalid slave number<br>B0=0x05: Invalid slave Id<br>B0=0x06: Invalid PHY Rate<br>B0=0x07: Invalid SYNC address<br>B0=0x08: Invalid downlink packet size<br>B0=0x09: Invalid uplink packet size<br>B0=0x0A: Invalid broadcast packet size|
 
 ### **Query Connection Status of Each Slave: 0xA044**
 The user can get the connection status of each slave by issuing this command on the master side.
