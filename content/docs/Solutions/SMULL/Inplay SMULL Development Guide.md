@@ -430,6 +430,16 @@ Notice:
 
 > *The minimum heartbeat period is 500ms. Thus, the period you set should be larger than or equal to 500ms. If the period is less than 500ms, it will be automatically set to 500ms.*
 
+### **Successful Pairing Notification: 0xA03B**
+This command indicates that all slaves are successfully paired with the master. This is a notification command on the master side, which will be automatically sent when all slaves are successfully paired with the master.
+Response:   **0xA0 0x3B 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x3B|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x00|Data Length (LSB)|
+
 ### **Slave Connection Status Notification: 0xA03C**
 This command indicates the connection status between the slave and the master on the slave side. This is a notification command, which will be automatically sent when the status of the slave changes.
 
