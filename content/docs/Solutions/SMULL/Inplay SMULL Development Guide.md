@@ -828,14 +828,14 @@ Send:    **0xA0 0xEB 0x00 0x00**
 |0x00|Data Length (MSB)|
 |0x00|Data Length (LSB)|
 
-Response:    **0xA0 0xEB 0x00 0x04 B0~B3**
+Response:    **0xA0 0xEB 0x00 0x06 B0~B5**
 |Byte|Comment|
 |---|---|
 |0xA0|Command Code (MSB)|
 |0xEB|Command Code (LSB)|
 |0x00|Data Length (MSB)|
-|0x04|Data Length (LSB)|
-|B0~B3|Firmware Version. This version number is a string: "vX.X"|
+|0x06|Data Length (LSB)|
+|B0~B5|Firmware Version. This version number is a string: "vX.X.X"|
 
 
 ## Example
