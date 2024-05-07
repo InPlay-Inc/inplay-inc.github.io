@@ -664,7 +664,7 @@ Response:   **0xA0 0x48 0x00 0x01 B0**
 |0x48|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: Success<br>B0=0x01: Fail<br>B0=0x02: The length of transmitted data is too long<br>B0=0x03: Invalid slave ID|
+|B0|B0=0x00: Success<br>B0=0x01: Fail to transmit data<br>B0=0x02: The length of transmitted data is too long<br>B0=0x03: Invalid slave ID|
 
 ### **Receive Data: 0xA049**
 When the master receives data from the slave(s) or vice versa, the received data will be transmitted to the user in the following format.
