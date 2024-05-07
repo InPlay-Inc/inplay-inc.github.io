@@ -136,7 +136,7 @@ Response:   **0xA0 0x14 0x00 0x01 B0**
 
 Notice:
 
-> *After successful configuration, you must reset the chip by issuing the command 0xA0E1, otherwise, the slave ID will not be updated.*
+> *After successful configuration, you must reset the chip by issuing the command 0xA0E1 or pressing the reset button, otherwise, the slave ID will not be updated.*
 
 ### **Get SYNC Address (Network Address): 0xA015**
 This command *gets* the SYNC address. Each established network should have a unique SYNC address (also known as network address).
@@ -432,7 +432,7 @@ Notice:
 > *The minimum heartbeat period is 500ms. Thus, the period you set should be larger than or equal to 500ms. If the period is less than 500ms, it will be automatically set to 500ms.*
 
 ### **Successful Pairing Notification: 0xA03B**
-This command indicates that all slaves are successfully paired with the master. This is a notification command on the master side, which will be automatically sent when all slaves are successfully paired with the master.
+This command indicates that all slaves are successfully paired with the master. This is a notification command on the master side, which will be automatically sent to the host when all slaves are successfully paired with the master.
 
 Notification:   **0xA0 0x3B 0x00 0x01 B0**
 |Byte|Comment|
@@ -443,7 +443,7 @@ Notification:   **0xA0 0x3B 0x00 0x01 B0**
 |0x00|Data Length (LSB)|
 
 ### **Slave Connection Status Notification: 0xA03C**
-This command indicates the connection status between the slave and the master. This is a notification command on the slave side, which will be automatically sent when the status of the slave changes.
+This command indicates the connection status between the slave and the master. This is a notification command on the slave side, which will be automatically sent to the host when the status of the slave changes.
 
 Notification:   **0xA0 0x3C 0x00 0x01 B0**
 |Byte|Comment|
@@ -668,7 +668,7 @@ Response:   **0xA0 0x48 0x00 0x01 B0**
 |B0|B0=0x00: Success<br>B0=0x01: Fail to transmit data<br>B0=0x02: The length of transmitted data is too long<br>B0=0x03: Invalid slave ID|
 
 ### **Receive Data: 0xA049**
-When the master receives data from the slave(s) or vice versa, the received data will be transmitted to the user in the following format.
+This is a notification command. When the master receives data from the slave(s) or vice versa, the received data will be transmitted to the host in the following format. 
 
 **0xA0 0x49 D0 D1 S0 B0~Bn**
 |Byte|Comment|
