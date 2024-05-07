@@ -397,10 +397,10 @@ Response:   **0xA0 0x33 0x00 0x04 B0 B1 B2 B3**
 |0x33|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x04|Data Length (LSB)|
-|B0|Period (MSB)|
-|B1|Period|
-|B2|Period|
-|B3|Period (LSB)|
+|B0|Interval (MSB)|
+|B1|Interval|
+|B2|Interval|
+|B3|Interval (LSB)|
 
 ### **Set the Interval of Sending Heartbeat Packet: 0xA034**
 Users can change the interval of sending the heartbeat packet by issuing this command. 
@@ -412,10 +412,10 @@ Send:    **0xA0 0x34 0x00 0x04 B0 B1 B2 B3**
 |0x34|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x04|Data Length (LSB)|
-|B0|Period (MSB)|
-|B1|Period|
-|B2|Period|
-|B3|Period (LSB)|
+|B0|Interval (MSB)|
+|B1|Interval|
+|B2|Interval|
+|B3|Interval (LSB)|
 
 
 Response:   **0xA0 0x34 0x00 0x01 B0**
