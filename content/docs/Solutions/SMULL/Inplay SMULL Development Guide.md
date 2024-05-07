@@ -68,7 +68,8 @@ Response:   **0xA0 0x11 0x00 0x01 B0**
 |B0|Number of slaves|
 
 ### **Set Slave Number: 0xA012**
-This command is used to configure the number of slaves.The slave number should be less than (or equal to) the maximum slave number (CFG_IPMAC_MAX_SLV_NUM).
+This command is used to configure the number of slaves.The slave number should be less than (or equal to) the maximum slave number (CFG_IPMAC_MAX_SLV_NUM). In current firmware, the value of 
+CFG_IPMAC_MAX_SLV_NUM is 64.
 
 Send:    **0xA0 0x12 0x00 0x01 B0**
 |Byte|Comment|
@@ -90,7 +91,7 @@ Response:   **0xA0 0x12 0x00 0x01 B0**
 
 Notice:
 
-> *After successfully setting the slave number on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①	If the network has been established, you may want to broadcast the new settings to all slaves. Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1.<br>②	If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1.<br><br>After successfully setting the slave number on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1.*
+> *After successfully setting the slave number on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①	If the network has been established, you may want to broadcast the new settings to all slaves. Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②	If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the slave number on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
 
 ### **Get Slave ID: 0xA013**
 This command *gets* the slave ID.
@@ -191,7 +192,7 @@ Notice:
 > *For optimal performance, it is advisable to ensure that the SYNC address bit sequence does not contain four consecutive ones or zeros. Generally speaking, it is better to use a random value. For example,<br>
 0x2954935B is a good value. There are no 4 consecutive ones or zeros in its bit sequence.<br>
 0x10F10724 is not a good value. There are 4 consecutive ones or zeros in its bit sequence.<br><br>
-After successfully setting the SYNC address on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①	If the network has been established, you may want to broadcast the new settings to all slaves. Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1.<br>②	If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1.<br><br>After successfully setting the SYNC address on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1.*
+After successfully setting the SYNC address on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①	If the network has been established, you may want to broadcast the new settings to all slaves. Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②	If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the SYNC address on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
 
 ### **Get PHY Rate: 0xA017**
 This command *gets* the PHY rate. The supported PHY rates are 1Mbps and 2Mbps.
@@ -236,7 +237,7 @@ Response:   **0xA0 0x18 0x00 0x01 B0**
 
 Notice:
 
-> *After successfully setting the PHY rate on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①	If the network has been established, you may want to broadcast the new settings to all slaves. Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1.<br>②	If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1.<br><br>After successfully setting the PHY rate on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1.*
+> *After successfully setting the PHY rate on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①	If the network has been established, you may want to broadcast the new settings to all slaves. Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②	If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the PHY rate on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
 
 ### **Get Mode: 0xA019**
 This command *gets* the current mode. 
@@ -329,7 +330,7 @@ Response:   **0xA0 0x1C 0x00 0x01 B0**
 
 Notice:
 
-> *After successfully setting the maximum length of downlink private packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1.<br><br>After successfully setting the maximum length of downlink private packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1.*
+> *After successfully setting the maximum length of downlink private packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the maximum length of downlink private packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
 
 ### **Get Maximum Length of Uplink Private Packet: 0xA01D**
 the maximum length of uplink private packet. Here, the uplink means the data are transmitted from slave to master.
@@ -376,7 +377,7 @@ Response:   **0xA0 0x1E 0x00 0x01 B0**
 
 Notice:
 
-> *After successfully setting the maximum length of uplink private packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1.<br><br>After successfully setting the maximum length of uplink private packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1.*
+> *After successfully setting the maximum length of uplink private packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the maximum length of uplink private packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
 
 ### **Get the Interval of Sending Heartbeat Packet: 0xA033**
 In order to track the connection status of the network, heartbeat packet is periodically sent between the master and slave(s). Users can get the interval of the heartbeat packet by issuing this command. The default value is 1000ms.
