@@ -333,7 +333,7 @@ Notice:
 > *After successfully setting the maximum length of downlink private packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the maximum length of downlink private packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
 
 ### **Get Maximum Length of Uplink Private Packet: 0xA01D**
-the maximum length of uplink private packet. Here, the uplink means the data are transmitted from slave to master.
+Get the maximum length of uplink private packet. Here, the uplink means the data are transmitted from slave to master.
 
 Send:    **0xA0 0x1D 0x00 0x00**
 |Byte|Comment|
@@ -378,6 +378,53 @@ Response:   **0xA0 0x1E 0x00 0x01 B0**
 Notice:
 
 > *After successfully setting the maximum length of uplink private packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the maximum length of uplink private packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
+
+### **Get Maximum Length of Broadcast Packet: 0xA01F**
+Get the maximum length of broadcast packet. 
+
+Send:    **0xA0 0x1F 0x00 0x00**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x1F|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x00|Data Length (LSB)|
+
+Response:   **0xA0 0x1F 0x00 0x02 B0 B1**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x1F|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x02|Data Length (LSB)|
+|B0|Maximum length of broadcast packet (MSB)|
+|B1|Maximum length of broadcast packet (LSB)|
+
+### **Set Maximum Length of Broadcast Packet: 0xA020**
+This length should be less than 200.
+
+Send:    **0xA0 0x20 0x00 0x02 B0 B1**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x20|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x02|Data Length (LSB)|
+|B0|Maximum length of broadcast packet (MSB)|
+|B1|Maximum length of broadcast packet (LSB)|
+
+Response:   **0xA0 0x20 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x20|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|B0=0x00: success<br>B0=0x01: The command sent is too short<br>B0=0x02: Length is larger than the limitation (200 bytes).|
+
+Notice:
+
+> *After successfully setting the maximum length of broadcast packet on the master side, the corresponding next steps should be taken based on whether the network has already been established.<br>①If the network has been established, you may want to broadcast the new settings to all slaves.Thus, you should issue the command 0xA040 to request the master broadcast new settings. After the completion of the broadcast, you will receive a response. Once you have successfully received the response, it is necessary to reset the chip by issuing the command 0xA0E1 or pressing the reset button.<br>②If the network has not yet been established, broadcasting the new settings is unnecessary. So, you can reset the chip immediately by issuing the command 0xA0E1 or pressing the reset button.<br><br>After successfully setting the maximum length of broadcast packet on the slave side, the chip needs to be reset immediately by issuing the command 0xA0E1 or pressing the reset button.*
 
 ### **Get the Interval of Sending Heartbeat Packet: 0xA033**
 In order to track the connection status of the network, heartbeat packet is periodically sent between the master and slave(s). Users can get the interval of the heartbeat packet by issuing this command. The default value is 1000ms.
