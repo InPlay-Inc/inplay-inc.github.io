@@ -432,7 +432,7 @@ Notice:
 > *The minimum heartbeat period is 500ms. Thus, the period you set should be larger than or equal to 500ms. If the period is less than 500ms, it will be automatically set to 500ms.*
 
 ### **Get Superframe Duration: 0xA03A**
-This command can be used to get the superframe duration in slots. 
+This command can be used to get the superframe duration in slots. The Figure2 illustrates what the superframe is.
 
 Send:    **0xA0 0x3A 0x00 0x00**
 
