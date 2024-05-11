@@ -103,33 +103,33 @@ Functions</h2></td></tr>
 <tr class="memitem:ga899fa0a6c783ec6992cf311831b20eec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga899fa0a6c783ec6992cf311831b20eec">hal_i2c_close</a> (void *hdl)</td></tr>
 <tr class="memdesc:ga899fa0a6c783ec6992cf311831b20eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the I2c driver.  <a href="#ga899fa0a6c783ec6992cf311831b20eec">More...</a><br /></td></tr>
 <tr class="separator:ga899fa0a6c783ec6992cf311831b20eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab34ad808adedf872a0078af5cbe745c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#gab34ad808adedf872a0078af5cbe745c4">hal_mi2c_read</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len)</td></tr>
-<tr class="memdesc:gab34ad808adedf872a0078af5cbe745c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master read function.  <a href="#gab34ad808adedf872a0078af5cbe745c4">More...</a><br /></td></tr>
-<tr class="separator:gab34ad808adedf872a0078af5cbe745c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9721c55b8d69da7588788daa3ad5f7c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga9721c55b8d69da7588788daa3ad5f7c1">hal_mi2c_write</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len)</td></tr>
-<tr class="memdesc:ga9721c55b8d69da7588788daa3ad5f7c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master write function.  <a href="#ga9721c55b8d69da7588788daa3ad5f7c1">More...</a><br /></td></tr>
-<tr class="separator:ga9721c55b8d69da7588788daa3ad5f7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab08bcf6b21a30516a265f26f15885256"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#gab08bcf6b21a30516a265f26f15885256">hal_mi2c_mix_tran_start_poll</a> (void *hdl, int speed, uint8_t tar, int dir_write, uint8_t *buffer, uint16_t buffer_len)</td></tr>
-<tr class="memdesc:gab08bcf6b21a30516a265f26f15885256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of I2c master read/write mixed function.  <a href="#gab08bcf6b21a30516a265f26f15885256">More...</a><br /></td></tr>
-<tr class="separator:gab08bcf6b21a30516a265f26f15885256"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b72f18c0dc82bef965a7ec67ad63c9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga2b72f18c0dc82bef965a7ec67ad63c9e">hal_mi2c_mix_tran_continue_poll</a> (void *hdl, uint8_t tar, int dir_write, int restart, uint8_t *buffer, uint16_t buffer_len)</td></tr>
-<tr class="memdesc:ga2b72f18c0dc82bef965a7ec67ad63c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue of I2c master read/write mixed function.  <a href="#ga2b72f18c0dc82bef965a7ec67ad63c9e">More...</a><br /></td></tr>
-<tr class="separator:ga2b72f18c0dc82bef965a7ec67ad63c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4b017cf3cef5785c7c87fa23032b73fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga4b017cf3cef5785c7c87fa23032b73fc">hal_mi2c_mix_tran_end_poll</a> (void *hdl, uint8_t tar, int dir_write, int restart, uint8_t *buffer, uint16_t buffer_len)</td></tr>
-<tr class="memdesc:ga4b017cf3cef5785c7c87fa23032b73fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">End of I2c master read/write mixed function.  <a href="#ga4b017cf3cef5785c7c87fa23032b73fc">More...</a><br /></td></tr>
-<tr class="separator:ga4b017cf3cef5785c7c87fa23032b73fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga267eb292dc4c492a6f95894dafe57fb5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga267eb292dc4c492a6f95894dafe57fb5">hal_si2c_read</a> (void *hdl, uint8_t sar, uint8_t *buffer, uint16_t buffer_len)</td></tr>
-<tr class="memdesc:ga267eb292dc4c492a6f95894dafe57fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c slave read function.  <a href="#ga267eb292dc4c492a6f95894dafe57fb5">More...</a><br /></td></tr>
-<tr class="separator:ga267eb292dc4c492a6f95894dafe57fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga07cac46682e20abf30888521979fcaf0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga07cac46682e20abf30888521979fcaf0">hal_si2c_write</a> (void *hdl, uint8_t sar, uint8_t *buffer, uint16_t buffer_len)</td></tr>
-<tr class="memdesc:ga07cac46682e20abf30888521979fcaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c slave write function.  <a href="#ga07cac46682e20abf30888521979fcaf0">More...</a><br /></td></tr>
-<tr class="separator:ga07cac46682e20abf30888521979fcaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3124566191486e8e0ce5b6684f4feba5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga3124566191486e8e0ce5b6684f4feba5">hal_mi2c_write_read</a> (void *hdl, uint8_t tar, uint8_t *wr_buf, uint16_t wr_len, uint8_t *rd_buf, uint16_t rd_len)</td></tr>
-<tr class="memdesc:ga3124566191486e8e0ce5b6684f4feba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master write and read function.  <a href="#ga3124566191486e8e0ce5b6684f4feba5">More...</a><br /></td></tr>
-<tr class="separator:ga3124566191486e8e0ce5b6684f4feba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd82bcb3c0421a869b1611d35c1195d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#gadd82bcb3c0421a869b1611d35c1195d8">hal_i2c_set_tmo</a> (void *hdl, uint32_t tmo)</td></tr>
-<tr class="memdesc:gadd82bcb3c0421a869b1611d35c1195d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the I2c timeout.  <a href="#gadd82bcb3c0421a869b1611d35c1195d8">More...</a><br /></td></tr>
-<tr class="separator:gadd82bcb3c0421a869b1611d35c1195d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cf2dfec05cb25cac3f10936783dcb4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga2cf2dfec05cb25cac3f10936783dcb4f">hal_mi2c_read</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga2cf2dfec05cb25cac3f10936783dcb4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master read function.  <a href="#ga2cf2dfec05cb25cac3f10936783dcb4f">More...</a><br /></td></tr>
+<tr class="separator:ga2cf2dfec05cb25cac3f10936783dcb4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16e36672ced173ab4b71a57e158f9c0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga16e36672ced173ab4b71a57e158f9c0f">hal_mi2c_read_dma</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga16e36672ced173ab4b71a57e158f9c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master read function with DMA.  <a href="#ga16e36672ced173ab4b71a57e158f9c0f">More...</a><br /></td></tr>
+<tr class="separator:ga16e36672ced173ab4b71a57e158f9c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5905063bda1bdbfcfd3c8a219d2419cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga5905063bda1bdbfcfd3c8a219d2419cf">hal_mi2c_write</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga5905063bda1bdbfcfd3c8a219d2419cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master write function.  <a href="#ga5905063bda1bdbfcfd3c8a219d2419cf">More...</a><br /></td></tr>
+<tr class="separator:ga5905063bda1bdbfcfd3c8a219d2419cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga086a871e08fba483ed8b4c193e8abc16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga086a871e08fba483ed8b4c193e8abc16">hal_mi2c_write_dma</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga086a871e08fba483ed8b4c193e8abc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master write function with DMA.  <a href="#ga086a871e08fba483ed8b4c193e8abc16">More...</a><br /></td></tr>
+<tr class="separator:ga086a871e08fba483ed8b4c193e8abc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec073c210b63b6b84198bbe30102a587"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#gaec073c210b63b6b84198bbe30102a587">hal_mi2c_write_read</a> (void *hdl, uint8_t tar, uint8_t *wr_buf, uint16_t wr_len, uint8_t *rd_buf, uint16_t rd_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:gaec073c210b63b6b84198bbe30102a587"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c master write and read function.  <a href="#gaec073c210b63b6b84198bbe30102a587">More...</a><br /></td></tr>
+<tr class="separator:gaec073c210b63b6b84198bbe30102a587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab5cdf3f53ce792153ce33e7e000b2bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#gaab5cdf3f53ce792153ce33e7e000b2bc">hal_si2c_read</a> (void *hdl, uint8_t sar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:gaab5cdf3f53ce792153ce33e7e000b2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c slave read function.  <a href="#gaab5cdf3f53ce792153ce33e7e000b2bc">More...</a><br /></td></tr>
+<tr class="separator:gaab5cdf3f53ce792153ce33e7e000b2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b0c948223e66103b435e1a36090cdd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga0b0c948223e66103b435e1a36090cdd7">hal_si2c_read_dma</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga0b0c948223e66103b435e1a36090cdd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c slave read function with DMA.  <a href="#ga0b0c948223e66103b435e1a36090cdd7">More...</a><br /></td></tr>
+<tr class="separator:ga0b0c948223e66103b435e1a36090cdd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04bc50993825891542853dcb98abac90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga04bc50993825891542853dcb98abac90">hal_si2c_write</a> (void *hdl, uint8_t sar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga04bc50993825891542853dcb98abac90"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c slave write function.  <a href="#ga04bc50993825891542853dcb98abac90">More...</a><br /></td></tr>
+<tr class="separator:ga04bc50993825891542853dcb98abac90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c7ee101a10c426bef875c5144c06390"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___i2_c.html#ga9c7ee101a10c426bef875c5144c06390">hal_si2c_write_dma</a> (void *hdl, uint8_t tar, uint8_t *buffer, uint16_t buffer_len, int poll, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga9c7ee101a10c426bef875c5144c06390"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2c slave write function with DMA.  <a href="#ga9c7ee101a10c426bef875c5144c06390">More...</a><br /></td></tr>
+<tr class="separator:ga9c7ee101a10c426bef875c5144c06390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HAL_I2C. </p>
@@ -208,259 +208,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gadd82bcb3c0421a869b1611d35c1195d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadd82bcb3c0421a869b1611d35c1195d8">&#9670;&nbsp;</a></span>hal_i2c_set_tmo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_i2c_set_tmo </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>tmo</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the I2c timeout. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
-
-</div>
-</div>
-<a id="ga2b72f18c0dc82bef965a7ec67ad63c9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2b72f18c0dc82bef965a7ec67ad63c9e">&#9670;&nbsp;</a></span>hal_mi2c_mix_tran_continue_poll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_mi2c_mix_tran_continue_poll </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>tar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dir_write</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>restart</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Continue of I2c master read/write mixed function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dir_write</td><td>Direction of the transaction on the I2C bus, 1: Write, 0: Read </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">restart</td><td>Issue a new start condition on the I2C bus, 1: Generate Re-Start bit, 0: informs the master function to continue to the next operation. This must done after writing transmit data or reading received data. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the transaction buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transaction buffer length.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
-
-</div>
-</div>
-<a id="ga4b017cf3cef5785c7c87fa23032b73fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4b017cf3cef5785c7c87fa23032b73fc">&#9670;&nbsp;</a></span>hal_mi2c_mix_tran_end_poll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_mi2c_mix_tran_end_poll </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>tar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dir_write</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>restart</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>End of I2c master read/write mixed function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dir_write</td><td>Direction of the last transaction on the I2C bus, 1: Write, 0: Read </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">restart</td><td>Issue a new start condition on the I2C bus, 1: Generate a re-start bit, 0: informs the master function to continue to the next operation. This must done after writing transmit data or reading received data. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the transaction buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transaction buffer length.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
-
-</div>
-</div>
-<a id="gab08bcf6b21a30516a265f26f15885256"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab08bcf6b21a30516a265f26f15885256">&#9670;&nbsp;</a></span>hal_mi2c_mix_tran_start_poll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_mi2c_mix_tran_start_poll </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>speed</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>tar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dir_write</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Start of I2c master read/write mixed function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The I2c serial clock rate, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum i2c_scl. <br />
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dir_write</td><td>Direction of the first transaction on the I2C bus, 1: Write, 0: Read </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the transaction buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transaction buffer length.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
-
-</div>
-</div>
-<a id="gab34ad808adedf872a0078af5cbe745c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab34ad808adedf872a0078af5cbe745c4">&#9670;&nbsp;</a></span>hal_mi2c_read()</h2>
+<a id="ga2cf2dfec05cb25cac3f10936783dcb4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2cf2dfec05cb25cac3f10936783dcb4f">&#9670;&nbsp;</a></span>hal_mi2c_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -487,7 +236,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -504,7 +265,9 @@ Functions</h2></td></tr>
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the received buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The receive buffer length.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The receive buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
   </table>
   </dd>
 </dl>
@@ -513,8 +276,76 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga9721c55b8d69da7588788daa3ad5f7c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9721c55b8d69da7588788daa3ad5f7c1">&#9670;&nbsp;</a></span>hal_mi2c_write()</h2>
+<a id="ga16e36672ced173ab4b71a57e158f9c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16e36672ced173ab4b71a57e158f9c0f">&#9670;&nbsp;</a></span>hal_mi2c_read_dma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_mi2c_read_dma </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>tar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2c master read function with DMA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the received buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The receive buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
+
+</div>
+</div>
+<a id="ga5905063bda1bdbfcfd3c8a219d2419cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5905063bda1bdbfcfd3c8a219d2419cf">&#9670;&nbsp;</a></span>hal_mi2c_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -541,7 +372,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -558,7 +401,9 @@ Functions</h2></td></tr>
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the transmit buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transmit buffer length.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transmit buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode, disable interrupt in polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
   </table>
   </dd>
 </dl>
@@ -567,8 +412,76 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga3124566191486e8e0ce5b6684f4feba5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3124566191486e8e0ce5b6684f4feba5">&#9670;&nbsp;</a></span>hal_mi2c_write_read()</h2>
+<a id="ga086a871e08fba483ed8b4c193e8abc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga086a871e08fba483ed8b4c193e8abc16">&#9670;&nbsp;</a></span>hal_mi2c_write_dma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_mi2c_write_dma </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>tar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2c master write function with DMA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the transmit buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transmit buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode, disable interrupt in polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
+
+</div>
+</div>
+<a id="gaec073c210b63b6b84198bbe30102a587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec073c210b63b6b84198bbe30102a587">&#9670;&nbsp;</a></span>hal_mi2c_write_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -607,7 +520,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>rd_len</em>&#160;</td>
+          <td class="paramname"><em>rd_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -626,8 +551,10 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">tar</td><td>The slave address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">wr_buf</td><td>The pointer to the write buffer. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">wr_len</td><td>The write buffer length. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rd_buf</td><td>The pointer to the read buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rd_len</td><td>The read buffer length.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rd_buf</td><td>The pointer to the read buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rd_len</td><td>The read buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
   </table>
   </dd>
 </dl>
@@ -636,8 +563,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga267eb292dc4c492a6f95894dafe57fb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga267eb292dc4c492a6f95894dafe57fb5">&#9670;&nbsp;</a></span>hal_si2c_read()</h2>
+<a id="gaab5cdf3f53ce792153ce33e7e000b2bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaab5cdf3f53ce792153ce33e7e000b2bc">&#9670;&nbsp;</a></span>hal_si2c_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -664,7 +591,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -681,7 +620,9 @@ Functions</h2></td></tr>
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">sar</td><td>The slave address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the receive buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The receive buffer length.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The receive buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
   </table>
   </dd>
 </dl>
@@ -690,8 +631,76 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga07cac46682e20abf30888521979fcaf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga07cac46682e20abf30888521979fcaf0">&#9670;&nbsp;</a></span>hal_si2c_write()</h2>
+<a id="ga0b0c948223e66103b435e1a36090cdd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b0c948223e66103b435e1a36090cdd7">&#9670;&nbsp;</a></span>hal_si2c_read_dma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_si2c_read_dma </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>tar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2c slave read function with DMA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sar</td><td>The slave address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the receive buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The receive buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode, disable interrupt in polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
+
+</div>
+</div>
+<a id="ga04bc50993825891542853dcb98abac90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04bc50993825891542853dcb98abac90">&#9670;&nbsp;</a></span>hal_si2c_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -718,7 +727,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -735,7 +756,77 @@ Functions</h2></td></tr>
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">sar</td><td>The slave address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the transmit buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transmit buffer length.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transmit buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum i2c_error for the possible return code. </dd></dl>
+
+</div>
+</div>
+<a id="ga9c7ee101a10c426bef875c5144c06390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c7ee101a10c426bef875c5144c06390">&#9670;&nbsp;</a></span>hal_si2c_write_dma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_si2c_write_dma </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>tar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2c slave write function with DMA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sar</td><td>The slave address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The pointer to the transmit buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The transmit buffer length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode, disable interrupt in polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout in ms.</td></tr>
   </table>
   </dd>
 </dl>

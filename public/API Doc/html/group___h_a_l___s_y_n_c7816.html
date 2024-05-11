@@ -109,24 +109,30 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1e43d8610ad1b9942da2d8791e16994d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga1e43d8610ad1b9942da2d8791e16994d">hal_sync7816_answer_to_rst</a> (void *dev, uint32_t *pval)</td></tr>
 <tr class="memdesc:ga1e43d8610ad1b9942da2d8791e16994d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get answer to reset.  <a href="#ga1e43d8610ad1b9942da2d8791e16994d">More...</a><br /></td></tr>
 <tr class="separator:ga1e43d8610ad1b9942da2d8791e16994d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0829de4f5bbbe086ecf2206a135dd4b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga0829de4f5bbbe086ecf2206a135dd4b5">fm4428_read_cmd</a> (void *dev, uint32_t cmd, uint32_t addr, uint32_t *rx_data, uint32_t rx_len)</td></tr>
-<tr class="memdesc:ga0829de4f5bbbe086ecf2206a135dd4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send read command for fm4428 chip.  <a href="#ga0829de4f5bbbe086ecf2206a135dd4b5">More...</a><br /></td></tr>
-<tr class="separator:ga0829de4f5bbbe086ecf2206a135dd4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga005bc2a0d5d3fd26296053a2f6f4a237"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga005bc2a0d5d3fd26296053a2f6f4a237">fm4428_read_byte</a> (void *dev, uint32_t addr, int protect, uint8_t *rx_data)</td></tr>
-<tr class="memdesc:ga005bc2a0d5d3fd26296053a2f6f4a237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one byte for fm4428 chip.  <a href="#ga005bc2a0d5d3fd26296053a2f6f4a237">More...</a><br /></td></tr>
-<tr class="separator:ga005bc2a0d5d3fd26296053a2f6f4a237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0b52c08b25f8d1772ed7bb4805be6cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#gaf0b52c08b25f8d1772ed7bb4805be6cc">fm4428_read_cmd</a> (void *dev, uint32_t cmd, uint32_t addr, uint32_t *rx_data, uint32_t rx_len, uint32_t tmo)</td></tr>
+<tr class="memdesc:gaf0b52c08b25f8d1772ed7bb4805be6cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send read command for fm4428 chip.  <a href="#gaf0b52c08b25f8d1772ed7bb4805be6cc">More...</a><br /></td></tr>
+<tr class="separator:gaf0b52c08b25f8d1772ed7bb4805be6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09b19431e081d40911e2146e634ad841"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga09b19431e081d40911e2146e634ad841">fm4428_read_byte</a> (void *dev, uint32_t addr, int protect, uint8_t *rx_data, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga09b19431e081d40911e2146e634ad841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one byte for fm4428 chip.  <a href="#ga09b19431e081d40911e2146e634ad841">More...</a><br /></td></tr>
+<tr class="separator:ga09b19431e081d40911e2146e634ad841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3178f79dc5270ebbd7bb3f4d452498bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga3178f79dc5270ebbd7bb3f4d452498bb">hal_fm4428_read_byte</a> (void *hdl, uint32_t addr, int protect, uint8_t *data)</td></tr>
+<tr class="memdesc:ga3178f79dc5270ebbd7bb3f4d452498bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one byte for fm4428 chip.  <a href="#ga3178f79dc5270ebbd7bb3f4d452498bb">More...</a><br /></td></tr>
+<tr class="separator:ga3178f79dc5270ebbd7bb3f4d452498bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae190f9105ec3963a1069c48be69c956c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#gae190f9105ec3963a1069c48be69c956c">fm4428_write_cmd</a> (void *dev, uint32_t cmd, uint32_t addr, uint8_t data, uint32_t wait_clk)</td></tr>
 <tr class="memdesc:gae190f9105ec3963a1069c48be69c956c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send write command for fm4428 chip.  <a href="#gae190f9105ec3963a1069c48be69c956c">More...</a><br /></td></tr>
 <tr class="separator:gae190f9105ec3963a1069c48be69c956c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga312857d584d921b2d8094a99a13eb2a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga312857d584d921b2d8094a99a13eb2a7">fm4428_write_byte</a> (void *dev, uint32_t addr, uint8_t data)</td></tr>
-<tr class="memdesc:ga312857d584d921b2d8094a99a13eb2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one byte for fm4428 chip.  <a href="#ga312857d584d921b2d8094a99a13eb2a7">More...</a><br /></td></tr>
-<tr class="separator:ga312857d584d921b2d8094a99a13eb2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e3fa6dd535aba2aeb75c2c6908dcf9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga5e3fa6dd535aba2aeb75c2c6908dcf9c">fm4428_unlock</a> (void *dev, uint8_t psc1, uint8_t psc2)</td></tr>
-<tr class="memdesc:ga5e3fa6dd535aba2aeb75c2c6908dcf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock fm4428 chip for write.  <a href="#ga5e3fa6dd535aba2aeb75c2c6908dcf9c">More...</a><br /></td></tr>
-<tr class="separator:ga5e3fa6dd535aba2aeb75c2c6908dcf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6e159ff365b7b75c87ae4f148d1b3b84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga6e159ff365b7b75c87ae4f148d1b3b84">fm4442_read_cmd</a> (void *dev, uint32_t cmd, uint32_t addr, uint32_t *rx_data, uint32_t rx_len)</td></tr>
-<tr class="memdesc:ga6e159ff365b7b75c87ae4f148d1b3b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send read command for fm4442 chip.  <a href="#ga6e159ff365b7b75c87ae4f148d1b3b84">More...</a><br /></td></tr>
-<tr class="separator:ga6e159ff365b7b75c87ae4f148d1b3b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabeb63aff76e192c62422b9214b7f00bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#gabeb63aff76e192c62422b9214b7f00bf">hal_fm4428_write_byte</a> (void *dev, uint32_t addr, uint8_t data)</td></tr>
+<tr class="memdesc:gabeb63aff76e192c62422b9214b7f00bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one byte for fm4428 chip.  <a href="#gabeb63aff76e192c62422b9214b7f00bf">More...</a><br /></td></tr>
+<tr class="separator:gabeb63aff76e192c62422b9214b7f00bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf793cd0f49e5d84c1505984698276c50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#gaf793cd0f49e5d84c1505984698276c50">hal_fm4428_unlock</a> (void *dev, uint8_t psc1, uint8_t psc2)</td></tr>
+<tr class="memdesc:gaf793cd0f49e5d84c1505984698276c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock fm4428 chip for write.  <a href="#gaf793cd0f49e5d84c1505984698276c50">More...</a><br /></td></tr>
+<tr class="separator:gaf793cd0f49e5d84c1505984698276c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga596392d537caeebdfe1dafb8d1dc25b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga596392d537caeebdfe1dafb8d1dc25b9">fm4442_read_cmd</a> (void *dev, uint32_t cmd, uint32_t addr, uint32_t *rx_data, uint32_t rx_len, uint32_t tmo)</td></tr>
+<tr class="memdesc:ga596392d537caeebdfe1dafb8d1dc25b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send read command for fm4442 chip.  <a href="#ga596392d537caeebdfe1dafb8d1dc25b9">More...</a><br /></td></tr>
+<tr class="separator:ga596392d537caeebdfe1dafb8d1dc25b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga897da3e2813c7d282d48936e71b9a8f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga897da3e2813c7d282d48936e71b9a8f9">hal_fm4442_read_cmd</a> (void *dev, uint32_t cmd, uint32_t addr, uint32_t *rx_data, uint32_t rx_len)</td></tr>
+<tr class="memdesc:ga897da3e2813c7d282d48936e71b9a8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send read command for fm4442 chip.  <a href="#ga897da3e2813c7d282d48936e71b9a8f9">More...</a><br /></td></tr>
+<tr class="separator:ga897da3e2813c7d282d48936e71b9a8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga49f7d4d0b98679c82b1562f7cdae7b5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_y_n_c7816.html#ga49f7d4d0b98679c82b1562f7cdae7b5a">fm4442_write_cmd</a> (void *dev, uint32_t cmd, uint32_t addr, uint8_t data)</td></tr>
 <tr class="memdesc:ga49f7d4d0b98679c82b1562f7cdae7b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send write command for fm4442 chip.  <a href="#ga49f7d4d0b98679c82b1562f7cdae7b5a">More...</a><br /></td></tr>
 <tr class="separator:ga49f7d4d0b98679c82b1562f7cdae7b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,8 +140,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HAL SYNC7816. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga005bc2a0d5d3fd26296053a2f6f4a237"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga005bc2a0d5d3fd26296053a2f6f4a237">&#9670;&nbsp;</a></span>fm4428_read_byte()</h2>
+<a id="ga09b19431e081d40911e2146e634ad841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09b19431e081d40911e2146e634ad841">&#9670;&nbsp;</a></span>fm4428_read_byte()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,7 +168,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>rx_data</em>&#160;</td>
+          <td class="paramname"><em>rx_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -179,6 +191,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">protect</td><td>1 is protect, 0 is not protect. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">rx_data</td><td>Data that read out from bus </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout to break process. </td></tr>
   </table>
   </dd>
 </dl>
@@ -186,8 +199,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0829de4f5bbbe086ecf2206a135dd4b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0829de4f5bbbe086ecf2206a135dd4b5">&#9670;&nbsp;</a></span>fm4428_read_cmd()</h2>
+<a id="gaf0b52c08b25f8d1772ed7bb4805be6cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0b52c08b25f8d1772ed7bb4805be6cc">&#9670;&nbsp;</a></span>fm4428_read_cmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +233,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>rx_len</em>&#160;</td>
+          <td class="paramname"><em>rx_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -238,96 +257,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">rx_data</td><td>Data that read out from bus </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">rx_len</td><td>Rx bit length. Max value is 32 bit. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if successful, otherwise failed </dd></dl>
-
-</div>
-</div>
-<a id="ga5e3fa6dd535aba2aeb75c2c6908dcf9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5e3fa6dd535aba2aeb75c2c6908dcf9c">&#9670;&nbsp;</a></span>fm4428_unlock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int fm4428_unlock </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>dev</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>psc1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>psc2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Unlock fm4428 chip for write. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Sync7816 device struct </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">psc1</td><td>psc1 code </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">psc2</td><td>psc2 code </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if successful, otherwise failed </dd></dl>
-
-</div>
-</div>
-<a id="ga312857d584d921b2d8094a99a13eb2a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga312857d584d921b2d8094a99a13eb2a7">&#9670;&nbsp;</a></span>fm4428_write_byte()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int fm4428_write_byte </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>dev</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Write one byte for fm4428 chip. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Sync7816 device struct </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data that write to bus </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout to break process. </td></tr>
   </table>
   </dd>
 </dl>
@@ -394,8 +324,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga6e159ff365b7b75c87ae4f148d1b3b84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6e159ff365b7b75c87ae4f148d1b3b84">&#9670;&nbsp;</a></span>fm4442_read_cmd()</h2>
+<a id="ga596392d537caeebdfe1dafb8d1dc25b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga596392d537caeebdfe1dafb8d1dc25b9">&#9670;&nbsp;</a></span>fm4442_read_cmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -428,7 +358,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>rx_len</em>&#160;</td>
+          <td class="paramname"><em>rx_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -446,6 +382,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">rx_data</td><td>Data that read out from bus </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">rx_len</td><td>Rx bit length. Max value is 16 bit. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout to break the process if not succeed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -498,6 +435,207 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>Command </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data that write to bus </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful, otherwise failed </dd></dl>
+
+</div>
+</div>
+<a id="ga3178f79dc5270ebbd7bb3f4d452498bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3178f79dc5270ebbd7bb3f4d452498bb">&#9670;&nbsp;</a></span>hal_fm4428_read_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_fm4428_read_byte </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>protect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read one byte for fm4428 chip. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Sync7816 device struct </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">protect</td><td>1 is protect, 0 is not protect. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rx_data</td><td>Data that read out from bus </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful, otherwise failed </dd></dl>
+
+</div>
+</div>
+<a id="gaf793cd0f49e5d84c1505984698276c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf793cd0f49e5d84c1505984698276c50">&#9670;&nbsp;</a></span>hal_fm4428_unlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_fm4428_unlock </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>psc1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>psc2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unlock fm4428 chip for write. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Sync7816 device struct </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">psc1</td><td>psc1 code </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">psc2</td><td>psc2 code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful, otherwise failed </dd></dl>
+
+</div>
+</div>
+<a id="gabeb63aff76e192c62422b9214b7f00bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabeb63aff76e192c62422b9214b7f00bf">&#9670;&nbsp;</a></span>hal_fm4428_write_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_fm4428_write_byte </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write one byte for fm4428 chip. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Sync7816 device struct </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data that write to bus </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful, otherwise failed </dd></dl>
+
+</div>
+</div>
+<a id="ga897da3e2813c7d282d48936e71b9a8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga897da3e2813c7d282d48936e71b9a8f9">&#9670;&nbsp;</a></span>hal_fm4442_read_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_fm4442_read_cmd </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>rx_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rx_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send read command for fm4442 chip. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Sync7816 device struct </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>Command </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Address </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rx_data</td><td>Data that read out from bus </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rx_len</td><td>Rx bit length. Max value is 16 bit. </td></tr>
   </table>
   </dd>
 </dl>

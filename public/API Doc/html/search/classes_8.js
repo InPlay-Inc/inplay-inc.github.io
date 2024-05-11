@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['trig_5fcfg_5ft',['trig_cfg_t',['../structtrig__cfg__t.html',1,'']]],
   ['trig_5fhdr_5ft',['trig_hdr_t',['../structtrig__hdr__t.html',1,'']]],
   ['trig_5finit_5ft',['trig_init_t',['../structtrig__init__t.html',1,'']]],
   ['trig_5foutput_5fcmd_5ft',['trig_output_cmd_t',['../structtrig__output__cmd__t.html',1,'']]],

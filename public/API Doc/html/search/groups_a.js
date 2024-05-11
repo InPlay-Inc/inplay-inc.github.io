@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['share_20memory_20device_20driver',['Share memory device driver',['../group___h_a_l___s_m_e_m.html',1,'']]],
-  ['spi_20device_20driver',['SPI device driver',['../group___h_a_l___s_p_i.html',1,'']]],
-  ['spi_20flash_20driver',['SPI Flash driver',['../group___h_a_l___s_p_i___f_l_a_s_h.html',1,'']]],
-  ['synchronous_207816_20driver',['Synchronous 7816 driver',['../group___h_a_l___s_y_n_c7816.html',1,'']]]
+  ['platform_20clock_20configuration',['Platform clock configuration',['../group___h_a_l___c_l_k.html',1,'']]],
+  ['platform_20globally_20initialization_2c_20suspend_2c_20and_20resume_20functions',['Platform globally initialization, suspend, and resume functions',['../group___h_a_l___g_l_o_b_a_l.html',1,'']]],
+  ['platform_20power_20management_20and_20sleep_20timer',['Platform power management and sleep timer',['../group___h_a_l___p_o_w_e_r.html',1,'']]],
+  ['pwm_20driver',['PWM driver',['../group___h_a_l___p_w_m.html',1,'']]],
+  ['prf_5ftypes',['PRF_TYPES',['../group___p_r_f___t_y_p_e_s.html',1,'']]]
 ];

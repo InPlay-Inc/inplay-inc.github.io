@@ -1,9 +1,9 @@
 var group___i_n___b_l_e___g_a_p =
 [
     [ "ble_dev_name_t", "structble__dev__name__t.html", [
-      [ "GAP_EVT_CODE", "group___i_n___b_l_e___e_v_t.html#gga16af7b253440dadd46a80a4b9fddba4da593ad2eaab65a361e097ade56694ad98", null ],
-      [ "GATT_EVT_CODE", "group___i_n___b_l_e___e_v_t.html#gga16af7b253440dadd46a80a4b9fddba4da57902c55963a439da0f1b3f1f31eb19c", null ],
-      [ "L2CAP_EVT_CODE", "group___i_n___b_l_e___e_v_t.html#gga16af7b253440dadd46a80a4b9fddba4da5c6b1dd3107c06e6955e24e0bb328a96", null ],
+      [ "GAP_EVT_CODE", "group___i_n___b_l_e___e_v_t.html#gga80155586fa275b28773c9b203f52cabaa593ad2eaab65a361e097ade56694ad98", null ],
+      [ "GATT_EVT_CODE", "group___i_n___b_l_e___e_v_t.html#gga80155586fa275b28773c9b203f52cabaa57902c55963a439da0f1b3f1f31eb19c", null ],
+      [ "L2CAP_EVT_CODE", "group___i_n___b_l_e___e_v_t.html#gga80155586fa275b28773c9b203f52cabaa5c6b1dd3107c06e6955e24e0bb328a96", null ],
       [ "length", "structble__dev__name__t.html#a1892eba2086d12ac2b09005aeb09ea3b", null ],
       [ "value", "structble__dev__name__t.html#a11d74100808acbfccffd18fb037f6cfc", null ]
     ] ],
@@ -329,7 +329,7 @@ var group___i_n___b_l_e___g_a_p =
       [ "name", "structble__get__dev__info__cfm__t.html#a34c9008ef820d1c62ef70b8225743441", null ],
       [ "req", "structble__get__dev__info__cfm__t.html#aee31b0c3b9c08cd76406c7bd7cf74642", null ],
       [ "slv_pref_params", "structble__get__dev__info__cfm__t.html#a0e225da41834bc49cd70c3f09034c632", null ],
-      [ "u", "structble__get__dev__info__cfm__t.html#aa32fcb9a4b9d431fa1da928e559a9cc3", null ]
+      [ "u", "structble__get__dev__info__cfm__t.html#a2fa48934a90c17e858d7af89c80c3408", null ]
     ] ],
     [ "ADDR_HASH_LEN", "group___i_n___b_l_e___g_a_p.html#ga170ad71abc4118d0c84b0c77fd649a71", null ],
     [ "ADDR_PRAND_LEN", "group___i_n___b_l_e___g_a_p.html#ga423963aea2ee62322bfac653492d0b2e", null ],

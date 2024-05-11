@@ -1,19 +1,20 @@
 var group___h_a_l___t_r_i_g =
 [
     [ "trig_init_t", "structtrig__init__t.html", [
-      [ "auto_resume", "structtrig__init__t.html#a5236bcb304e637808a7a11020bd799ed", null ],
-      [ "cb_arg", "structtrig__init__t.html#aa2a0fc874870115f7d31aabcbb53ec0b", null ],
-      [ "intr_unmask0", "structtrig__init__t.html#a3a44634fd590eb36615f4f46a3c5f9bd", null ],
-      [ "intr_unmask1", "structtrig__init__t.html#a4e096f303bb4c563a5a20a403eb685dd", null ],
-      [ "irq_cb", "structtrig__init__t.html#a36f929c30612d36661bffb7ef3f29f14", null ],
-      [ "irq_prio", "structtrig__init__t.html#af51f1ddd02781b5c9f7a707c69cb9cc6", null ],
-      [ "lp_mem_addr", "structtrig__init__t.html#aa643f3e8a7a37a09c7b337e159f2255e", null ],
-      [ "mp_mem_addr", "structtrig__init__t.html#a61af3f876fbba45c6f3e3a4d4760c454", null ]
+      [ "lp_mem_size", "structtrig__init__t.html#a6bdea248239c8202029cc0d563572e28", null ],
+      [ "mp_mem_size", "structtrig__init__t.html#a1d10e457c22d7358e87a63dd6000a4f9", null ]
+    ] ],
+    [ "trig_cfg_t", "structtrig__cfg__t.html", [
+      [ "auto_resume", "structtrig__cfg__t.html#a5236bcb304e637808a7a11020bd799ed", null ],
+      [ "cb_arg", "structtrig__cfg__t.html#aa2a0fc874870115f7d31aabcbb53ec0b", null ],
+      [ "intr_unmask0", "structtrig__cfg__t.html#a3a44634fd590eb36615f4f46a3c5f9bd", null ],
+      [ "intr_unmask1", "structtrig__cfg__t.html#a4e096f303bb4c563a5a20a403eb685dd", null ],
+      [ "irq_cb", "structtrig__cfg__t.html#a36f929c30612d36661bffb7ef3f29f14", null ],
+      [ "irq_prio", "structtrig__cfg__t.html#af51f1ddd02781b5c9f7a707c69cb9cc6", null ]
     ] ],
     [ "trig_hdr_t", "structtrig__hdr__t.html", [
       [ "cmd_addr", "structtrig__hdr__t.html#a34a22d91d94cca1c04f93aacb161a780", null ],
       [ "cmd_num", "structtrig__hdr__t.html#a41e4ef20644fe282284df7f20352acb8", null ],
-      [ "run_until_invalid", "structtrig__hdr__t.html#a79a749972624e8b2b30930215c162038", null ],
       [ "run_until_null", "structtrig__hdr__t.html#a7f5387047ac1bb25e005b14c122793ea", null ]
     ] ],
     [ "trig_output_cmd_t", "structtrig__output__cmd__t.html", [
@@ -95,6 +96,8 @@ var group___h_a_l___t_r_i_g =
     [ "TRIG_LP_INTR_READ_COMPARE_FAIL", "group___h_a_l___t_r_i_g.html#gab1551f483e1f917242e2f62e7867d2ea", null ],
     [ "TRIG_LP_INTR_TIMER_DONE", "group___h_a_l___t_r_i_g.html#ga1421a45045ff95c8a10ae3076a40a051", null ],
     [ "TRIG_LP_INTR_TIMER_TMO", "group___h_a_l___t_r_i_g.html#ga54b5a12ca48d43f972c81cb59a53feac", null ],
+    [ "TRIG_MAX_ADDR_OFT", "group___h_a_l___t_r_i_g.html#ga9917f629ac7a08ce4ca3de0c1f4443f7", null ],
+    [ "TRIG_MAX_MEM_SIZE", "group___h_a_l___t_r_i_g.html#gab5bc800f18bf7e6c0fce139dcf87324b", null ],
     [ "TRIG_MID_PRI_Q_CMD_START_ADDR", "group___h_a_l___t_r_i_g.html#ga45e6f838c4cc5863ed25ca3c57f5a950", null ],
     [ "TRIG_MID_PRI_Q_MAX_TRIG_ID", "group___h_a_l___t_r_i_g.html#ga4dd9c04f981e56eca5d56ac7f7df56e5", null ],
     [ "TRIG_MP_INTR_CMD_COMPLETED", "group___h_a_l___t_r_i_g.html#gaaf40e69a781e92d685fabba25a5222a4", null ],
@@ -149,7 +152,8 @@ var group___h_a_l___t_r_i_g =
       [ "TRIG_ERR_OK", "group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea8e8beb379b9ffa2ffc7f91a7dc1c76bf", null ],
       [ "TRIG_ERR_INVALID_PARAM", "group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1eac8519d4fe463051d68e2014d695a1c5b", null ],
       [ "TRIG_ERR_MEM_OVERFLOW", "group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea15db889610cf94912187efef82babab0", null ],
-      [ "TRIG_ERR_MUTEX", "group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea1a9c860aa0d8b6923118cf6c78dff84d", null ]
+      [ "TRIG_ERR_MUTEX", "group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea1a9c860aa0d8b6923118cf6c78dff84d", null ],
+      [ "TRIG_ERR_BUSY", "group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea237e5c8dc0c347b5fb54a3ec9e050bfa", null ]
     ] ],
     [ "trig_odc_idx", "group___h_a_l___t_r_i_g.html#ga4acebbe050c8f01530e2d827e2eccc4a", [
       [ "TIRG_ODC_GPIO_OUTPUT_BASE_IDX", "group___h_a_l___t_r_i_g.html#gga4acebbe050c8f01530e2d827e2eccc4aa390fb79543027ace9e3fa768e8679482", null ],
@@ -385,7 +389,7 @@ var group___h_a_l___t_r_i_g =
     [ "hal_trig_reg_rd_cmp_cmd", "group___h_a_l___t_r_i_g.html#gaf0415d8672a7ed7e2d95578e1ad6673c", null ],
     [ "hal_trig_reg_rw_cmd", "group___h_a_l___t_r_i_g.html#ga1f2c408a9578abf049de1f481407689f", null ],
     [ "hal_trig_reg_wr_cmd", "group___h_a_l___t_r_i_g.html#ga750bd139236b7c573b3ec46893241aa1", null ],
-    [ "hal_trig_resume", "group___h_a_l___t_r_i_g.html#ga90bdd5a0a72f6c9d1c0df74e066647e1", null ],
+    [ "hal_trig_resume", "group___h_a_l___t_r_i_g.html#ga925d5de2bce3bd45734f56f4e7281b98", null ],
     [ "hal_trig_set_mem_addr", "group___h_a_l___t_r_i_g.html#ga7a75c6fc3ccc441d9d5ecb757ef25961", null ],
     [ "hal_trig_set_sig", "group___h_a_l___t_r_i_g.html#gace4ebfe704af040c4bef4847869075d4", null ],
     [ "hal_trig_set_tmr_cmd", "group___h_a_l___t_r_i_g.html#ga77872300837d65ba2916b969edfa5627", null ],

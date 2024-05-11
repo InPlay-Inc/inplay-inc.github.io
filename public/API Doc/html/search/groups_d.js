@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['watch_20dog_20timer_20driver',['Watch dog timer driver',['../group___h_a_l___w_d_t.html',1,'']]]
+  ['uart_20driver',['uart driver',['../group___h_a_l___u_a_r_t.html',1,'']]]
 ];
