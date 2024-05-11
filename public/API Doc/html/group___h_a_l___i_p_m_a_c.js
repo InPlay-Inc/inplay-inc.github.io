@@ -6,6 +6,7 @@ var group___h_a_l___i_p_m_a_c =
       [ "irq_prio", "structipmac__init__t.html#af51f1ddd02781b5c9f7a707c69cb9cc6", null ],
       [ "join_en", "structipmac__init__t.html#aabe23434f473848b56cd7a7c0ef10980", null ],
       [ "mode", "structipmac__init__t.html#a1ea5d0cb93f22f7d0fdf804bd68c3326", null ],
+      [ "nl_sync_en", "structipmac__init__t.html#aae880b3d92df14f1e26fe896ed643466", null ],
       [ "phy_rate", "structipmac__init__t.html#a07f40f565b366edbd026e5c954b2ce54", null ],
       [ "rssi_scan_en", "structipmac__init__t.html#a7e7168110d4cd8fd86f03c99c89a4f59", null ],
       [ "same_len", "structipmac__init__t.html#ac8aaba821ead06b2ec078976b0fb6b23", null ],

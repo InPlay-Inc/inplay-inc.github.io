@@ -141,54 +141,36 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gab995d7ea256e4c506fc772fd8ff5729e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gab995d7ea256e4c506fc772fd8ff5729e">hal_spi_open</a> (int id, int speed, int phase, int polarity, int prio)</td></tr>
-<tr class="memdesc:gab995d7ea256e4c506fc772fd8ff5729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the SPI driver.  <a href="#gab995d7ea256e4c506fc772fd8ff5729e">More...</a><br /></td></tr>
-<tr class="separator:gab995d7ea256e4c506fc772fd8ff5729e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0c53d0138e219c78f39bdd5a1501cde"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gaa0c53d0138e219c78f39bdd5a1501cde">hal_spi_open</a> (int <a class="el" href="group___h_a_l___s_p_i.html#gab8662401ed15b6f5702950647dd774e2">spi_id</a>, spi_config_t *p_spi)</td></tr>
+<tr class="memdesc:gaa0c53d0138e219c78f39bdd5a1501cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the SPI driver.  <a href="#gaa0c53d0138e219c78f39bdd5a1501cde">More...</a><br /></td></tr>
+<tr class="separator:gaa0c53d0138e219c78f39bdd5a1501cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafaf0aa1817860305b542a893de0cb458"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gafaf0aa1817860305b542a893de0cb458">hal_spi_cancel</a> (void *hdl)</td></tr>
+<tr class="memdesc:gafaf0aa1817860305b542a893de0cb458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the SPI process.  <a href="#gafaf0aa1817860305b542a893de0cb458">More...</a><br /></td></tr>
+<tr class="separator:gafaf0aa1817860305b542a893de0cb458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd6e676fef4c3051926763022ce27c25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gacd6e676fef4c3051926763022ce27c25">hal_spi_close</a> (void *hdl)</td></tr>
 <tr class="memdesc:gacd6e676fef4c3051926763022ce27c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the SPI driver.  <a href="#gacd6e676fef4c3051926763022ce27c25">More...</a><br /></td></tr>
 <tr class="separator:gacd6e676fef4c3051926763022ce27c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ac42b3e3e83048a16b37288b9d1778e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga6ac42b3e3e83048a16b37288b9d1778e">hal_spi_int_prio</a> (void *hdl, int prio)</td></tr>
-<tr class="memdesc:ga6ac42b3e3e83048a16b37288b9d1778e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set SPI interrupt priority.  <a href="#ga6ac42b3e3e83048a16b37288b9d1778e">More...</a><br /></td></tr>
-<tr class="separator:ga6ac42b3e3e83048a16b37288b9d1778e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac99fe5227a1bd6f5f1f4ed3e9729f102"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gac99fe5227a1bd6f5f1f4ed3e9729f102">hal_spi_tx_non_block</a> (void *hdl, int cs, int dfs, void *buffer, uint16_t buffer_len, void *arg, void(*callback)(void *arg, int status, uint16_t size))</td></tr>
-<tr class="memdesc:gac99fe5227a1bd6f5f1f4ed3e9729f102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI transmit function.  <a href="#gac99fe5227a1bd6f5f1f4ed3e9729f102">More...</a><br /></td></tr>
-<tr class="separator:gac99fe5227a1bd6f5f1f4ed3e9729f102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadbf453270595e780b99153327e633242"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gadbf453270595e780b99153327e633242">hal_spi_rx_non_block</a> (void *hdl, int cs, int dfs, void *buffer, uint16_t buffer_len, void *arg, void(*callback)(void *arg, int status, uint16_t size))</td></tr>
-<tr class="memdesc:gadbf453270595e780b99153327e633242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Receive function.  <a href="#gadbf453270595e780b99153327e633242">More...</a><br /></td></tr>
-<tr class="separator:gadbf453270595e780b99153327e633242"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga461b8e686bd08d2957a2d37d4b44a763"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga461b8e686bd08d2957a2d37d4b44a763">hal_spi_trx_non_block</a> (void *hdl, int cs, int dfs, void *wbuf, void *rbuf, uint16_t buf_len, void *arg, void(*callback)(void *arg, int status, uint16_t actual_size))</td></tr>
-<tr class="memdesc:ga461b8e686bd08d2957a2d37d4b44a763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Transmit and Receive function (bi-direction)  <a href="#ga461b8e686bd08d2957a2d37d4b44a763">More...</a><br /></td></tr>
-<tr class="separator:ga461b8e686bd08d2957a2d37d4b44a763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga329448e642abc4a8b6da531f5303b383"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga329448e642abc4a8b6da531f5303b383">hal_spi_tx_dma</a> (void *hdl, int cs, void *buffer, uint16_t buffer_len, uint16_t *actual_size)</td></tr>
-<tr class="memdesc:ga329448e642abc4a8b6da531f5303b383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI transmit DMA function.  <a href="#ga329448e642abc4a8b6da531f5303b383">More...</a><br /></td></tr>
-<tr class="separator:ga329448e642abc4a8b6da531f5303b383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf46b4e0d2f43e388edddc36ed3f39b90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gaf46b4e0d2f43e388edddc36ed3f39b90">hal_spi_rx_dma</a> (void *hdl, int cs, void *buffer, uint16_t buffer_len, uint16_t *actual_size)</td></tr>
-<tr class="memdesc:gaf46b4e0d2f43e388edddc36ed3f39b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Receive DMA function.  <a href="#gaf46b4e0d2f43e388edddc36ed3f39b90">More...</a><br /></td></tr>
-<tr class="separator:gaf46b4e0d2f43e388edddc36ed3f39b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga644cbbf8dd4ac4deec9a10a1e05ccfa4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga644cbbf8dd4ac4deec9a10a1e05ccfa4">hal_spi_trx_dma</a> (void *hdl, int cs, void *wbuf, void *rbuf, uint16_t buffer_len, uint16_t *actual_size)</td></tr>
-<tr class="memdesc:ga644cbbf8dd4ac4deec9a10a1e05ccfa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Transmit and Receive DMA function (bi-direction)  <a href="#ga644cbbf8dd4ac4deec9a10a1e05ccfa4">More...</a><br /></td></tr>
-<tr class="separator:ga644cbbf8dd4ac4deec9a10a1e05ccfa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5506696dd2ad49c072eded08829c3dab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga5506696dd2ad49c072eded08829c3dab">hal_slv_spi_tx</a> (void *hdl, int phase, int polarity, int dfs, void *buf, uint16_t buf_len, uint16_t *wlen)</td></tr>
-<tr class="memdesc:ga5506696dd2ad49c072eded08829c3dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slave SPI transmit function.  <a href="#ga5506696dd2ad49c072eded08829c3dab">More...</a><br /></td></tr>
-<tr class="separator:ga5506696dd2ad49c072eded08829c3dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga829386e115dea84ab3ad2abfc58cf331"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga829386e115dea84ab3ad2abfc58cf331">hal_slv_spi_rx</a> (void *hdl, int phase, int polarity, int dfs, void *buf, uint16_t buf_len, uint16_t *rlen)</td></tr>
-<tr class="memdesc:ga829386e115dea84ab3ad2abfc58cf331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slave SPI Receive function.  <a href="#ga829386e115dea84ab3ad2abfc58cf331">More...</a><br /></td></tr>
-<tr class="separator:ga829386e115dea84ab3ad2abfc58cf331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac65b45b1971eb5df7bba78ac90ddbe26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gac65b45b1971eb5df7bba78ac90ddbe26">hal_slv_spi_trx</a> (void *hdl, int phase, int polarity, int dfs, void *wbuf, void *rbuf, uint16_t buf_len, uint16_t *wlen, uint16_t *rlen)</td></tr>
-<tr class="memdesc:gac65b45b1971eb5df7bba78ac90ddbe26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slave SPI Transmit and Receive function (bi-direction)  <a href="#gac65b45b1971eb5df7bba78ac90ddbe26">More...</a><br /></td></tr>
-<tr class="separator:gac65b45b1971eb5df7bba78ac90ddbe26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae63b0f1180cb61eac2a1f1db68f97773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gae63b0f1180cb61eac2a1f1db68f97773">hal_slv_spi_stop</a> (void *hdl)</td></tr>
-<tr class="memdesc:gae63b0f1180cb61eac2a1f1db68f97773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slave SPI stop function.  <a href="#gae63b0f1180cb61eac2a1f1db68f97773">More...</a><br /></td></tr>
-<tr class="separator:gae63b0f1180cb61eac2a1f1db68f97773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7dcbafcf3c30c059e4e9c52843f7b6b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gaf7dcbafcf3c30c059e4e9c52843f7b6b">hal_spi_busy</a> (void *hdl)</td></tr>
-<tr class="memdesc:gaf7dcbafcf3c30c059e4e9c52843f7b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get SPI busy status.  <a href="#gaf7dcbafcf3c30c059e4e9c52843f7b6b">More...</a><br /></td></tr>
-<tr class="separator:gaf7dcbafcf3c30c059e4e9c52843f7b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00bb740ff18ad1ddad2e2ba6afd9c82c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga00bb740ff18ad1ddad2e2ba6afd9c82c">hal_spi_trx_dma_chain_start</a> (void *hdl, int cs, int speed, int phase, int polarity, int dfs, void *wbuf[2], void *rbuf[2], uint16_t buffer_len, void *arg, void(*callback)(void *arg, int dir, int id, int status))</td></tr>
-<tr class="memdesc:ga00bb740ff18ad1ddad2e2ba6afd9c82c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master SPI Transmit and Receive DMA block chain function (bi-direction)  <a href="#ga00bb740ff18ad1ddad2e2ba6afd9c82c">More...</a><br /></td></tr>
-<tr class="separator:ga00bb740ff18ad1ddad2e2ba6afd9c82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa124c5efb9e6c78c6780601241aab562"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gaa124c5efb9e6c78c6780601241aab562">hal_spi_trx_dma_chain_stop</a> (void *hdl)</td></tr>
-<tr class="memdesc:gaa124c5efb9e6c78c6780601241aab562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Transmit and Receive DMA block chain function (bi-direction)  <a href="#gaa124c5efb9e6c78c6780601241aab562">More...</a><br /></td></tr>
-<tr class="separator:gaa124c5efb9e6c78c6780601241aab562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga684d0ce487462ebcdeebedfe755d55dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga684d0ce487462ebcdeebedfe755d55dc">hal_spi_tx</a> (void *hdl, void *buffer, uint16_t buffer_len, int poll, uint32_t tmo, uint16_t *actual_size)</td></tr>
+<tr class="memdesc:ga684d0ce487462ebcdeebedfe755d55dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI transmit function.  <a href="#ga684d0ce487462ebcdeebedfe755d55dc">More...</a><br /></td></tr>
+<tr class="separator:ga684d0ce487462ebcdeebedfe755d55dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e557c7178fdf160ace68fef1fee4d8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga0e557c7178fdf160ace68fef1fee4d8a">hal_spi_rx</a> (void *hdl, void *buffer, uint16_t buffer_len, int poll, uint32_t tmo, uint16_t *actual_size)</td></tr>
+<tr class="memdesc:ga0e557c7178fdf160ace68fef1fee4d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Receive function.  <a href="#ga0e557c7178fdf160ace68fef1fee4d8a">More...</a><br /></td></tr>
+<tr class="separator:ga0e557c7178fdf160ace68fef1fee4d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d7ad58c16385d184f83a6a7baa51e2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga3d7ad58c16385d184f83a6a7baa51e2f">hal_spi_trx</a> (void *hdl, void *wbuf, void *rbuf, uint16_t buffer_len, int poll, uint32_t tmo, uint16_t *actual_size)</td></tr>
+<tr class="memdesc:ga3d7ad58c16385d184f83a6a7baa51e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Transmit and Receive function (bi-direction)  <a href="#ga3d7ad58c16385d184f83a6a7baa51e2f">More...</a><br /></td></tr>
+<tr class="separator:ga3d7ad58c16385d184f83a6a7baa51e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4199a8724ef21c9ffae42f702f730ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gab4199a8724ef21c9ffae42f702f730ae">hal_spi_tx_dma</a> (void *hdl, void *buffer, uint16_t buffer_len, int poll, uint32_t tmo, uint16_t *actual_size)</td></tr>
+<tr class="memdesc:gab4199a8724ef21c9ffae42f702f730ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI transmit DMA function.  <a href="#gab4199a8724ef21c9ffae42f702f730ae">More...</a><br /></td></tr>
+<tr class="separator:gab4199a8724ef21c9ffae42f702f730ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf816f1dc3c4d3192129a095a3f0c5d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gadf816f1dc3c4d3192129a095a3f0c5d6">hal_spi_rx_dma</a> (void *hdl, void *buffer, uint16_t buffer_len, int poll, uint32_t tmo, uint16_t *actual_size)</td></tr>
+<tr class="memdesc:gadf816f1dc3c4d3192129a095a3f0c5d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Receive DMA function.  <a href="#gadf816f1dc3c4d3192129a095a3f0c5d6">More...</a><br /></td></tr>
+<tr class="separator:gadf816f1dc3c4d3192129a095a3f0c5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga791325f155a9210ff764f98ab7e5460f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#ga791325f155a9210ff764f98ab7e5460f">hal_spi_trx_dma</a> (void *hdl, void *wbuf, void *rbuf, uint16_t buffer_len, int poll, uint32_t tmo, uint16_t *actual_size)</td></tr>
+<tr class="memdesc:ga791325f155a9210ff764f98ab7e5460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master or Slave SPI Transmit and Receive DMA function (bi-direction)  <a href="#ga791325f155a9210ff764f98ab7e5460f">More...</a><br /></td></tr>
+<tr class="separator:ga791325f155a9210ff764f98ab7e5460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad380bc4e47f157df02626d4b96bd8f95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___s_p_i.html#gad380bc4e47f157df02626d4b96bd8f95">hal_spi_resume</a> (void *hdl)</td></tr>
+<tr class="memdesc:gad380bc4e47f157df02626d4b96bd8f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually resume the SPI.  <a href="#gad380bc4e47f157df02626d4b96bd8f95">More...</a><br /></td></tr>
+<tr class="separator:gad380bc4e47f157df02626d4b96bd8f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HAL_SPI. </p>
@@ -268,102 +250,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga829386e115dea84ab3ad2abfc58cf331"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga829386e115dea84ab3ad2abfc58cf331">&#9670;&nbsp;</a></span>hal_slv_spi_rx()</h2>
+<a id="gafaf0aa1817860305b542a893de0cb458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafaf0aa1817860305b542a893de0cb458">&#9670;&nbsp;</a></span>hal_spi_cancel()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int hal_slv_spi_rx </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>phase</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>polarity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dfs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>buf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buf_len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t *&#160;</td>
-          <td class="paramname"><em>rlen</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Slave SPI Receive function. </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>SPI slave can receive multiple uint within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
- </li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer point to the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The RX buffer length. <br />
-</td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rlen</td><td>Actual RX length.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="gae63b0f1180cb61eac2a1f1db68f97773"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae63b0f1180cb61eac2a1f1db68f97773">&#9670;&nbsp;</a></span>hal_slv_spi_stop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void hal_slv_spi_stop </td>
+          <td class="memname">int hal_spi_cancel </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>hdl</em></td><td>)</td>
@@ -372,7 +266,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Slave SPI stop function. </p>
+<p>Stop the SPI process. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
@@ -380,226 +274,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a id="gac65b45b1971eb5df7bba78ac90ddbe26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac65b45b1971eb5df7bba78ac90ddbe26">&#9670;&nbsp;</a></span>hal_slv_spi_trx()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_slv_spi_trx </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>phase</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>polarity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dfs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>wbuf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>rbuf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buf_len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t *&#160;</td>
-          <td class="paramname"><em>wlen</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t *&#160;</td>
-          <td class="paramname"><em>rlen</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Slave SPI Transmit and Receive function (bi-direction) </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>For SPI slave transmit, the master needs to provide the "Slave Select" signal. The SPI slave will transmit one unit (could be byte, short, or long depends on the data frame size) out per "Slave Select" signal. SPI slave can't do multiple transfer within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
- </li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wbuf</td><td>The void pointer point to the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rbuf</td><td>The void pointer point to the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buf_len</td><td>The TX and RX buffer length. <br />
-</td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">wlen</td><td>Actual TX length. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rlen</td><td>Actual RX length.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ga5506696dd2ad49c072eded08829c3dab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5506696dd2ad49c072eded08829c3dab">&#9670;&nbsp;</a></span>hal_slv_spi_tx()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_slv_spi_tx </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>phase</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>polarity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dfs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>buf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buf_len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t *&#160;</td>
-          <td class="paramname"><em>wlen</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Slave SPI transmit function. </p>
-<p>Experimental slave SPI API <br />
- </p><dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>For SPI slave transmit, the master needs to provide the "Slave Select" signal. The SPI slave will transmit one unit (could be byte, short, or long depends on the data frame size) out per "Slave Select" signal. SPI slave can't do multiple transfer within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
-</li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer point to the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The TX buffer length. <br />
-</td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">wlen</td><td>Actual TX length.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="gaf7dcbafcf3c30c059e4e9c52843f7b6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf7dcbafcf3c30c059e4e9c52843f7b6b">&#9670;&nbsp;</a></span>hal_spi_busy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_spi_busy </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get SPI busy status. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>1 if busy, otherwise 0 </dd></dl>
 
 </div>
 </div>
@@ -632,49 +308,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga6ac42b3e3e83048a16b37288b9d1778e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6ac42b3e3e83048a16b37288b9d1778e">&#9670;&nbsp;</a></span>hal_spi_int_prio()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_spi_int_prio </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>prio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set SPI interrupt priority. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prio</td><td>Interrupt priority. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>in_irq.h.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="gab995d7ea256e4c506fc772fd8ff5729e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab995d7ea256e4c506fc772fd8ff5729e">&#9670;&nbsp;</a></span>hal_spi_open()</h2>
+<a id="gaa0c53d0138e219c78f39bdd5a1501cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0c53d0138e219c78f39bdd5a1501cde">&#9670;&nbsp;</a></span>hal_spi_open()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -683,31 +318,13 @@ Functions</h2></td></tr>
           <td class="memname">void* hal_spi_open </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
+          <td class="paramname"><em>spi_id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>speed</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>phase</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>polarity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>prio</em>&#160;</td>
+          <td class="paramtype">spi_config_t *&#160;</td>
+          <td class="paramname"><em>p_spi</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -720,18 +337,127 @@ Functions</h2></td></tr>
 <p>Open the SPI driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>The SPI ID, </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">spi_id</td><td>The SPI ID, </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gab8662401ed15b6f5702950647dd774e2" title="SPI ID. ">spi_id</a>. <br />
- </dd></dl>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">p_spi</td><td>Pointer to the spi_config_t data structure <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>Handle to the SPI driver, NULL means open failed. </dd></dl>
 
 </div>
 </div>
-<a id="gaf46b4e0d2f43e388edddc36ed3f39b90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf46b4e0d2f43e388edddc36ed3f39b90">&#9670;&nbsp;</a></span>hal_spi_rx_dma()</h2>
+<a id="gad380bc4e47f157df02626d4b96bd8f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad380bc4e47f157df02626d4b96bd8f95">&#9670;&nbsp;</a></span>hal_spi_resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_spi_resume </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Manually resume the SPI. </p>
+<dl class="section note"><dt>Note</dt><dd>When call SPI TRX API, driver will resume SPI automatically. If the application wants to resume SPI maually, then call this API.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none. </dd></dl>
+
+</div>
+</div>
+<a id="ga0e557c7178fdf160ace68fef1fee4d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e557c7178fdf160ace68fef1fee4d8a">&#9670;&nbsp;</a></span>hal_spi_rx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_rx </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>actual_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Master or Slave SPI Receive function. </p>
+<dl class="section note"><dt>Note</dt><dd>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
+ </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer of the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The RX length. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>=1: Poll the completition, =0: Otherwise. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Poll or block time out value in millisecond. &gt; 0: Block until transfer completed or time out, = 0xFFFFFFFF: Block forever until completed. = 0: No blocking; Callback to indicate completition </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_size</td><td>Pointer to a 16 bits variable for the function to return the length of the actual TX. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
+
+</div>
+</div>
+<a id="gadf816f1dc3c4d3192129a095a3f0c5d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf816f1dc3c4d3192129a095a3f0c5d6">&#9670;&nbsp;</a></span>hal_spi_rx_dma()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -745,12 +471,6 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>buffer</em>, </td>
         </tr>
@@ -759,6 +479,18 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -775,29 +507,19 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Master or Slave SPI Receive DMA function. </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>SPI slave can receive multiple uint within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
- </li>
-</ol>
-</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
+ </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>The SPI slave select. This is only valid for master SPI and the possible value are 0 or 1. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The SPI serial clock rate. They can be 16, 8, 4, 2, or 1 Mhz. Only for master. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer point to the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The RX buffer length. <br />
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer of the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The RX length. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>=1: Poll the completition, =0: Otherwise. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Poll or block time out value in millisecond. &gt; 0: Block until transfer completed or time out, = 0xFFFFFFFF: Block forever until completed. = 0: No blocking; Callback to indicate completition </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_size</td><td>Pointer to a 16 bits variable for the function to return the length of the actual TX. <br />
  </td></tr>
   </table>
   </dd>
@@ -807,112 +529,17 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gadbf453270595e780b99153327e633242"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadbf453270595e780b99153327e633242">&#9670;&nbsp;</a></span>hal_spi_rx_non_block()</h2>
+<a id="ga3d7ad58c16385d184f83a6a7baa51e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d7ad58c16385d184f83a6a7baa51e2f">&#9670;&nbsp;</a></span>hal_spi_trx()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int hal_spi_rx_non_block </td>
+          <td class="memname">int hal_spi_trx </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dfs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(void *arg, int status, uint16_t size)&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Master or Slave SPI Receive function. </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>SPI slave can receive multiple uint within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
- </li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>The SPI slave select. This is only valid for master SPI and the possible value are 0 or 1. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The SPI serial clock rate. They can be 16, 8, 4, 2, or 1 Mhz. Only for master. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer point to the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The RX buffer length. <br />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ga644cbbf8dd4ac4deec9a10a1e05ccfa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga644cbbf8dd4ac4deec9a10a1e05ccfa4">&#9670;&nbsp;</a></span>hal_spi_trx_dma()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_spi_trx_dma </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -931,6 +558,98 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>actual_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Master or Slave SPI Transmit and Receive function (bi-direction) </p>
+<dl class="section note"><dt>Note</dt><dd>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
+ </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wbuf</td><td>The void pointer point to the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rbuf</td><td>The void pointer point to the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The TX and RX buffer length. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>=1: Poll the completition, =0: Otherwise. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Poll or block time out value in millisecond. &gt; 0: Block until transfer completed or time out, = 0xFFFFFFFF: Block forever until completed. = 0: No blocking; Callback to indicate completition </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_size</td><td>Pointer to a 16 bits variable for the function to return the length of the actual TX. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ga791325f155a9210ff764f98ab7e5460f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga791325f155a9210ff764f98ab7e5460f">&#9670;&nbsp;</a></span>hal_spi_trx_dma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_trx_dma </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>wbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>rbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -957,20 +676,14 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>The SPI slave select. This is only valid for master SPI and the possible value are 0 or 1. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The SPI serial clock rate. They can be 16, 8, 4, 2, or 1 Mhz. Only for master. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">wbuf</td><td>The void pointer point to the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">rbuf</td><td>The void pointer point to the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The TX and RX buffer length. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>=1: Poll the completition, =0: Otherwise. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Poll or block time out value in millisecond. &gt; 0: Block until transfer completed or time out, = 0xFFFFFFFF: Block forever until completed. = 0: No blocking; Callback to indicate completition </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_size</td><td>Pointer to a 16 bits variable for the function to return the length of the actual TX. <br />
  </td></tr>
   </table>
   </dd>
@@ -980,14 +693,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga00bb740ff18ad1ddad2e2ba6afd9c82c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga00bb740ff18ad1ddad2e2ba6afd9c82c">&#9670;&nbsp;</a></span>hal_spi_trx_dma_chain_start()</h2>
+<a id="ga684d0ce487462ebcdeebedfe755d55dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga684d0ce487462ebcdeebedfe755d55dc">&#9670;&nbsp;</a></span>hal_spi_tx()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int hal_spi_trx_dma_chain_start </td>
+          <td class="memname">int hal_spi_tx </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>hdl</em>, </td>
@@ -995,44 +708,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>speed</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>phase</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>polarity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dfs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>wbuf</em>[2], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>rbuf</em>[2], </td>
+          <td class="paramname"><em>buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1043,14 +720,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*)(void *arg, int dir, int id, int status)&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>actual_size</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1060,68 +743,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Master SPI Transmit and Receive DMA block chain function (bi-direction) </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>This is to start the DMA block chaining. The SPI's TX/RX FIFO will be automatically filled/emptied by the DMA.</li>
-<li>While user handles the ping buffer, the DMA will handle the pong buffer</li>
-</ol>
-<ol type="1">
-<li>The ping/pong scheme will continuously transfer data to/from slave which means the slave selected signal will be always low. <br />
- </li>
-</ol>
+<p>Master or Slave SPI transmit function. </p>
+<dl class="section note"><dt>Note</dt><dd>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>The SPI slave select. This is only valid for master SPI and the possible value are 0 or 1. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The SPI serial clock rate. They can be 16, 8, 4, 2, or 1 Mhz. Only for master. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wbuf</td><td>The ping/pong buffers pointer array for the TX. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rbuf</td><td>The ping/pong buffer pointer array for the RX. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The ping/pong buffer size. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>The user provided argument for the ping/pong completed call back function. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The user provided ping/pong completed call back function:</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="gaa124c5efb9e6c78c6780601241aab562"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa124c5efb9e6c78c6780601241aab562">&#9670;&nbsp;</a></span>hal_spi_trx_dma_chain_stop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_spi_trx_dma_chain_stop </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Master or Slave SPI Transmit and Receive DMA block chain function (bi-direction) </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>Stop the DMA block chaining.</li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer of the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The TX length. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>=1: Poll the completition, =0: Otherwise. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Poll or block time out value in millisecond. &gt; 0: Block until transfer completed or time out, = 0xFFFFFFFF: Block forever until completed. = 0: No blocking; Callback to indicate completition </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_size</td><td>Pointer to a 16 bits variable for the function to return the length of the actual TX. <br />
  </td></tr>
   </table>
   </dd>
@@ -1131,104 +766,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga461b8e686bd08d2957a2d37d4b44a763"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga461b8e686bd08d2957a2d37d4b44a763">&#9670;&nbsp;</a></span>hal_spi_trx_non_block()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_spi_trx_non_block </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dfs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>wbuf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>rbuf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buf_len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(void *arg, int status, uint16_t actual_size)&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Master or Slave SPI Transmit and Receive function (bi-direction) </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>For SPI slave transmit, the master needs to provide the "Slave Select" signal. The SPI slave will transmit one unit (could be byte, short, or long depends on the data frame size) out per "Slave Select" signal. SPI slave can't do multiple transfer within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
- </li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
-</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>The SPI slave select. This is only valid for master SPI and the possible value are 0 or 1. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The SPI serial clock rate. They can be 16, 8, 4, 2, or 1 Mhz. Only for master. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wbuf</td><td>The void pointer point to the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rbuf</td><td>The void pointer point to the RX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buf_len</td><td>The TX and RX buffer length. <br />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ga329448e642abc4a8b6da531f5303b383"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga329448e642abc4a8b6da531f5303b383">&#9670;&nbsp;</a></span>hal_spi_tx_dma()</h2>
+<a id="gab4199a8724ef21c9ffae42f702f730ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4199a8724ef21c9ffae42f702f730ae">&#9670;&nbsp;</a></span>hal_spi_tx_dma()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1242,12 +781,6 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>buffer</em>, </td>
         </tr>
@@ -1256,6 +789,18 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1272,118 +817,19 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Master or Slave SPI transmit DMA function. </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>For SPI slave transmit, the master needs to provide the "Slave Select" signal. The SPI slave will transmit one unit (could be byte, short, or long depends on the data frame size) out per "Slave Select" signal. SPI slave can't do multiple transfer within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
-</li>
-</ol>
-</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
+ </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>The SPI slave select. This is only valid for SPI master and the possible value are 0 or 1. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The SPI serial clock rate. They can be 16, 8, 4, 2, or 1 Mhz. Only for master. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer point to the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The TX buffer length. <br />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>SPI_ERR_OK if successful, otherwise failed. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#ga15319111e661191d82defc0a867dbba3" title="SPI error code. ">spi_err</a>. </dd></dl>
-
-</div>
-</div>
-<a id="gac99fe5227a1bd6f5f1f4ed3e9729f102"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac99fe5227a1bd6f5f1f4ed3e9729f102">&#9670;&nbsp;</a></span>hal_spi_tx_non_block()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_spi_tx_non_block </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dfs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(void *arg, int status, uint16_t size)&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Master or Slave SPI transmit function. </p>
-<dl class="section note"><dt>Note</dt><dd><ol type="1">
-<li>For SPI slave transmit, the master needs to provide the "Slave Select" signal. The SPI slave will transmit one unit (could be byte, short, or long depends on the data frame size) out per "Slave Select" signal. SPI slave can't do multiple transfer within one "Slave Select" signal.</li>
-<li>SPI slave can only support speed up to D0 clock divided by 4. If D0 clock is 32 Mhz, then SPI master speed has to be less or equal to 8 Mhz. <br />
-</li>
-</ol>
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the "open" function call. <br />
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer of the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The TX length. <br />
 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>The SPI slave select. This is only valid for SPI master and the possible value are 0 or 1. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>The SPI serial clock rate. They can be 16, 8, 4, 2, or 1 Mhz. Only for master. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The SPI clock phase. 0: first edge of SPI clock, 1: trailing edge of SPI clock. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">polarity</td><td>The SPI clock polarity. 0: rising, 1: falling. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfs</td><td>The data frame size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum <a class="el" href="group___h_a_l___s_p_i.html#gaccc684e45dc033c88af301fb218850a8" title="SPI data frame size. ">spi_dfs_bit</a>. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The void pointer point to the TX buffer. This pointer, depends on the data frame size, will be cast by the driver to byte, short, or long. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>The TX buffer length. <br />
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>=1: Poll the completition, =0: Otherwise. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Poll or block time out value in millisecond. &gt; 0: Block until transfer completed or time out, = 0xFFFFFFFF: Block forever until completed. = 0: No blocking; Callback to indicate completition </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_size</td><td>Pointer to a 16 bits variable for the function to return the length of the actual TX. <br />
  </td></tr>
   </table>
   </dd>

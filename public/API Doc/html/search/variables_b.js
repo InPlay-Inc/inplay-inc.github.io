@@ -21,7 +21,7 @@ var searchData=
   ['local_5fmps',['local_mps',['../structble__lecb__connect__t.html#a73413f5579f31f3139574f257ab629d6',1,'ble_lecb_connect_t::local_mps()'],['../structble__lecb__connect__cfm__t.html#a73413f5579f31f3139574f257ab629d6',1,'ble_lecb_connect_cfm_t::local_mps()']]],
   ['local_5fmtu',['local_mtu',['../structble__lecb__connect__t.html#a073cf06d942a4dec85b975abf226da6b',1,'ble_lecb_connect_t::local_mtu()'],['../structble__lecb__connect__cfm__t.html#a073cf06d942a4dec85b975abf226da6b',1,'ble_lecb_connect_cfm_t::local_mtu()']]],
   ['local_5fsign_5fcounter',['local_sign_counter',['../structble__evt__sign__counter__ind__t.html#ab9ecfac2fc3551f67d3514c632eb5d6c',1,'ble_evt_sign_counter_ind_t']]],
-  ['lp_5fmem_5faddr',['lp_mem_addr',['../structtrig__init__t.html#aa643f3e8a7a37a09c7b337e159f2255e',1,'trig_init_t']]],
+  ['lp_5fmem_5fsize',['lp_mem_size',['../structtrig__init__t.html#a6bdea248239c8202029cc0d563572e28',1,'trig_init_t']]],
   ['lpn_5faddr',['lpn_addr',['../structmesh__dbg__friend__lpn__ind.html#ab3371dec7376470768bacb36c432e7be',1,'mesh_dbg_friend_lpn_ind']]],
   ['lpn_5flid',['lpn_lid',['../structmesh__dbg__friend__lpn__ind.html#a8c6551439832f747281143807f5edeb0',1,'mesh_dbg_friend_lpn_ind']]],
   ['lsign_5fcounter',['lsign_counter',['../structble__conn__cfm__t.html#a4b565165db59a62a4e1acd2575250921',1,'ble_conn_cfm_t']]],

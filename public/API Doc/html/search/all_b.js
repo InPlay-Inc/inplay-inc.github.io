@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['l2cap_5fevt_5fcode',['L2CAP_EVT_CODE',['../group___i_n___b_l_e___e_v_t.html#gga16af7b253440dadd46a80a4b9fddba4da5c6b1dd3107c06e6955e24e0bb328a96',1,'in_ble_evt.h']]],
+  ['l2cap_5fevt_5fcode',['L2CAP_EVT_CODE',['../group___i_n___b_l_e___e_v_t.html#gga80155586fa275b28773c9b203f52cabaa5c6b1dd3107c06e6955e24e0bb328a96',1,'in_ble_evt.h']]],
   ['label_5fuuid',['label_uuid',['../structmesh__dbg__mio__set__publi__param__cmd.html#a4c753abd7c7857015133b08e290306f6',1,'mesh_dbg_mio_set_publi_param_cmd::label_uuid()'],['../structmesh__dbg__mio__add__addr__subs__cmd.html#a4c753abd7c7857015133b08e290306f6',1,'mesh_dbg_mio_add_addr_subs_cmd::label_uuid()'],['../structmesh__dbg__mio__del__addr__subs__cmd.html#a4c753abd7c7857015133b08e290306f6',1,'mesh_dbg_mio_del_addr_subs_cmd::label_uuid()']]],
   ['latency',['latency',['../structble__conn__param__update__t.html#a3c33efef6d5cbcd1ddacf7f6ec924423',1,'ble_conn_param_update_t::latency()'],['../structble__evt__conn__param__upd__req__t.html#a3c33efef6d5cbcd1ddacf7f6ec924423',1,'ble_evt_conn_param_upd_req_t::latency()']]],
   ['layer',['layer',['../structmesh__dbg__data__send.html#ab92ef21d02da6a7b7ca74c70ef78f57f',1,'mesh_dbg_data_send']]],
@@ -27,7 +27,7 @@ var searchData=
   ['local_5fmps',['local_mps',['../structble__lecb__connect__t.html#a73413f5579f31f3139574f257ab629d6',1,'ble_lecb_connect_t::local_mps()'],['../structble__lecb__connect__cfm__t.html#a73413f5579f31f3139574f257ab629d6',1,'ble_lecb_connect_cfm_t::local_mps()']]],
   ['local_5fmtu',['local_mtu',['../structble__lecb__connect__t.html#a073cf06d942a4dec85b975abf226da6b',1,'ble_lecb_connect_t::local_mtu()'],['../structble__lecb__connect__cfm__t.html#a073cf06d942a4dec85b975abf226da6b',1,'ble_lecb_connect_cfm_t::local_mtu()']]],
   ['local_5fsign_5fcounter',['local_sign_counter',['../structble__evt__sign__counter__ind__t.html#ab9ecfac2fc3551f67d3514c632eb5d6c',1,'ble_evt_sign_counter_ind_t']]],
-  ['lp_5fmem_5faddr',['lp_mem_addr',['../structtrig__init__t.html#aa643f3e8a7a37a09c7b337e159f2255e',1,'trig_init_t']]],
+  ['lp_5fmem_5fsize',['lp_mem_size',['../structtrig__init__t.html#a6bdea248239c8202029cc0d563572e28',1,'trig_init_t']]],
   ['lpn_5faddr',['lpn_addr',['../structmesh__dbg__friend__lpn__ind.html#ab3371dec7376470768bacb36c432e7be',1,'mesh_dbg_friend_lpn_ind']]],
   ['lpn_5flid',['lpn_lid',['../structmesh__dbg__friend__lpn__ind.html#a8c6551439832f747281143807f5edeb0',1,'mesh_dbg_friend_lpn_ind']]],
   ['lsign_5fcounter',['lsign_counter',['../structble__conn__cfm__t.html#a4b565165db59a62a4e1acd2575250921',1,'ble_conn_cfm_t']]],

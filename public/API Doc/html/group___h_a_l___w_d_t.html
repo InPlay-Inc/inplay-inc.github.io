@@ -97,18 +97,70 @@ $(document).ready(function(){initNavTree('group___h_a_l___w_d_t.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad6cd64f16525b77dd1fa078f30be1d25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___w_d_t.html#gad6cd64f16525b77dd1fa078f30be1d25">hal_aon_wdt_start</a> (wdt_cfg_param_t *cfg, void(*callback)(void *arg), void *arg)</td></tr>
-<tr class="memdesc:gad6cd64f16525b77dd1fa078f30be1d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable watch dog timer.  <a href="#gad6cd64f16525b77dd1fa078f30be1d25">More...</a><br /></td></tr>
-<tr class="separator:gad6cd64f16525b77dd1fa078f30be1d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac34a0f84ab6bef2db2e1f4113f0361d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___w_d_t.html#gac34a0f84ab6bef2db2e1f4113f0361d1">hal_aon_wdt_start</a> (wdt_cfg_param_t *cfg, void *arg, void(*callback)(void *arg))</td></tr>
+<tr class="memdesc:gac34a0f84ab6bef2db2e1f4113f0361d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable watch dog timer.  <a href="#gac34a0f84ab6bef2db2e1f4113f0361d1">More...</a><br /></td></tr>
+<tr class="separator:gac34a0f84ab6bef2db2e1f4113f0361d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab13c645443752faa582ec2b465a8d095"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___w_d_t.html#gab13c645443752faa582ec2b465a8d095">hal_aon_wdt_stop</a> (void)</td></tr>
+<tr class="memdesc:gab13c645443752faa582ec2b465a8d095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable watch dog timer.  <a href="#gab13c645443752faa582ec2b465a8d095">More...</a><br /></td></tr>
+<tr class="separator:gab13c645443752faa582ec2b465a8d095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga03a4e2a3d43eaec7e99f829d2ff92330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___w_d_t.html#ga03a4e2a3d43eaec7e99f829d2ff92330">hal_aon_wdt_touch</a> (void)</td></tr>
 <tr class="memdesc:ga03a4e2a3d43eaec7e99f829d2ff92330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reload the watch dog timer counter.  <a href="#ga03a4e2a3d43eaec7e99f829d2ff92330">More...</a><br /></td></tr>
 <tr class="separator:ga03a4e2a3d43eaec7e99f829d2ff92330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c2c6b9d88a0109fb3b4983d1fb6af61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___w_d_t.html#ga6c2c6b9d88a0109fb3b4983d1fb6af61">hal_aon_wdt_clear_int_source</a> (void)</td></tr>
+<tr class="memdesc:ga6c2c6b9d88a0109fb3b4983d1fb6af61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear watch dog timer interrupt source in the slow clock domain.  <a href="#ga6c2c6b9d88a0109fb3b4983d1fb6af61">More...</a><br /></td></tr>
+<tr class="separator:ga6c2c6b9d88a0109fb3b4983d1fb6af61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c23bd234cf012f608a382b5962724d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___w_d_t.html#ga9c23bd234cf012f608a382b5962724d1">hal_aon_wdt_resume</a> (void)</td></tr>
+<tr class="memdesc:ga9c23bd234cf012f608a382b5962724d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume interrupt settings.  <a href="#ga9c23bd234cf012f608a382b5962724d1">More...</a><br /></td></tr>
+<tr class="separator:ga9c23bd234cf012f608a382b5962724d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HAL_WDT. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gad6cd64f16525b77dd1fa078f30be1d25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad6cd64f16525b77dd1fa078f30be1d25">&#9670;&nbsp;</a></span>hal_aon_wdt_start()</h2>
+<a id="ga6c2c6b9d88a0109fb3b4983d1fb6af61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c2c6b9d88a0109fb3b4983d1fb6af61">&#9670;&nbsp;</a></span>hal_aon_wdt_clear_int_source()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_aon_wdt_clear_int_source </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear watch dog timer interrupt source in the slow clock domain. </p>
+<dl class="section note"><dt>Note</dt><dd>:</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void. This function has no return value. </dd></dl>
+
+</div>
+</div>
+<a id="ga9c23bd234cf012f608a382b5962724d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c23bd234cf012f608a382b5962724d1">&#9670;&nbsp;</a></span>hal_aon_wdt_resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_aon_wdt_resume </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resume interrupt settings. </p>
+<dl class="section return"><dt>Returns</dt><dd>void. This function has no return value. </dd></dl>
+
+</div>
+</div>
+<a id="gac34a0f84ab6bef2db2e1f4113f0361d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac34a0f84ab6bef2db2e1f4113f0361d1">&#9670;&nbsp;</a></span>hal_aon_wdt_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -122,14 +174,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*)(void *arg)&#160;</td>
-          <td class="paramname"><em>callback</em>, </td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em>&#160;</td>
+          <td class="paramtype">void(*)(void *arg)&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -142,15 +194,43 @@ Functions</h2></td></tr>
 <p>Enable watch dog timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cfg</td><td>Configuration parameters of WDT <br />
-</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cfg</td><td>Configuration parameters of WDT; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>wdt_cfg_param_t. <br />
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Call back function when WDT interrupt happens. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>User supply call back parameter.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum wdt_error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Driver error return code; </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum wdt_error. </dd></dl>
+
+</div>
+</div>
+<a id="gab13c645443752faa582ec2b465a8d095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab13c645443752faa582ec2b465a8d095">&#9670;&nbsp;</a></span>hal_aon_wdt_stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_aon_wdt_stop </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable watch dog timer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Driver error return code; </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum wdt_error. </dd></dl>
 
 </div>
 </div>

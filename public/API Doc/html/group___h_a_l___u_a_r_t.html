@@ -86,8 +86,7 @@ $(document).ready(function(){initNavTree('group___h_a_l___u_a_r_t.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">uart driver<div class="ingroups"><a class="el" href="group___h_a_l.html">HAL driver</a></div></div>  </div>
 </div><!--header-->
@@ -107,128 +106,43 @@ Functions</h2></td></tr>
 <tr class="memitem:gade2a58775b56de5499db9df3ce5d5884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#gade2a58775b56de5499db9df3ce5d5884">hal_uart_putc</a> (void *hdl, char c)</td></tr>
 <tr class="memdesc:gade2a58775b56de5499db9df3ce5d5884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output 1 char.  <a href="#gade2a58775b56de5499db9df3ce5d5884">More...</a><br /></td></tr>
 <tr class="separator:gade2a58775b56de5499db9df3ce5d5884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga990cb32c2f274bea386994e73f5cdb84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga990cb32c2f274bea386994e73f5cdb84">hal_uart_xmit_poll</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len)</td></tr>
-<tr class="memdesc:ga990cb32c2f274bea386994e73f5cdb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart TX by polling.  <a href="#ga990cb32c2f274bea386994e73f5cdb84">More...</a><br /></td></tr>
-<tr class="separator:ga990cb32c2f274bea386994e73f5cdb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae128ad304e8557e8dd85cf6336584eda"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#gae128ad304e8557e8dd85cf6336584eda">hal_uart_rcvd_poll</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len)</td></tr>
-<tr class="memdesc:gae128ad304e8557e8dd85cf6336584eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart RX by polling.  <a href="#gae128ad304e8557e8dd85cf6336584eda">More...</a><br /></td></tr>
-<tr class="separator:gae128ad304e8557e8dd85cf6336584eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05bc0ffb7615abe0574ca921aee7ba05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga05bc0ffb7615abe0574ca921aee7ba05">hal_uart_xmit_intr</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len)</td></tr>
-<tr class="memdesc:ga05bc0ffb7615abe0574ca921aee7ba05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart TX by interrupt.  <a href="#ga05bc0ffb7615abe0574ca921aee7ba05">More...</a><br /></td></tr>
-<tr class="separator:ga05bc0ffb7615abe0574ca921aee7ba05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7584ef73e588a32011f8aa294a412c1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga7584ef73e588a32011f8aa294a412c1d">hal_uart_xmit_intr_hci</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, void *cb_arg, void(*callback)(void *arg, int length, int error))</td></tr>
-<tr class="memdesc:ga7584ef73e588a32011f8aa294a412c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">HCI Uart TX by interrupt.  <a href="#ga7584ef73e588a32011f8aa294a412c1d">More...</a><br /></td></tr>
-<tr class="separator:ga7584ef73e588a32011f8aa294a412c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9dfbd636fd4d320276e3a42b40ae30ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga9dfbd636fd4d320276e3a42b40ae30ec">hal_uart_rcvd_intr</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, uint32_t tmo, uint32_t *actual_rx_len)</td></tr>
-<tr class="memdesc:ga9dfbd636fd4d320276e3a42b40ae30ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart RX by interrupt.  <a href="#ga9dfbd636fd4d320276e3a42b40ae30ec">More...</a><br /></td></tr>
-<tr class="separator:ga9dfbd636fd4d320276e3a42b40ae30ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7173782143b4afd4875946bd44fccff3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga7173782143b4afd4875946bd44fccff3">hal_uart_rcvd_intr_hci</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, void *cb_arg, void(*callback)(void *arg, int length, int error))</td></tr>
-<tr class="memdesc:ga7173782143b4afd4875946bd44fccff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">HCI Uart RX by interrupt.  <a href="#ga7173782143b4afd4875946bd44fccff3">More...</a><br /></td></tr>
-<tr class="separator:ga7173782143b4afd4875946bd44fccff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f74906e6341a90b29e59008358ae925"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga8f74906e6341a90b29e59008358ae925">hal_uart_tx</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, int poll)</td></tr>
+<tr class="memdesc:ga8f74906e6341a90b29e59008358ae925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart TX by interrupt.  <a href="#ga8f74906e6341a90b29e59008358ae925">More...</a><br /></td></tr>
+<tr class="separator:ga8f74906e6341a90b29e59008358ae925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17f40fb62e4ac641b259da84e4da14e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga17f40fb62e4ac641b259da84e4da14e2">hal_uart_tx_hci</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, void *cb_arg, void(*callback)(void *arg, int length, int error))</td></tr>
+<tr class="memdesc:ga17f40fb62e4ac641b259da84e4da14e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">HCI Uart TX by interrupt.  <a href="#ga17f40fb62e4ac641b259da84e4da14e2">More...</a><br /></td></tr>
+<tr class="separator:ga17f40fb62e4ac641b259da84e4da14e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69cfcdb5d3f41886442fe59a5f75e6b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga69cfcdb5d3f41886442fe59a5f75e6b9">hal_uart_rx</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, int poll, uint32_t tmo, uint32_t *actual_rx_len)</td></tr>
+<tr class="memdesc:ga69cfcdb5d3f41886442fe59a5f75e6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart RX by interrupt.  <a href="#ga69cfcdb5d3f41886442fe59a5f75e6b9">More...</a><br /></td></tr>
+<tr class="separator:ga69cfcdb5d3f41886442fe59a5f75e6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ea99dadc05b3915ee2e9322c98270e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga6ea99dadc05b3915ee2e9322c98270e0">hal_uart_rx_hci</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, void *cb_arg, void(*callback)(void *arg, int length, int error))</td></tr>
+<tr class="memdesc:ga6ea99dadc05b3915ee2e9322c98270e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">HCI Uart RX by interrupt.  <a href="#ga6ea99dadc05b3915ee2e9322c98270e0">More...</a><br /></td></tr>
+<tr class="separator:ga6ea99dadc05b3915ee2e9322c98270e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0264b6b13b18a63796cfc5e937251232"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga0264b6b13b18a63796cfc5e937251232">hal_uart_flow_on</a> (void *hdl)</td></tr>
 <tr class="memdesc:ga0264b6b13b18a63796cfc5e937251232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually turn on RTS request.  <a href="#ga0264b6b13b18a63796cfc5e937251232">More...</a><br /></td></tr>
 <tr class="separator:ga0264b6b13b18a63796cfc5e937251232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga845d870d7a344d6340dd4e5a25176356"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga845d870d7a344d6340dd4e5a25176356">hal_uart_flow_off</a> (void *hdl)</td></tr>
 <tr class="memdesc:ga845d870d7a344d6340dd4e5a25176356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually turn off RTS request.  <a href="#ga845d870d7a344d6340dd4e5a25176356">More...</a><br /></td></tr>
 <tr class="separator:ga845d870d7a344d6340dd4e5a25176356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3852536c7ff09c7f2e5e777728123a54"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga3852536c7ff09c7f2e5e777728123a54">hal_uart_xmit_dma</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len)</td></tr>
-<tr class="memdesc:ga3852536c7ff09c7f2e5e777728123a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart TX by DMA.  <a href="#ga3852536c7ff09c7f2e5e777728123a54">More...</a><br /></td></tr>
-<tr class="separator:ga3852536c7ff09c7f2e5e777728123a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6488e8d716592ce695ac38ee3aaf526c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga6488e8d716592ce695ac38ee3aaf526c">hal_uart_rcvd_dma</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, uint32_t tmo, uint32_t *actual_rx_len)</td></tr>
-<tr class="memdesc:ga6488e8d716592ce695ac38ee3aaf526c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart RX by DMA.  <a href="#ga6488e8d716592ce695ac38ee3aaf526c">More...</a><br /></td></tr>
-<tr class="separator:ga6488e8d716592ce695ac38ee3aaf526c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e19b38bae8416b74cf11fd4494f213a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga5e19b38bae8416b74cf11fd4494f213a">hal_uart_cancel</a> (void *hdl)</td></tr>
-<tr class="memdesc:ga5e19b38bae8416b74cf11fd4494f213a"><td class="mdescLeft">&#160;</td><td class="mdescRight">cancel uart rx  <a href="#ga5e19b38bae8416b74cf11fd4494f213a">More...</a><br /></td></tr>
-<tr class="separator:ga5e19b38bae8416b74cf11fd4494f213a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1f5190b1f786bf9b44c7b6ccf4c877e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga1f5190b1f786bf9b44c7b6ccf4c877e3">hal_uart_tx_dma</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, int poll)</td></tr>
+<tr class="memdesc:ga1f5190b1f786bf9b44c7b6ccf4c877e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart TX by DMA.  <a href="#ga1f5190b1f786bf9b44c7b6ccf4c877e3">More...</a><br /></td></tr>
+<tr class="separator:ga1f5190b1f786bf9b44c7b6ccf4c877e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e614202ef7d7ec26b73d0eb10615f99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga2e614202ef7d7ec26b73d0eb10615f99">hal_uart_rx_dma</a> (void *hdl, uint8_t *buffer, uint32_t buffer_len, int poll, uint32_t tmo, uint32_t *actual_rx_len)</td></tr>
+<tr class="memdesc:ga2e614202ef7d7ec26b73d0eb10615f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart RX by DMA.  <a href="#ga2e614202ef7d7ec26b73d0eb10615f99">More...</a><br /></td></tr>
+<tr class="separator:ga2e614202ef7d7ec26b73d0eb10615f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga666310f007cc314350371c8bfc7f1aae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga666310f007cc314350371c8bfc7f1aae">hal_uart_rx_cancel</a> (void *hdl)</td></tr>
+<tr class="memdesc:ga666310f007cc314350371c8bfc7f1aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">cancel uart rx  <a href="#ga666310f007cc314350371c8bfc7f1aae">More...</a><br /></td></tr>
+<tr class="separator:ga666310f007cc314350371c8bfc7f1aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5e52793fc7b35004bbb4e85e5234af64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga5e52793fc7b35004bbb4e85e5234af64">hal_uart_en_break</a> (void *hdl, char en, void(*cb)(void *), void *arg)</td></tr>
 <tr class="memdesc:ga5e52793fc7b35004bbb4e85e5234af64"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable uart break feature. Use uart break signal to wake chip.  <a href="#ga5e52793fc7b35004bbb4e85e5234af64">More...</a><br /></td></tr>
 <tr class="separator:ga5e52793fc7b35004bbb4e85e5234af64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac3afc6cf89103dce1529b432fd1efa18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#gac3afc6cf89103dce1529b432fd1efa18">hal_uart_en_unbreak_int</a> (void *hdl)</td></tr>
 <tr class="memdesc:gac3afc6cf89103dce1529b432fd1efa18"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable uart break interrupt  <a href="#gac3afc6cf89103dce1529b432fd1efa18">More...</a><br /></td></tr>
 <tr class="separator:gac3afc6cf89103dce1529b432fd1efa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga784e73e1ce3f90fbcbb0a78d72a053ff"><td class="memItemLeft" align="right" valign="top"><a id="ga784e73e1ce3f90fbcbb0a78d72a053ff"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga784e73e1ce3f90fbcbb0a78d72a053ff">baud_rate</a></td></tr>
-<tr class="memdesc:ga784e73e1ce3f90fbcbb0a78d72a053ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart baud rate. <br /></td></tr>
-<tr class="separator:ga784e73e1ce3f90fbcbb0a78d72a053ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa0b40a33cab1c8fa68e1fa86c686d6d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#gaa0b40a33cab1c8fa68e1fa86c686d6d8">data_len</a></td></tr>
-<tr class="memdesc:gaa0b40a33cab1c8fa68e1fa86c686d6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart char length,.  <a href="#gaa0b40a33cab1c8fa68e1fa86c686d6d8">More...</a><br /></td></tr>
-<tr class="separator:gaa0b40a33cab1c8fa68e1fa86c686d6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga26522b684f9e91dce792ca405c11126b"><td class="memItemLeft" align="right" valign="top"><a id="ga26522b684f9e91dce792ca405c11126b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga26522b684f9e91dce792ca405c11126b">stop_bit</a></td></tr>
-<tr class="memdesc:ga26522b684f9e91dce792ca405c11126b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart stop bits, 0: 1 stop bit, 1: 2 stop bits. <br /></td></tr>
-<tr class="separator:ga26522b684f9e91dce792ca405c11126b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga830dfcd88549a0c54751a1f84c454155"><td class="memItemLeft" align="right" valign="top"><a id="ga830dfcd88549a0c54751a1f84c454155"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga830dfcd88549a0c54751a1f84c454155">parity_en</a></td></tr>
-<tr class="memdesc:ga830dfcd88549a0c54751a1f84c454155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart parity enable, 0: disable, 1: enable. <br /></td></tr>
-<tr class="separator:ga830dfcd88549a0c54751a1f84c454155"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad6566becba299629004974ccdde5de33"><td class="memItemLeft" align="right" valign="top"><a id="gad6566becba299629004974ccdde5de33"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#gad6566becba299629004974ccdde5de33">even_parity</a></td></tr>
-<tr class="memdesc:gad6566becba299629004974ccdde5de33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart even parity, 0: odd parity, 1: even parity. <br /></td></tr>
-<tr class="separator:gad6566becba299629004974ccdde5de33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78ccac598d091a161e6c2cb79411d8a2"><td class="memItemLeft" align="right" valign="top"><a id="ga78ccac598d091a161e6c2cb79411d8a2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga78ccac598d091a161e6c2cb79411d8a2">fc</a></td></tr>
-<tr class="memdesc:ga78ccac598d091a161e6c2cb79411d8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart controller flow control enable, 1: enable, 0: disable. <br /></td></tr>
-<tr class="separator:ga78ccac598d091a161e6c2cb79411d8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e954adec0b197a5b0befe7b4508742f"><td class="memItemLeft" align="right" valign="top"><a id="ga1e954adec0b197a5b0befe7b4508742f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga1e954adec0b197a5b0befe7b4508742f">no_intr</a></td></tr>
-<tr class="memdesc:ga1e954adec0b197a5b0befe7b4508742f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uart don't generate interrupt. <br /></td></tr>
-<tr class="separator:ga1e954adec0b197a5b0befe7b4508742f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f8e491cf1d80eb127fe0c10ebbfc659"><td class="memItemLeft" align="right" valign="top"><a id="ga6f8e491cf1d80eb127fe0c10ebbfc659"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga6f8e491cf1d80eb127fe0c10ebbfc659">prio</a></td></tr>
-<tr class="memdesc:ga6f8e491cf1d80eb127fe0c10ebbfc659"><td class="mdescLeft">&#160;</td><td class="mdescRight">interrupt priority <br /></td></tr>
-<tr class="separator:ga6f8e491cf1d80eb127fe0c10ebbfc659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1f24312da06b94adbba6749573b4c75a"><td class="memItemLeft" align="right" valign="top"><a id="ga1f24312da06b94adbba6749573b4c75a"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga1f24312da06b94adbba6749573b4c75a">rx_arg</a></td></tr>
-<tr class="memdesc:ga1f24312da06b94adbba6749573b4c75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">rx callback argument <br /></td></tr>
-<tr class="separator:ga1f24312da06b94adbba6749573b4c75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaef2c61aa7b259207d9f58c38e4d8317a"><td class="memItemLeft" align="right" valign="top"><a id="gaef2c61aa7b259207d9f58c38e4d8317a"></a>
-void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#gaef2c61aa7b259207d9f58c38e4d8317a">rx_cb</a> )(void *arg, int length, int error)</td></tr>
-<tr class="memdesc:gaef2c61aa7b259207d9f58c38e4d8317a"><td class="mdescLeft">&#160;</td><td class="mdescRight">rx callback <br /></td></tr>
-<tr class="separator:gaef2c61aa7b259207d9f58c38e4d8317a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab71c61cfc1951088aacab284c6f82e9d"><td class="memItemLeft" align="right" valign="top"><a id="gab71c61cfc1951088aacab284c6f82e9d"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#gab71c61cfc1951088aacab284c6f82e9d">tx_arg</a></td></tr>
-<tr class="memdesc:gab71c61cfc1951088aacab284c6f82e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">tx callback argument <br /></td></tr>
-<tr class="separator:gab71c61cfc1951088aacab284c6f82e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b3eb7e6dd8d3bd956cdbe2c4f5c636d"><td class="memItemLeft" align="right" valign="top"><a id="ga2b3eb7e6dd8d3bd956cdbe2c4f5c636d"></a>
-void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___u_a_r_t.html#ga2b3eb7e6dd8d3bd956cdbe2c4f5c636d">tx_cb</a> )(void *arg, int length, int error)</td></tr>
-<tr class="memdesc:ga2b3eb7e6dd8d3bd956cdbe2c4f5c636d"><td class="mdescLeft">&#160;</td><td class="mdescRight">tx callback <br /></td></tr>
-<tr class="separator:ga2b3eb7e6dd8d3bd956cdbe2c4f5c636d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HAL_UART. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga5e19b38bae8416b74cf11fd4494f213a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5e19b38bae8416b74cf11fd4494f213a">&#9670;&nbsp;</a></span>hal_uart_cancel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void hal_uart_cancel </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>cancel uart rx </p>
-<hr/>
- <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>none <hr/>
- </dd></dl>
-
-</div>
-</div>
 <a id="gac77a6c2fe880b3ea7bddb7debf53fa7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac77a6c2fe880b3ea7bddb7debf53fa7b">&#9670;&nbsp;</a></span>hal_uart_close()</h2>
 
@@ -484,14 +398,14 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 
 </div>
 </div>
-<a id="ga6488e8d716592ce695ac38ee3aaf526c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6488e8d716592ce695ac38ee3aaf526c">&#9670;&nbsp;</a></span>hal_uart_rcvd_dma()</h2>
+<a id="ga69cfcdb5d3f41886442fe59a5f75e6b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69cfcdb5d3f41886442fe59a5f75e6b9">&#9670;&nbsp;</a></span>hal_uart_rx()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int hal_uart_rcvd_dma </td>
+          <td class="memname">int hal_uart_rx </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>hdl</em>, </td>
@@ -511,62 +425,8 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>tmo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>actual_rx_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Uart RX by DMA. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer pointer for RX </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length. Max 2047 for dma transmission. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout for block call, 0: means wait forever </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">actual_rx_len</td><td>Blocking call return the exact RX bytes</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum uart_err </dd></dl>
-
-</div>
-</div>
-<a id="ga9dfbd636fd4d320276e3a42b40ae30ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9dfbd636fd4d320276e3a42b40ae30ec">&#9670;&nbsp;</a></span>hal_uart_rcvd_intr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_uart_rcvd_intr </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -596,7 +456,8 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
     <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer to RX </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout for block call, 0: means wait forever </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout for block call. 0: means non block call, need set callback funciton. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">actual_rx_len</td><td>Blocking call return the exact RX bytes</td></tr>
   </table>
   </dd>
@@ -606,14 +467,113 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 
 </div>
 </div>
-<a id="ga7173782143b4afd4875946bd44fccff3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7173782143b4afd4875946bd44fccff3">&#9670;&nbsp;</a></span>hal_uart_rcvd_intr_hci()</h2>
+<a id="ga666310f007cc314350371c8bfc7f1aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga666310f007cc314350371c8bfc7f1aae">&#9670;&nbsp;</a></span>hal_uart_rx_cancel()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int hal_uart_rcvd_intr_hci </td>
+          <td class="memname">int hal_uart_rx_cancel </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cancel uart rx </p>
+<hr/>
+ <dl class="section note"><dt>Note</dt><dd>This function is used for both DMA and non DMA mode. <br />
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum uart_err <hr/>
+ </dd></dl>
+
+</div>
+</div>
+<a id="ga2e614202ef7d7ec26b73d0eb10615f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e614202ef7d7ec26b73d0eb10615f99">&#9670;&nbsp;</a></span>hal_uart_rx_dma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_uart_rx_dma </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tmo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>actual_rx_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uart RX by DMA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer pointer for RX </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length. Max 2047 for dma transmission. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode, disable interrupt in polling mode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmo</td><td>Timeout for block call, 0: means non block call, need set callback funciton. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">actual_rx_len</td><td>Blocking call return the exact RX bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum uart_err </dd></dl>
+
+</div>
+</div>
+<a id="ga6ea99dadc05b3915ee2e9322c98270e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ea99dadc05b3915ee2e9322c98270e0">&#9670;&nbsp;</a></span>hal_uart_rx_hci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_uart_rx_hci </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>hdl</em>, </td>
@@ -668,14 +628,14 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 
 </div>
 </div>
-<a id="gae128ad304e8557e8dd85cf6336584eda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae128ad304e8557e8dd85cf6336584eda">&#9670;&nbsp;</a></span>hal_uart_rcvd_poll()</h2>
+<a id="ga8f74906e6341a90b29e59008358ae925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f74906e6341a90b29e59008358ae925">&#9670;&nbsp;</a></span>hal_uart_tx()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int hal_uart_rcvd_poll </td>
+          <td class="memname">int hal_uart_tx </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>hdl</em>, </td>
@@ -690,99 +650,13 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Uart RX by polling. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer to RX </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum uart_err </dd></dl>
-
-</div>
-</div>
-<a id="ga3852536c7ff09c7f2e5e777728123a54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3852536c7ff09c7f2e5e777728123a54">&#9670;&nbsp;</a></span>hal_uart_xmit_dma()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_uart_xmit_dma </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
+          <td class="paramname"><em>buffer_len</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Uart TX by DMA. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer to TX </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum uart_err </dd></dl>
-
-</div>
-</div>
-<a id="ga05bc0ffb7615abe0574ca921aee7ba05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga05bc0ffb7615abe0574ca921aee7ba05">&#9670;&nbsp;</a></span>hal_uart_xmit_intr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_uart_xmit_intr </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -800,8 +674,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
     <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer to TX </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cb_arg</td><td>Argument that user wants to pass to the TX completion call back function </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>TX completion call back function provided by the user</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode.</td></tr>
   </table>
   </dd>
 </dl>
@@ -810,14 +683,67 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 
 </div>
 </div>
-<a id="ga7584ef73e588a32011f8aa294a412c1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7584ef73e588a32011f8aa294a412c1d">&#9670;&nbsp;</a></span>hal_uart_xmit_intr_hci()</h2>
+<a id="ga1f5190b1f786bf9b44c7b6ccf4c877e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1f5190b1f786bf9b44c7b6ccf4c877e3">&#9670;&nbsp;</a></span>hal_uart_tx_dma()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int hal_uart_xmit_intr_hci </td>
+          <td class="memname">int hal_uart_tx_dma </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uart TX by DMA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer to TX </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>0: interrupt mode, 1: polling mode, disable interrupt in polling mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum uart_err </dd></dl>
+
+</div>
+</div>
+<a id="ga17f40fb62e4ac641b259da84e4da14e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17f40fb62e4ac641b259da84e4da14e2">&#9670;&nbsp;</a></span>hal_uart_tx_hci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_uart_tx_hci </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>hdl</em>, </td>
@@ -869,70 +795,6 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
 <dl class="section see"><dt>See also</dt><dd>enum uart_err </dd></dl>
-
-</div>
-</div>
-<a id="ga990cb32c2f274bea386994e73f5cdb84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga990cb32c2f274bea386994e73f5cdb84">&#9670;&nbsp;</a></span>hal_uart_xmit_poll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hal_uart_xmit_poll </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>buffer_len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Uart TX by polling. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>Uart handle from the open API </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Data buffer to TX </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Data buffer length</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Driver error return code, </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>enum uart_err </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="gaa0b40a33cab1c8fa68e1fa86c686d6d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa0b40a33cab1c8fa68e1fa86c686d6d8">&#9670;&nbsp;</a></span>data_len</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int data_len</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Uart char length,. </p>
-<dl class="section see"><dt>See also</dt><dd>enum uart_len </dd></dl>
 
 </div>
 </div>

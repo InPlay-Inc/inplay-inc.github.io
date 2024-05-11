@@ -141,7 +141,7 @@ var searchData=
   ['modulation_5fstable',['MODULATION_STABLE',['../group___i_n___b_l_e___g_a_p.html#gga50854e4f4fd490ed589f94bcdd7f693da75598cefe7929cfd8d82ec1c6d19ba2c',1,'in_ble_gap.h']]],
   ['modulation_5fstandard',['MODULATION_STANDARD',['../group___i_n___b_l_e___g_a_p.html#gga50854e4f4fd490ed589f94bcdd7f693da0e15acf3282b6394ea21804c3cb82de2',1,'in_ble_gap.h']]],
   ['month',['month',['../structble__date__time__t.html#a3e00faf7fbf9805e9ec4d2edd6339050',1,'ble_date_time_t']]],
-  ['mp_5fmem_5faddr',['mp_mem_addr',['../structtrig__init__t.html#a61af3f876fbba45c6f3e3a4d4760c454',1,'trig_init_t']]],
+  ['mp_5fmem_5fsize',['mp_mem_size',['../structtrig__init__t.html#a1d10e457c22d7358e87a63dd6000a4f9',1,'trig_init_t']]],
   ['msg',['msg',['../structmesh__model__publish__t.html#aeeb76dab5e9b2f4c110090f0c2a31e13',1,'mesh_model_publish_t']]],
   ['mspi_5fid',['MSPI_ID',['../group___h_a_l___s_p_i.html#ggab8662401ed15b6f5702950647dd774e2a73ea0e1ba419ed3296773558f1b66ea8',1,'hal_spi.h']]],
   ['mtu',['mtu',['../structble__evt__mtu__xchg__ind__t.html#a2997a8aa5758871f81608a28ce97b796',1,'ble_evt_mtu_xchg_ind_t']]],

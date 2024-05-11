@@ -47,6 +47,7 @@ var searchData=
   ['trig_5fble_5firq_5fsw',['TRIG_BLE_IRQ_SW',['../group___h_a_l___t_r_i_g.html#gga34b11613eacf29d241a74e8580ccc6d6a50911d4f0a7f40d40c193332a1c424a1',1,'hal_trig.h']]],
   ['trig_5fble_5firq_5fts',['TRIG_BLE_IRQ_TS',['../group___h_a_l___t_r_i_g.html#gga34b11613eacf29d241a74e8580ccc6d6addddc30dcaf20c3afa9fbe12feabe381',1,'hal_trig.h']]],
   ['trig_5fble_5firq_5ftx',['TRIG_BLE_IRQ_TX',['../group___h_a_l___t_r_i_g.html#gga34b11613eacf29d241a74e8580ccc6d6a6dff1fc03fe3f0a041ebc6edc4485354',1,'hal_trig.h']]],
+  ['trig_5ferr_5fbusy',['TRIG_ERR_BUSY',['../group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea237e5c8dc0c347b5fb54a3ec9e050bfa',1,'hal_trig.h']]],
   ['trig_5ferr_5finvalid_5fparam',['TRIG_ERR_INVALID_PARAM',['../group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1eac8519d4fe463051d68e2014d695a1c5b',1,'hal_trig.h']]],
   ['trig_5ferr_5fmem_5foverflow',['TRIG_ERR_MEM_OVERFLOW',['../group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea15db889610cf94912187efef82babab0',1,'hal_trig.h']]],
   ['trig_5ferr_5fmutex',['TRIG_ERR_MUTEX',['../group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea1a9c860aa0d8b6923118cf6c78dff84d',1,'hal_trig.h']]],

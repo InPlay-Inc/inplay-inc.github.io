@@ -98,45 +98,87 @@ $(document).ready(function(){initNavTree('group___h_a_l___d_m_a.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdma__mb__item__t.html">dma_mb_item_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block Link List Item structure.  <a href="structdma__mb__item__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdma__bd__t.html">dma_bd_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block descriptor structure.  <a href="structdma__bd__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa0765cc55520457abe3dc4de88a82c34"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gaa0765cc55520457abe3dc4de88a82c34">hal_dma_open</a> (int id, int periph_id, uint32_t sar, uint32_t dar, int size, int sdw, int ddw, int sai, int dai, int sbz, int dbz, int sahb, int dahb, int ttype)</td></tr>
-<tr class="memdesc:gaa0765cc55520457abe3dc4de88a82c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the DMA driver.  <a href="#gaa0765cc55520457abe3dc4de88a82c34">More...</a><br /></td></tr>
-<tr class="separator:gaa0765cc55520457abe3dc4de88a82c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae86fce93b6813b0d4a507473fe905ce1"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gae86fce93b6813b0d4a507473fe905ce1">hal_dma_soft_open</a> (int id, uint32_t sar, uint32_t dar, int size, int sdw, int ddw, int sai, int dai, int sbz, int dbz, int sahb, int dahb, int ttype)</td></tr>
-<tr class="memdesc:gae86fce93b6813b0d4a507473fe905ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a Software Control DMA driver.  <a href="#gae86fce93b6813b0d4a507473fe905ce1">More...</a><br /></td></tr>
-<tr class="separator:gae86fce93b6813b0d4a507473fe905ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46590d4d45dfad44bce05c3a03765968"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga46590d4d45dfad44bce05c3a03765968">hal_dma_ch_open</a> (int dma_id, int periph_id, void *arg, void(*callback)(void *arg, uint32_t status, int dma_id, int buf_idx))</td></tr>
+<tr class="memdesc:ga46590d4d45dfad44bce05c3a03765968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the DMA driver.  <a href="#ga46590d4d45dfad44bce05c3a03765968">More...</a><br /></td></tr>
+<tr class="separator:ga46590d4d45dfad44bce05c3a03765968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc4ffc87e5d5de65b66402273b2d26cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gadc4ffc87e5d5de65b66402273b2d26cf">hal_dma_ch_close</a> (void *hdl)</td></tr>
+<tr class="memdesc:gadc4ffc87e5d5de65b66402273b2d26cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the DMA driver.  <a href="#gadc4ffc87e5d5de65b66402273b2d26cf">More...</a><br /></td></tr>
+<tr class="separator:gadc4ffc87e5d5de65b66402273b2d26cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga760893739c7586e797c6f87e4baedbd4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga760893739c7586e797c6f87e4baedbd4">hal_dma_ch_enable</a> (void *hdl, int poll, dma_tfr_t *p_tfr)</td></tr>
+<tr class="memdesc:ga760893739c7586e797c6f87e4baedbd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA channel enable.  <a href="#ga760893739c7586e797c6f87e4baedbd4">More...</a><br /></td></tr>
+<tr class="separator:ga760893739c7586e797c6f87e4baedbd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2593310c040485effd0f2c44a4bbca4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gaa2593310c040485effd0f2c44a4bbca4">hal_dma_ch_disable</a> (void *hdl)</td></tr>
+<tr class="memdesc:gaa2593310c040485effd0f2c44a4bbca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA channel disable.  <a href="#gaa2593310c040485effd0f2c44a4bbca4">More...</a><br /></td></tr>
+<tr class="separator:gaa2593310c040485effd0f2c44a4bbca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7771acb2d9eccdca1a59c6774dde84cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga7771acb2d9eccdca1a59c6774dde84cb">hal_dma_poll_tran_done</a> (void *hdl)</td></tr>
+<tr class="memdesc:ga7771acb2d9eccdca1a59c6774dde84cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA poll transfer done.  <a href="#ga7771acb2d9eccdca1a59c6774dde84cb">More...</a><br /></td></tr>
+<tr class="separator:ga7771acb2d9eccdca1a59c6774dde84cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5e9070f811ba8eb1c25f799aa89b792"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gae5e9070f811ba8eb1c25f799aa89b792">hal_dma_get_tran_len</a> (void *hdl)</td></tr>
+<tr class="memdesc:gae5e9070f811ba8eb1c25f799aa89b792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get DMA transfer length.  <a href="#gae5e9070f811ba8eb1c25f799aa89b792">More...</a><br /></td></tr>
+<tr class="separator:gae5e9070f811ba8eb1c25f799aa89b792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa18f1522e5abad0f30c4f70e245d0f73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gaa18f1522e5abad0f30c4f70e245d0f73">hal_dma_set_sar</a> (void *hdl, uint32_t sar)</td></tr>
+<tr class="memdesc:gaa18f1522e5abad0f30c4f70e245d0f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA set the source address.  <a href="#gaa18f1522e5abad0f30c4f70e245d0f73">More...</a><br /></td></tr>
+<tr class="separator:gaa18f1522e5abad0f30c4f70e245d0f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8d13b24ca9fe16a2d1d2a7b6556c003"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gae8d13b24ca9fe16a2d1d2a7b6556c003">hal_dma_set_dar</a> (void *hdl, uint32_t dar)</td></tr>
+<tr class="memdesc:gae8d13b24ca9fe16a2d1d2a7b6556c003"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA set the destination address.  <a href="#gae8d13b24ca9fe16a2d1d2a7b6556c003">More...</a><br /></td></tr>
+<tr class="separator:gae8d13b24ca9fe16a2d1d2a7b6556c003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcabf4e1e55f7d135d3e5b9ba2d0392d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gabcabf4e1e55f7d135d3e5b9ba2d0392d">hal_dma_set_tran_block_size</a> (void *hdl, uint32_t size)</td></tr>
+<tr class="memdesc:gabcabf4e1e55f7d135d3e5b9ba2d0392d"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA set the transfer block size.  <a href="#gabcabf4e1e55f7d135d3e5b9ba2d0392d">More...</a><br /></td></tr>
+<tr class="separator:gabcabf4e1e55f7d135d3e5b9ba2d0392d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d6af04ddb0a082f389cc24a607951e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga8d6af04ddb0a082f389cc24a607951e5">hal_dma_set_llcp</a> (void *hdl, uint32_t addr)</td></tr>
+<tr class="memdesc:ga8d6af04ddb0a082f389cc24a607951e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA set link list address.  <a href="#ga8d6af04ddb0a082f389cc24a607951e5">More...</a><br /></td></tr>
+<tr class="separator:ga8d6af04ddb0a082f389cc24a607951e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50d79d9d4bc293f8e34d7147bdb9dd85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga50d79d9d4bc293f8e34d7147bdb9dd85">hal_dma_add_mb_item</a> (uint32_t ba, uint32_t nba, <a class="el" href="structdma__mb__item__t.html">dma_mb_item_t</a> *p_itm)</td></tr>
+<tr class="memdesc:ga50d79d9d4bc293f8e34d7147bdb9dd85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add DMA block descriptor for block chaining : Call this function before start DMA block chaining.  <a href="#ga50d79d9d4bc293f8e34d7147bdb9dd85">More...</a><br /></td></tr>
+<tr class="separator:ga50d79d9d4bc293f8e34d7147bdb9dd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90b6c3fb5d11e97e5e4f9a07d98dbed9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga90b6c3fb5d11e97e5e4f9a07d98dbed9">hal_dma_mb_open</a> (int id, uint32_t addr, uint32_t nblock, int periph_id, void *arg, void(*callback)(void *arg, uint32_t status, int dma_id, int buf_idx))</td></tr>
+<tr class="memdesc:ga90b6c3fb5d11e97e5e4f9a07d98dbed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block chaining open.  <a href="#ga90b6c3fb5d11e97e5e4f9a07d98dbed9">More...</a><br /></td></tr>
+<tr class="separator:ga90b6c3fb5d11e97e5e4f9a07d98dbed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7ee8f54f60f338ea3d4feb3151e56db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gac7ee8f54f60f338ea3d4feb3151e56db">hal_dma_mb_ch_enable</a> (void *hdl)</td></tr>
+<tr class="memdesc:gac7ee8f54f60f338ea3d4feb3151e56db"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block chainning enable.  <a href="#gac7ee8f54f60f338ea3d4feb3151e56db">More...</a><br /></td></tr>
+<tr class="separator:gac7ee8f54f60f338ea3d4feb3151e56db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84f3208ad84529a194cb3a3e6970c59f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga84f3208ad84529a194cb3a3e6970c59f">hal_dma_mb_ch_disable</a> (void *hdl)</td></tr>
+<tr class="memdesc:ga84f3208ad84529a194cb3a3e6970c59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block chainning disable.  <a href="#ga84f3208ad84529a194cb3a3e6970c59f">More...</a><br /></td></tr>
+<tr class="separator:ga84f3208ad84529a194cb3a3e6970c59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5b80b55127cd87f63fba09ec2cab0d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gab5b80b55127cd87f63fba09ec2cab0d1">hal_dma_mb_ch_close</a> (void *hdl)</td></tr>
+<tr class="memdesc:gab5b80b55127cd87f63fba09ec2cab0d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block chainning close.  <a href="#gab5b80b55127cd87f63fba09ec2cab0d1">More...</a><br /></td></tr>
+<tr class="separator:gab5b80b55127cd87f63fba09ec2cab0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1bc4aa80c02a53da948bbb9e9b8d8c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gaf1bc4aa80c02a53da948bbb9e9b8d8c7">hal_dma_pcm_start</a> (void *buffer0, void *buffer1, uint16_t buffer_len, void *arg, void(*callback)(void *arg, int id, uint32_t status))</td></tr>
+<tr class="memdesc:gaf1bc4aa80c02a53da948bbb9e9b8d8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA Audio block's PCM data to memory : This function is not responsible for setting up Audio Block's PCM output.  <a href="#gaf1bc4aa80c02a53da948bbb9e9b8d8c7">More...</a><br /></td></tr>
+<tr class="separator:gaf1bc4aa80c02a53da948bbb9e9b8d8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39d3d15427de3f0dd7007936a23d69d9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga39d3d15427de3f0dd7007936a23d69d9">hal_dma_open</a> (int id, int periph_id, int sai, int dai, int sahb, int dahb, int ttype, int prio)</td></tr>
+<tr class="memdesc:ga39d3d15427de3f0dd7007936a23d69d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the DMA driver.  <a href="#ga39d3d15427de3f0dd7007936a23d69d9">More...</a><br /></td></tr>
+<tr class="separator:ga39d3d15427de3f0dd7007936a23d69d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga94e32c22c03a919d8de71c00a78630a2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga94e32c22c03a919d8de71c00a78630a2">hal_dma_soft_open</a> (int id, uint32_t sar, uint32_t dar, int size, int sdw, int ddw, int sai, int dai, int sbz, int dbz, int sahb, int dahb, int ttype)</td></tr>
+<tr class="memdesc:ga94e32c22c03a919d8de71c00a78630a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a Software Control DMA driver.  <a href="#ga94e32c22c03a919d8de71c00a78630a2">More...</a><br /></td></tr>
+<tr class="separator:ga94e32c22c03a919d8de71c00a78630a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85111e6279d8174c94e8d45dd508831c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga85111e6279d8174c94e8d45dd508831c">hal_dma_close</a> (void *hdl)</td></tr>
 <tr class="memdesc:ga85111e6279d8174c94e8d45dd508831c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the DMA driver.  <a href="#ga85111e6279d8174c94e8d45dd508831c">More...</a><br /></td></tr>
 <tr class="separator:ga85111e6279d8174c94e8d45dd508831c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9ccc317b07f3ef5e8d2ba1e9704cb9dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga9ccc317b07f3ef5e8d2ba1e9704cb9dd">hal_dma_ch_enable</a> (void *hdl, void *arg, void(*callback)(int id, void *arg, uint32_t status))</td></tr>
 <tr class="memdesc:ga9ccc317b07f3ef5e8d2ba1e9704cb9dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Software Control) DMA channel enable  <a href="#ga9ccc317b07f3ef5e8d2ba1e9704cb9dd">More...</a><br /></td></tr>
 <tr class="separator:ga9ccc317b07f3ef5e8d2ba1e9704cb9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa2593310c040485effd0f2c44a4bbca4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gaa2593310c040485effd0f2c44a4bbca4">hal_dma_ch_disable</a> (void *hdl)</td></tr>
-<tr class="memdesc:gaa2593310c040485effd0f2c44a4bbca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA channel disable.  <a href="#gaa2593310c040485effd0f2c44a4bbca4">More...</a><br /></td></tr>
-<tr class="separator:gaa2593310c040485effd0f2c44a4bbca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaece0e2d35531545c824374265463f616"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gaece0e2d35531545c824374265463f616">hal_dma_ch_is_enabled</a> (void *hdl)</td></tr>
-<tr class="memdesc:gaece0e2d35531545c824374265463f616"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA channel is enabled.  <a href="#gaece0e2d35531545c824374265463f616">More...</a><br /></td></tr>
-<tr class="separator:gaece0e2d35531545c824374265463f616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac5c2cb7178cf205cad86e6e3b2975e22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gac5c2cb7178cf205cad86e6e3b2975e22">hal_dma_switch_buffer</a> (void *hdl, int sa_da, uint32_t buffer_addr)</td></tr>
 <tr class="memdesc:gac5c2cb7178cf205cad86e6e3b2975e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA change source or destination buffer address : This function is provided to quickly switch buffer without re-program all the DMA register.  <a href="#gac5c2cb7178cf205cad86e6e3b2975e22">More...</a><br /></td></tr>
 <tr class="separator:gac5c2cb7178cf205cad86e6e3b2975e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafc77f9c154d9672183b4d25defcf351b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gafc77f9c154d9672183b4d25defcf351b">hal_dma_src_req</a> (void *hdl)</td></tr>
 <tr class="memdesc:gafc77f9c154d9672183b4d25defcf351b"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA controlled by software to transfer data from or to peripheral.  <a href="#gafc77f9c154d9672183b4d25defcf351b">More...</a><br /></td></tr>
 <tr class="separator:gafc77f9c154d9672183b4d25defcf351b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae5e9070f811ba8eb1c25f799aa89b792"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#gae5e9070f811ba8eb1c25f799aa89b792">hal_dma_get_tran_len</a> (void *hdl)</td></tr>
-<tr class="memdesc:gae5e9070f811ba8eb1c25f799aa89b792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get DMA transfer length.  <a href="#gae5e9070f811ba8eb1c25f799aa89b792">More...</a><br /></td></tr>
-<tr class="separator:gae5e9070f811ba8eb1c25f799aa89b792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga00f33086ab3c7e72e69d54f88056979a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga00f33086ab3c7e72e69d54f88056979a">hal_dma_add_mb_item</a> (uint32_t ba, uint32_t next_ba, uint32_t dar, uint32_t sar, int dtw, int stw, int dai, int sai, int dbz, int sbz, int dms, int sms, int tt_fc, int size)</td></tr>
 <tr class="memdesc:ga00f33086ab3c7e72e69d54f88056979a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add DMA each block descriptor for block chaining : Call this function before start DMA block chaining.  <a href="#ga00f33086ab3c7e72e69d54f88056979a">More...</a><br /></td></tr>
 <tr class="separator:ga00f33086ab3c7e72e69d54f88056979a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga066d152e0833dd0a36aef23e6ed38804"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga066d152e0833dd0a36aef23e6ed38804">hal_dma_mb_open</a> (int id, uint32_t bd_addr, int bda_nb, int src_periph_id, int dst_periph_id)</td></tr>
-<tr class="memdesc:ga066d152e0833dd0a36aef23e6ed38804"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block chaining open.  <a href="#ga066d152e0833dd0a36aef23e6ed38804">More...</a><br /></td></tr>
-<tr class="separator:ga066d152e0833dd0a36aef23e6ed38804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a94561bfcb7f6da84b6903583adb1c4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga3a94561bfcb7f6da84b6903583adb1c4">hal_dma_mb_open</a> (int id, uint32_t bd_addr, int bda_nb, int src_periph_id, int dst_periph_id)</td></tr>
+<tr class="memdesc:ga3a94561bfcb7f6da84b6903583adb1c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA block chaining open.  <a href="#ga3a94561bfcb7f6da84b6903583adb1c4">More...</a><br /></td></tr>
+<tr class="separator:ga3a94561bfcb7f6da84b6903583adb1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b58ce28920b916145074533d3fd9300"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga0b58ce28920b916145074533d3fd9300">hal_dma_mb_ch_enable</a> (void *hdl, void *arg, void(*callback)(int id, void *arg, uint32_t status))</td></tr>
 <tr class="memdesc:ga0b58ce28920b916145074533d3fd9300"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA link list driver open.  <a href="#ga0b58ce28920b916145074533d3fd9300">More...</a><br /></td></tr>
 <tr class="separator:ga0b58ce28920b916145074533d3fd9300"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,15 +188,60 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2ba7457e94c67240018834fef5bf5e2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga2ba7457e94c67240018834fef5bf5e2a">hal_dma_pcm_en</a> (void *buffer0, void *buffer1, uint16_t buffer_len, void *arg, void(*callback)(void *arg, int id, uint32_t status))</td></tr>
 <tr class="memdesc:ga2ba7457e94c67240018834fef5bf5e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA Audio block's PCM data to memory : This function is not responsible for setting up Audio Block's PCM output.  <a href="#ga2ba7457e94c67240018834fef5bf5e2a">More...</a><br /></td></tr>
 <tr class="separator:ga2ba7457e94c67240018834fef5bf5e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39d3d15427de3f0dd7007936a23d69d9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___d_m_a.html#ga39d3d15427de3f0dd7007936a23d69d9">hal_dma_open</a> (int id, int periph_id, int sai, int dai, int sahb, int dahb, int ttype, int prio)</td></tr>
-<tr class="memdesc:ga39d3d15427de3f0dd7007936a23d69d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the DMA driver.  <a href="#ga39d3d15427de3f0dd7007936a23d69d9">More...</a><br /></td></tr>
-<tr class="separator:ga39d3d15427de3f0dd7007936a23d69d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>HAL_DMA. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga50d79d9d4bc293f8e34d7147bdb9dd85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50d79d9d4bc293f8e34d7147bdb9dd85">&#9670;&nbsp;</a></span>hal_dma_add_mb_item() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_add_mb_item </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdma__mb__item__t.html">dma_mb_item_t</a> *&#160;</td>
+          <td class="paramname"><em>p_itm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add DMA block descriptor for block chaining : Call this function before start DMA block chaining. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ba</td><td>Block address. This should be system memory address with 4 bytes alignment <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">next_ba</td><td>Next block address. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p_itm</td><td>A pointer to the <a class="el" href="structdma__mb__item__t.html" title="DMA block Link List Item structure. ">dma_mb_item_t</a> data structure.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
 <a id="ga00f33086ab3c7e72e69d54f88056979a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga00f33086ab3c7e72e69d54f88056979a">&#9670;&nbsp;</a></span>hal_dma_add_mb_item()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00f33086ab3c7e72e69d54f88056979a">&#9670;&nbsp;</a></span>hal_dma_add_mb_item() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,6 +410,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gadc4ffc87e5d5de65b66402273b2d26cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc4ffc87e5d5de65b66402273b2d26cf">&#9670;&nbsp;</a></span>hal_dma_ch_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_dma_ch_close </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close the DMA driver. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function has no return value. </dd></dl>
+
+</div>
+</div>
 <a id="gaa2593310c040485effd0f2c44a4bbca4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa2593310c040485effd0f2c44a4bbca4">&#9670;&nbsp;</a></span>hal_dma_ch_disable()</h2>
 
@@ -352,8 +467,57 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga760893739c7586e797c6f87e4baedbd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga760893739c7586e797c6f87e4baedbd4">&#9670;&nbsp;</a></span>hal_dma_ch_enable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_ch_enable </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>poll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">dma_tfr_t *&#160;</td>
+          <td class="paramname"><em>p_tfr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA channel enable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">poll</td><td>1: poll for dma completition; 0: dma compelted interrupt enable. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p_tfr</td><td>Pointer to the dma_tfr_t data structure. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
 <a id="ga9ccc317b07f3ef5e8d2ba1e9704cb9dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9ccc317b07f3ef5e8d2ba1e9704cb9dd">&#9670;&nbsp;</a></span>hal_dma_ch_enable()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9ccc317b07f3ef5e8d2ba1e9704cb9dd">&#9670;&nbsp;</a></span>hal_dma_ch_enable() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -399,30 +563,71 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaece0e2d35531545c824374265463f616"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaece0e2d35531545c824374265463f616">&#9670;&nbsp;</a></span>hal_dma_ch_is_enabled()</h2>
+<a id="ga46590d4d45dfad44bce05c3a03765968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46590d4d45dfad44bce05c3a03765968">&#9670;&nbsp;</a></span>hal_dma_ch_open()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char hal_dma_ch_is_enabled </td>
+          <td class="memname">void* hal_dma_ch_open </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dma_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>periph_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *arg, uint32_t status, int dma_id, int buf_idx)&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>DMA channel is enabled. </p>
+<p>Open the DMA driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hdl</td><td>The handle from the previous "open" function. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dma_id</td><td>The DMAI ID, </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>char 1: is enabled. 0: not enabled. other: error. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_id. <br />
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">periph_id</td><td>Perpheral ID, </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma0_periph_id and enum dma1_periph_id. <br />
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>User provided callback argument. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">periph_id</td><td>User provided callback function. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Handle to the DMA driver, NULL means open failed. </dd></dl>
 
 </div>
 </div>
@@ -482,8 +687,65 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gab5b80b55127cd87f63fba09ec2cab0d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5b80b55127cd87f63fba09ec2cab0d1">&#9670;&nbsp;</a></span>hal_dma_mb_ch_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_dma_mb_ch_close </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA block chainning close. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function has no return value. </dd></dl>
+
+</div>
+</div>
+<a id="ga84f3208ad84529a194cb3a3e6970c59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84f3208ad84529a194cb3a3e6970c59f">&#9670;&nbsp;</a></span>hal_dma_mb_ch_disable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_mb_ch_disable </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA block chainning disable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
 <a id="ga7abf74de939811fa38a5464b19fed7e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7abf74de939811fa38a5464b19fed7e3">&#9670;&nbsp;</a></span>hal_dma_mb_ch_disable()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7abf74de939811fa38a5464b19fed7e3">&#9670;&nbsp;</a></span>hal_dma_mb_ch_disable() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -523,8 +785,37 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gac7ee8f54f60f338ea3d4feb3151e56db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7ee8f54f60f338ea3d4feb3151e56db">&#9670;&nbsp;</a></span>hal_dma_mb_ch_enable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_mb_ch_enable </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA block chainning enable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
 <a id="ga0b58ce28920b916145074533d3fd9300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0b58ce28920b916145074533d3fd9300">&#9670;&nbsp;</a></span>hal_dma_mb_ch_enable()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b58ce28920b916145074533d3fd9300">&#9670;&nbsp;</a></span>hal_dma_mb_ch_enable() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,14 +863,98 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga066d152e0833dd0a36aef23e6ed38804"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga066d152e0833dd0a36aef23e6ed38804">&#9670;&nbsp;</a></span>hal_dma_mb_open()</h2>
+<a id="ga90b6c3fb5d11e97e5e4f9a07d98dbed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90b6c3fb5d11e97e5e4f9a07d98dbed9">&#9670;&nbsp;</a></span>hal_dma_mb_open() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * hal_dma_mb_open </td>
+          <td class="memname">void* hal_dma_mb_open </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nblock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>periph_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *arg, uint32_t status, int dma_id, int buf_idx)&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA block chaining open. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>The DMA ID, </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_id. <br />
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>FIrst block descriptor base address. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nblock</td><td>Number of block descriptor <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">periph_id</td><td>The peripheral ID, </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma0_periph_id and </dd>
+<dd>
+dma1_periph_id. <br />
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Usr provides interrupt callback argument. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Usr provides interrupt callback function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the length of DMA transfer bytes </dd></dl>
+
+</div>
+</div>
+<a id="ga3a94561bfcb7f6da84b6903583adb1c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3a94561bfcb7f6da84b6903583adb1c4">&#9670;&nbsp;</a></span>hal_dma_mb_open() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* hal_dma_mb_open </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -654,7 +1029,7 @@ dma1_periph_id. <br />
 </div>
 </div>
 <a id="ga39d3d15427de3f0dd7007936a23d69d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga39d3d15427de3f0dd7007936a23d69d9">&#9670;&nbsp;</a></span>hal_dma_open() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39d3d15427de3f0dd7007936a23d69d9">&#9670;&nbsp;</a></span>hal_dma_open()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -706,193 +1081,6 @@ dma1_periph_id. <br />
           <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>prio</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Open the DMA driver. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>The DMAI ID, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_id. <br />
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">periph_id</td><td>The peripheral ID, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma0_periph_id and </dd>
-<dd>
-dma1_periph_id. <br />
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sar</td><td>The source address of the DMA trandfer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dar</td><td>The destination address of the DMA trandfer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The total transfer size. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sdw</td><td>The source data width, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_tr_width. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ddw</td><td>The destination data width, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_tr_width. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sai</td><td>The source address changes, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_addr_chg. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dai</td><td>The destination address changes, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_addr_chg. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sbz</td><td>The source burst size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_tr_msize. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dbz</td><td>The destination burst size, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_tr_msize. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sahb</td><td>The source AHB master, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_ahb_master. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dahb</td><td>The destination AHB master, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_ahb_master. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ttype</td><td>The DMA transfer type, </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>enum dma_ttype.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Handle to the DMA driver, NULL means open failed. </dd></dl>
-
-</div>
-</div>
-<a id="gaa0765cc55520457abe3dc4de88a82c34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa0765cc55520457abe3dc4de88a82c34">&#9670;&nbsp;</a></span>hal_dma_open() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* hal_dma_open </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>periph_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>sar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>dar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sdw</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ddw</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sai</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dai</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sbz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dbz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sahb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dahb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ttype</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1054,14 +1242,269 @@ dma1_periph_id. <br />
 
 </div>
 </div>
-<a id="gae86fce93b6813b0d4a507473fe905ce1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae86fce93b6813b0d4a507473fe905ce1">&#9670;&nbsp;</a></span>hal_dma_soft_open()</h2>
+<a id="gaf1bc4aa80c02a53da948bbb9e9b8d8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf1bc4aa80c02a53da948bbb9e9b8d8c7">&#9670;&nbsp;</a></span>hal_dma_pcm_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * hal_dma_soft_open </td>
+          <td class="memname">int hal_dma_pcm_start </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>buffer_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *arg, int id, uint32_t status)&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA Audio block's PCM data to memory : This function is not responsible for setting up Audio Block's PCM output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer0</td><td>Ping buffer <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer1</td><td>Pong buffer <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_len</td><td>Ping/Pong buffer size in 4 bytes unit <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Pointer to the user's argument to pass to DMA ping/pong transfer done call back function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Pointer to the user's call back function for the DMA ping/pong transfer done.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_PCM_ERR_OK if successful, otherwise DMA failed </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_pcm_error_code. </dd></dl>
+
+</div>
+</div>
+<a id="ga7771acb2d9eccdca1a59c6774dde84cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7771acb2d9eccdca1a59c6774dde84cb">&#9670;&nbsp;</a></span>hal_dma_poll_tran_done()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_poll_tran_done </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA poll transfer done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1: transfer completed; 0: otherwise; &lt; 0: error </dd></dl>
+
+</div>
+</div>
+<a id="gae8d13b24ca9fe16a2d1d2a7b6556c003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8d13b24ca9fe16a2d1d2a7b6556c003">&#9670;&nbsp;</a></span>hal_dma_set_dar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_set_dar </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>dar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA set the destination address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dar</td><td>New destination address. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
+<a id="ga8d6af04ddb0a082f389cc24a607951e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8d6af04ddb0a082f389cc24a607951e5">&#9670;&nbsp;</a></span>hal_dma_set_llcp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_set_llcp </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA set link list address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Link list address. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
+<a id="gaa18f1522e5abad0f30c4f70e245d0f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa18f1522e5abad0f30c4f70e245d0f73">&#9670;&nbsp;</a></span>hal_dma_set_sar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_set_sar </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>sar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA set the source address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sar</td><td>New source address. <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
+<a id="gabcabf4e1e55f7d135d3e5b9ba2d0392d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcabf4e1e55f7d135d3e5b9ba2d0392d">&#9670;&nbsp;</a></span>hal_dma_set_tran_block_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_dma_set_tran_block_size </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA set the transfer block size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hdl</td><td>The handle from the previous "open" function. <br />
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sar</td><td>New block size (total size). <br />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DMA_ERR_OK if successful, otherwise DMA failed. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>enum dma_error_code. </dd></dl>
+
+</div>
+</div>
+<a id="ga94e32c22c03a919d8de71c00a78630a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga94e32c22c03a919d8de71c00a78630a2">&#9670;&nbsp;</a></span>hal_dma_soft_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* hal_dma_soft_open </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>id</em>, </td>

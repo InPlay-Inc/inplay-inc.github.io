@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uart_20driver',['uart driver',['../group___h_a_l___u_a_r_t.html',1,'']]]
+  ['timer_20driver',['timer driver',['../group___h_a_l___t_i_m.html',1,'']]],
+  ['trigger_20driver',['Trigger driver',['../group___h_a_l___t_r_i_g.html',1,'']]]
 ];

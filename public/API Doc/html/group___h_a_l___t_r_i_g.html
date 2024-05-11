@@ -103,6 +103,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrig__init__t.html">trig_init_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">trigger init parameter  <a href="structtrig__init__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrig__cfg__t.html">trig_cfg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">trigger configure parameter  <a href="structtrig__cfg__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrig__hdr__t.html">trig_hdr_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">trigger handler parameter  <a href="structtrig__hdr__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +139,14 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga9917f629ac7a08ce4ca3de0c1f4443f7"><td class="memItemLeft" align="right" valign="top"><a id="ga9917f629ac7a08ce4ca3de0c1f4443f7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#ga9917f629ac7a08ce4ca3de0c1f4443f7">TRIG_MAX_ADDR_OFT</a>&#160;&#160;&#160;0x400</td></tr>
+<tr class="memdesc:ga9917f629ac7a08ce4ca3de0c1f4443f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max trigger address offset. <br /></td></tr>
+<tr class="separator:ga9917f629ac7a08ce4ca3de0c1f4443f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5bc800f18bf7e6c0fce139dcf87324b"><td class="memItemLeft" align="right" valign="top"><a id="gab5bc800f18bf7e6c0fce139dcf87324b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#gab5bc800f18bf7e6c0fce139dcf87324b">TRIG_MAX_MEM_SIZE</a>&#160;&#160;&#160;512</td></tr>
+<tr class="memdesc:gab5bc800f18bf7e6c0fce139dcf87324b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max trigger memory size, unit is word, not byte. <br /></td></tr>
+<tr class="separator:gab5bc800f18bf7e6c0fce139dcf87324b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac39ad1eac97aa563c6c836514cd0c883"><td class="memItemLeft" align="right" valign="top"><a id="gac39ad1eac97aa563c6c836514cd0c883"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#gac39ad1eac97aa563c6c836514cd0c883">TRIG_HIGH_PRI_Q_MAX_TRIG_ID</a>&#160;&#160;&#160;8</td></tr>
 <tr class="memdesc:gac39ad1eac97aa563c6c836514cd0c883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max trigger id for high priority queue. <br /></td></tr>
@@ -267,10 +278,14 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:gaa5dc2ec1fefd9681614d5d3143b72f1e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#gaa5dc2ec1fefd9681614d5d3143b72f1e">trig_err</a> { <a class="el" href="group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea8e8beb379b9ffa2ffc7f91a7dc1c76bf">TRIG_ERR_OK</a> = 0, 
+<tr class="memitem:gaa5dc2ec1fefd9681614d5d3143b72f1e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#gaa5dc2ec1fefd9681614d5d3143b72f1e">trig_err</a> { <br />
+&#160;&#160;<a class="el" href="group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea8e8beb379b9ffa2ffc7f91a7dc1c76bf">TRIG_ERR_OK</a> = 0, 
 <a class="el" href="group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1eac8519d4fe463051d68e2014d695a1c5b">TRIG_ERR_INVALID_PARAM</a> = -1, 
 <a class="el" href="group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea15db889610cf94912187efef82babab0">TRIG_ERR_MEM_OVERFLOW</a> = -2, 
-<a class="el" href="group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea1a9c860aa0d8b6923118cf6c78dff84d">TRIG_ERR_MUTEX</a> = -4
+<a class="el" href="group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea1a9c860aa0d8b6923118cf6c78dff84d">TRIG_ERR_MUTEX</a> = -4, 
+<br />
+&#160;&#160;<a class="el" href="group___h_a_l___t_r_i_g.html#ggaa5dc2ec1fefd9681614d5d3143b72f1ea237e5c8dc0c347b5fb54a3ec9e050bfa">TRIG_ERR_BUSY</a> = -5
+<br />
  }</td></tr>
 <tr class="memdesc:gaa5dc2ec1fefd9681614d5d3143b72f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">trigger error code  <a href="group___h_a_l___t_r_i_g.html#gaa5dc2ec1fefd9681614d5d3143b72f1e">More...</a><br /></td></tr>
 <tr class="separator:gaa5dc2ec1fefd9681614d5d3143b72f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -694,9 +709,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa34f34d9a3ab7416f07e46978d7559e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#gaa34f34d9a3ab7416f07e46978d7559e5">hal_trig_apb_mux</a> (int peripheral, int bus_sel)</td></tr>
 <tr class="memdesc:gaa34f34d9a3ab7416f07e46978d7559e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set peripheral apb bus mux for trigger.  <a href="#gaa34f34d9a3ab7416f07e46978d7559e5">More...</a><br /></td></tr>
 <tr class="separator:gaa34f34d9a3ab7416f07e46978d7559e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga90bdd5a0a72f6c9d1c0df74e066647e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#ga90bdd5a0a72f6c9d1c0df74e066647e1">hal_trig_resume</a> (void)</td></tr>
-<tr class="memdesc:ga90bdd5a0a72f6c9d1c0df74e066647e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually resume trigger after wake up. Should set auto_resume to 0 when open trigger.  <a href="#ga90bdd5a0a72f6c9d1c0df74e066647e1">More...</a><br /></td></tr>
-<tr class="separator:ga90bdd5a0a72f6c9d1c0df74e066647e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga925d5de2bce3bd45734f56f4e7281b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#ga925d5de2bce3bd45734f56f4e7281b98">hal_trig_resume</a> (int resume_all)</td></tr>
+<tr class="memdesc:ga925d5de2bce3bd45734f56f4e7281b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually resume trigger after wake up. Should set auto_resume to 0 when open trigger.  <a href="#ga925d5de2bce3bd45734f56f4e7281b98">More...</a><br /></td></tr>
+<tr class="separator:ga925d5de2bce3bd45734f56f4e7281b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafda7f44632723d9e256fd1120776e946"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___t_r_i_g.html#gafda7f44632723d9e256fd1120776e946">hal_trig_intr_sig</a> (int queue, int trig_sig)</td></tr>
 <tr class="memdesc:gafda7f44632723d9e256fd1120776e946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set trigger signal for interrupt status 1, <a class="el" href="group___h_a_l___t_r_i_g.html#gafc8261ce56470005f03f318ebcc00759">TRIG_HP_INTR_CMD_START</a>.  <a href="#gafda7f44632723d9e256fd1120776e946">More...</a><br /></td></tr>
 <tr class="separator:gafda7f44632723d9e256fd1120776e946"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -831,6 +846,8 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ggaa5dc2ec1fefd9681614d5d3143b72f1ea15db889610cf94912187efef82babab0"></a>TRIG_ERR_MEM_OVERFLOW&#160;</td><td class="fielddoc"><p>Memory overflow. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaa5dc2ec1fefd9681614d5d3143b72f1ea1a9c860aa0d8b6923118cf6c78dff84d"></a>TRIG_ERR_MUTEX&#160;</td><td class="fielddoc"><p>Mutex error. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa5dc2ec1fefd9681614d5d3143b72f1ea237e5c8dc0c347b5fb54a3ec9e050bfa"></a>TRIG_ERR_BUSY&#160;</td><td class="fielddoc"><p>Busy error. </p>
 </td></tr>
 </table>
 
@@ -2115,8 +2132,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga90bdd5a0a72f6c9d1c0df74e066647e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga90bdd5a0a72f6c9d1c0df74e066647e1">&#9670;&nbsp;</a></span>hal_trig_resume()</h2>
+<a id="ga925d5de2bce3bd45734f56f4e7281b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga925d5de2bce3bd45734f56f4e7281b98">&#9670;&nbsp;</a></span>hal_trig_resume()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2124,8 +2141,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void hal_trig_resume </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>resume_all</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

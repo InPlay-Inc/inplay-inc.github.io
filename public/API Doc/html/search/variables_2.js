@@ -1,7 +1,7 @@
 var searchData=
 [
   ['callback',['callback',['../structipmac__mst__tx__t.html#a205e5ba2d8a6a08a0f149136896b78a1',1,'ipmac_mst_tx_t::callback()'],['../structipmac__slv__tx__t.html#a7a5dc098cbcec6a51f77c9787bb5841a',1,'ipmac_slv_tx_t::callback()']]],
-  ['cb_5farg',['cb_arg',['../structtrig__init__t.html#aa2a0fc874870115f7d31aabcbb53ec0b',1,'trig_init_t']]],
+  ['cb_5farg',['cb_arg',['../structtrig__cfg__t.html#aa2a0fc874870115f7d31aabcbb53ec0b',1,'trig_cfg_t']]],
   ['cfm_5fneeded',['cfm_needed',['../structmesh__evt__fault__test__req__ind__t.html#a764870782f2d0d9c5dcbe938fa034da2',1,'mesh_evt_fault_test_req_ind_t']]],
   ['ch_5fmap',['ch_map',['../unionble__conn__peer__info__t.html#ad18ec917f0ad80d2a45de357e6e9713c',1,'ble_conn_peer_info_t']]],
   ['chan_5fsel_5falgo',['chan_sel_algo',['../unionble__conn__peer__info__t.html#ab42b1dbbf455a90136eaed4d977baf38',1,'ble_conn_peer_info_t']]],

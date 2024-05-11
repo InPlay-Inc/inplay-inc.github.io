@@ -1,7 +1,7 @@
 var searchData=
 [
   ['i2c_20driver',['I2C driver',['../group___h_a_l___i2_c.html',1,'']]],
-  ['i2s_20profile',['I2S Profile',['../group___h_a_l___i2_s.html',1,'']]],
+  ['i2s_20driver',['I2S driver',['../group___h_a_l___i2_s.html',1,'']]],
   ['ipmac_20driver',['IPMAC driver',['../group___h_a_l___i_p_m_a_c.html',1,'']]],
   ['ir_20driver',['IR driver',['../group___h_a_l___i_r.html',1,'']]],
   ['i2s_5fccr_5fwss_5f16',['I2S_CCR_WSS_16',['../group___h_a_l___i2_s.html#ga74285c88831f8593f533620840400e5c',1,'hal_i2s.h']]],
@@ -374,8 +374,8 @@ var searchData=
   ['init_5ftype_5fdirect_5fconn_5fest',['INIT_TYPE_DIRECT_CONN_EST',['../group___i_n___b_l_e___g_a_p.html#ggaec26a09a58751c1de56b57da54e41b00a895d161e88daaa23a0ca1e41aabc0a4e',1,'in_ble_gap.h']]],
   ['init_5ftype_5fname_5fdisc',['INIT_TYPE_NAME_DISC',['../group___i_n___b_l_e___g_a_p.html#ggaec26a09a58751c1de56b57da54e41b00a5b6fa9dfe73ea398088e72a09e46e835',1,'in_ble_gap.h']]],
   ['init_5fvalue',['init_value',['../structtrig__output__cmd__t.html#a0f86c34a2100957325ad079b54bdab9b',1,'trig_output_cmd_t::init_value()'],['../structtrig__set__tmr__cmd__t.html#abfca665e82ff2ac001858775c2bb7325',1,'trig_set_tmr_cmd_t::init_value()']]],
-  ['intr_5funmask0',['intr_unmask0',['../structtrig__init__t.html#a3a44634fd590eb36615f4f46a3c5f9bd',1,'trig_init_t']]],
-  ['intr_5funmask1',['intr_unmask1',['../structtrig__init__t.html#a4e096f303bb4c563a5a20a403eb685dd',1,'trig_init_t']]],
+  ['intr_5funmask0',['intr_unmask0',['../structtrig__cfg__t.html#a3a44634fd590eb36615f4f46a3c5f9bd',1,'trig_cfg_t']]],
+  ['intr_5funmask1',['intr_unmask1',['../structtrig__cfg__t.html#a4e096f303bb4c563a5a20a403eb685dd',1,'trig_cfg_t']]],
   ['intv',['intv',['../structble__evt__sync__established__ind__t.html#a0240debbc3420454fe136feb2b4403d3',1,'ble_evt_sync_established_ind_t']]],
   ['intv_5fmax',['intv_max',['../structble__conn__param__update__t.html#a4df1de7674fae5c268e54e2861298ae5',1,'ble_conn_param_update_t::intv_max()'],['../structble__evt__conn__param__upd__req__t.html#a4df1de7674fae5c268e54e2861298ae5',1,'ble_evt_conn_param_upd_req_t::intv_max()']]],
   ['intv_5fmin',['intv_min',['../structble__conn__param__update__t.html#ae639d065b4080351063225fa950730be',1,'ble_conn_param_update_t::intv_min()'],['../structble__evt__conn__param__upd__req__t.html#ae639d065b4080351063225fa950730be',1,'ble_evt_conn_param_upd_req_t::intv_min()']]],
@@ -404,8 +404,8 @@ var searchData=
   ['ir_5fsend',['IR_SEND',['../group___h_a_l___i_r.html#gafe4400a1191aedd72fe6757feaf8c8df',1,'hal_ir.h']]],
   ['irk',['irk',['../structble__irk__t.html#a86ad4c845c42c5fcf6f50c687af189ab',1,'ble_irk_t::irk()'],['../structble__set__dev__config__t.html#a86ad4c845c42c5fcf6f50c687af189ab',1,'ble_set_dev_config_t::irk()'],['../structble__rnd__addr__resolve__t.html#a114d12c373c4cc2e698008ae7f5a5133',1,'ble_rnd_addr_resolve_t::irk()'],['../structble__rnd__addr__solved__t.html#a86ad4c845c42c5fcf6f50c687af189ab',1,'ble_rnd_addr_solved_t::irk()'],['../structble__bond__cfm__t.html#a124c55cca18e164d9807d70975675ac2',1,'ble_bond_cfm_t::irk()'],['../unionble__bond__data.html#a124c55cca18e164d9807d70975675ac2',1,'ble_bond_data::irk()']]],
   ['irk_5fexch',['IRK_EXCH',['../group___i_n___b_l_e___g_a_p.html#gga308d96997345d6169594def6bf97f9d2aec5987a177b6f4b1d6604bbc90c9ab9e',1,'in_ble_gap.h']]],
-  ['irq_5fcb',['irq_cb',['../structtrig__init__t.html#a36f929c30612d36661bffb7ef3f29f14',1,'trig_init_t']]],
-  ['irq_5fprio',['irq_prio',['../structipmac__init__t.html#af51f1ddd02781b5c9f7a707c69cb9cc6',1,'ipmac_init_t::irq_prio()'],['../structtrig__init__t.html#af51f1ddd02781b5c9f7a707c69cb9cc6',1,'trig_init_t::irq_prio()']]],
+  ['irq_5fcb',['irq_cb',['../structtrig__cfg__t.html#a36f929c30612d36661bffb7ef3f29f14',1,'trig_cfg_t']]],
+  ['irq_5fprio',['irq_prio',['../structipmac__init__t.html#af51f1ddd02781b5c9f7a707c69cb9cc6',1,'ipmac_init_t::irq_prio()'],['../structtrig__cfg__t.html#af51f1ddd02781b5c9f7a707c69cb9cc6',1,'trig_cfg_t::irq_prio()']]],
   ['item_5fnum',['item_num',['../structipmac__queue__t.html#a53f8db911dc894f2b942569d0c65f136',1,'ipmac_queue_t']]],
   ['iv',['iv',['../structaes__cfg__t.html#a37af4c67a3b518996596545e430769e2',1,'aes_cfg_t']]]
 ];
