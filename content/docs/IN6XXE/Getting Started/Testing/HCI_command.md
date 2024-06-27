@@ -193,7 +193,7 @@ Command: `0x01, 0x33, 0x20, 0x03, <channel>, <phy>, <modulation index>`
 
 - channel: range 0x00 to 0x27 (39), formula: N = (F - 2402)/ 2; 0x00 represents 2.402G
 
-- phy: please refer to Table 1
+- phy: please refer to Table 2
 
 - modulation index: Normally set to 0
   
@@ -217,8 +217,8 @@ Command：`0x01, 0x01, 0xFC, 0x02, <channel> <TX gain>`
 
 - channel: the range is 0x00 to 0x27（39），Formula：N =（F – 2402）/ 2；  0x00 means 2.402GHz
 - TX gain:  
-  - 0: use default value.  
-  - 0x1 ~ 0x7F: PA gain, 0x19 is 0dBm. 
+  - 0: Don't change TX power setting.  
+  - 0x1 ~ 0x7F: PA gain, 0x1C is 0dBm. 
 
 Complete Event：`0x04, 0x0E, 0x04, 0x01, 0x01, 0xFC, <status>`
 
