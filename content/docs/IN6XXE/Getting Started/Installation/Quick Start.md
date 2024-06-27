@@ -57,6 +57,7 @@ Note:
 If the J-Link is connected to the DK board and DK board is powered up, KEIL should detect DK board and display its information in the "SW Device" column, as illustrated below. If Keil can't find device, reset DK and click "Scan" to rescan device.
 
 ![](/images/quickstart02.png) 
+
 7. If Keil displays the following warning dialog, please click the OK button and then select Cortex-M4 on the next page.
 ![](/images/quickstart06.png) 
 ![](/images/quickstart07.png) 
