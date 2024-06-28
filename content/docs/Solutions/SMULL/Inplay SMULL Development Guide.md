@@ -745,6 +745,27 @@ This is a notification command. When the master receives data from the slave(s) 
 |...|...|
 |Bn|last byte of data|
 
+### **Get slave connection status: 0xA04B**
+This command can be used to get the connection status on the slave side.
+
+Send:    **0xA0 0x4B 0x00 0x00**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x4B|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x00|Data Length (LSB)|
+
+Response:   **0xA0 0x4B 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x4B|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|B0=0x00: Idle, B0=0x01: connect, B0=0x02: disconnect|
+
+
 ### **Get UART Configuration: 0xA063**
 This command *read* the UART configuration.
 
