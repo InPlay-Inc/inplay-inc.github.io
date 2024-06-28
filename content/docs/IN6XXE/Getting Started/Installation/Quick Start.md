@@ -57,11 +57,15 @@ Note:
 If the J-Link is connected to the DK board and DK board is powered up, KEIL should detect DK board and display its information in the "SW Device" column, as illustrated below. If Keil can't find device, reset DK and click "Scan" to rescan device.
 
 ![](/images/quickstart02.png) 
-	
+
+7. If Keil displays the following warning dialog, please click the OK button and then select Cortex-M4 on the next page.
+![](/images/quickstart06.png) 
+![](/images/quickstart07.png) 
+
 8. In the "Utilities" tab, click  "Settings". If the Keil Pack is installed, configuration will be done automatically as follows.
    ![](/images/quickstart04.png) 
    If Keil is not configured properly, please manually add the "IN6XX SPI FLASH "flm file, set start addres and size.
-9. Click "OK" to apply changes.
+9.  Click "OK" to apply changes.
 
 10. Click "download" button to download image file to DK board.
 ![](/images/quickstart05.png) 

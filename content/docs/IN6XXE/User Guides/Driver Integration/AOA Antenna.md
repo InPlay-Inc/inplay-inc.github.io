@@ -62,17 +62,17 @@ AOA Antenna engine also supports a feature that only if both SYNC match and some
 
 ![](/images/aoa_capture_03.png)  
 
-### API
-#### Set the callback of the interrupt.
-The callback function will be called when RX finish.
-```
-void aoa_ant_register_aoa_data_callback(void (*on_data)(uint32_t *data, uint16_t samples));
-```  
-
+### API  
 
 #### initialization.
 
 ```
+typedef struct aoa_cap_ant_pattern_s
+{
+    uint16_t duration;
+    uint8_t addr;
+} aoa_cap_ant_pattern_t;
+
 typedef struct aoa_cap_filter_s
 {
     int8_t enable;
@@ -81,10 +81,10 @@ typedef struct aoa_cap_filter_s
     uint32_t bit_mask;
 } aoa_cap_filter_t;  
 
-const uint8_t ant_id[] is antenna switch pattern,  
-const uint16_t duration[] is duration of pattern,  
+const aoa_cap_ant_pattern_t *patterns is antenna switch pattern,  
 int size is size of patterns, maximum is 256,  
 aoa_cap_filter_t *filter is bit-patten match and mask  
-void aoa_ant_aoa_init( const uint8_t ant_id[], const uint16_t duration[], int size, aoa_cap_filter_t *filter);
+void (*on_data)(uint32_t *data, uint16_t samples the callback function will be called when finish.
+void hal_ana_aoa_capture_init(const aoa_cap_ant_pattern_t *patterns, uint8_t pattern_size, aoa_cap_filter_t *filter,  void (*on_data)(uint32_t *data, uint16_t samples));
 ```
 

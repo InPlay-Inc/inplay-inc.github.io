@@ -193,7 +193,7 @@ Command: `0x01, 0x33, 0x20, 0x03, <channel>, <phy>, <modulation index>`
 
 - channel: range 0x00 to 0x27 (39), formula: N = (F - 2402)/ 2; 0x00 represents 2.402G
 
-- phy: please refer to Table 1
+- phy: please refer to Table 2
 
 - modulation index: Normally set to 0
   
@@ -217,8 +217,8 @@ Command：`0x01, 0x01, 0xFC, 0x02, <channel> <TX gain>`
 
 - channel: the range is 0x00 to 0x27（39），Formula：N =（F – 2402）/ 2；  0x00 means 2.402GHz
 - TX gain:  
-  - 0: use default value.  
-  - 0x1 ~ 0x7F: PA gain, 0x19 is 0dBm. 
+  - 0: Don't change TX power setting.  
+  - 0x1 ~ 0x7F: PA gain, 0x1C is 0dBm. 
 
 Complete Event：`0x04, 0x0E, 0x04, 0x01, 0x01, 0xFC, <status>`
 
@@ -269,21 +269,7 @@ Command: `0x01, 0x05, 0xFC, 0x01 <Cap>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x05, 0xFC, <status>`
 
-12. ### Save Cap to Efuse
-
-Command: `0x01, 0x06, 0xFC, 0x01 <Cap>`
-
-- cap:  capacitance  range is 0x0~0xF
-
-Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x06, 0xFC, <status>`
-
-**Notice:**
-
-This command burn cap data to Efuse memory. Must supply 3.3V power on VDDQ pin.
-
-Efuse is OTP(One Time Programmable) memory. Make sure bure correct value in Efuse.
-
-13. ### Save  Cap to Flash
+1.  ### Save  Cap to Flash
 
 Command: `0x01, 0x08, 0xFC, 0x01, <Cap>`
 
@@ -436,6 +422,20 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
     Command: `0x01, 0x0A, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0A, 0xFC, <status>`   
+
+23. ### Set RTC32K Output
+    
+    Command: `0x01, 0x46, 0xFC, 0x03, <enable>, <port>, <pin>`
+	Output RTC32K signal on specail GPIO. Available pins are GPIO_0_2, GPIO_0_6, GPIO_1_0, GPIO_1_4, GPIO_1_8, GPIO_3_3 and GPIO_4_3.
+
+- enable: 1 is enable, and 0 is disable
+- port: GPIO port
+- pin: GPIO pin
+	
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x46, 0xFC, <status>` 
+
+
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 	
 ***The following command in only available for Golden tester board.***
 
 1.  ### DUT Calibrate XO
