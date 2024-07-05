@@ -392,9 +392,9 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 
 22. ### Get ADC sample
     
-    Command: `0x01, 0x43, 0xFC, 0x01, <ADC channel>`
+    Command: `0x01, 0x43, 0xFC, 0x02, <ADC channel>, <parameter>`
 	- ADC channel: ADC channel
-
+	- parameter: If ADC channel is not 13, set this to 0x0. If ADC channel is 13, this value is register pmu_test_mux_ctrl[0:7].
 	Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x43, 0xFC, <status> , <Sample raw data byte 0>, <Sample raw data byte 1> <Sample converted data byte 0>, <Sample converted data byte 1>`
 
     - Sample raw data: 16 bits ADC sample raw data.
