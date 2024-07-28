@@ -840,8 +840,8 @@ Response:   **0xA0 0x52 0x00 0x01 B0**
 |0x01|Data Length (LSB)|
 |B0|B0=0x00: Success, B0=0x01: Invalid Command length, B0=0x02: Invalid PWM ID, B0=0x03: This PWM is not supported in this firmware.|
 
-### **Set PWM duty cycle and start this PWM: 0xA053**
-When the master receives this command, it will send this information to specific slave.
+### **Set the duty cycle of slave's PWM and start this PWM: 0xA053**
+This command can be usd to set the duty cycle of slave's PWM and start this PWM on the master side. When the master receives this command, it will send this information to specific slave.
 
 Send:    **0xA0 0x53 0x00 0x0B B0~B10**
 |Byte|Comment|
