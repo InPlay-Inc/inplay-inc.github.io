@@ -703,7 +703,7 @@ Response:   **0xA0 0x48 0x00 0x01 B0**
 |0x44|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: Success<br>B0=0x01: Fail<br>B0=0x02: The length of transmitted data is too long|
+|B0|B0=0x00: Success<br>B0=0x01: Fail<br>B0=0x02: The length of transmitted data is too long<br>B0=0x04:Fail to allocate memory for transmitting data|
 
 ②Master transmits data. The master can transmit three types of packets to the slave: private, public
 and broadcast. In current firmware, we only support private packet and broadcast packet.
@@ -728,7 +728,7 @@ Response:   **0xA0 0x48 0x00 0x01 B0**
 |0x48|Command Code (LSB)|
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
-|B0|B0=0x00: Success<br>B0=0x01: Fail to transmit data<br>B0=0x02: The length of transmitted data is too long<br>B0=0x03: Invalid slave ID|
+|B0|B0=0x00: Success<br>B0=0x01: Fail to transmit data<br>B0=0x02: The length of transmitted data is too long<br>B0=0x03: Invalid slave ID<br>B0=0x04:Fail to allocate memory for transmitting data|
 
 ### **Receive Data: 0xA049**
 This is a notification command. When the master receives data from the slave(s) or vice versa, the received data will be transmitted to the host in the following format. 
@@ -764,6 +764,113 @@ Response:   **0xA0 0x4B 0x00 0x01 B0**
 |0x00|Data Length (MSB)|
 |0x01|Data Length (LSB)|
 |B0|B0=0x00: Idle, B0=0x01: connect, B0=0x02: disconnect|
+
+### **Slave GPIO Configuration: 0xA04E**
+This command can be used to configure the slave's GPIO on the master side. When the master receives this command, it will send these configurations to the slave.
+
+Send:    **0xA0 0x4E 0x00 0x08 B0~B7**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x4E|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x08|Data Length (LSB)|
+|B0|Slave ID|
+|B1|GPIO Port|
+|B2|GPIO Pin|
+|B3|GPIO Direction. 0x00:default, 0x01:output, 0x02:input, 0x03: disable input and output|
+|B4|Pull. 0x00:default, 0x01:pull-up, 0x02:pull-down, 0x03: disable pull-up and pull-down|
+|B5|Latch. 0x01:GPIO latch during deep sleep, others:disable latch|
+|B6|Config GPIO pin to level wake up. 0x00:default, 0x01:high, 0x02:low|
+|B7|Config GPIO pin to edge wake up. 0x00:default, 0x01:rising edge, 0x02:falling edge, 0x03:rising and falling edge|
+
+Response:   **0xA0 0x4E 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x4E|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|B0=0x00: Success, B0=0x01: Invalid Command length|
+
+### **Configure the GPIO output level of one slave: 0xA04F**
+This command can be used to configure the output level of slave's GPIO on the master side. When the master receives this command, it will send this configuration to specific slave.
+
+Send:    **0xA0 0x4F 0x00 0x04 B0~B3**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x4F|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x04|Data Length (LSB)|
+|B0|Slave ID|
+|B1|GPIO Port|
+|B2|GPIO Pin|
+|B3|Output level. 0x00:low, 0x01:high|
+
+Response:   **0xA0 0x4F 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x4F|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|B0=0x00: Success, B0=0x01: Invalid Command length|
+
+### **Open a PWM of one slave: 0xA052**
+This command can be used to open a PWM of one slave on the master side. When the master receives this command, it will send this information to specific slave.
+
+Send:    **0xA0 0x52 0x00 0x02 B0~B1**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x52|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x02|Data Length (LSB)|
+|B0|Slave ID|
+|B1|PWM ID. In current firmware, the available PWM IDs are 0, 1, 5, 6, 7. |
+
+
+Response:   **0xA0 0x52 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x52|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|B0=0x00: Success, B0=0x01: Invalid Command length, B0=0x02: Invalid PWM ID, B0=0x03: This PWM is not supported in this firmware.|
+
+### **Set PWM duty cycle and start this PWM: 0xA053**
+When the master receives this command, it will send this information to specific slave.
+
+Send:    **0xA0 0x53 0x00 0x0B B0~B10**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x53|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x0B|Data Length (LSB)|
+|B0|Slave ID|
+|B1|PWM ID. In current firmware, the available PWM IDs are 0, 1, 5, 6, 7. |
+|B2|PWM start. 0x00: Stop, 0x01: Start|
+|B3|PWM period in microseond. (MSB)|
+|B4|PWM period in microseond. |
+|B5|PWM period in microseond. |
+|B6|PWM period in microseond. (LSB)|
+|B7|PWM high in microseond. (MSB)|
+|B8|PWM high in microseond. |
+|B9|PWM high in microseond. |
+|B10|PWM high in microseond. (LSB)|
+
+
+Response:   **0xA0 0x53 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x53|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|B0=0x00: Success, B0=0x01: Invalid Command length, B0=0x02: Invalid PWM ID, B0=0x03: This PWM is not supported in current firmware.|
 
 
 ### **Get UART Configuration: 0xA063**
