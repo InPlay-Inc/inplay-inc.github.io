@@ -181,11 +181,14 @@ Command：`0x01, 0x01, 0xFC, 0x02, <channel> <TX gain>`
 - channel: the range is 0x00 to 0x27（39），Formula：N =（F – 2402）/ 2；  0x00 means 2.402GHz
 - TX gain:  
   - 0: Don't change TX power setting.  
-  - 0x1 ~ 0x7F: PA gain, 0x1C is 0dBm. 
+  - 0x1 ~ 0x7F: PA gain. 
+
+Note:
+	Suggest set TX gain to 0x0, and use "Set TX Power" command to set TX power.
 
 Complete Event：`0x04, 0x0E, 0x04, 0x01, 0x01, 0xFC, <status>`
 
-9. ### Get RSSI
+1. ### Get RSSI
 
 Command：`0x01, 0x03, 0xFC, 0x00`
 
