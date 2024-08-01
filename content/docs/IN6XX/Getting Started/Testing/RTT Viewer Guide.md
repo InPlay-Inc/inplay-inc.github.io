@@ -2,21 +2,14 @@
 
 ## Introduction
 
-J-Link RTT Viewer is a Windows GUI application that uses RTT functionality on the debugging host. RTT Viewer can be used independently, opening its own connection to the J-Link and connecting in parallel to the target of the ongoing debugging session or alternatively to it using an existing J-Link connection. The RTT Viewer supports the main functions of RTT:
-
-1. Terminal output on channel 
-2. Sending text input to channel
-3. Up to 16 virtual terminals with only one target channel
-4. Controlling text output
-5. Recording data on channel
-
+J-Link RTT Viewer is a Windows GUI application that uses RTT functionality on the debugging host. RTT Viewer can be used independently, opening its own connection to the J-Link and connecting in parallel to the target of the ongoing debugging session or alternatively to it using an existing J-Link connection. 
 
 
 ## Configuration
 
 ### Install J-Link
 
-Should setup **in-dev\tools\ InPlayToolsSetup.exe**, get more information in [JFlash Programming Guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/jflash-download-guide.html)
+Should install **in-dev\tools\ InPlayToolsSetup.exe** first, get more information in [JFlash Programming Guide](https://inplay-inc.github.io/docs/in6xx/getting-started/jflash-download-guide.html)
 
 ### Config in in_config Config Tool
 
@@ -50,7 +43,7 @@ Should setup **in-dev\tools\ InPlayToolsSetup.exe**, get more information in [JF
 
   Note: 
 
-  When the chip is reset or enters sleep mode, JLink will disconnect. When the chip is running again, you need to click Connect to reconnect before the log is displayed.
+  When the chip is reset or enters sleep mode, J-Link will disconnect. When the chip is running again, you need to click Connect to reconnect before the log is displayed.
 
   ![](/images/rtt-viewer06.png)
 
