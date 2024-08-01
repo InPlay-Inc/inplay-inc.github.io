@@ -14,7 +14,7 @@ J-Link RTT Viewer is a Windows GUI application that uses RTT functionality on th
 
 ## Configuration
 
-### Install Jlink
+### Install J-Link
 
 Should setup **in-dev\tools\ InPlayToolsSetup.exe**, get more information in [JFlash Programming Guide](https://inplay-inc.github.io/docs/in6xxe/getting-started/jflash-download-guide.html)
 

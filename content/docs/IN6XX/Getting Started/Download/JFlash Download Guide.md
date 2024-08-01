@@ -21,7 +21,7 @@ J-Flash is a part of the J-Link tool series developed by Segger, offers a reliab
 
 	InPlayTools is an extension designed to enhance J-Flash functionality by adding support for the IN6XX series of chips.
 
-	The installation file for Inplaytools is in "SDK\in-dev\tools\InPlayToolsSetup.exe", or download [InPlayTools](https://github.com/InPlay-Inc/IN6XX-Tools/blob/main/InPlayTool/InPlayToolsSetup.exe) from website.
+	The installation file for Inplaytools is in "SDK\in-dev\tools\InPlayToolsSetup.exe", or download [InPlayTools](https://raw.githubusercontent.com/InPlay-Inc/IN6XX-Tools/main/InPlayTool/InPlayToolsSetup.exe) from website.
 
 	User should select the Jlink version. Recommended install Jlink Version 7.62 or later first.
 
