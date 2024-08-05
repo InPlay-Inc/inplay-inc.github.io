@@ -90,43 +90,6 @@ Command Complete Event: `0x04, 0x0E, <Packet len ><Commands Available>, 0x01, 0x
 
 
 ----
-*Table 3*
-- tx power:
-  
-  | Value | TX Power  |
-  | ----- | --------- |
-  | 0x00  | Max Power |
-  | 0x01  | 7dBm      |
-  | 0x02  | 6.5dBm    |
-  | 0x03  | 6dBm      |
-  | 0x04  | 5.5dBm    |
-  | 0x05  | 5dBm      |
-  | 0x06  | 4.5dBm    |
-  | 0x07  | 4dBm      |
-  | 0x08  | 3.5dBm    |
-  | 0x09  | 3dBm      |
-  | 0x0A  | 2.5dBm    |
-  | 0x0B  | 2dBm      |
-  | 0x0C  | 1.5dBm    |
-  | 0x0D  | 1dBm      |
-  | 0x0E  | 0.5dBm    |
-  | 0x0F  | 0dBm      |
-  | 0x10  | -1dBm     |
-  | 0x11  | -2dBm     |
-  | 0x12  | -3dBm     |
-  | 0x13  | -4dBm     |
-  | 0x14  | -5dBm     |
-  | 0x15  | -6dBm     |
-  | 0x16  | -8dBm     |
-  | 0x17  | -10dBm     |
-  | 0x18  | -12dBm    |
-  | 0x19  | -16dBm    |
-  | 0x1A  | -20dBm    |
-  | 0x1B  | -43dBm    |
-
-
-
-----
 
 ## HCI  Test Command Description
 
@@ -219,7 +182,7 @@ Command：`0x01, 0x01, 0xFC, 0x02, <channel> <TX gain>`
 - TX gain:  
   - 0: Don't change TX power setting.  
   - 0x1 ~ 0x7F: PA gain. 
-  
+
 Note:
 
 	Suggest set TX gain to 0x0, and use "Set TX Power" command to set TX power.
@@ -273,40 +236,19 @@ Command: `0x01, 0x05, 0xFC, 0x01 <Cap>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x05, 0xFC, <status>`
 
-1.  ### Save  Cap to Flash
 
-Command: `0x01, 0x08, 0xFC, 0x01, <Cap>`
-
-- cap:  capacitance  range is 0x0~0xF
-  
-  Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x08, 0xFC, <status>`
-14. ### Set TX Power
+1.  ### Set TX Power
     
     Set the transmit power according to Table 3. 
 
 Commands: `0x01, 0x07, 0xFC, 0x01, <TX Power>`
 
-- TX Power: transmit power, range is 0x00 to 0x1A. Please refer to Table 3.
+- TX Power: transmit power, range is 0x00 ~ 0x7F.  Default is 0x18.
 
 Complete Event: `0x04, 0x0E, 01, 0x04, 0x07, 0xFC, <status>`
 
-15. ### Set TX Gain
-    
-    Command: `0x01, 0x51, 0xFC, 0x00, <TX Gain>`
-    
-    - TX Gain: TX gain, range is 0x00 ~ 0x7F.  Default is 0x18.
 
-	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x51, 0xFC, <status>`
-
-15. ### Set TX Power Table
-    
-    Command: `0x01, 0x52, 0xFC, 0x00, <TX Power Table>`
-    
-    - TX Power Table:  Range is 0x01 ~ 0x04.  Default is 0x1. Table 1 is for low power mode. And table 4 is for high power mode.
-
-	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x51, 0xFC, <status>`
-
-16.  ### Read Register
+1.   ### Read Register
     
     Read register.
 
