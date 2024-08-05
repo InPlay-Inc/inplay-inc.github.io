@@ -845,7 +845,7 @@ Response:   **0xA0 0x50 0x00 0x01 B0**
 ### **Slave GPIO interrupt notification: 0xA051**
 This is a notification command. When the external interrupt is triggered on the slave side, it will send this command to the master.
 
-**0xA0 0x51 00 03 B0~B2**
+**0xA0 0x51 0x00 0x03 B0~B2**
 |Byte|Comment|
 |---|---|
 |0xA0|Command Code (MSB)|
