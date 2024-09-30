@@ -439,7 +439,16 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x46, 0xFC, <status>` 
 
 
-Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 	
+1.  ### Enter Deep Sleep
+    
+    Command: `0x01, 0x54, 0xFC, 0x00`
+	Enter deep sleep mode,
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x54, 0xFC, <status>` 
+
+
+
+
 ***The following command in only available for Golden tester board.***
 
 1.  ### DUT Calibrate XO
@@ -512,7 +521,17 @@ Example: bootram size is 0x2000 bytes, image size is 0xAC00 bytes:
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x34, 0xFC, <status>`
 
-25. ### Start BLE Scan
+24. ### Measure XO
+    
+    Command: `0x01, 0x35, 0xFC, 0x02, <port>, <pin>`
+    Measure DUT XO by PWM signal.
+    - port: DUT PWM port.
+    - pin: DUT PWM pin.
+
+Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x35, 0xFC, <status>, <ppm byte0>, <ppm byte1>`
+	-ppm: if ppm > 0, DUT clock is faster then tester clock. If ppm < 0, DUT clock is slower then tester clock.
+
+1.  ### Start BLE Scan
     
     Command: `0x01, 0x40, 0xFC, 0x07, <channel>, <BD addr byte 0>, < BD addr byte 1>, < BD addr byte 2>, < BD addr byte 3 >, < BD addr byte 4>, < BD addr byte 5 >`
 - channel: Scan channel. 37, 38 or 39
