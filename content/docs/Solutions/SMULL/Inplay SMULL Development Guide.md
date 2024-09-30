@@ -817,6 +817,45 @@ Response:   **0xA0 0x4F 0x00 0x01 B0**
 |0x01|Data Length (LSB)|
 |B0|B0=0x00: Success, B0=0x01: Invalid Command length|
 
+### **Slave GPIO External Interrupt Configuration: 0xA050**
+The command is used to configure the external interrupt mode of the slave GPIO on the master side. When master receives this command, it will send these configurations to the slave.
+
+Send:    **0xA0 0x50 0x00 0x05 B0~B4**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x50|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x05|Data Length (LSB)|
+|B0|Slave ID|
+|B1|GPIO Port|
+|B2|GPIO Pin|
+|B3|Edge. 0x00:falling edge, 0x01: rising edge|
+|B4|Interrupt priority. 0x00~0x07, If there are no special priority requirements, we recommend using 0x04.|
+
+Response:   **0xA0 0x50 0x00 0x01 B0**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x50|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x01|Data Length (LSB)|
+|B0|B0=0x00: Success, B0=0x01: Invalid Command length|
+
+### **Slave GPIO interrupt notification: 0xA051**
+This is a notification command. When the external interrupt is triggered on the slave side, it will send this command to the master.
+
+**0xA0 0x51 0x00 0x03 B0~B2**
+|Byte|Comment|
+|---|---|
+|0xA0|Command Code (MSB)|
+|0x51|Command Code (LSB)|
+|0x00|Data Length (MSB)|
+|0x03|Data Length (LSB)|
+|B0|GPIO Port|
+|B1|GPIO Pin|
+|B2|Edge. 0x00: falling edge, 0x01:rising edge|
+
 ### **Open a PWM of one slave: 0xA052**
 This command can be used to open a PWM of one slave on the master side. When the master receives this command, it will send this information to specific slave.
 
@@ -861,6 +900,8 @@ Send:    **0xA0 0x53 0x00 0x0B B0~B10**
 |B8|PWM high in microseond. |
 |B9|PWM high in microseond. |
 |B10|PWM high in microseond. (LSB)|
+
+If you want to stop the PWM, the B3~B10 should be filled with zero.
 
 
 Response:   **0xA0 0x53 0x00 0x01 B0**
