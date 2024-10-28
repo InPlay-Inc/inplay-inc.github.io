@@ -271,6 +271,14 @@ Command:
     </tr>
     </tr>
         <tr>
+        <td><font size="0">8</font></td>
+        <td><font size="0">PHY</font></td>
+        <td><font size="0">1</font></td>
+        <td style="white-space: pre;"><font size="0">0: 1M<br>1: 2M<br>2: 125K<br>3: 500K</font></td>
+        <td><font size="0">Physical rate</font></td>
+    </tr>    
+    </tr>
+        <tr>
         <td><font size="0">2</font></td>
         <td><font size="0">Sync Interval</font></td>
         <td><font size="0">2</font></td>
@@ -308,9 +316,9 @@ Response:
 
 Example:
 
-> *//Start SDR broadcast only scan every 1000ms on channel 15.<br>→03 00 0F E8 03 00 00 00*
+> *//Start SDR broadcast only scan every 1000ms on channel 15 on 1M PHY.<br>→03 00 0F E8 03 00 00 00 00*
 
-> *//Start BLE advertising only scan every 1000ms on all 37 to 39 channels.<br>→03 00 00 00 00 00 E8 03*
+> *//Start BLE advertising only scan every 1000ms on all 37 to 39 channels on 125K coded PHY.<br>→03 00 00 00 00 00 E8 03 02*
 
 > *//Start Transceiver with sync interval 100ms.<br>→03 01 64 00*
 
