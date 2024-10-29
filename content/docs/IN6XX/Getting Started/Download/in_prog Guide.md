@@ -45,7 +45,7 @@ The main window of the GUI tool, as shown in Figure 1, is organized into five ar
 ![](/images/in_prog03.png)
 ![](/images/in_prog04.png)
 
-### Data File Download
+### Data File Download (Area 2)
 Some programs may require downloading data files, such as calibration data or tokens/UUIDs, to specific locations. This step can be done after downloading the application binary file. 
 **Note**: 
 If no program has been downloaded previously, data files cannot be downloaded directly.
