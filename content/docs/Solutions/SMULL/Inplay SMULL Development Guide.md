@@ -211,7 +211,7 @@ The SMULL configurations consist of 8 parameters: mode, slave number, slave ID, 
 
 Send:    `0xA0 0x42 0x00 0x00`
 
-Response: `0xA0 0x42 0x00 0x0E <mode> <slv num> <slv id> <addr byte 3> <phy> <addr byte 2> <addr byte 1> <addr byte 0> <downlink packet length byte 1> <downlink packet length byte 0> <uplink packet length byte 1> <uplink packet length byte 0> <broadcast packet length byte 1> <broadcast packet length byte 0>`
+Response: `0xA0 0x42 0x00 0x0E <mode> <slv num> <slv id> <phy> <addr byte 3> <addr byte 2> <addr byte 1> <addr byte 0> <downlink packet length byte 1> <downlink packet length byte 0> <uplink packet length byte 1> <uplink packet length byte 0> <broadcast packet length byte 1> <broadcast packet length byte 0>`
 - **mode**: 0: slave, 1: master
 - **slv num**: Slave Number.
 - **slv id**: Slave ID. 0~(slave number – 1). Master will ignore this value.
@@ -226,7 +226,7 @@ Response: `0xA0 0x42 0x00 0x0E <mode> <slv num> <slv id> <addr byte 3> <phy> <ad
 
 As mentioned earlier, the SMULL configurations consist of 8 parameters. You can set these parameters all at once by issuing the following command.
 
-Send:    `0xA0 0x43 0x00 0x0E <mode> <slv num> <slv id> <addr byte 3> <phy> <addr byte 2> <addr byte 1> <addr byte 0> <downlink packet length byte 1> <downlink packet length byte 0> <uplink packet length byte 1> <uplink packet length byte 0> <broadcast packet length byte 1> <broadcast packet length byte 0>`
+Send:    `0xA0 0x43 0x00 0x0E <mode> <slv num> <slv id> <phy> <addr byte 3> <addr byte 2> <addr byte 1> <addr byte 0> <downlink packet length byte 1> <downlink packet length byte 0> <uplink packet length byte 1> <uplink packet length byte 0> <broadcast packet length byte 1> <broadcast packet length byte 0>`
 - **mode**: 0: slave, 1: master
 - **slv num**: Number of slaves.
 - **slv id**: Slave ID. Ranges from 0 to (slave number – 1). The master will ignore this value.
