@@ -7,7 +7,7 @@ title: "InPlay Programmer Guide"
 ## Introduction
 The [InPlay Programmer](https://github.com/InPlay-Inc/IN6XX-Tools/blob/main/inplay_programmer/inplay_programmer.zip) is a graphical chip configuration and programming tool for the PC that enables developers to configure and download programs to target boards using InPlay chips via UART. Developers should refer to the chip datasheet to thoroughly understand the configuration options based on their specific application requirements.
 
-The main window of the GUI tool, as shown in Figure 1, is organized into five primary sections:
+The main window of the GUI tool, as shown in Figure 1, is organized into five area:
 
 1. Data communication interface selection and configuration area
 2. Application download area
