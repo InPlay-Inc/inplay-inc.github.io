@@ -59,8 +59,45 @@ To facilitate software development with SMULL, we have designed a set of program
   | 0x03        | Invalid parameter                                               |
   | 0x04        | Hardware error                                                 |
 
+----
+*Table 2*
+- TX Power:
+  
+  | Value | TX Power  |
+  | ----- | --------- |
+  | 0x00  | Max Power |
+  | 0x01  | 7dBm      |
+  | 0x02  | 6.5dBm    |
+  | 0x03  | 6dBm      |
+  | 0x04  | 5.5dBm    |
+  | 0x05  | 5dBm      |
+  | 0x06  | 4.5dBm    |
+  | 0x07  | 4dBm      |
+  | 0x08  | 3.5dBm    |
+  | 0x09  | 3dBm      |
+  | 0x0A  | 2.5dBm    |
+  | 0x0B  | 2dBm      |
+  | 0x0C  | 1.5dBm    |
+  | 0x0D  | 1dBm      |
+  | 0x0E  | 0.5dBm    |
+  | 0x0F  | 0dBm      |
+  | 0x10  | -1dBm     |
+  | 0x11  | -2dBm     |
+  | 0x12  | -3dBm     |
+  | 0x13  | -4dBm     |
+  | 0x14  | -5dBm     |
+  | 0x15  | -6dBm     |
+  | 0x16  | -8dBm     |
+  | 0x17  | -10dBm     |
+  | 0x18  | -12dBm    |
+  | 0x19  | -16dBm    |
+  | 0x1A  | -20dBm    |
+  | 0x1B  | -43dBm    |
 
 
+
+----
+## SMULL Command
 ### **Get Slave Number: 0xA011**
 This command gets the number of slaves in the current network.
 Send: 		`0xA0 0x11 0x00 0x00`
@@ -239,8 +276,18 @@ Send:    `0xA0 0x43 0x00 0x0E <mode> <slv num> <slv id> <phy> <addr byte 3> <add
 Response: `0xA0 0x43 0x00 0x01 <error code>`
 - **error code**: Refer to table 1.
 
+### **Get RSSi: 0xA045**
 
-### **Start Pairing**
+This command get RSSI of the remote device.
+
+Send:    `0xA0 0x45 0x00 0x01 <slv id>`
+- **slv id**: Slave id for master mode. Set it to 0 for slave mode.
+
+Response:    `0xA0 0x45 0x00 0x02 <error code> <rssi>`
+- **error code**: Refer to Table 1.
+- **rssi**: RSSI. It is int8 value, use this fomular to get RSSI value : rssi-256
+
+### **Start Pairing: 0xA110**
 
 This command initiates the pairing process.
 
@@ -253,7 +300,7 @@ Send:    `0xA1 0x10 0x00 0x03 <pair num / require id> <timeout byte 1> <timeout 
 Response:    `0xA1 0x10 0x00 0x01 <error code>`
 - **error code**: Refer to Table 1.
 
-### **Stop Pairing**
+### **Stop Pairing: 0xA147**
 
 This command stops the pairing process.
 
@@ -262,7 +309,7 @@ Send:    `0xA1 0x47 0x00 0x00`
 Response:    `0xA1 0x47 0x00 0x01 <error code>`
 - **error code**: Refer to Table 1.
 
-### **Delete All Pair Information**
+### **Delete All Pair Information: 0xA113**
 
 This command deletes all pairing information. It is only available in master mode.
 
@@ -271,14 +318,14 @@ Send:    `0xA1 0x13 0x00 0x00`
 Response:    `0xA1 0x13 0x00 0x01 <error code>`
 - **error code**: Refer to Table 1.
 
-### **Delete Pair Information**
+### **Delete Pair Information: 0xA114**
 
 This command un-pairs one device. It is only available in master mode.
 
 Send:    `0xA1 0x14 0x00 0x01 <slv id>`
 - **slv id**: Slave ID
 
-Response:    `0xA1 0x13 0x00 0x01 <error code>`
+Response:    `0xA1 0x14 0x00 0x01 <error code>`
 - **error code**: Refer to Table 1.
 
 
@@ -325,6 +372,15 @@ Send:    `0xA0 0x48 <data length byte 1> <data length byte 0> <packet type> <slv
 Response:   `0xA0 0x48 0x00 0x01 <error code>`
 - **error code**: Refer to Table 1.
 
+### **Set TX Power: 0xA0F5**
+This command set TX power.
+
+Send:    `0xA0 0xF5 0x00 0x01 <tx power>`
+- **tx power**: TX Power, see table 2.
+
+Response: `0xA0 0xF5 0x00 0x01 <error code>`
+- **error code**: See table 1.
+  
 
 ### **Get UART Configuration: 0xA063**
 
@@ -374,18 +430,24 @@ Response:    `0xA0 0x66 0x00 0x01 <error code>`
 - **error code**: Refer to table 1 for details.
 
 
+## Misc Command
 ### **Chip Reset: 0xA0E1**
 
 Reset the chip.
 
 Send:    `0xA0 0xE1 0x00 0x00`
 
-Response:    `0xA0 0xE1 0x00 0x01 <error code>`
-- **error code**: Refer to table 1 for details.
+No response
 
+### **Factory Reset: 0xA0EA**
 
+Reset the chip.
 
-### **Get Hex version**
+Send:    `0xA0 0xEA 0x00 0x00`
+
+No response
+
+### **Get Hex version: 0xA123**
 
 Retrieve the version in hexadecimal format.
 
@@ -394,7 +456,28 @@ Send: `0xA1 0x23 0x00 0x00`
 Response:    `0xA1 0x23 0x00 0x04 <version bytes 3> <version bytes 2> <version bytes 1> <version bytes 0>`
 - **version**: Version number in hexadecimal format.
 
-### **OTA Start**
+### **Get UUID: 0xA0EC**
+
+Retrieve the version in hexadecimal format.
+
+Send: `0xA0 0xEC 0x00 0x00`
+
+Response:    `0xA0 0xEC 0x00 0x06 <UUID bytes 5> <UUID bytes 4> <UUID bytes 3> <UUID bytes 2> <UUID bytes 1> <UUID bytes 0>`
+
+
+
+### **Dummy Command: 0xA035**
+Dummy command, do nothing.
+
+Send: `0xA0 0x35 0x00 0x00`
+
+Response:    `0xA0 0x35 0x00 0x01 <error code> `
+- **error code**: Refer to table 1 for details.
+
+
+
+## OTA Command
+### **OTA Start: 0xA119**
 Initiate the OTA command, available only for the master.
 
 Send: `0xA1 0x19 0x00 0x01 <type>`
@@ -403,7 +486,7 @@ Send: `0xA1 0x19 0x00 0x01 <type>`
 Response:    `0xA1 0x19 0x00 0x01 <error code>`
 - **error code**: Refer to table 1 for details.
 
-### **OTA remote Update para**
+### **OTA remote Update para: 0xA11D**
 The master updates the slave connection parameters for OTA, available only for the master.
 
 Send: `0xA1 0x1D 0x00 0x02 <slv id> <pkt len>`
@@ -414,7 +497,7 @@ Response:    `0xA1 0x1D 0x00 0x01 <error code>`
 - **error code**: Refer to table 1 for details.
 
 
-### **OTA local Update para**
+### **OTA local Update para: 0xA118**
 Update the connection parameters for OTA.
 
 Send: `0xA1 0x18 0x00 0x01 <pkt_len>`
@@ -424,7 +507,7 @@ Response:    `0xA1 0x18 0x00 0x01 <error code>`
 - **error code**: Refer to table 1 for details.
 
 
-### **OTA local default para**
+### **OTA local default para: 0xA11C**
 Reset connection parameters to default settings.
 
 Send: `0xA1 0x1C 0x00 0x00 <pkt len>`
@@ -433,7 +516,7 @@ Response:    `0xA1 0x1C 0x00 0x01 <error code>`
 - **error code**: Refer to table 1 for details.
 
 
-### **OTA End**
+### **OTA End: 0xA11A**
 Complete the OTA process.
 
 Send: `0xA1 0x1A 0x00 0x00`
@@ -441,7 +524,7 @@ Send: `0xA1 0x1A 0x00 0x00`
 Response:    `0xA1 0x1A 0x00 0x01 <error code>`
 - **error code**: Refer to table 1 for details.
 
-### **OTA cmd**
+### **OTA cmd: 0xA11B**
 The master sends OTA commands to the slave, available only for the master.
 
 Send: `0xA1 0x1B <len byte1> <len byte0> <slv id> <cmd> ...`
@@ -452,7 +535,7 @@ Send: `0xA1 0x1B <len byte1> <len byte0> <slv id> <cmd> ...`
 Response:    `0xA1 0x1B 0x00 0x01 <error code>`
 - **error code**: Refer to table 1 for details.
 
-### **OTA result**
+### **OTA result: 0xA11E**
 Retrieve the OTA result, available only for the master.
 
 Send: `0xA1 0x1E 0x00 0x00`
@@ -466,8 +549,15 @@ Response:    `0xA1 0x1E 0x00 0x11 <error code> <result byte 0> <result byte 1> .
 	- **byte 15**: Result for slaves 120 to 127.
 
 
+
+
 ## **Event**
 The event is a command that the device sends to the host.
+
+### **Ready: 0xC102**
+Indicates the completion of initialize. Must send UART command after receiving ready event.
+
+Notification: `0xC1 0x02 0x00 0x00`
 
 
 ### **Receive Data: 0xA049**
@@ -478,32 +568,32 @@ Notification: `0xA0 0x49 <command length byte 1> <command length byte 0> <slv id
 - **slv id/packet type**: For the master, this is the slave ID. For the slave, this is the packet type (0 = broadcast, 1 = public, 2 = private).
 - **data**: Packet data.
 
-### **Pair End**
+### **Pair End: 0xC003**
 Indicates the completion of the pairing process.
 
 Notification: `0xC0 0x03 0x00 0x02 <error> <paired num>`
 - **error**: Result of the pairing process; 0 indicates no error.
 - **paired num**: Number of slaves that have been paired, applicable only in master mode.
 
-### **Pair One**
+### **Pair One: 0xC002**
 Indicates the successful pairing with one slave. This is available only in master mode.
 
 Notification: `0xC0 0x02 0x00 0x01 <slv id>`
 - **slv id**: Slave ID.
 
-### **Master Connect**
+### **Master Connect: 0xC007**
 Indicates a successful connection to one slave. This is available only in master mode.
 
 Notification: `0xC0 0x07 0x00 0x01 <slv id>`
 - **slv id**: Slave ID.
 
-### **Master Disconnect**
+### **Master Disconnect: 0xC008**
 Indicates a disconnection from one slave. This is available only in master mode.
 
 Notification: `0xC0 0x08 0x00 0x01 <slv id>`
 - **slv id**: Slave ID.
 
-### **Status**
+### **Status: 0xC004**
 Indicates a change in the device status, which will trigger this event.
 
 Notification: `0xC0 0x04 0x00 0x01 <status>`
@@ -513,13 +603,13 @@ Note:
 	- For the master, the connecting status means at least one slave is disconnected.
 
 
-### **Error**
-Indicates an error has occurred; the device may need to reset or perform a factory reset.
+### **Error: 0xC001**
+Indicates an error has occurred. When in release mode, the device may reset or perform a factory reset.
 
 Notification: `0xC0 0x01 0x00 0x01 <error>`
 - **error**: Error code indicating the type of issue.
 
-### **OTA Ack**
+### **OTA Ack: 0xC100**
 Indicates the result of an OTA command.
 
 Notification: `0xC1 0x00 <length byte 1> <length byte 0> <data byte 0> <data byte 1> ...`
@@ -531,7 +621,7 @@ Notification: `0xC1 0x00 <length byte 1> <length byte 0> <data byte 0> <data byt
 ## **Debug Command**
 The debug command is intended for debugging purposes only. Please note that it SHOULD NOT be used in actual projects. This command has not been fully tested and may be removed or modified in future versions.
 
-### **Set Debug Mode**
+### **Set Debug Mode: 0xA11F**
 
 Send:    `0xA1 0x1F 0x00 0x01 <mode>`
 - **mode**: 1 for debug mode, 0 for release mode.
@@ -539,7 +629,7 @@ Send:    `0xA1 0x1F 0x00 0x01 <mode>`
 Response:    `0xA1 0x1F 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Read RAM Log**
+### **Read RAM Log: 0xA115**
 The master reads the log stored in the slave's RAM. This command is only available in master mode, and the master prints the log to the log UART.
 
 Send:    `0xA1 0x15 0x00 0x01 <slv id>`
@@ -548,7 +638,7 @@ Send:    `0xA1 0x15 0x00 0x01 <slv id>`
 Response:    `0xA1 0x15 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Reset RAM Log**
+### **Reset RAM Log: 0xA116**
 The master resets the slave's log pointer, allowing the master to re-read the log from the slave. This command is only available in master mode.
 
 Send:    `0xA1 0x16 0x00 0x01 <slv id>`
@@ -557,7 +647,7 @@ Send:    `0xA1 0x16 0x00 0x01 <slv id>`
 Response:    `0xA1 0x16 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Read Slave Flash Log**
+### **Read Slave Flash Log: 0xA124**
 Read the log stored in the slave's flash memory.
 
 Send:    `0xA1 0x24 0x00 0x00`
@@ -565,7 +655,7 @@ Send:    `0xA1 0x24 0x00 0x00`
 Response:    `0xA1 0x24 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Reset Slave Flash Log**
+### **Reset Slave Flash Log: 0xA125**
 Reset the pointer for the slave's flash log.
 
 Send:    `0xA1 0x25 0x00 0x00`
@@ -573,7 +663,7 @@ Send:    `0xA1 0x25 0x00 0x00`
 Response:    `0xA1 0x25 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Dump Flash Log**
+### **Dump Flash Log: 0xA126**
 Dump the contents of the flash log.
 
 Send:    `0xA1 0x26 0x00 0x00`
@@ -581,7 +671,7 @@ Send:    `0xA1 0x26 0x00 0x00`
 Response:    `0xA1 0x26 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Erase Flash Log**
+### **Erase Flash Log: 0xA127**
 Erase the contents of the flash log.
 
 Send:    `0xA1 0x27 0x00 0x00`
@@ -589,7 +679,7 @@ Send:    `0xA1 0x27 0x00 0x00`
 Response:    `0xA1 0x27 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Set Command UART ID**
+### **Set Command UART ID: 0xA117**
 Set the command UART ID. If the command UART ID is the same as the log UART ID, the hexadecimal characters of the command will be printed in the log UART.
 
 Send:    `0xA1 0x17 0x00 0x01 <uart id>`
@@ -598,7 +688,7 @@ Send:    `0xA1 0x17 0x00 0x01 <uart id>`
 Response:    `0xA1 0x17 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **Remote Command**
+### **Remote Command: 0xA201**
 Send a command from the master to the slave.
 
 Send:    `0xA2 0x01 <len byte 1> <len byte 0> <slv id> <cmd byte 0> <cmd byte 1> ...`
@@ -609,7 +699,7 @@ Send:    `0xA2 0x01 <len byte 1> <len byte 0> <slv id> <cmd byte 0> <cmd byte 1>
 Response:    `0xA2 0x01 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **GPIO Config**
+### **GPIO Config: 0xA120**
 Configure GPIO settings.
 
 Send:    `0xA1 0x20 0x00 0x05 <port> <pin> <pinmux> <oe_ie> <pull_up_down>`
@@ -622,7 +712,7 @@ Send:    `0xA1 0x20 0x00 0x05 <port> <pin> <pinmux> <oe_ie> <pull_up_down>`
 Response:    `0xA1 0x20 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **GPIO Output**
+### **GPIO Output: 0xA121**
 Configure GPIO output level.
 
 Send:    `0xA1 0x21 0x00 0x03 <port> <pin> <output>`
@@ -633,7 +723,7 @@ Send:    `0xA1 0x21 0x00 0x03 <port> <pin> <output>`
 Response:    `0xA1 0x21 0x00 0x01 <error code>`
 - **error code**: See table 1.
 
-### **GPIO Input Status**
+### **GPIO Input Status: 0xA122**
 Get the status of GPIO input.
 
 Send:    `0xA1 0x22 0x00 0x02 <port> <pin>`
@@ -652,6 +742,40 @@ Send:    `0xA0 0x3A 0x00 0x00`
 
 Response: `0xA0 0x3A 0x00 0x02 <superframe duration byte 1> <superframe duration byte 0>`
 - **superframe duration**: Duration of the SMULL superframe.
+
+
+### **Stop HBT timer： 0xA128**
+This command stop the heartbeat timer.
+
+Send:    `0xA1 0x28 0x00 0x00`
+
+Response: `0xA1 0x28 0x00 0x01 <error code>`
+- **error code**: See table 1.
+
+### **Start HBT timer： 0xA129**
+This command restart the heartbeat timer.
+
+Send:    `0xA1 0x29 0x00 0x00`
+
+Response: `0xA1 0x29 0x00 0x01 <error code>`
+- **error code**: See table 1.
+
+### **Read Register**
+This command stop the heartbeat timer.
+
+Send:    `0xA1 0x2C 0x00 0x04 <addr byte 3> <addr byte 2> <addr byte 1> <addr byte 0>`
+
+Response: `0xA1 0x2D 0x00 0x05 <error code> <value byte 3> <value byte 2> <value byte 1> <value byte 0>`
+- **error code**: See table 1.
+
+### **Write Register**
+This command stop the heartbeat timer.
+
+Send:    `0xA1 0x2D 0x00 0x04 <addr byte 3> <addr byte 2> <addr byte 1> <addr byte 0> <value byte 3> <value byte 2> <value byte 1> <value byte 0>`
+
+Response: `0xA1 0x2D 0x00 0x01 <error code>`
+- **error code**: See table 1.
+
 
 
 ## **Deprecated Command**
