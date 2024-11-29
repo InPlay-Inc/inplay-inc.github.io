@@ -166,13 +166,14 @@ Command: `0x01, 0x33, 0x20, 0x03, <channel>, <phy>, <modulation index>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x33, 0x20, <status>`
 
+***The following commands are vendor specified.***
+
 7. ### Stop Carrier TX ( Carrier signal)
 
 Command：`0x01, 0x04, 0xFC, 0x00`
 
 Complete Event:`0x04, 0x0E,0x04, 0x01, 0x04, 0xFC, <status>`
 
-***The following commands are vendor specified.***
 
 8. ### Start Carrier TX (carrier signal)
 
@@ -371,8 +372,8 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
     - Sample raw data: 16 bits ADC sample raw data.
     - Sample converted data: 16 bits converted data in millivolt.
 23. ### Start PWM
-    
-    Command: `0x01, 0x09, 0xFC, 0x01, <pwm id>`
+    Start PWM
+    Command: `0x01, 0x09, 0xFC, 0x09, <pwm id>, <period byte 0>, <period byte 1>, <period byte 2>, <period byte 3>, <high byte 0>, <high byte 1>, <high byte 2>, <high byte 3>`
 
 - pwm id:
 
@@ -385,20 +386,20 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
     - PWM3    3
 
     - PWM4    4
+  - period: PWM period, count in microsecond
+  - high: PWM high time, count in microsecond
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 
 
-19. ### Stop PWM
-    
+1.  ### Stop PWM
+    Stop PWM
     Command: `0x01, 0x0A, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0A, 0xFC, <status>`   
 
-23. ### Set RTC32K Output
-    
+2.  ### Set RTC32K Output
+    Output RTC32K signal on specail GPIO. Available pins are GPIO_0_2, GPIO_0_6, GPIO_1_0, GPIO_1_4, GPIO_1_8, GPIO_3_3 and GPIO_4_3.
     Command: `0x01, 0x46, 0xFC, 0x03, <enable>, <port>, <pin>`
-	Output RTC32K signal on specail GPIO. Available pins are GPIO_0_2, GPIO_0_6, GPIO_1_0, GPIO_1_4, GPIO_1_8, GPIO_3_3 and GPIO_4_3.
-
 - enable: 1 is enable, and 0 is disable
 - port: GPIO port
 - pin: GPIO pin
@@ -407,6 +408,32 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
 
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 	
+
+1.  ### I2C Read Register
+    I2C read register as master
+    Command: `0x01, 0x59, 0xFC, 0x03, <i2c_id>, <slv_addr>, <reg_addr>`
+- i2c_id: I2C id, 0 or 1.
+- slv_addr: I2C slave address
+- reg_addr: register addr
+
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x02, 0x59, 0xFC, <status>, <reg_val>`   
+- reg_val: register value
+  
+1.  ### Get RTC clock
+    I2C read register as master
+    Command: `0x01, 0x5A, 0xFC, 0x00`
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x5A, 0xFC, <status>, <rtc_clk byte 0>, <rtc_clk byte 1>, <rtc_clk byte 2>, <rtc_clk byte 3>`   
+- rtc_clk: RTC clock in HZ.
+
+1.  ### Deep Sleep
+    Go to deep sleep mode
+    Command: `0x01, 0x55, 0xFC, 0x04, <sleep_time byte 0>, <sleep_time byte 1>, <sleep_time byte 2>, <sleep_time byte 3>`
+- sleep_time: sleep time in millisecond. 
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x55, 0xFC, <status>`   
+
 ***The following command in only available for Golden tester board.***
 
 1.  ### DUT Calibrate XO
