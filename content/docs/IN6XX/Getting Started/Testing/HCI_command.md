@@ -412,9 +412,9 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
 1.  ### I2C Read Register
     I2C read register as master
     Command: `0x01, 0x59, 0xFC, 0x03, <i2c_id>, <slv_addr>, <reg_addr>`
-- i2c_id: I2C id, 0 or 1.
+- i2c_id: I2C id, 0 or 1. I2C 0 use GPIO0_0 and GPIO0_1, I2C 1 use GPIO4_0 and GPIO4_1.
 - slv_addr: I2C slave address
-- reg_addr: register addr
+- reg_addr: register address
 
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x02, 0x59, 0xFC, <status>, <reg_val>`   
@@ -430,7 +430,7 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
 1.  ### Deep Sleep
     Go to deep sleep mode
     Command: `0x01, 0x55, 0xFC, 0x04, <sleep_time byte 0>, <sleep_time byte 1>, <sleep_time byte 2>, <sleep_time byte 3>`
-- sleep_time: sleep time in millisecond. 
+- sleep_time: sleep time in millisecond, must larger then 10.  Chip will wake up after sleep_time. 
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x55, 0xFC, <status>`   
 
