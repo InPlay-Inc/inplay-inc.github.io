@@ -90,9 +90,11 @@ This section configures the [HCI Firmware](https://github.com/InPlay-Inc/IN6XX-T
   2. Set pin.
 
 #### Generate Bin File
-If you click "Download" directly, the configuration  will be written into the flash but will not modify the original bin file. If you need to download it again, you must configure it again.
+Must click the browse button (Area 2) to select the original bin file first.
 
-Clicking the "Generate Bin" button will create a bin file with the configured information. Directly downloading this generated bin file eliminates the need for reconfiguration. All related configuration options can simply be set to "Default Config."
+Then if you click "Download" bnutton, the configuration will be written into the flash but will not modify the original bin file. If you need to download it again, you must configure it again.
+
+Clicking the "Generate Bin" button will create a bin file with the configured information. And it will not modify the original bin file. If download the generated bin file, don't need to configure the HCI Firmware Configuration (Area 3). Just select all "Default Config" options.
 
 ### Device Configuration (Area 4)
 This section is used to configure device-related information, which will be stored separately at address `0x37F000`. Therefore, if the configuration has already been set and downloaded, there is no need to configure it again for subsequent downloads. 
