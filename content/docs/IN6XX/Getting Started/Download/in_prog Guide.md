@@ -122,6 +122,8 @@ This section is used to configure device-related information, which will be stor
 - **No success dialog after clicking Connect**:
     - Verify the selected port is correct.
     - Confirm that the chip is in boot mode.
+    - Disconnect all connections to the chip, such as UART and JLink connections. Then pull down boot pin and reset the chip. 	After that, reconnect the serial port to the chip and click "Connect."
+
 - **Download fails upon clicking Download**:
     - Ensure the correct binary file is selected.
     - Verify **Bootram** is checked.

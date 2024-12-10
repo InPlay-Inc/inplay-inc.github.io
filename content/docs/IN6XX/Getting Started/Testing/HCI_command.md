@@ -40,6 +40,9 @@ Similarly, the format for an HCI event packet is structured as follows:
 - **Parameter Length:** A byte indicating the length of the parameters or data that follow.
 - **Data:** Additional information or payload associated with the event or response.
 
+Note:
+	HCI command is in hexadecimal, not ASCII characters. If you are using a serial tool to send the HCI command, make sure to set it to HEX mode for both sending and receiving. For example, in this document, "0x12" represents one byte with the value 0x12. Please do not enter '0', 'x', '1', '2' as four separate bytes.
+
 ## Command Example:
 
 **Reset Command**
