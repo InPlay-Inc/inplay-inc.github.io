@@ -474,7 +474,46 @@ Send: `0xA0 0x35 0x00 0x00`
 Response:    `0xA0 0x35 0x00 0x01 <error code> `
 - **error code**: Refer to table 1 for details.
 
+## BLE Command
+### **Set Chip Mode: 0xA0EE**
+Set chip mode
+Send: `0xA0 0xEE 0x00 0x01 <mode>`
+- **mode**: chip mode, 0:SMULL only, 1: SMULL and BLE concurrently
+  
+Response:    `0xA0 0xEE 0x00 0x01 <error code> `
+- **error code**: Refer to table 1 for details.
 
+### **Get Chip Mode: 0xA0ED**
+Get chip mode
+Send: `0xA0 0xED 0x00 0x00`
+
+Response:    `0xA0 0xED 0x00 0x01 <error code> `
+- **error code**: Refer to table 1 for details.
+
+### **Start Advertising: 0xA302**
+Start BLE advertising
+
+Send: `0xA3 0x02 0x00 0x00`
+
+Response:    `0xA3 0x02 0x00 0x01 <error code> `
+- **error code**: Refer to table 1 for details.
+
+### **Stop Advertising: 0xA303**
+Stop BLE advertising
+
+Send: `0xA3 0x03 0x00 0x00`
+
+Response:    `0xA3 0x03 0x00 0x01 <error code> `
+- **error code**: Refer to table 1 for details.
+
+### **BLE Disconnect: 0xA304**
+Send BLE disconnect command
+
+Send: `0xA3 0x04 0x00 0x00`
+
+Response:    `0xA3 0x04 0x00 0x01 <error code> `
+- **error code**: Refer to table 1 for details.
+- 
 
 ## OTA Command
 ### **OTA Start: 0xA119**
@@ -616,6 +655,11 @@ Notification: `0xC1 0x00 <length byte 1> <length byte 0> <data byte 0> <data byt
 - **length**: Length of the command.
 - **data**: Result data indicating the outcome.
 
+### **Delete Slave Device : 0xC103**
+Delete slave device pair information before enter pair mode
+
+Notification: `0xC1 0x03 <mode>`
+- **mode**: 0: delate all slave devices, 1: only delete slave devices that is in disconnect status.
 
 
 ## **Debug Command**
