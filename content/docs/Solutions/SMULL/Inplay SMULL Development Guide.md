@@ -482,6 +482,9 @@ Send: `0xA0 0xEE 0x00 0x01 <mode>`
   
 Response:    `0xA0 0xEE 0x00 0x01 <error code> `
 - **error code**: Refer to table 1 for details.
+Note:
+	Must reset chip after set chip mode.
+
 
 ### **Get Chip Mode: 0xA0ED**
 Get chip mode
@@ -513,7 +516,6 @@ Send: `0xA3 0x04 0x00 0x00`
 
 Response:    `0xA3 0x04 0x00 0x01 <error code> `
 - **error code**: Refer to table 1 for details.
-- 
 
 ## OTA Command
 ### **OTA Start: 0xA119**
@@ -872,5 +874,14 @@ Response:   `0xA0 0x14 0x00 0x01 <error code>`
 - If the slave cannot conveniently use the serial port for commands, the "Remote Command" can be used to send "GPIO Config" and "GPIO Output" commands to toggle the GPIO pin of an LED, allowing the current slave ID to be determined.
 - If the PC lacks sufficient serial ports, the command UART can be set to `0x1` using "Set Command UART ID", making it the same as the log UART. This allows commands to be sent and logs to be viewed simultaneously through the log UART.
 
-
+## Best Pratice for BLE
+- Set chip mode to 1 on master and all slave devices.
+- Reset master and slave devices.
+- (Optional) Re-pairing with all slave devices.
+- Start advertising.
+- Use phone to connect with master or slave. Send command to device through BLE RX characteristic .
+- Check command response through BLE TX characteristic.
+- BLE service UUID is "ccddb4f8-cdf3-11e9-a32f-2a2ae2dbcce4"
+- BLE RX characteristic UUID is "28be4a4a-cd67-11e9-a32f-2a2ae2dbcce4". Send command to device by GATT write.
+- BLE TX characteristic UUID is "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4". Device send response by GATT notify.  
 
