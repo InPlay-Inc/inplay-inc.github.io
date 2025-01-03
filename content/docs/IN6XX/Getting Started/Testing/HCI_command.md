@@ -424,13 +424,15 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
 - reg_val: register value
   
 27.  ### Get RTC clock
-    I2C read register as master
+    Get RTC clock
     Command: `0x01, 0x5A, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x5A, 0xFC, <status>, <rtc_clk byte 0>, <rtc_clk byte 1>, <rtc_clk byte 2>, <rtc_clk byte 3>`   
 - rtc_clk: RTC clock in HZ.
+Note:
+	RTC need 1 second for calibration. Must wait for 1 second after power on, then run this command.
 
-28.  ### Deep Sleep
+28.   ### Deep Sleep
     Go to deep sleep mode
     Command: `0x01, 0x55, 0xFC, 0x04, <sleep_time byte 0>, <sleep_time byte 1>, <sleep_time byte 2>, <sleep_time byte 3>`
 - sleep_time: sleep time in millisecond, must larger then 10.  Chip will wake up after sleep_time. 
