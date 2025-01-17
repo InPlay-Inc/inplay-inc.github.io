@@ -21,7 +21,7 @@ This document provides a guide as following:
 
 - Download and install [J-Link Software and Documentation Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)(Version 7.62 or later is recommended).
 
-- Install InPlayInc.DeviceFamilyPack. Double click the InPlayInc.DeviceFamilyPack installation package under the directory of "in-dev\tools", or download [InPlayInc.DeviceFamilyPack](https://raw.githubusercontent.com/InPlay-Inc/IN6XX-Tools/blob/main/Keil_Pack/InPlayInc.DeviceFamilyPack.1.0.6.pack) from website. 
+- Install InPlayInc.DeviceFamilyPack. Double click the InPlayInc.DeviceFamilyPack installation package under the directory of "in-dev\tools", or download [InPlayInc.DeviceFamilyPack](https://github.com/InPlay-Inc/IN6XX-Tools/raw/refs/heads/main/Keil_Pack/keil_pack.zip) from website. 
 
 ## Generate configuration File (optional)
 Demo projects are in "SDK/in-dev/proj". Each project has a configuration file named "in_config.h". This file is located in the "inc" directory of the project. This file is genareted by "InPlay SwiftConfig Tool". If you want to modify the default configuration file, use this tool that is located in "in-dev/tools/in_config".
