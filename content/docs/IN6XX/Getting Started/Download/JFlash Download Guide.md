@@ -37,12 +37,15 @@ J-Flash is a part of the J-Link tool series developed by Segger, offers a reliab
 - Select the target device
 ![](/images/jflash2.png)
 
-- Select InPlay IN6XX_C0_GIGA device
+- Select InPlay "IN6XX_C0_GIGA" device
 ![](/images/c0-jflash1.png)
+
+Note:
+	If chip is "IN610-Q32-R-G8C0I", select "IN6XX_C0_GIGA_8M" device.
 
 - Open the Bin file
 
-Click the file menu, select “Open data file”, and select the Bin file to be downloaded.
+Click the file menu, select "Open data file", and select the Bin file to be downloaded.
 ![](/images/jflash4.png)
 
 - Set start address
