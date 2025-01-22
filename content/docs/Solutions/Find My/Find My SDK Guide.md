@@ -58,7 +58,7 @@ The Windows application "inplay_programmer" included in the SDK (in-dev/tools/in
 
 The "in610_fmna_program" shown in below table is used to load the Apple token to IN610 either using J-Link or UART.
 
-| Too | URL or path in the SDK | Notes |
+| Tool | URL or path in the SDK | Notes |
 |---|---|---|
 |Python 3.x|https://www.python.org/downloads/|The In610_fmna_program utilizes a Python script to upload the Apple Find My token to the internal flash memory of the IN610.|
 |in610_fmna_program|in-dev/proj/proj_ble_find_my/tools|Included in the SDK. A toolset designed for loading the Apple Find My token to the internal flash memory of the IN610.|
@@ -165,7 +165,15 @@ The "bsp_acc.c" is the motion sensor driver. Currently, the SDK supports only th
 
 The bsp_acc.c file serves as the motion sensor driver. Currently, the SDK supports only the LIS2DH12 motion sensor. The driver allows users to configure the IN610 I2C interface and specify the GPIO pin for receiving interrupts from the motion sensor.
 
-The IN610 offers two options for the I2C interface, as outlined in Table 6. Users can select the desired interface by setting the I2C_BUS macro in fm_models.h as follows:
+The IN610 offers two options for the I2C interface, as outlined in below table:
+
+|I2C ID|SCL	SDA|
+|---|---|
+|I2C0_ID|GPIO_0_0|GPIO_0_1|
+|I2C1_ID|GPIO_4_0|GPIO_4_1|
+
+Users can select the desired interface by setting the I2C_BUS macro in fm_models.h as follows:
+
 ```
 #define I2C_BUS I2C0_ID  // Select I2C0 for the interface
 ```
@@ -180,21 +188,17 @@ The LIS2DH12 motion sensor generates interrupts via its INT1 and INT2 pins. The 
 #define INT2_PORT 2  //The port of the 2nd GPIO which can receiver interrupt from the motion sensor.
 #define INT2_PIN  8 // The pin of the 2nd GPIO which can receiver interrupt from the motion sensor.
 ```
-Available I2C port are as below:
-
-|I2C ID|SCL	SDA|
-|---|---|
-|I2C0_ID|GPIO_0_0|GPIO_0_1|
-|I2C1_ID|GPIO_4_0|GPIO_4_1|
 
 #### Battery driver
 
 The “bsp_battery.c” file functions as the battery driver for monitoring the battery voltage of the Find My accessory device. If the battery directly supplies power to the IN610, the internal ADC channel (ADC_CH14) can be used to measure the supply voltage directly. If the battery does not directly supply power to the IN610, external ADC channels of the IN610 (ADC_CH0 is recommended) must be utilized to measure the battery level. It is important to note that for external ADC channels, the input signal range must remain within [0, 2.0V]. Users are advised to implement a suitable voltage divider to ensure that the input signal range is between [50 mV, 1950 mV] for optimal linearity.
 
 The driver enables users to define battery levels as "Full," "Medium," "Low," and "Critical Low" based on the measured battery voltage (in millivolts, mV). These levels can be customized by modifying an array in the bsp_battery.c file, which maps specific voltage ranges to corresponding battery levels.
+
 For rechargeable batteries, two threshold sets must be configured:
 - g_vbat_thr in the bsp_battery.c file for batteries not in a charging state.
 - g_vbat_chrg_thr for batteries in a charging state.
+
 For non-rechargeable batteries, thresholds can be defined using g_vbat_thr. 
 
 The SDK provides example thresholds for reference. For a non-rechargeable battery, the provided examples indicate the following:
@@ -236,7 +240,7 @@ The boot pin is utilized to signal the boot ROM of the IN610 that a firmware ima
 
 Several SDK configuration macros are defined in the fm_config.h file, as detailed in the following sub-sections.
 
-#### Debug option
+#### Debug option{#debug-option}
 The Keil project includes two targets: tracker (release version) and tracker_d (debug version). The differences between these targets are outlined in below table:
 
 |Target|Linked libraries|FMND_DEBUG defined?|Description|
@@ -418,13 +422,13 @@ The "check_adv_actv" callback function is used to check if an activity index is 
 
 ### Build the project with Keil
 
-The Keil project file is “in-dev/proj/proj_ble_find_my/build/mdk/proj_ble_lp.uvprojx”, open it with Keil and then select the appropriate target.
+The Keil project file is “in-dev/proj/proj_ble_find_my/build/mdk/proj_ble_lp.uvprojx”, open it with Keil and then select the appropriate target (refer to [Debug option](#debug-option)).
 If the build is successful, a file named "ble_find_my.bin" will be generated in the "in-dev/proj/proj_ble_find_my/build/mdk" directory. That file is the firmware image users need to load it to the IN610's flash.
 
 ### Build the project with GCC
 Follow below steps to build the project.
 1. Unzip InPlay SDK to any directory.
-2. If you're using Ubuntu, open the file in-dev/proj/common/gcc/linux.mk and set the GNU_INSTALL_ROOT to the path of your ARM GCC installation. For Windows users, modify the in-dev/proj/common/gcc/windows.mk file instead. Note that in windows.mk, you should use forward slashes "/" as the path separator, rather than backslashes "\".
+2. If you're using Ubuntu, open the file in-dev/proj/common/gcc/linux.mk and set the GNU_INSTALL_ROOT to the path of your ARM GCC installation. For Windows users, modify the in-dev/proj/common/gcc/windows.mk file instead. Note that in windows.mk, you should use forward slashes "/" as the path separator, rather than backslashes "\\".
 3. For Ubuntu users, navigate to the “in-dev/proj/proj_ble_find_my/build/gcc directory and execute the following command in your terminal:
 ```
 make -j4
@@ -441,7 +445,7 @@ If the build is successful, a file named "ble_find_my.bin" will be generated in 
 
 **Note:** If you build the project on Windows, PowerShell or Command Prompt are not supported. It is recommended to install [Git for Windows](https://gitforwindows.org/) and execute the "make" command in "Git Bash" shell.
 
-#### Load the image to IN610L flash
+#### Load the image to IN610L flash {#ref-load-flash}
 The boot pin signals the boot ROM of the IN610 to initiate firmware image download to the flash memory. If the device is already programmed, its state may be uncertain (e.g., it could be in deep sleep or active mode). In such cases, the boot pin assists in preparing the device for image loading. Follow these steps to load an image to the flash:
 - Connect the boot pin to ground (not required if the device has never been programmed).
 - Perform a power cycle on the device or toggle the CHIP_EN pin from low to high.
@@ -477,7 +481,7 @@ A token item has an UUID and a base64-encoded token value.
 In610_fmna_program.py is the python script to load the token. It can support both J-Link and UART.
 
 #### Load token with J-Link
-Before running the script, follow (JFlash Programming | InPlay Doc)[https://inplay-inc.github.io/docs/in6xx/getting-started/download/jflash-download-guide.html] to make sure you can program IN610 flash with J-Link. You should also add the directory path that contains "J-Link.exe" to the PATH environment variable. You can refer [Add to the PATH on Windows 10 and Windows 11 | Architect Ryan](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) to know how to do this.
+Before running the script, follow [JFlash Programming | InPlay Doc](https://inplay-inc.github.io/docs/in6xx/getting-started/download/jflash-download-guide.html) to make sure you can program IN610 flash with J-Link. You should also add the directory path that contains "J-Link.exe" to the PATH environment variable. You can refer [Add to the PATH on Windows 10 and Windows 11 | Architect Ryan](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) to know how to do this.
 
 To load the token, connect J-Link to IN610 chip and run the script as below:
 ```
@@ -493,7 +497,7 @@ python ./in610_fmna_program.py --mfi-token 9748f95c-1678-4c73-9a77-15ed5c5473c9 
 
 #### Load token with UART
 
-Before running the script, check section 8.3 to ensure the chip is in Boot ROM mode and ready to download an image via UART. To load the token, connect your PC to any UART port on the IN610 chip. Then, include the "--com" parameter to specify the COM port number used for the connection. This is an example:
+Before running the script, check section [Load the image to IN610L flash](#ref-load-flash) to ensure the chip is in Boot ROM mode and ready to download an image via UART. To load the token, connect your PC to any UART port on the IN610 chip. Then, include the "--com" parameter to specify the COM port number used for the connection. This is an example:
 
 ```
 python ./in610_fmna_program.py --com 89 --mfi-token 9748f95c-1678-4c73-9a77-15ed5c5473c9 MYG9ME0CAQECAQEERTBDAh8fGFpEniKAqaM+PoxcZc95fXq1p71bCC6KXoeB+89TAiAG8hHm33V/peyFz7f4Cqe+TmuoqW8qnVW+Z1nLXqD/gjBsAgECAgEBBGQxYjAJAgFmAgEBBAECMBACAWUCAQEECDfGbPyNAQAAMBECAgDKAgEBBAgAAAAAAAAACDAWAgIAyQIBAQQNMjYyOTgzLTczMDExMTAYAgFnAgEBBBB/5DXuqMpN+JOWBM/IEzc+
