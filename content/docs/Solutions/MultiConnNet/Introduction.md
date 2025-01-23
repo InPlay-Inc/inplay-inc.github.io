@@ -9,6 +9,8 @@ The MultiConnNet is Inplay's proprietary Multi-Connection Private Network system
 
 The system is comprised of two primary components: the gateway module and the node module.
 
+![alt text](/images/solution/MultiConnNet/topology.png "Figure 1: InPlay MultiConnNet network topology")
+
 ## Key Features ##
 - **Star Topology:** The system employs a star connection model, with the gateway serving as the central node for bidirectional communication with multiple node modules, facilitating management and data transmission.
 
@@ -19,6 +21,8 @@ The system is comprised of two primary components: the gateway module and the no
 - **Private SDR Protocol:** Based on a private SDR protocol, the system offers greater flexibility and customization, allowing optimization according to specific requirements to enhance communication efficiency.
 
 - **Spectrum Utilization:** Operating in the 2.4GHz frequency band, it effectively utilizes existing wireless spectrum resources, making it suitable for various indoor and outdoor environments.
+
+- **Low Power** Node module can be in low power mode that allows them to run on battery power for several years. This makes them particularly suitable for remote or hard-to-reach environments in IoT application. 
 
 ## Glossary of Acronyms and Important Terms ##
 
@@ -87,11 +91,11 @@ When you introduce nodes with shorter connection intervals, the total number of 
 
 Generally, to determine the maximum number of nodes in a mixed connection interval scenario, you can follow this approach:
 
-![alt text](/images/solution/MultiConnNet/node_count_formular.png)
+![alt text](/images/solution/MultiConnNet/node_count_formular.png "Figure 2: Inplay MultiConnNet Capacity Formular")
 
 The formula states that the total time required by all nodes in the network (calculated as the sum of the time each type of node takes based on its connection interval and count) should not exceed the maximum allowable time frame represented by 16 × 8.
 
-![alt text](/images/solution/MultiConnNet/node_count_example.png)
+![alt text](/images/solution/MultiConnNet/node_count_example.png "Figure 3: InPlay MultiConnNet Capacity Sample")
 
 **Conclusion:**
 
@@ -101,7 +105,7 @@ Using this formula allows you to effectively manage and calculate the maximum al
 
 Data throughput is dependent on connection interval. Lower connection interval, higher data throughput. Here is fomular that is used to estimate approximate data rate.
 
-![alt text](/images/solution/MultiConnNet/throughput_formular.png)
+![alt text](/images/solution/MultiConnNet/throughput_formular.png "Figure 4: InPlay MultiConnNet Data Throughput Formular")
 
 The maximum data rate will be (1000/50)*251 ≈ 5KBps when connection interval is 50 ms.
 
@@ -109,4 +113,4 @@ The maximum data rate will be (1000/50)*251 ≈ 5KBps when connection interval i
 
 The Gateway is in full operation mode while node is cable of entering low power mode. It is also dependent on connection interval. Lower connection interval, higher power consumption. For maximum 800ms connection interval, node's average current can be lower than 48uA.
 
-![alt text](/images/solution/MultiConnNet/ave_current_800ms_conn_intv.png)
+![alt text](/images/solution/MultiConnNet/ave_current_800ms_conn_intv.png "Figure 5: InPlay MultiConnNet Node's Power Consumption")
