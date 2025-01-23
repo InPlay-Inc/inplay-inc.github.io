@@ -21,7 +21,7 @@ This document provides a guide as following:
 
 - Download and install [J-Link Software and Documentation Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack)(Version 7.62 or later is recommended).
 
-- Install InPlayInc.DeviceFamilyPack. Double click the InPlayInc.DeviceFamilyPack installation package under the directory of "in-dev\tools", or download [InPlayInc.DeviceFamilyPack](https://raw.githubusercontent.com/InPlay-Inc/IN6XX-Tools/blob/main/Keil_Pack/InPlayInc.DeviceFamilyPack.1.0.6.pack) from website. 
+- Install InPlayInc.DeviceFamilyPack. Double click the InPlayInc.DeviceFamilyPack installation package under the directory of "in-dev\tools", or download [InPlayInc.DeviceFamilyPack](https://github.com/InPlay-Inc/IN6XX-Tools/raw/refs/heads/main/Keil_Pack/keil_pack.zip) from website. 
 
 ## Generate configuration File (optional)
 Demo projects are in "SDK/in-dev/proj". Each project has a configuration file named "in_config.h". This file is located in the "inc" directory of the project. This file is genareted by "InPlay SwiftConfig Tool". If you want to modify the default configuration file, use this tool that is located in "in-dev/tools/in_config".
@@ -44,8 +44,12 @@ If you encounter errors indicating that project files such as "hw\_ana" and "ble
 1. Connect JLink debugger to DK board. And power up DK board.
    
 2. Click "Project" menu in Keil, and select "Options for target"(or use shortcut key Alt+F7).
-3. Click "Device" tab, and select "IN6XXE" device under "InPlay Inc".
+3. Click "Device" tab, and select "IN612L" device under "InPlay Inc".
    ![](/images/c0-quickstart01.png)
+
+Note:
+	If chip is "IN610-Q32-R-G8C0I", select "IN610_G8C0I" device.
+	
 4. Click "Debug" tab, and select "J-Link" from the drop-down menu, as shown below:
    ![](/images/quickstart00.png)
 5. If a devices selection window pops up, select the "unspecified Cortex M4".  
@@ -65,6 +69,10 @@ If the J-Link is connected to the DK board and DK board is powered up, KEIL shou
 8. In the "Utilities" tab, click  "Settings". If the Keil Pack is installed, configuration will be done automatically as follows.
    ![](/images/c0-quickstart02.png) 
    If Keil is not configured properly, please manually add the "IN602C0 GD25WD40C SPI FLASH "flm file by click "Add" button. Then set start addres to 0x210000 and set size to 0x1000.
+
+Note:
+	If chip is "IN610-Q32-R-G8C0I", flm file is "IN602C0 GD25WD80C SPI FLASH".
+
 9.  Click "OK" to apply changes.
 
 10. Click "download" button to download image file to DK board.

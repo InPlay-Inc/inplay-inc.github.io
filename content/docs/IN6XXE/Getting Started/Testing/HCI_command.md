@@ -226,7 +226,7 @@ Note:
 
 Complete Event：`0x04, 0x0E, 0x04, 0x01, 0x01, 0xFC, <status>`
 
-1. ### Get RSSI
+9. ### Get RSSI
 
 Command：`0x01, 0x03, 0xFC, 0x00`
 
@@ -258,14 +258,14 @@ Note:
 
 Complete Event:`0x04, 0x0E, 0x04, 0x01, 0x0D, 0xFC, <status>`
 
-21. ### Vendor TX end 
+11. ### Vendor TX end 
     Stop TX and send back TX packets,
     Command: `0x01, 0x53, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x53, 0xFC, <status> ,<packet number byte 0>, <packet number byte 1>`
 	- packet number: TX packet number
 
-22.   ### Set Cap
+12.   ### Set Cap
 
 Command: `0x01, 0x05, 0xFC, 0x01 <Cap>`
 
@@ -273,7 +273,7 @@ Command: `0x01, 0x05, 0xFC, 0x01 <Cap>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x05, 0xFC, <status>`
 
-1.  ### Save  Cap to Flash
+13.  ### Save  Cap to Flash
 
 Command: `0x01, 0x08, 0xFC, 0x01, <Cap>`
 
@@ -298,7 +298,7 @@ Complete Event: `0x04, 0x0E, 01, 0x04, 0x07, 0xFC, <status>`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x51, 0xFC, <status>`
 
-15. ### Set TX Power Table
+16. ### Set TX Power Table
     
     Command: `0x01, 0x52, 0xFC, 0x00, <TX Power Table>`
     
@@ -306,7 +306,7 @@ Complete Event: `0x04, 0x0E, 01, 0x04, 0x07, 0xFC, <status>`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x51, 0xFC, <status>`
 
-16.  ### Read Register
+17.  ### Read Register
     
     Read register.
 
@@ -326,7 +326,7 @@ Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x07, 0xFC, <status> ,<Reg Value Byte 0
 - Reg Value Byte 1: Register value byte 1.
 - Reg Value Byte 2: Register value byte 2.
 - Reg Value Byte 3: Register value byte 3.
-17. ### Write Register
+18. ### Write Register
 
 Write register.
 
@@ -352,11 +352,11 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 
 
 
-20. ### Get Version Number
+19. ### Get Version Number
     
-    Command: `0x01, 0x50, 0xFC, 0x00`
+    Command: `0x01, 0x5B, 0xFC, 0x00`
 
-	Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x50, 0xFC, <status> , <version byte 0>, <version byte 1>, <version byte 2>, <version byte 3>`
+	Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x5B, 0xFC, <status> , <version byte 0>, <version byte 1>, <version byte 2>, <version byte 3>`
 
     - Version: 32bit HCI command SW version number
 
@@ -394,7 +394,7 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0C, 0xFC, <status> <GPIO input>`
 	- GPIO input: 1 is high and 0 is low
 
-22. ### Get ADC sample
+23. ### Get ADC sample
     
     Command: `0x01, 0x43, 0xFC, 0x02, <ADC channel>, <parameter>`
 	- ADC channel: ADC channel
@@ -403,7 +403,7 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 
     - Sample raw data: 16 bits ADC sample raw data.
     - Sample converted data: 16 bits converted data in millivolt.
-23. ### Start PWM
+24. ### Start PWM
     
     Command: `0x01, 0x09, 0xFC, 0x01, <pwm id>`
 
@@ -421,13 +421,13 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 
 
-19. ### Stop PWM
+25. ### Stop PWM
     
     Command: `0x01, 0x0A, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0A, 0xFC, <status>`   
 
-23. ### Set RTC32K Output
+26. ### Set RTC32K Output
     
     Command: `0x01, 0x46, 0xFC, 0x03, <enable>, <port>, <pin>`
 	Output RTC32K signal on specail GPIO. Available pins are GPIO_0_2, GPIO_0_6, GPIO_1_0, GPIO_1_4, GPIO_1_8, GPIO_3_3 and GPIO_4_3.
@@ -439,7 +439,7 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x46, 0xFC, <status>` 
 
 
-1.  ### Enter Deep Sleep
+27.  ### Enter Deep Sleep
     
     Command: `0x01, 0x54, 0xFC, 0x00`
 	Enter deep sleep mode,
@@ -484,7 +484,7 @@ Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>`
 - cap: cap value
 
 - offset: Offset between DUT and tester , Unit is 1/8 us at 100ms(1.25PPM).
-22. ### DUT Set TX Power
+2. ### DUT Set TX Power
     
     Command: `0x01, 0x32, 0xFC, 0x03, <ch>, <phy>, <tx gain code>`
 - ch: 0 ~ 39
@@ -494,7 +494,7 @@ Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>`
 Complete Event: `0x04, 0x0E, 0x05, 0x01, 0x32, 0xFC, <status>,<rssi>` 
 
 - rssi: RSSI value
-23. ### DUT RX Sensitivity
+3. ### DUT RX Sensitivity
     
     Command: `0x01, 0x33, 0xFC, 0x03, <ch>, <phy>, <loss rate>`
 - ch: 0 ~ 39
@@ -508,7 +508,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x06, 0x33, 0xFC, <status>, <tx power>, <loss
 - tx power: Tester TX power
 
 - loss rate: loss rate, unit is 0.1%.  20 means 2%.
-24. ### DUT Download Image
+4. ### DUT Download Image
     
     Command: `0x01, 0x34, 0xFC, 0x08, <bootram size byte 0>, <bootram size byte 1>, <bootram size byte 2>, <bootram size byte 3>, <image size byte 0>, <image size byte 1>, <image size byte 2>, <image size byte 3>`
     
@@ -521,7 +521,7 @@ Example: bootram size is 0x2000 bytes, image size is 0xAC00 bytes:
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x34, 0xFC, <status>`
 
-24. ### Measure XO
+5. ### Measure XO
     
     Command: `0x01, 0x35, 0xFC, 0x02, <port>, <pin>`
     Measure DUT XO by PWM signal.
@@ -531,7 +531,7 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x34, 0xFC, <status>`
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x35, 0xFC, <status>, <ppm byte0>, <ppm byte1>`
 	-ppm: if ppm > 0, DUT clock is faster then tester clock. If ppm < 0, DUT clock is slower then tester clock.
 
-1.  ### Start BLE Scan
+6.  ### Start BLE Scan
     
     Command: `0x01, 0x40, 0xFC, 0x07, <channel>, <BD addr byte 0>, < BD addr byte 1>, < BD addr byte 2>, < BD addr byte 3 >, < BD addr byte 4>, < BD addr byte 5 >`
 - channel: Scan channel. 37, 38 or 39
@@ -540,7 +540,7 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x35, 0xFC, <status>, <ppm byte0>, <ppm
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x40, 0xFC, <status>`
 
-26. ### Start SDR Scan
+7. ### Start SDR Scan
     
     Command: `0x01, 0x41, 0xFC, 0x05, <channel>, <access addr byte 0>, <access addr byte 1>, <access addr byte 2>, <access addr byte 3 >`
 - channel:Scan channel. Range is 0 ~  39.
@@ -549,7 +549,7 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x40, 0xFC, <status>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x41, 0xFC, <status>`
 
-27. ### Stop Scan
+8. ### Stop Scan
     
     Command: `0x01, 0x42, 0xFC, 0x00`
 
@@ -561,3 +561,11 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x41, 0xFC, <status>, <RSSI>,<freq_offs
 
 `Offset(KHz) = 500.0/1024* freq_offset_code` 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x42, 0xFC, <status>`
+
+9. ### Get HW ID
+    Get hardware ID
+    Command: `0x01, 0x50, 0xFC, 0x00`
+
+	Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x5B, 0xFC, <status> , <id byte 0>, <id byte 1>, <version byte 2>, <id byte 3>`
+
+    - id: 32bit HW ID

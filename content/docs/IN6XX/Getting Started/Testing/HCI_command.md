@@ -40,6 +40,9 @@ Similarly, the format for an HCI event packet is structured as follows:
 - **Parameter Length:** A byte indicating the length of the parameters or data that follow.
 - **Data:** Additional information or payload associated with the event or response.
 
+Note:
+	HCI command is in hexadecimal, not ASCII characters. If you are using a serial tool to send the HCI command, make sure to set it to HEX mode for both sending and receiving. For example, in this document, "0x12" represents one byte with the value 0x12. Please do not enter '0', 'x', '1', '2' as four separate bytes.
+
 ## Command Example:
 
 **Reset Command**
@@ -166,13 +169,14 @@ Command: `0x01, 0x33, 0x20, 0x03, <channel>, <phy>, <modulation index>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x33, 0x20, <status>`
 
+***The following commands are vendor specified.***
+
 7. ### Stop Carrier TX ( Carrier signal)
 
 Command：`0x01, 0x04, 0xFC, 0x00`
 
 Complete Event:`0x04, 0x0E,0x04, 0x01, 0x04, 0xFC, <status>`
 
-***The following commands are vendor specified.***
 
 8. ### Start Carrier TX (carrier signal)
 
@@ -189,7 +193,7 @@ Note:
 
 Complete Event：`0x04, 0x0E, 0x04, 0x01, 0x01, 0xFC, <status>`
 
-1. ### Get RSSI
+9. ### Get RSSI
 
 Command：`0x01, 0x03, 0xFC, 0x00`
 
@@ -221,14 +225,14 @@ Note:
 
 Complete Event:`0x04, 0x0E, 0x04, 0x01, 0x0D, 0xFC, <status>`
 
-21. ### Vendor TX end 
+11. ### Vendor TX end 
     Stop TX and send back TX packets,
     Command: `0x01, 0x53, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x53, 0xFC, <status> ,<packet number byte 0>, <packet number byte 1>`
 	- packet number: TX packet number
 
-22.   ### Set Cap
+12.   ### Set Cap
 
 	Set XO cap
 
@@ -238,7 +242,7 @@ Command: `0x01, 0x05, 0xFC, 0x01 <Cap>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x05, 0xFC, <status>`
 
-22.   ### Save Cap
+13.   ### Save Cap
    
 	Save XO cap value to flash
 
@@ -246,7 +250,7 @@ Command: `0x01, 0x08, 0xFC, 0x00 `
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x08, 0xFC, <status>`
 
-1.  ### Set TX Power
+14.  ### Set TX Power
     
     Set the transmit power according to Table 3. 
 
@@ -257,7 +261,7 @@ Commands: `0x01, 0x07, 0xFC, 0x01, <TX Power>`
 Complete Event: `0x04, 0x0E, 01, 0x04, 0x07, 0xFC, <status>`
 
 
-1.   ### Read Register
+15.   ### Read Register
     
     Read register.
 
@@ -277,7 +281,7 @@ Complete Event: `0x04, 0x0E, 0x08, 0x01, 0x07, 0xFC, <status> ,<Reg Value Byte 0
 - Reg Value Byte 1: Register value byte 1.
 - Reg Value Byte 2: Register value byte 2.
 - Reg Value Byte 3: Register value byte 3.
-17. ### Write Register
+16. ### Write Register
 
 Write register.
 
@@ -303,7 +307,7 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 
 
 
-20. ### Get Version Number
+17. ### Get Version Number
     
     Command: `0x01, 0x50, 0xFC, 0x00`
 
@@ -312,7 +316,7 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
     - Version: 32bit HCI command SW version number
 
 
-20. ### Set TRX Enable Pin
+18. ### Set TRX Enable Pin
     
     Command: `0x01, 0x44, 0xFC, 0x06,  <bias port> <bias pin>, <tx en port>, <tx en pin>,<rx en port>, <rx en pin>`
 	- bias port: PA bias port, set to 0xFF if it is invaild
@@ -324,7 +328,7 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x44, 0xFC, <status> `
 
-20. ### Save Configuration
+19. ### Save Configuration
 
 	Save PA  and tx power configuration to flash.
 
@@ -371,8 +375,8 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
     - Sample raw data: 16 bits ADC sample raw data.
     - Sample converted data: 16 bits converted data in millivolt.
 23. ### Start PWM
-    
-    Command: `0x01, 0x09, 0xFC, 0x01, <pwm id>`
+    Start PWM
+    Command: `0x01, 0x09, 0xFC, 0x09, <pwm id>, <period byte 0>, <period byte 1>, <period byte 2>, <period byte 3>, <high byte 0>, <high byte 1>, <high byte 2>, <high byte 3>`
 
 - pwm id:
 
@@ -385,20 +389,20 @@ Complete Event:  `0x04, 0x0E, 0x04, 0x01, 0x07, 0xFC, <status>`
     - PWM3    3
 
     - PWM4    4
+  - period: PWM period, count in microsecond
+  - high: PWM high time, count in microsecond
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 
 
-19. ### Stop PWM
-    
+24.  ### Stop PWM
+    Stop PWM
     Command: `0x01, 0x0A, 0xFC, 0x00`
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x0A, 0xFC, <status>`   
 
-23. ### Set RTC32K Output
-    
+25.  ### Set RTC32K Output
+    Output RTC32K signal on specail GPIO. Available pins are GPIO_0_2, GPIO_0_6, GPIO_1_0, GPIO_1_4, GPIO_1_8, GPIO_3_3 and GPIO_4_3.
     Command: `0x01, 0x46, 0xFC, 0x03, <enable>, <port>, <pin>`
-	Output RTC32K signal on specail GPIO. Available pins are GPIO_0_2, GPIO_0_6, GPIO_1_0, GPIO_1_4, GPIO_1_8, GPIO_3_3 and GPIO_4_3.
-
 - enable: 1 is enable, and 0 is disable
 - port: GPIO port
 - pin: GPIO pin
@@ -407,6 +411,34 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>`
 
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x09, 0xFC, <status>` 	
+
+26.  ### I2C Read Register
+    I2C read register as master
+    Command: `0x01, 0x59, 0xFC, 0x03, <i2c_id>, <slv_addr>, <reg_addr>`
+- i2c_id: I2C id, 0 or 1. I2C 0 use GPIO0_0 and GPIO0_1, I2C 1 use GPIO4_0 and GPIO4_1.
+- slv_addr: I2C slave address
+- reg_addr: register address
+
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x02, 0x59, 0xFC, <status>, <reg_val>`   
+- reg_val: register value
+  
+27.  ### Get RTC clock
+    Get RTC clock
+    Command: `0x01, 0x5A, 0xFC, 0x00`
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x5A, 0xFC, <status>, <rtc_clk byte 0>, <rtc_clk byte 1>, <rtc_clk byte 2>, <rtc_clk byte 3>`   
+- rtc_clk: RTC clock in HZ.
+Note:
+	RTC need 1 second for calibration. Must wait for 1 second after power on, then run this command.
+
+28.   ### Deep Sleep
+    Go to deep sleep mode
+    Command: `0x01, 0x55, 0xFC, 0x04, <sleep_time byte 0>, <sleep_time byte 1>, <sleep_time byte 2>, <sleep_time byte 3>`
+- sleep_time: sleep time in millisecond, must larger then 10.  Chip will wake up after sleep_time. 
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x55, 0xFC, <status>`   
+
 ***The following command in only available for Golden tester board.***
 
 1.  ### DUT Calibrate XO
@@ -442,7 +474,7 @@ Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>`
 - cap: cap value
 
 - offset: Offset between DUT and tester , Unit is 1/8 us at 100ms(1.25PPM).
-22. ### DUT Set TX Power
+2. ### DUT Set TX Power
     
     Command: `0x01, 0x32, 0xFC, 0x03, <ch>, <phy>, <tx gain code>`
 - ch: 0 ~ 39
@@ -452,7 +484,7 @@ Complete Event: `0x04, 0x0E, 0x06, 0x01, 0x31, 0xFC, <status>,<cap>,<offset>`
 Complete Event: `0x04, 0x0E, 0x05, 0x01, 0x32, 0xFC, <status>,<rssi>` 
 
 - rssi: RSSI value
-23. ### DUT RX Sensitivity
+3. ### DUT RX Sensitivity
     
     Command: `0x01, 0x33, 0xFC, 0x03, <ch>, <phy>, <loss rate>`
 - ch: 0 ~ 39
@@ -466,7 +498,7 @@ Complete Event: `0x04, 0x0E, 0x01, 0x06, 0x33, 0xFC, <status>, <tx power>, <loss
 - tx power: Tester TX power
 
 - loss rate: loss rate, unit is 0.1%.  20 means 2%.
-24. ### DUT Download Image
+4. ### DUT Download Image
     
     Command: `0x01, 0x34, 0xFC, 0x08, <bootram size byte 0>, <bootram size byte 1>, <bootram size byte 2>, <bootram size byte 3>, <image size byte 0>, <image size byte 1>, <image size byte 2>, <image size byte 3>`
     
@@ -479,7 +511,7 @@ Example: bootram size is 0x2000 bytes, image size is 0xAC00 bytes:
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x34, 0xFC, <status>`
 
-25. ### Start BLE Scan
+5. ### Start BLE Scan
     
     Command: `0x01, 0x40, 0xFC, 0x07, <channel>, <BD addr byte 0>, < BD addr byte 1>, < BD addr byte 2>, < BD addr byte 3 >, < BD addr byte 4>, < BD addr byte 5 >`
 - channel: Scan channel. 37, 38 or 39
@@ -488,7 +520,7 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x34, 0xFC, <status>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x40, 0xFC, <status>`
 
-26. ### Start SDR Scan
+6. ### Start SDR Scan
     
     Command: `0x01, 0x41, 0xFC, 0x05, <channel>, <access addr byte 0>, <access addr byte 1>, <access addr byte 2>, <access addr byte 3 >`
 - channel:Scan channel. Range is 0 ~  39.
@@ -497,7 +529,7 @@ Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x40, 0xFC, <status>`
 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x41, 0xFC, <status>`
 
-27. ### Stop Scan
+7. ### Stop Scan
     
     Command: `0x01, 0x42, 0xFC, 0x00`
 
