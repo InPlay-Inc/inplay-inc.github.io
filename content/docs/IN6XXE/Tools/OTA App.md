@@ -18,35 +18,45 @@ The InPlayOTA Android App is designed for Over-the-Air (OTA) firmware upgrades f
 
 When you run the InPlayOTA app for the first time, you will be prompted to grant permissions. Please follow these steps:
 
-1. Tap **"While using the app"**.
-![](/images/ota_app/ota2.png)
-2. Then tap **"Allow"**.
-![](/images/ota_app/ota3.png)   
+- Tap **"While using the app"**.  
+<img src="/images/ota_app/ota2.png" width="30%" />  
+
+- Then tap **"Allow"**.  
+<img src="/images/ota_app/ota3.png" width="30%" />  
 
 ## Step
 
-- Click the **Scan** button to search for available devices.
-![](/images/ota_app/ota4.png)  
-- (Optional)Click the **Filter** button to filter devices. Click it again to collapse the filter.
-![](/images/ota_app/ota5.png)  
-- Find the device (e.g., "InPlay-OTA") and click the **Connect** button.
-![](/images/ota_app/ota6.png)
-- If the device status is not "CONNECTED," click **DISCONNECT** and then click **CONNECT** again.
-![](/images/ota_app/ota1.png)
-- Select the bin file from your phone.
-![](/images/ota_app/ota9.png)
-- (Optional) Click the **Options** button:
-  ![](/images/ota_app/ota7.png)
+- Click the **Scan** button to search for available devices.  
+<img src="/images/ota_app/ota4.png" width="30%" />  
+
+- (Optional)Click the **Filter** button to filter devices. Click it again to collapse the filter.  
+<img src="/images/ota_app/ota5.png" width="30%" />  
+
+- Find the device (e.g., "InPlay-OTA") and click the **Connect** button.  
+<img src="/images/ota_app/ota6.png" width="30%" />  
+
+- If the device status is not "CONNECTED," click **DISCONNECT** and then click **CONNECT** again.  
+<img src="/images/ota_app/ota1.png" width="30%" />  
+
+- Select the bin file from your phone.  
+<img src="/images/ota_app/ota9.png" width="30%" />  
+
+- (Optional) Click the **Options** button:  
+<img src="/images/ota_app/ota7.png" width="30%" />  
+
   - **Hash:** Enable hash checking (only available for IN6XX chip).
   - **CRC32:** Enable CRC32 checking (only available for IN6XXE chip).
   - **AES Encrypt:** Deprecated setting, do not check.
   - **Flash Verify:** Verify flash data. This is not required if hash or CRC32 checking is enabled.
   - **Force Erase:** Deprecated setting.
 
-- Click the **Start** button to begin the OTA process.
-![](/images/ota_app/ota10.png)
-The device will reset automatically once the OTA update is successful.
-![](/images/ota_app/ota11.png)
+- Click the **Start** button to begin the OTA process.  
+<img src="/images/ota_app/ota10.png" width="30%" />  
+
+- The device will reset automatically once the OTA update is successful.  
+  <img src="/images/ota_app/ota11.png" width="30%" />  
+
+
 
 
 
