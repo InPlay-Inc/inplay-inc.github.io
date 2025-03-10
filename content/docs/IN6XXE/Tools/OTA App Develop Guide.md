@@ -227,7 +227,7 @@ The upgrade binary file is divided into up to three sections, as described in th
 Below is a flowchart illustrating the OTA upgrade process:
 
 ```mermaid
-  flowchart TD
+graph TD;
   A[Start] --> C[Update CMD with long interval]
   C --> B[Cancel CMD]
   B --> K[Prepare CMD]
