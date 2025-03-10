@@ -228,20 +228,20 @@ Below is a flowchart illustrating the OTA upgrade process:
 
 ```mermaid
 graph TD;
-  A[Start] --> C[Update CMD with long interval]
-  C --> B[Cancel CMD]
-  B --> K[Prepare CMD]
-  K --> D[Configure CMD]
-  D --> E[Update CMD with short interval]
-  E --> L[SW Version CMD]
-  L --> M[HW Version CMD]
-  M --> N[Signature CMD]
-  N --> F[Write CMD]
-  F --> G{Write Complete?}
-    G -->|Yes| H[Done CMD]
-    H --> I[Reset CMD]
-    I --> J[End]
-    G -->|No| F
+  A[Start] --> C[Update CMD with long interval];
+  C --> B[Cancel CMD];
+  B --> K[Prepare CMD];
+  K --> D[Configure CMD];
+  D --> E[Update CMD with short interval];
+  E --> L[SW Version CMD];
+  L --> M[HW Version CMD];
+  M --> N[Signature CMD];
+  N --> F[Write CMD];
+  F --> G{Write Complete?};
+    G -->|Yes| H[Done CMD];
+    H --> I[Reset CMD];
+    I --> J[End];
+    G -->|No| F;
 ```
   
 ### Best Pracitce
