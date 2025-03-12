@@ -369,6 +369,8 @@ Functions declared in “fmna_user.h” and “nearby_user.h” are APIs called 
 
 The flash address 0x0 is mapped to 0x00300000 in the CPU addressing space. Below table provides detailed information about the flash layout.
 
+### 512KB Flash:
+
 |Address range|Description|
 |---|---|
 |0x0 ~ 0x4000|Boot options and Boot RAM|
@@ -377,6 +379,17 @@ The flash address 0x0 is mapped to 0x00300000 in the CPU addressing space. Below
 |0x7B000~0x7E000|Pair information and keys|
 |0x7E000~0x7F000|Apple software authentication token|
 |0x7F000~0x80000|Reserved, can be used to store SN, etc.|
+
+### 1MB Flash:
+
+|Address range|Description|
+|---|---|
+|0x0 ~ 0x4000|Boot options and Boot RAM|
+|0x4000~0x80000|Application bank A|
+|0x80000~0xFB000|Application bank B|
+|0xFB000~0xFE000|Pair information and keys|
+|0xFE000~0xFF000|Apple software authentication token|
+|0xFF000~0x100000|Reserved, can be used to store SN, etc.|
 
 **Note:** The SDK supports firmware upgrades using A/B banks. At any given time, the application program is stored in either Application Bank A or Application Bank B. Keil can only program firmware to Bank A. If the firmware is upgraded to Bank B, the sector at address 0x3000 must be erased before running a program loaded with Keil.
 
