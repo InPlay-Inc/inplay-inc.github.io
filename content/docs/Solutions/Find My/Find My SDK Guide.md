@@ -497,17 +497,25 @@ In610_fmna_program.py is the python script to load the token. It can support bot
 Before running the script, follow [JFlash Programming | InPlay Doc](https://inplay-inc.github.io/docs/in6xx/getting-started/download/jflash-download-guide.html) to make sure you can program IN610 flash with J-Link. You should also add the directory path that contains "J-Link.exe" to the PATH environment variable. You can refer [Add to the PATH on Windows 10 and Windows 11 | Architect Ryan](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) to know how to do this.
 
 To load the token, connect J-Link to IN610 chip and run the script as below:
+- 512KB flash
 ```
 python ./in610_fmna_program.py --mfi-token [token-UUID] [token-base64]
 ```
-
+- 1MB flash
+```
+python ./in610_fmna_program.py --mfi-token [token-UUID] [token-base64] --flash 1
+```
 where **token-UUID** represents the UUID of the token and **token-base64** is the base64-encoded token value.
 
 This is an example:
+- 512KB flash
 ```
 python ./in610_fmna_program.py --mfi-token 9748f95c-1678-4c73-9a77-15ed5c5473c9 MYG9ME0CAQECAQEERTBDAh8fGFpEniKAqaM+PoxcZc95fXq1p71bCC6KXoeB+89TAiAG8hHm33V/peyFz7f4Cqe+TmuoqW8qnVW+Z1nLXqD/gjBsAgECAgEBBGQxYjAJAgFmAgEBBAECMBACAWUCAQEECDfGbPyNAQAAMBECAgDKAgEBBAgAAAAAAAAACDAWAgIAyQIBAQQNMjYyOTgzLTczMDExMTAYAgFnAgEBBBB/5DXuqMpN+JOWBM/IEzc+
 ```
-
+- 1MB flash
+```
+python ./in610_fmna_program.py --mfi-token 9748f95c-1678-4c73-9a77-15ed5c5473c9 MYG9ME0CAQECAQEERTBDAh8fGFpEniKAqaM+PoxcZc95fXq1p71bCC6KXoeB+89TAiAG8hHm33V/peyFz7f4Cqe+TmuoqW8qnVW+Z1nLXqD/gjBsAgECAgEBBGQxYjAJAgFmAgEBBAECMBACAWUCAQEECDfGbPyNAQAAMBECAgDKAgEBBAgAAAAAAAAACDAWAgIAyQIBAQQNMjYyOTgzLTczMDExMTAYAgFnAgEBBBB/5DXuqMpN+JOWBM/IEzc+ --flash 1
+```
 #### Load token with UART
 
 Before running the script, check section [Load the image to IN610L flash](#ref-load-flash) to ensure the chip is in Boot ROM mode and ready to download an image via UART. To load the token, connect your PC to any UART port on the IN610 chip. Then, include the "--com" parameter to specify the COM port number used for the connection. This is an example:
