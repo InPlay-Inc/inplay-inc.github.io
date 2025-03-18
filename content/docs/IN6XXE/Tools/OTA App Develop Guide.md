@@ -54,13 +54,13 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
 1. #### Prepare Command (0x06)
    - **Description:** Prepares the device for OTA. This command must be issued before any other OTA commands.
    - **Format:**
-     | CMD (0x06) |
+     | CMD:0x06  (4 bytes)|
      |------------|
 
 2. #### Configure Command (0x00)
    - **Description:** Configures OTA parameters such as firmware size and update flags.
    - **Format:**
-     | CMD (0x00) | Firmware Size (4 bytes) | Flag (4 bytes) |
+     | CMD:0x00 (4 bytes) | Firmware Size (4 bytes) | Flag (4 bytes) |
      |------------|-------------------------|----------------|
    - **Parameters:**
      - **Firmware Size:** Total size of the upgrade file.
@@ -80,26 +80,26 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
 3. #### Signature Command (0x08)
    - **Description:** Sends the upgrade file’s signature.
    - **Format:**
-     | CMD (0x08) | Signature (64 bytes) |
+     | CMD:0x08 (4 bytes) | Signature (64 bytes) |
      |------------|----------------------|
    - **Note:** If the device does not support signature checking, this command may return an `OTA_ERR_INVALID_PARAM` error, which can be safely ignored.
 
 4. #### Software Version Command (0x09)
    - **Description:** Sends the software version to the device. If an error is returned, cancel the OTA process.
    - **Format:**
-     | CMD (0x09) | SW Version (4 bytes) |
+     | CMD:0x09  (4 bytes) | SW Version (4 bytes) |
      |------------|----------------------|
 
 5. #### Hardware Version Command (0x0A)
    - **Description:** Sends the hardware version to the device. If an error is returned, cancel the OTA process.
    - **Format:**
-     | CMD (0x0A) | HW Version (4 bytes) |
+     | CMD:0x0A  (4 bytes) | HW Version (4 bytes) |
      |------------|----------------------|
 
 6. #### Write Command (0x01)
    - **Description:** Writes firmware data to the device’s flash memory.
    - **Format:**
-     | CMD (0x01) | Address (4 bytes) | Data (4–512 bytes) |
+     | CMD:0x01 (4 bytes) | Address (4 bytes) | Data (4–512 bytes) |
      |------------|-------------------|--------------------|
    - **Parameters:**
      - **Address:** Flash offset address (starting at 0).
@@ -108,26 +108,26 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
 7. #### Done Command (0x02)
    - **Description:** Finalizes the OTA process and write the configuration to flash memory.
    - **Format:**
-     | CMD (0x02) |
+     | CMD:0x02  (4 bytes) |
      |------------|
 
 8. #### Cancel Command (0x03)
    - **Description:** Cancels the current OTA process and resets the device state.
    - **Format:**
-     | CMD (0x03) |
+     | CMD:0x03  (4 bytes) |
      |------------|
    - **Note:** After cancellation, issue a Prepare Command to restart the OTA process.
 
 9. #### Reset Command (0x04)
    - **Description:** Resets the device.
    - **Format:**
-     | CMD (0x04) |
+     | CMD:0x04  (4 bytes) |
      |------------|
 
 10. #### Update Command (0x05)
     - **Description:** Updates BLE connection parameters.
     - **Format:**
-      | CMD (0x05) | Interval Min (4 bytes) | Interval Max (4 bytes) | Latency (4 bytes) | Timeout (4 bytes) |
+      | CMD:0x05  (4 bytes) | Interval Min (4 bytes) | Interval Max (4 bytes) | Latency (4 bytes) | Timeout (4 bytes) |
       |------------|------------------------|------------------------|-------------------|-------------------|
     - **Parameters:**
       - **Interval Min:** Minimum connection interval (N × 1.25ms).
@@ -200,7 +200,7 @@ The upgrade binary file is divided into up to three sections, as described in th
 
    | Field         | Size (bytes) | Description                                                                                       |
    |---------------|--------------|---------------------------------------------------------------------------------------------------|
-   | Magicword     | 4            | Should be `0xA72E0129`. If not, the OTA header is considered absent.                              |
+   | Magicword     | 4            | Should be `0xA9D8194E`. If not, the OTA header is considered absent.                              |
    | SW Version    | 4            | Software version (sent in the Software Version Command).                                          |
    | HW Version    | 4            | Hardware version (sent in the Hardware Version Command).                                          |
    | Signature     | 64           | Signature of the upgrade file (sent in the Signature Command).                                    |
