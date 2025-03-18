@@ -146,7 +146,9 @@ The OTA Error characteristic notifies the application of errors that occur durin
 
 | Field      | Size (bytes) | Description                   |
 |------------|--------------|-------------------------------|
-| Error Code | 4            | Identifier for the error      |
+| Command | 1            | OTA Command      |
+| Error Code | 1            | Identifier for the error      |
+| Reserved | 2| Reserved data
 | Data       | 4            | Additional error data         |
 
 ### Error Codes
