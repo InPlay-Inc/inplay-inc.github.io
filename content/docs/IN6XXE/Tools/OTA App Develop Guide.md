@@ -104,27 +104,30 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
    - **Parameters:**
      - **Address:** Flash offset address (starting at 0).
      - **Data:** Data payload (must be 4-byte aligned).
+  
+**Note**:
+	If this command completes successfully, it will not send a GATT notify through the OTA error characteristic. A GATT notify is only sent in case of an error.
 
-7. #### Done Command (0x02)
+1. #### Done Command (0x02)
    - **Description:** Finalizes the OTA process and write the configuration to flash memory.
    - **Format:**
      | CMD:0x02  (4 bytes) |
      |------------|
 
-8. #### Cancel Command (0x03)
+2. #### Cancel Command (0x03)
    - **Description:** Cancels the current OTA process and resets the device state.
    - **Format:**
      | CMD:0x03  (4 bytes) |
      |------------|
    - **Note:** After cancellation, issue a Prepare Command to restart the OTA process.
 
-9. #### Reset Command (0x04)
+3. #### Reset Command (0x04)
    - **Description:** Resets the device.
    - **Format:**
      | CMD:0x04  (4 bytes) |
      |------------|
 
-10. #### Update Command (0x05)
+4.  #### Update Command (0x05)
     - **Description:** Updates BLE connection parameters.
     - **Format:**
       | CMD:0x05  (4 bytes) | Interval Min (4 bytes) | Interval Max (4 bytes) | Latency (4 bytes) | Timeout (4 bytes) |
