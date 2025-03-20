@@ -111,8 +111,11 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
 1. #### Done Command (0x02)
    - **Description:** Finalizes the OTA process and write the configuration to flash memory.
    - **Format:**
-     | CMD:0x02  (4 bytes) |
-     |------------|
+     | CMD:0x02  (4 bytes) | *optional* Hash Value(32 bytes)|
+     |------------|-------|
+
+	- **Note**:
+		The 32-bytes hash value is optional and is only available when the **Hash** bit is set to 1 in the **Configure Command**. Compute the hash value using SHA-256 on the application data.
 
 2. #### Cancel Command (0x03)
    - **Description:** Cancels the current OTA process and resets the device state.
@@ -233,10 +236,10 @@ Below is a flowchart illustrating the OTA upgrade process:
 
 ```mermaid
 graph TD;
-  A[Start] --> C[Update CMD with long interval];
-  C --> B[Cancel CMD];
+  A[Start] --> B[Cancel CMD];
   B --> K[Prepare CMD];
-  K --> D[Configure CMD];
+  K --> C[Update CMD with long interval];
+  C --> D[Configure CMD];
   D --> E[Update CMD with short interval];
   E --> L[SW Version CMD];
   L --> M[HW Version CMD];
