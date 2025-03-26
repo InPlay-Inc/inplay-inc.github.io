@@ -439,6 +439,17 @@ Note:
 
 	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x55, 0xFC, <status>`   
 
+29.   ### User Ddefined Command
+	Run user defined command.
+    Command: `0x01, 0x47, 0xFC, 0x04, <para0>, <para1>, <para2>, <para3>`
+- para0: parameter 0.
+- para1: parameter 1.
+- para2: parameter 2.
+- para3: parameter 3.
+
+	Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x47, 0xFC, <status> <res byte0> <res byte1> <res byte2> <res byte3>`
+- res: return value of user defined function    
+  	
 ***The following command in only available for Golden tester board.***
 
 1.  ### DUT Calibrate XO

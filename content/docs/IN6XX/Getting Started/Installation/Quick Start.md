@@ -48,7 +48,7 @@ If you encounter errors indicating that project files such as "hw\_ana" and "ble
    ![](/images/c0-quickstart01.png)
 
 Note:
-	If chip is "IN610-Q32-R-G8C0I", select "IN610_G8C0I" device.
+	If chip is "IN610-Q32-R-G8C0I"(1MB Flash), select "IN610_G8C0I" device.
 	
 4. Click "Debug" tab, and select "J-Link" from the drop-down menu, as shown below:
    ![](/images/quickstart00.png)
@@ -71,7 +71,7 @@ If the J-Link is connected to the DK board and DK board is powered up, KEIL shou
    If Keil is not configured properly, please manually add the "IN602C0 GD25WD40C SPI FLASH "flm file by click "Add" button. Then set start addres to 0x210000 and set size to 0x1000.
 
 Note:
-	If chip is "IN610-Q32-R-G8C0I", flm file is "IN602C0 GD25WD80C SPI FLASH".
+	If chip is "IN610-Q32-R-G8C0I"(1MB Flash), flm file is "IN602C0 GD25WD80C SPI FLASH".
 
 9.  Click "OK" to apply changes.
 

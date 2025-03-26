@@ -41,7 +41,7 @@ J-Flash is a part of the J-Link tool series developed by Segger, offers a reliab
 ![](/images/c0-jflash1.png)
 
 Note:
-	If chip is "IN610-Q32-R-G8C0I", select "IN6XX_C0_GIGA_8M" device.
+	If chip is "IN610-Q32-R-G8C0I"(1MB Flash), select "IN6XX_C0_GIGA_8M" device.
 
 - Open the Bin file
 
