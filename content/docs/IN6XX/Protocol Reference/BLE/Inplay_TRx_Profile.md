@@ -1,5 +1,5 @@
 ---
-title: "Transparent Data Transmission Component Programming Guide"
+title: "Inplay Transparent Data Transmission (TRx) profile User Guide"
 ---
 
 # Overview
