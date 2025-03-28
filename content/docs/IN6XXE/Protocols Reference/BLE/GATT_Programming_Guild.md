@@ -129,7 +129,7 @@ typedef struct
 } ble_gatt_svc_desc_t;
 ```
 
-In TRX profile, there is only one service which contains two majoy characteristics representing data tx ([TRX_CHAR_VAL_TX]) and rx ([TRX_CHAR_VAL_RX]) respectively. Their <code>uuid</code> are application defined. According to the GATT standard, each service must first contain an attribute called Characteristic Declaration with a fixed <code>uuid</code> 0x2803. In addition, the server usually allows the client to control whether the server is able to send data by notification or indicatation method or not. Therefore, for the characteristic of data rx, a Client Characteristic Configuration Descriptor with predefined <code>uuid</code> 0x2902 should be added in the service. 
+In TRx profile, there is only one service which contains two majoy characteristics representing data tx ([TRX_CHAR_VAL_TX]) and rx ([TRX_CHAR_VAL_RX]) respectively. Their <code>uuid</code> are application defined. According to the GATT standard, each service must first contain an attribute called Characteristic Declaration with a fixed <code>uuid</code> 0x2803. In addition, the server usually allows the client to control whether the server is able to send data by notification or indicatation method or not. Therefore, for the characteristic of data rx, a Client Characteristic Configuration Descriptor with predefined <code>uuid</code> 0x2902 should be added in the service. 
 
 The <code>prop</code> defines the access method of the attribute, **ATT_CHAR_PROP_READ**, **ATT_CHAR_PROP_WRITE**, **ATT_CHAR_PROP_NOTIFY**, **ATT_CHAR_PROP_INDICATE** etc, which is clear in meaning by its name. For example, **ATT_CHAR_PROP_NOTIFY** should be specified for attribute [TRX_CHAR_VAL_TX] which represents the data tx, because TRX_CHAR_VAL_TX depends on the method of Notify. For attribute [TRX_CHAR_VAL_RX] representing the data rx, **ATT_CHAR_PROP_WRITE** should be specified, which means that the client sends data to the server through the method of GATT Write. 
 
@@ -189,7 +189,7 @@ In short, the main concern when creating a service is to define the structure of
 
 ### Server Sending Data
 
-Below are APIs that server uses to send data, by GATT notify or indicate method.
+Below are APIs that server usually uses to send data, by GATT notify or indicate method.
 
 ```c
 /**
@@ -231,7 +231,7 @@ Handle of TX Characteristic = Start Handle + TRX_CHAR_VAL_TX + 1
 
 The 1 in above formula actually represents the additional attribute "Service Declaration" in service, which is not described in service description structure when it is created but added automatically by GATT profile.
 
-In sample TRX profile, it is call like below:
+In sample TRx profile, it is call like below:
 
 ```c
 res = in_ble_gatt_send_ntf(g_trx_svr.h_bstk, conidx, g_trx_svr.hdl_svc + TRX_CHAR_VAL_TX + 1, len, (uint8_t *)buf, NULL);
@@ -257,13 +257,13 @@ Data notification and Indication has differet operations, as refered to GATT pro
 
 Accordingly, <code>in_ble_gatt_send_ind</code> implements the above-mentioned function of Characteristic Value Indication. The main difference is that each call needs to wait for the response of the peer ATT layer before it can be completed and exit.
 
-For example, assume that the parameter of Bluetooth connection is 1s. Call in_ble_gatt_send_ntf or <code>in_ble_gatt_send_ind</code> twice during the period. The application osThread that calls inb_gatt_send_ntf can continue to work. At the same time, at the next connection point, the data sent by the two calls can be received by the other side simultaneously. If the connection is suddenly interrupted, the data sent is lost. The thread calling in_ble_gatt_send_ind will get blocked until the next connection point has sent data and received the other party's response successfully. It holds true for the next call. That is, for the same two packets, using <code>in_ble_gatt_send_ind</code> causes an interval of 2 seconds, but it will ensure that the sent data will not get lost.
+For example, assume that the parameter of Bluetooth connection is 1s. Call in_ble_gatt_send_ntf or <code>in_ble_gatt_send_ind</code> twice during the period. The application osThread that calls in_ble_gatt_send_ntf can continue to work. At the same time, at the next connection point, the data sent by the two calls can be received by the other side simultaneously. If the connection is suddenly interrupted, the data sent is lost. The thread calling in_ble_gatt_send_ind will get blocked until the next connection point has sent data and received the other party's response successfully. It holds true for the next call. That is, for the same two packets, using <code>in_ble_gatt_send_ind</code> causes an interval of 2 seconds, but it will ensure that the sent data will not get lost.
 
 ### Server Receiving Data
 
 When GATT profile receives data from peer connection device (client), it will post a **GATT_EVT_WRT_REQ** event to application since client send data via GATT write method. We will talk about it later on session of client send data. All server need to do is to register event callback when system is initialized by <code>in_ble_api_init</code>.
 
-In sample TRX profile, <code>evt_wrt_req</code> is registered to handle this event when client writes to [TRX_CHAR_VAL_RX] and [TRX_CLIENT_CHAR_CFG_TX] characteristic, which both have ATT_CHAR_PROP_WRITE property when creating.
+In sample TRx profile, <code>evt_wrt_req</code> is registered to handle this event when client writes to [TRX_CHAR_VAL_RX] and [TRX_CLIENT_CHAR_CFG_TX] characteristic, which both have ATT_CHAR_PROP_WRITE property when creating.
 
 ```c
 static void evt_wrt_req(ble_evt_write_req_ind_t* ind, uint8_t* status)
@@ -312,46 +312,50 @@ static void evt_wrt_req(ble_evt_write_req_ind_t* ind, uint8_t* status)
 }
 ```
 
-Note it's important to set <code>*status</code> to the right value so that ATT protocol will send right response to client.1
+Note it's important to set <code>*status</code> to the right value so that ATT protocol will send right response to client.
 
 ### Server notification enable and disable
 
-In TRX sample above, there is a configuration attribute [TRX_CLIENT_CHAR_CFG_TX] for data sending, with which the client can enable or disable the server to send data. For example, the sensor is not required to report data at some specific time. Obviously, this attribute is also writing for the client, so it is similar to the server's processing method of receiving data.
+In TRx sample above, there is a configuration attribute [TRX_CLIENT_CHAR_CFG_TX] for data sending, with which the client can enable or disable the server to send data. For example, the sensor is not required to report data at some specific time. Obviously, this attribute is also writing for the client, so it is similar to the server's processing method of receiving data.
 
 Enable or disable request is stored in variable <code>g_trx_svr.cfg</code>. When sending data, if it is disabled by client, data is not sent.
 
 ```c
 int in_trx_notify(int conidx, uint8_t *buf, uint32_t len, bool ack)
 {
-    if (len > TRX_MAX_LEN) {
-        return INB_PLT_ERR_INVALID_PARAM;
-    }
-    int res = INB_ATT_ERR_APP_ERROR;
-    trx_svr_t *p_svr = &trx_svr;
-    if (p_svr->cfg[conidx] & 0x1)
+	int res = 0;
+
+	if (len > TRX_MAX_LEN) {
+		res = IN_BLE_PLT_ERR_INVALID_PARAM;
+		goto out;
+	}
+
+	if (g_trx_svr.cfg[conidx] & 0x1)
 	{
 		if (ack)
-			res = inb_gatt_send_ind(conidx, p_svr->hdl_svc + TRX_CHAR_VAL_TX + 1, len, (uint8_t *)buf, NULL);
+			res = in_ble_gatt_send_ind(g_trx_svr.h_bstk, conidx, g_trx_svr.hdl_svc + TRX_CHAR_VAL_TX + 1, len, (uint8_t *)buf, NULL);
 		else
-			res = inb_gatt_send_ntf(conidx, p_svr->hdl_svc + TRX_CHAR_VAL_TX + 1, len, (uint8_t *)buf, NULL);
+			res = in_ble_gatt_send_ntf(g_trx_svr.h_bstk, conidx, g_trx_svr.hdl_svc + TRX_CHAR_VAL_TX + 1, len, (uint8_t *)buf, NULL);
 
-		if (res != INB_ERR_NO_ERROR) {
+		if (res != IN_BLE_ERR_NO_ERROR) {
 			PRINTD(DBG_ERR, "in_trx_notify: 0x%x\n", res);
 		}
-    } 
-    return res;
+	}
+
+out:
+	return (0-res);
 }
 ```
 
-### Read request from server
+### Read request from client
 
 Client can also directly poll data from server by ATT read method to characteristic that allow read access permission. In sample TRx service, we don’t grant [TRX_CHAR_VAL_TX] characteristic read access, which can only be notified and indicated. But [TRX_CLIENT_CHAR_CFG_TX] characteristic is readable so that client can know if server is allowed notification or not.
 
 The sequence is when client send characteristic read request to server, ATT protocol stack sends *GATT_EVT_RD_REQ* event to inform application. Once the attribute handle is right, application provides actual data to ATT protocol stack so that it transmit back to client.
 
-If ble_app.c is used, application is only required to register event callback for *GATT_EVT_RD_REQ* to provide data and <code>in_ble_gatt_read_req_cfm</code> is called by ble_app to send back to ATT protocol.
+If *ble_app.c* is used, application is only required to register event callback for *GATT_EVT_RD_REQ* to provide data and <code>in_ble_gatt_read_req_cfm</code> is called by ble_app to send back to ATT protocol.
 
-Here is what has been done in ble_app.c for the event.
+Here is what has been done in *ble_app.c* for the event.
 
 ```c
 static void handle_default_gatt_evt(uint16_t eid, void* pv)
@@ -400,7 +404,8 @@ static void evt_rd_req(ble_evt_read_req_ind_t* ind, uint8_t* status, uint16_t* r
 
 ## Client
 
-On the other hand, the client has simpler work to do than server when initializing but more complicated after connection is established with server. Since all the APIs relies on attribute handle, unless service's start handle and its structure is well known in advance, such as both client and server use the sample TRX profile and the start handle of service is fixed, they are going to be obtained in the following procedure called Service Discovery Protocol (SDP). 
+On the other hand, the client has simpler work to do than server when initializing but more complicated after connection is established with server. Since all the APIs relies on attribute handle, unless service's start handle and its structure is well known in advance, such as both client and server use the sample TRx profile and the start handle of service is fixed, they are going to be obtained in the following procedure called Service Discovery Protocol (SDP). 
+
 The client must know the corresponding handle of the attribute in service before any client operations. If both parties in the connection are devices developed by yourself, it means that you are already familiar with the structure of the service, UUID of the service and the starting handle, so this condition is naturally satisfied, and you only need to constantize it in the code. Otherwise, you will need to obtain it through the discover process.
 
 ### Discovering Service by <code>in_ble_gatt_sdp</code>
@@ -423,7 +428,7 @@ This function starts SDP in BLE stack and returns result through event. API prot
 int in_ble_gatt_sdp(void *hdl, int conidx, int sdp_type, ble_gatt_sdp_t *p_sdp, comp_cb callback);
 ```
 
-There are three value for <code>sdp_type</code>: GATT_SDP_DISC_SVC, GATT_SDP_DISC_SVC_ALL, GATT_SDP_DISC_SVC_ALL. Here in sample TRX profile, GATT_SDP_DISC_SVC is used, just as the name suggests, discover one certain service.
+There are three value for <code>sdp_type</code>: GATT_SDP_DISC_SVC, GATT_SDP_DISC_SVC_ALL, GATT_SDP_DISC_SVC_ALL. Here in sample TRx profile, GATT_SDP_DISC_SVC is used, just as the name suggests, discover one certain service.
 
 ```c
 static int discover_svc(trx_clt_t *p_trx_clt)
@@ -446,7 +451,7 @@ static int discover_svc(trx_clt_t *p_trx_clt)
 
 Not only UUID of the service but also handle range is necessary. The range can be specified as 1~0xFFFF, which means searching all attributes. If the service is not within this handle range, discover fails either. 
 
-After service is discovered, **GATT_EVT_SDP_SVC** event is sent to application. Here in sample TRX profile, the event is retrieved by registered event handler <code>evt_sdp_svc</code> with ble_app component.
+After service is discovered, **GATT_EVT_SDP_SVC** event is sent to application. Here in sample TRx profile, the event is retrieved by registered event handler <code>evt_sdp_svc</code> with ble_app component.
 
 ```c
 static void evt_sdp_svc(ble_evt_sdp_svc_ind_t *p_ind)
@@ -672,10 +677,10 @@ Client can also directly poll data from server by ATT read method to characteris
 int in_ble_gatt_read(void *hdl, int conidx, int read_type, ble_gatt_read_req_t *p_req, comp_cb callback);
 ```
 
-The actual read result and value are retrieved by *GATT_EVT_RD_RSP_IND*. If ble_app.c is used, client must register event handler for the event. The register method is same as other callback function. Here is sample of callback function and actual read data is within <code>inb_evt_read_rsp_ind_t</code> parameter.
+The actual read result and value are retrieved by *GATT_EVT_RD_RSP_IND*. If *ble_app.c* is used, client must register event handler for the event. The register method is same as other callback function. Here is sample of callback function and actual read data is within <code>inb_evt_read_rsp_ind_t</code> parameter.
 
 ```c
-void evt_read_rsp_ind(inb_evt_read_rsp_ind_t *p_ind)
+void evt_read_rsp_ind(ble_evt_read_rsp_ind_t *p_ind)
 {
     ...
 }
