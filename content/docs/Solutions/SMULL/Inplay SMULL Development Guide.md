@@ -300,13 +300,13 @@ Send:    `0xA1 0x10 0x00 0x03 <pair num / require id> <timeout byte 1> <timeout 
 Response:    `0xA1 0x10 0x00 0x01 <error code>`
 - **error code**: Refer to Table 1.
 
-### **Stop Pairing: 0xA147**
+### **Stop Pairing: 0xA047**
 
 This command stops the pairing process.
 
-Send:    `0xA1 0x47 0x00 0x00`
+Send:    `0xA0 0x47 0x00 0x00`
 
-Response:    `0xA1 0x47 0x00 0x01 <error code>`
+Response:    `0xA0 0x47 0x00 0x01 <error code>`
 - **error code**: Refer to Table 1.
 
 ### **Delete All Pair Information: 0xA113**
@@ -381,7 +381,7 @@ Send:    `0xA0 0xF5 0x00 0x01 <tx power>`
 Response: `0xA0 0xF5 0x00 0x01 <error code>`
 - **error code**: See table 1.
   
-
+## UART Command
 ### **Get UART Configuration: 0xA063**
 
 This command reads the UART configuration.
@@ -490,8 +490,8 @@ Note:
 Get chip mode
 Send: `0xA0 0xED 0x00 0x00`
 
-Response:    `0xA0 0xED 0x00 0x01 <error code> `
-- **error code**: Refer to table 1 for details.
+Response:    `0xA0 0xED 0x00 0x01 <mode> `
+- **mode**: chip mode, 0:SMULL only, 1: SMULL and BLE concurrently
 
 ### **Start Advertising: 0xA302**
 Start BLE advertising
