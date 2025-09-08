@@ -12,9 +12,9 @@ Triggering chip reset through GPIO involves controlling a GPIO pin to perform a 
 
 ## Hardware Requirements
 
-| Hardware  | Project Name        | Project Path                           |
-| --------- | ------------------- | -------------------------------------- |
-| IN628E DK | proj_drv_gpio_reset | in-dev/proj/driver/proj_drv_gpio_reset |
+| Hardware   | Project Name                       | Project Path                                                     |
+| --------- | ----------------------  | --------------------------------------- |
+| IN628E DK | proj_drv_gpio_reset_no_os  | in-dev/proj/driver/proj_drv_gpio_reset_no_os |
 
 
 
@@ -22,7 +22,7 @@ Triggering chip reset through GPIO involves controlling a GPIO pin to perform a 
 
 ```c
 #define GPIO_RESET_TEST_PORT 1
-#define GPIO_RESET_TEST_PIN 2
+#define GPIO_RESET_TEST_PIN 3
 ```
 
 Define the GPIO reset port and pin.
@@ -45,9 +45,9 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 
 ## Debug
 
-We can get the status of gpio to Uart Log and LED. The following are samples,
+We can get the status of gpio to Uart Log. The following are samples,
 
-- **Waiting for reset signals:** `Input pin is GPIO1_2 Wait for falling edge to trigger PD1 reset `
+- **Waiting for reset signals:** `Input pin is GPIO1_3 Wait for falling edge to trigger PD1 reset `
 
 - **reset success:**`CHIP ID = ...`
 
@@ -57,6 +57,6 @@ More information may be found in [debug guide](https://inplay-inc.github.io/docs
 
 ## Testing Steps
 
-1. Open Keil and select the GPIO reset pin and edge, then download **proj_drv_GPIO_RESET**.
+1. Open Keil and select the GPIO reset pin and edge, then download **proj_drv_gpio_reset_no_os**.
 2. Press the reset button and observe the log for the message `CHIP ID =`.
 3. Input signal in set pin, we can find that we reset development board suceess.
