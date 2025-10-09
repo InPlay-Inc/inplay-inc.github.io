@@ -552,3 +552,23 @@ Complete Event: `0x04, 0x0E, 0x01, 0x01, 0x41, 0xFC, <status>, <RSSI>,<freq_offs
 
 `Offset(KHz) = 500.0/1024* freq_offset_code` 
 Complete Event: `0x04, 0x0E, 0x04, 0x01, 0x42, 0xFC, <status>`
+
+## Example:
+
+- channel 0, continus TX on 1M phy
+`01 0D FC 08 00 25 00 01 00 01 00 00` 
+
+- channel 19, continus TX on 1M phy
+`01 0D FC 08 13 25 00 01 00 01 00 00`
+
+- channel 39, continus TX on 1M phy
+`01 0D FC 08 27 25 00 01 00 01 00 00`
+
+- channel 0, continus TX on 2M phy
+`01 0D FC 08 00 25 00 02 00 01 00 00`
+
+- channel 19, continus TX on 2M phy
+`01 0D FC 08 13 25 00 02 00 01 00 00`
+
+- channel 39, continus TX on 2M phy
+`01 0D FC 08 27 25 00 02 00 01 00 00`

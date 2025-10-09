@@ -14,10 +14,9 @@ In this example, we can achieve basic input and output functionality using GPIO.
 
 ## Hardware Requirements
 
-| Hardware  | Project Name  | Project Path                     |
-| --------- | ------------- | -------------------------------- |
-| IN628E DK | proj_drv_gpio | in-dev/proj/driver/proj_drv_gpio |
-
+| Hardware  | Project Name        | Project Path                                 |
+| --------- | --------------------| --------------------------------|
+| IN628E DK | proj_drv_gpio_no_os | in-dev/proj/driver/proj_drv_gpio_no_os |
 
 
 ## Configuration
@@ -32,11 +31,11 @@ Define the GPIO output port and pin for LED.
 
 
 ```c
-#define KEY_PORT 2
+#define KEY_PORT 1
 #define KEY_PIN 3
 ```
 
-Define the GPIO input port and pin.
+Define the GPIO input port and pin for keyboard.
 
 
 
@@ -51,7 +50,7 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 We can get the status of gpio to Uart Log and LED. The following are samples,
 
 - LED cycle flashing
-- when the  GPIO_2_3 put up, the message `KEY up` will be printed.
+- when the  GPIO_1_3 is high, the message `KEY up` will be printed.
 
 More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/examples-and-use-case/debug-reference) page.
 
@@ -59,6 +58,6 @@ More information may be found in [debug guide](https://inplay-inc.github.io/docs
 
 ## Testing Steps
 
-1. Open Keil and select the GPIO output pin and input pin, then download **proj_drv_GPIO**.
+1. Open Keil and select the GPIO output pin and input pin, then download **proj_drv_gpio_no_os**.
 2. Press the reset button and observe the log for the message `CHIP ID =`.
 3. Repeat the LED on/off cycle. If the GPIO input pin is high, the message `KEY up` will be printed.

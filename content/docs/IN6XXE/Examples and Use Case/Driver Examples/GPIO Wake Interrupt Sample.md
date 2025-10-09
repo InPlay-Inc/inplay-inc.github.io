@@ -14,7 +14,7 @@ GPIO interrupt and wake-up are two important features in embedded systems. GPIO 
 
 | Hardware  | Project Name                | Project Path                                   |
 | --------- | --------------------------- | ---------------------------------------------- |
-| IN628E DK | proj_drv_gpio_wuk_interrupt | in-dev/proj/driver/proj_drv_gpio_wuk_interrupt |
+| IN628E DK | proj_drv_gpio_wup_interrupt_no_os| in-dev/proj/driver/proj_drv_gpio_wup_interrupt_no_os |
 
 
 
@@ -23,7 +23,7 @@ GPIO interrupt and wake-up are two important features in embedded systems. GPIO 
 
 
 ```c
-#define PORT 2
+#define PORT 1
 #define PIN 3
 ```
 
@@ -41,11 +41,11 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 
 We can get the status of gpio according to Uart Log. The following are samples,
 
-- **gpio interrupt occur** `interrupt occur`
+- **gpio interrupt occur** `rise:0 fall:1 wup:1`
 
-- **Wake up** `power up src=`
+- **Wake up** `power up`
 
-- Power down `power down`
+- **Sleep**     `power down`
 
 More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/examples-and-use-case/debug-reference)  page.
 
@@ -53,7 +53,7 @@ More information may be found in [debug guide](https://inplay-inc.github.io/docs
 
 ## Test Steps
 
-1. Open Keil and select the GPIO wake-up and interrupt pin. Download the **proj_drv_gpio_wuk_interrupt** project.
+1. Open Keil and select the GPIO wake-up and interrupt pin. Download the **proj_drv_gpio_wup_interrupt_no_os** project.
 2. Press the reset button and observe the log for the text `CHIP ID =`.
-3. Toggle the light on and off. When the corresponding edge signal is detected on the GPIO input pin, `power up src=`and`interrupt occur` will be printed.
+3. Toggle the light on and off. When the corresponding edge signal is detected on the GPIO input pin, `power up`and`rise:... fall:... wup:...` will be printed.
 

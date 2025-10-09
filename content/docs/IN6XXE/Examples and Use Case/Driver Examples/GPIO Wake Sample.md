@@ -14,7 +14,7 @@ The GPIO wake-up feature is a functionality that allows a chip to be awakened fr
 
 | Hardware  | Project Name      | Project Path                         |
 | --------- | ----------------- | ------------------------------------ |
-| IN628E DK | proj_drv_gpio_wuk | in-dev/proj/driver/proj_drv_gpio_wuk |
+| IN628E DK | proj_drv_gpio_wup_no_os | in-dev/proj/driver/proj_drv_gpio_wup_no_os |
 
 
 
@@ -57,9 +57,9 @@ To build the sample with keil, follow the steps listed on the [quick start](http
 
 We can get the status of gpio to Uart Log and LED. The following are samples,
 
-- **Power down:** `power down `
+- **Sleep:** `power down `
 
-- **Wake up:**`power up src=23`. number 23 means wake-up source, we can find its meaning in `pm_ws`.
+- **Wake up:**`power up`
 
 More information may be found in [debug guide](https://inplay-inc.github.io/docs/in6xxe/examples-and-use-case/debug-reference) page.
 
@@ -68,7 +68,7 @@ More information may be found in [debug guide](https://inplay-inc.github.io/docs
 
 ## Testing Steps
 
-1. Open Keil and select the GPIO wake-up pin and edge, then download **proj_drv_gpio_wuk**.
+1. Open Keil and select the GPIO wake-up pin and edge, then download **proj_drv_gpio_wup_no_os**.
 2. Press the reset button and observe the log for the message `CHIP ID =`.
 3. Input signal in set pin, we can find that development board  wake up successfully.
 

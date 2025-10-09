@@ -63,7 +63,7 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
      | CMD:0x00 (4 bytes) | Firmware Size (4 bytes) | Flag (4 bytes) |
      |------------|-------------------------|----------------|
    - **Parameters:**
-     - **Firmware Size:** Total size of the upgrade file.
+     - **Firmware Size:** Total size of the upgrade file. This size must be 4-byte aligned. If it is not aligned to 4 bytes, padding with zeros is required to reach the next 4-byte boundary, and the size should be increased accordingly.
      - **Flag:** Configuration flags (see table below).
    - **Flag Values:**
 
@@ -152,10 +152,9 @@ The OTA Error characteristic notifies the application of errors that occur durin
 
 | Field      | Size (bytes) | Description                   |
 |------------|--------------|-------------------------------|
-| Command | 1            | OTA Command      |
-| Error Code | 1            | Identifier for the error      |
-| Reserved | 2| Reserved data
-| Data       | 4            | Additional error data         |
+| Command | 4            | OTA Command      |
+| Error Code | 4            | Identifier for the error      |
+
 
 ### Error Codes
 
