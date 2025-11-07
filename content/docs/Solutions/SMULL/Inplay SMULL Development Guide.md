@@ -7,7 +7,7 @@ title: "SMULL Command Set"
 
 ## Introduction
 
-IN618 is InPlay’s SMULL SoC product which features synchronous multi-node low-latency protocol (SMULL) stack with 2.4Ghz frequency band RF radio and MCU system integrated. The device incorporates an InPlay SMULL radio and subsystem that contains the RF transceiver, baseband, PHY and link layer engines.The physical layer has the digital PHY and RF transceiver that transmits and receives GFSK packets at 2Mbps. The PHY can also be configured to 1Mbps mode to transmits and receives 1Mbps modulated packets.
+IN628E/IN618E is InPlay’s SMULL SoC product which features synchronous multi-node low-latency protocol (SMULL) stack with 2.4Ghz frequency band RF radio and MCU system integrated. The device incorporates an InPlay SMULL radio and subsystem that contains the RF transceiver, baseband, PHY and link layer engines.The physical layer has the digital PHY and RF transceiver that transmits and receives GFSK packets at 2Mbps. The PHY can also be configured to 1Mbps mode to transmits and receives 1Mbps modulated packets.
 
 The baseband controller combines both hardware and software implementation that supports variety of communication modes between master and slave devices: Unicast, multi-cast and broadcast modes. In a typical start topology network, as shown in Figure 1, the central node will operate as the master and the peripheral nodes will operate as the slave nodes. The communication between the master and the slaves can be unidirectional or bi-directional.<br>
 ![InPlay SMULL network topology](/images/smull_dt/fig1_topology.png "Figure 1: InPlay SMULL network topology")
@@ -27,9 +27,9 @@ The master can send a broadcast packet to all slaves in each frame.<br>
 *Broadcast packet: Slaves do not acknowledge receipt of a broadcast packet.*
 
 ## Overview of Transparent Data Transmission
-Many modern applications rely on wireless data transmission, but end-users often lack knowledge or interest in the underlying technologies. We have designed a mechanism that enables users to leverage the powerful data transfer capabilities of SMULL without needing to understand the protocol details. Before initiating data transmission, the relevant SMULL parameters must be configured to establish a network between the master and slaves. Using our provided commands, you can quickly set up the SMULL network. Please refer to the [example](#example) for more details. Figure 3 illustrates the entire system, showing the connection between the host and the IN618 module.<br>
+Many modern applications rely on wireless data transmission, but end-users often lack knowledge or interest in the underlying technologies. We have designed a mechanism that enables users to leverage the powerful data transfer capabilities of SMULL without needing to understand the protocol details. Before initiating data transmission, the relevant SMULL parameters must be configured to establish a network between the master and slaves. Using our provided commands, you can quickly set up the SMULL network. Please refer to the [example](#example) for more details. Figure 3 illustrates the entire system, showing the connection between the host and the IN628E/IN618E module.<br>
 ![Schematic](/images/smull_dt/fig3.png "Figure 3: Schematic")
-Typically, the host refers to devices such as personal computers (PCs), laptops, microcontroller units (MCUs), and others. In the current architecture, the host and IN618 communicate through UART. The default UART settings in our system are as follows:<br>
+Typically, the host refers to devices such as personal computers (PCs), laptops, microcontroller units (MCUs), and others. In the current architecture, the host and IN628E/IN618E communicate through UART. The default UART settings in our system are as follows:<br>
 
 ### UART Default Settings
 
