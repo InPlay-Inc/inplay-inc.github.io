@@ -16,7 +16,7 @@ In this example, we can achieve basic input and output functionality using GPIO.
 
 | Hardware  | Project Name        | Project Path                                 |
 | --------- | --------------------| --------------------------------|
-| IN628E DK | proj_drv_gpio_no_os | in-dev/proj/driver/proj_drv_gpio_no_os |
+| IN628E DK | proj_drv_gpio | in-dev/proj/driver/proj_drv_gpio |
 
 
 ## Configuration
@@ -58,6 +58,6 @@ More information may be found in [debug guide](https://inplay-inc.github.io/docs
 
 ## Testing Steps
 
-1. Open Keil and select the GPIO output pin and input pin, then download **proj_drv_gpio_no_os**.
+1. Open Keil and select the GPIO output pin and input pin, then download **proj_drv_gpio**.
 2. Press the reset button and observe the log for the message `CHIP ID =`.
 3. Repeat the LED on/off cycle. If the GPIO input pin is high, the message `KEY up` will be printed.

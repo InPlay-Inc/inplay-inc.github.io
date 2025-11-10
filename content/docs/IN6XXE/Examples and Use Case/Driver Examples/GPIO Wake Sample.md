@@ -14,7 +14,7 @@ The GPIO wake-up feature is a functionality that allows a chip to be awakened fr
 
 | Hardware  | Project Name      | Project Path                         |
 | --------- | ----------------- | ------------------------------------ |
-| IN628E DK | proj_drv_gpio_wup_no_os | in-dev/proj/driver/proj_drv_gpio_wup_no_os |
+| IN628E DK | proj_drv_gpio_wup | in-dev/proj/driver/proj_drv_gpio_wup |
 
 
 
@@ -68,7 +68,7 @@ More information may be found in [debug guide](https://inplay-inc.github.io/docs
 
 ## Testing Steps
 
-1. Open Keil and select the GPIO wake-up pin and edge, then download **proj_drv_gpio_wup_no_os**.
+1. Open Keil and select the GPIO wake-up pin and edge, then download **proj_drv_gpio_wup**.
 2. Press the reset button and observe the log for the message `CHIP ID =`.
 3. Input signal in set pin, we can find that development board  wake up successfully.
 

@@ -14,7 +14,7 @@ GPIO interrupts are signals that are sent to the processor when there is a chang
 
 | Hardware   | Project Name                       | Project Path                               |
 | --------- | ----------------------- | -------------------------------------------- |
-| IN628E DK | proj_drv_gpio_interrupt_no_os | in-dev/proj/driver/proj_drv_gpio_interrupt_no_os |
+| IN628E DK | proj_drv_gpio_interrupt | in-dev/proj/driver/proj_drv_gpio_interrupt |
 
 
 
@@ -57,7 +57,7 @@ More information may be found in [debug guide](https://inplay-inc.github.io/docs
 
 ## Test Steps
 
-1. Open Keil and select the GPIO interrupt pin. Download the **proj_drv_gpio_interrupt_no_os** project.
+1. Open Keil and select the GPIO interrupt pin. Download the **proj_drv_gpio_interrupt** project.
 2. Press the reset button and observe the log for the text `CHIP ID =`.
 3. Toggle the light on and off. When the corresponding edge signal is detected on the GPIO input pin, `rise:... fall:... wup:...` will be printed.
 
