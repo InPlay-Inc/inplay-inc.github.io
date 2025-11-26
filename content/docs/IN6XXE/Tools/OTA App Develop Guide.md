@@ -99,10 +99,11 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
 6. #### Write Command (0x01)
    - **Description:** Writes firmware data to the device’s flash memory.
    - **Format:**
-     | CMD:0x01 (4 bytes) | Address (4 bytes) | Data (4–512 bytes) |
-     |------------|-------------------|--------------------|
+     | CMD:0x01 (4 bytes) | Address (4 bytes) | Length (4 bytes)|  Data (4–512 bytes) |
+     |------------|-------------------|--------------------|--------------------|
    - **Parameters:**
      - **Address:** Flash offset address (starting at 0).
+     - **Length:** Data length of 'Data' field (starting at 0).
      - **Data:** Data payload (must be 4-byte aligned).
   
 **Note**:
@@ -111,11 +112,11 @@ The command execution result is sent via GATT Notify using the **OTA Error** cha
 1. #### Done Command (0x02)
    - **Description:** Finalizes the OTA process and write the configuration to flash memory.
    - **Format:**
-     | CMD:0x02  (4 bytes) | *optional* Hash Value(32 bytes)|
+     | CMD:0x02  (4 bytes) | *optional* CRC Value(4 bytes)|
      |------------|-------|
 
 	- **Note**:
-		The 32-bytes hash value is optional and is only available when the **Hash** bit is set to 1 in the **Configure Command**. Compute the hash value using SHA-256 on the application data.
+		The 4-bytes crc32 value is optional and is only available when the **CRC** bit is set to 1 in the **Configure Command**. Compute the hash value using CRC32 on the application data.
 
 2. #### Cancel Command (0x03)
    - **Description:** Cancels the current OTA process and resets the device state.
@@ -152,8 +153,10 @@ The OTA Error characteristic notifies the application of errors that occur durin
 
 | Field      | Size (bytes) | Description                   |
 |------------|--------------|-------------------------------|
-| Command | 4            | OTA Command      |
-| Error Code | 4            | Identifier for the error      |
+| Command |  1             | OTA Command      |
+| Error Code | 1            | Identifier for the error      |
+| Reserve | 2            | Reserve bytes     |
+| Response Data | 4            | Command response data     |
 
 
 ### Error Codes
@@ -177,6 +180,7 @@ The OTA Error characteristic notifies the application of errors that occur durin
 | 0x0E       | CRC error                               |
 | 0x0F       | Timeout error                           |
 | 0x10       | All devices timeout error               |
+| 0x11       | Update parameter error               |
 
 ---
 
