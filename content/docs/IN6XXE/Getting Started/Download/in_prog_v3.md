@@ -46,7 +46,8 @@ title: "InPlay Programmer V3 Guide"
 ### System Requirements
 - Windows/Linux/macOS
 - Available serial port (for UART mode) or JLink probe (for JLink mode)
-- Install InPlayTools(for JLink download)
+- [J-Link Software and Documentation Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) installed on your host computer
+- Install [InPlayTools](https://github.com/InPlay-Inc/IN6XXE-Tools/blob/main/InPlayTool/InPlayToolsSetup.exe)(for JLink download)
 
 
 ### First Launch
