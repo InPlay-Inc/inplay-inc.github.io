@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Examples and Use Case on InPlay Doc</title><link>/docs/in6xxe/examples-and-use-case.html</link><description>Recent content in Examples and Use Case on InPlay Doc</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>InPlay Inc</copyright><atom:link href="/docs/in6xxe/examples-and-use-case/index.xml" rel="self" type="application/rss+xml"/><item><title>Debug Reference</title><link>/docs/in6xxe/examples-and-use-case/debug-reference.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/in6xxe/examples-and-use-case/debug-reference.html</guid><description>Debug Reference # Configuration and Connection during Debug # To connect with the IN628E, we should use a terminal emulator with following setting,
-Port: according to your device.
-Baud Rate: 115200.
-Data bits: 8.
-Stop bits: 1.
-Parity: None.
-Flow control: None.
-UART Tx Pin: default is GPIO_2_1.
-UART Rx Pin: default is GPIO_2_7.</description></item></channel></rss>
