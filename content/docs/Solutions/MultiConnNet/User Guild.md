@@ -2,7 +2,7 @@
 title: "User Guilde"
 ---
 
-# MultiConnNet User Guild
+# MultiConnNet User Guilde
 ---
 
 Proper module configuration is essential before the MultiConnNet network can operate normally. However, it is necessary to understand the essential information beforehand.
